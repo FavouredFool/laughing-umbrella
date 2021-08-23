@@ -2,5 +2,6 @@ using UnityEngine;
 
 public class SkillEnum : MonoBehaviour {
 
-    public enum Skill { SkillBallGreen, SkillBallRed };
+    // Enum um Fähigkeiten der Orbs auszuwählen. MUSS FÜR JEDE FÄHIGKEIT ERWEITERT WERDEN
+    public enum Skill { SkillBallGreen, SkillBallRed, SkillBallYellow, SkillEmpty };
 }
