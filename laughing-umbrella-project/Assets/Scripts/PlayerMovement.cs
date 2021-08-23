@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour {
 	private float yMove;
 
 	private Rigidbody2D myBody;
+
+	
 	
 	#endregion
 	
@@ -39,6 +41,8 @@ public class PlayerMovement : MonoBehaviour {
 		myBody.velocity = new Vector2(xMove, yMove);
 
 	}
+
+    
 
 
 
