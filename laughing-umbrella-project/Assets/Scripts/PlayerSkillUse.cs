@@ -8,13 +8,13 @@ public class PlayerSkillUse : MonoBehaviour {
     ISkill tempSkill = null;
     ISkill emptySkill = null;
 
-    private string ORB_TAG = "Orb";
-
     SpriteRenderer sr;
     Color EMPTYCOLOR;
     Color backupColor;
     Color activeColor;
     Color tempColor;
+
+    private string ORB_TAG = "Orb";
     #endregion
 
 
@@ -29,6 +29,7 @@ public class PlayerSkillUse : MonoBehaviour {
 
         sr = GetComponent<SpriteRenderer>();
         EMPTYCOLOR = sr.color;
+        activeColor = EMPTYCOLOR;
         backupColor = EMPTYCOLOR;
     }
 
@@ -78,8 +79,6 @@ public class PlayerSkillUse : MonoBehaviour {
             sr.color = activeColor;
 
         }
-        
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -110,8 +109,6 @@ public class PlayerSkillUse : MonoBehaviour {
                         break;
                     default:
                         throw new System.Exception("SWITCH_CASE_FEHLER");
-                        
-
                 }
 
 
@@ -121,7 +118,6 @@ public class PlayerSkillUse : MonoBehaviour {
 
                 // Orb wird zerstört
                 Destroy(collision.gameObject);
-
             }
         }
     }
