@@ -46,6 +46,11 @@ public class PlayerMovement : MonoBehaviour {
 
 		myBody.velocity = new Vector2(xMove, yMove);
 
+
+
+		// Animationszeug
+		animator.SetFloat("speed", Math.Abs(xMove)+Math.Abs(yMove));
+
 		if (xMove != 0 || yMove != 0)
         {
 			playerDirection = determineDirection(xMove, yMove);
