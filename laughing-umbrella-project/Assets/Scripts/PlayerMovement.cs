@@ -82,13 +82,11 @@ public class PlayerMovement : MonoBehaviour {
 			if(yMove <= 0)
             {
 				animator.SetInteger("direction", 0);
-				Debug.Log("Front");
 				return Direction.FRONT;
             }
 			else
             {
 				animator.SetInteger("direction", 1);
-				Debug.Log("back");
 				return Direction.BACK;
             }
         }

@@ -17,6 +17,9 @@ public class PlayerSkillUse : MonoBehaviour {
     Color activeColor;
     Color tempColor;
 
+
+    CapsuleCollider2D playerCollider;
+
     // Konstante für Tags
     private string ORB_TAG = "Orb";
     #endregion
@@ -37,6 +40,9 @@ public class PlayerSkillUse : MonoBehaviour {
         EMPTYCOLOR = sr.color;
         activeColor = EMPTYCOLOR;
         backupColor = EMPTYCOLOR;
+
+        // Playercollider
+        playerCollider = gameObject.GetComponent<CapsuleCollider2D>();
     }
 
     private void Update()
@@ -113,7 +119,7 @@ public class PlayerSkillUse : MonoBehaviour {
         if (activeSkill == emptySkill)
         {
             // Get all Collisions at Player-Character 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), gameObject.GetComponent<CircleCollider2D>().radius);
+            Collider2D[] colliders = Physics2D.OverlapCapsuleAll(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), playerCollider.size, playerCollider.direction, 0);
 
             if (colliders.Length > 1)
             {
