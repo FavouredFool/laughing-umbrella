@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4619642697008298346, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.307
+      value: 2.63
       objectReference: {fileID: 0}
     - target: {fileID: 4619642697008298346, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -663,6 +663,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4831965654929628838, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
+      propertyPath: skillEnum
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5976392519029236579, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_Color.b
       value: 0.061478734
@@ -851,7 +855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4831965654929628838, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: skillEnum
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5976392519029236579, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_Color.b
@@ -987,7 +991,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168415039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.497, y: -0.516, z: 0}
+  m_LocalPosition: {x: 2.51, y: -0.516, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1005,9 +1009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472786b540210c64bbc7c09979c223db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbLayers:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!95 &1168415046
 Animator:
   serializedVersion: 3
@@ -1104,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4831965654929628838, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: skillEnum
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5976392519029236579, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_Color.b
@@ -1220,7 +1221,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.00000032782555}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1231,5 +1232,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.0000007}
   m_EdgeRadius: 0

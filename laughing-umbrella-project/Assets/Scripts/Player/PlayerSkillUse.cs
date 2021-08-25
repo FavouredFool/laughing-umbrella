@@ -5,10 +5,10 @@ public class PlayerSkillUse : MonoBehaviour {
 
     #region Variables
     // Skills deklarieren
-    ISkill activeSkill;
-	ISkill backupSkill;
-    ISkill tempSkill;
-    ISkill emptySkill;
+    GameObject activeSkill;
+    GameObject backupSkill;
+    GameObject tempSkill;
+    GameObject emptySkill;
 
     // Farben deklarieren
     SpriteRenderer sr;
@@ -17,13 +17,15 @@ public class PlayerSkillUse : MonoBehaviour {
     Color activeColor;
     Color tempColor;
 
+    // Children deklarieren
+    Dictionary<string, GameObject> allSkills;
 
     CapsuleCollider2D playerCollider;
 
-    public LayerMask orbLayers;
-
     // Konstante für Tags
     private string ORB_TAG = "Orb";
+
+    LayerMask orbLayers; 
     #endregion
 
 
@@ -31,11 +33,21 @@ public class PlayerSkillUse : MonoBehaviour {
 
     void Start() {
 
-        // Skill-Variablen initialisieren
-        gameObject.AddComponent<SkillEmpty>();
-        emptySkill = GetComponent<SkillEmpty>();
+        allSkills = new Dictionary<string, GameObject>();
+
+        // Read all Skills from a Ressource-File
+        foreach (Object prefab in Resources.LoadAll("Prefabs/Skills", typeof(GameObject)))
+        {
+            allSkills.Add(prefab.name, (GameObject) prefab);
+        }
+
+
+        // EmptySkill active setzen
+        emptySkill = Instantiate(allSkills["SkillEmpty"], gameObject.transform);
         activeSkill = emptySkill;
         backupSkill = emptySkill;
+
+        
 
         // Farben Initialisieren
         sr = GetComponent<SpriteRenderer>();
@@ -45,6 +57,8 @@ public class PlayerSkillUse : MonoBehaviour {
 
         // Playercollider
         playerCollider = gameObject.GetComponent<CapsuleCollider2D>();
+
+        orbLayers = LayerMask.GetMask(ORB_TAG);
     }
 
     private void Update()
@@ -55,11 +69,10 @@ public class PlayerSkillUse : MonoBehaviour {
             if (activeSkill != emptySkill)
             {
                 // Skill wird genutzt
-                activeSkill.UseSkill();
+                activeSkill.GetComponent<ISkill>().UseSkill();
 
                 // Component wird zerstört
-                
-                Destroy((Object)activeSkill);
+                Destroy(activeSkill);
                 activeSkill = emptySkill;
                 
 
@@ -74,7 +87,7 @@ public class PlayerSkillUse : MonoBehaviour {
             else
             {
                 // EmptySkill wird genutzt
-                activeSkill.UseSkill();
+                activeSkill.GetComponent<ISkill>().UseSkill();
             }
         }
 
@@ -151,27 +164,21 @@ public class PlayerSkillUse : MonoBehaviour {
     {
         // Fähigkeit von Enums über Switch Case. MUSS FÜR JEDE FÄHIGKEIT ERWEITERT WERDEN
         // SkillEmpty wird nicht aufgeführt, da er nicht durch Orbs erreichbar ist
-
-        switch (collision.gameObject.GetComponent<Orb>().skillEnum)
+        // Zugriff über Children in Hashmap
+        switch(collision.gameObject.GetComponent<Orb>().skillEnum)
         {
             case SkillEnum.Skill.SKILLBALLRED:
-                gameObject.AddComponent<SkillBallRed>();
-                activeSkill = GetComponent<SkillBallRed>();
-                break;
-            case SkillEnum.Skill.SKILLBALLGREEN:
-                gameObject.AddComponent<SkillBallGreen>();
-                activeSkill = GetComponent<SkillBallGreen>();
-                break;
-            case SkillEnum.Skill.SKILLBALLYELLOW:
-                gameObject.AddComponent<SkillBallYellow>();
-                activeSkill = GetComponent<SkillBallYellow>();
+                activeSkill = Instantiate(allSkills["SkillBallRed"], gameObject.transform);
                 break;
             case SkillEnum.Skill.SKILLSLASH:
-                gameObject.AddComponent<SkillSlash>();
-                activeSkill = GetComponent<SkillSlash>();
+                activeSkill = Instantiate(allSkills["SkillSlash"], gameObject.transform);
                 break;
-            default:
-                throw new System.Exception("SWITCH_CASE_FEHLER");
+            case SkillEnum.Skill.SKILLBALLGREEN:
+                activeSkill = Instantiate(allSkills["SkillBallGreen"], gameObject.transform);
+                break;
+            case SkillEnum.Skill.SKILLBALLYELLOW:
+                activeSkill = Instantiate(allSkills["SkillBallYellow"], gameObject.transform);
+                break;
         }
 
         // Player nimmt Farbe des Orbs an

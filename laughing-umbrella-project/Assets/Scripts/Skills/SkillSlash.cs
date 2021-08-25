@@ -3,7 +3,6 @@ using UnityEngine;
 public class SkillSlash : MonoBehaviour, ISkill
 {
 
-    public float attackRange;
     LayerMask enemyLayers;
 
     BoxCollider2D hitBox;
@@ -11,15 +10,14 @@ public class SkillSlash : MonoBehaviour, ISkill
     Vector3 rotatedPointNear;
     Vector3 rotatedPointFar;
 
-    float SLASHWIDTH = 2;
-    float SLASHLENGTH = 2;
+    public float SLASHWIDTH;
+    public float SLASHLENGTH;
 
 
 
     void Start()
     {
         enemyLayers = LayerMask.GetMask("Enemy");
-        attackRange = 0.5f;
 
 
     }

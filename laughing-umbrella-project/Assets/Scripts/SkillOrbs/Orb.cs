@@ -22,7 +22,6 @@ public class Orb : MonoBehaviour {
 
     public void Start()
     {
-        // Hier wird das Enum zu einem Skill
 
     }
 
