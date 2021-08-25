@@ -17,6 +17,11 @@ public class PlayerSkillUse : MonoBehaviour {
     Color activeColor;
     Color tempColor;
 
+
+    CapsuleCollider2D playerCollider;
+
+    public LayerMask orbLayers;
+
     // Konstante für Tags
     private string ORB_TAG = "Orb";
     #endregion
@@ -37,6 +42,9 @@ public class PlayerSkillUse : MonoBehaviour {
         EMPTYCOLOR = sr.color;
         activeColor = EMPTYCOLOR;
         backupColor = EMPTYCOLOR;
+
+        // Playercollider
+        playerCollider = gameObject.GetComponent<CapsuleCollider2D>();
     }
 
     private void Update()
@@ -113,41 +121,27 @@ public class PlayerSkillUse : MonoBehaviour {
         if (activeSkill == emptySkill)
         {
             // Get all Collisions at Player-Character 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), gameObject.GetComponent<CircleCollider2D>().radius);
+            Collider2D[] colliders = Physics2D.OverlapCapsuleAll(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), playerCollider.size, playerCollider.direction, 0, orbLayers);
 
-            if (colliders.Length > 1)
+            if (colliders.Length > 0)
             {
-                List<Collider2D> orbColliders = new List<Collider2D>();
+            // Herausfinden welcher Orb am nähesten zum Spieler ist
+                float shortestDist = float.PositiveInfinity;
+                float tempDist;
+                int distIndex = 0;
 
-                // Nur die Orb-Collider herausziehen
-                foreach (Collider2D col in colliders)
+                for (int i = 0; i < colliders.Length; i++)
                 {
-                    if (col.gameObject.tag.Equals(ORB_TAG))
+                    tempDist = Vector3.Distance(gameObject.transform.position, colliders[i].gameObject.transform.position);
+
+                    if (shortestDist > tempDist)
                     {
-                        orbColliders.Add(col);
+                        distIndex = i;
+                        shortestDist = tempDist;
                     }
                 }
-
-                // Herausfinden welcher Orb am nähesten zum Spieler ist
-                if (orbColliders.Count > 0)
-                {
-                    float shortestDist = float.PositiveInfinity;
-                    float tempDist;
-                    int distIndex = 0;
-
-                    for (int i = 0; i < orbColliders.Count; i++)
-                    {
-                        tempDist = Vector3.Distance(gameObject.transform.position, orbColliders[i].gameObject.transform.position);
-
-                        if (shortestDist > tempDist)
-                        {
-                            distIndex = i;
-                            shortestDist = tempDist;
-                        }
-                    }
-                    // den Skill des Orbs absorbieren und Orb zerstören
-                    GetSkill(orbColliders[distIndex]);
-                }
+                // den Skill des Orbs absorbieren und Orb zerstören
+                GetSkill(colliders[distIndex]);
             }
         }
     }
@@ -159,17 +153,21 @@ public class PlayerSkillUse : MonoBehaviour {
 
         switch (collision.gameObject.GetComponent<Orb>().skillEnum)
         {
-            case SkillEnum.Skill.SkillBallRed:
+            case SkillEnum.Skill.SKILLBALLRED:
                 gameObject.AddComponent<SkillBallRed>();
                 activeSkill = GetComponent<SkillBallRed>();
                 break;
-            case SkillEnum.Skill.SkillBallGreen:
+            case SkillEnum.Skill.SKILLBALLGREEN:
                 gameObject.AddComponent<SkillBallGreen>();
                 activeSkill = GetComponent<SkillBallGreen>();
                 break;
-            case SkillEnum.Skill.SkillBallYellow:
+            case SkillEnum.Skill.SKILLBALLYELLOW:
                 gameObject.AddComponent<SkillBallYellow>();
                 activeSkill = GetComponent<SkillBallYellow>();
+                break;
+            case SkillEnum.Skill.SKILLSLASH:
+                gameObject.AddComponent<SkillSlash>();
+                activeSkill = GetComponent<SkillSlash>();
                 break;
             default:
                 throw new System.Exception("SWITCH_CASE_FEHLER");
