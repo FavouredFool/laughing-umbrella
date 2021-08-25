@@ -58,8 +58,10 @@ public class PlayerSkillUse : MonoBehaviour {
                 activeSkill.UseSkill();
 
                 // Component wird zerstört
+                
                 Destroy((Object)activeSkill);
                 activeSkill = emptySkill;
+                
 
                 // Farbe wird zurückgeändert
                 activeColor = EMPTYCOLOR;
@@ -74,8 +76,8 @@ public class PlayerSkillUse : MonoBehaviour {
                 // EmptySkill wird genutzt
                 activeSkill.UseSkill();
             }
-            
         }
+
         // Rechtsklick -> Swappe Fähigkeiten
         if (Input.GetMouseButtonDown(1))
         {
@@ -91,7 +93,6 @@ public class PlayerSkillUse : MonoBehaviour {
             activeColor = backupColor;
             backupColor = tempColor;
             sr.color = activeColor;
-
 
             // Wenn man bei Rechtsklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
             checkForOrb();
