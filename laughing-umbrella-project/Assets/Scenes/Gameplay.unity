@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 272445914}
   - component: {fileID: 272445913}
   - component: {fileID: 272445912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1322652162697492334, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4619642697008298346, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_RootOrder
@@ -617,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1322652162697492334, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4619642697008298346, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_RootOrder
@@ -803,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1322652162697492334, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4619642697008298346, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_RootOrder
@@ -851,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4831965654929628838, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: skillEnum
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5976392519029236579, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_Color.b
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44182308ee1601744ab109730d51aa01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 10
   animator: {fileID: 1168415046}
 --- !u!212 &1168415043
 SpriteRenderer:
@@ -1005,6 +1005,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472786b540210c64bbc7c09979c223db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbLayers:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!95 &1168415046
 Animator:
   serializedVersion: 3
@@ -1053,7 +1056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1322652162697492334, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4619642697008298346, guid: 64e529ea3347d124b93e020507ec3ebe, type: 3}
       propertyPath: m_RootOrder

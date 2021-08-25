@@ -6,17 +6,9 @@ public class PlayerMovement : MonoBehaviour {
 	#region Variables
 
 	public float moveSpeed;
-
-	private float xInput;
-	private float yInput;
-	private float xMove;
-	private float yMove;
+	Vector2 movement;
 
 	private Rigidbody2D myBody;
-
-	public enum Direction { FRONT, BACK, LEFT, RIGHT };
-	private Direction playerDirection;
-
 	public Animator animator;
 	
 	#endregion
@@ -27,75 +19,34 @@ public class PlayerMovement : MonoBehaviour {
     void Start() {
 
 		myBody = GetComponent<Rigidbody2D>();
-		playerDirection = Direction.FRONT;
 
 	}
 
     void Update() {
+		//input in Update()
 		PlayerMoveControls();
     }
 
 
 	void PlayerMoveControls()
 	{
-		xInput = Input.GetAxisRaw("Horizontal");
-		yInput = Input.GetAxisRaw("Vertical");
-
-		xMove = xInput * moveSpeed;
-		yMove = yInput * moveSpeed;
-
-		myBody.velocity = new Vector2(xMove, yMove);
-
-
-
-		// Animationszeug
-		animator.SetFloat("speed", Math.Abs(xMove)+Math.Abs(yMove));
-
-		if (xMove != 0 || yMove != 0)
+		movement.x = Input.GetAxisRaw("Horizontal");
+		movement.y = Input.GetAxisRaw("Vertical");
+		movement.Normalize();
+		if (movement != Vector2.zero)
         {
-			playerDirection = determineDirection(xMove, yMove);
+			animator.SetFloat("horizontal", movement.x);
+			animator.SetFloat("vertical", movement.y);
 		}
-		
-
+		animator.SetFloat("speed", movement.sqrMagnitude);
 	}
 
-
-	Direction determineDirection(float xMove, float yMove)
+    void FixedUpdate()
     {
-		if (Math.Abs(xMove) > Math.Abs(yMove))
-        {
-			// Läuft rechts/links
-			if(xMove <= 0)
-            {
-				animator.SetInteger("direction", 2);
-				return Direction.LEFT;
-			}
-			else
-            {
-				animator.SetInteger("direction", 3);
-				return Direction.RIGHT;
-			}
-        }
-		else
-        {
-			// Läuft vorne/hinten
-			if(yMove <= 0)
-            {
-				animator.SetInteger("direction", 0);
-				return Direction.FRONT;
-            }
-			else
-            {
-				animator.SetInteger("direction", 1);
-				return Direction.BACK;
-            }
-        }
+		//movement in FixedUpdate()
+		myBody.MovePosition(myBody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        
     }
-
-    
-
-
-
 
     #endregion
 }
