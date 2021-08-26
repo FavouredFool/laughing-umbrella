@@ -10,6 +10,8 @@ public abstract class Enemy : MonoBehaviour {
 	public Healthbar healthBar;
 
 	Vector2 movement;
+
+    Vector3 posOffset = new Vector3(0f, 0f, 0f);
     #endregion
 
 
@@ -20,6 +22,7 @@ public abstract class Enemy : MonoBehaviour {
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
     }
+
 
     public void getDamaged(int attackDamage)
     {
