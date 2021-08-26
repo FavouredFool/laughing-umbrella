@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SLASHWIDTH: 3
   SLASHLENGTH: 3
+  attackDamage: 10
