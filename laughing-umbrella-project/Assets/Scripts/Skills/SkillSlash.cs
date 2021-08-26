@@ -13,6 +13,8 @@ public class SkillSlash : MonoBehaviour, ISkill
     public float SLASHWIDTH;
     public float SLASHLENGTH;
 
+    public int attackDamage;
+
 
 
     void Start()
@@ -58,12 +60,16 @@ public class SkillSlash : MonoBehaviour, ISkill
     {
         Debug.Log("Slash!");
 
+        // AUS PERFORMANCEGRÜNDEN SOLLTE ALLES IN update() HIER HIN VERSCHOBEN WERDEN - DANN WERDEN ABER DIE GIZMOS NICHT MEHR ANGEZEIGT
+
         // Gegner bei Slash detecten
         Collider2D[] enemiesHit = Physics2D.OverlapAreaAll(rotatedPointNear, rotatedPointFar, enemyLayers);
 
         foreach(Collider2D enemy in enemiesHit)
         {
             Debug.Log(enemy.name);
+            enemy.gameObject.GetComponent<Enemy>().getDamaged(attackDamage);
+
         }
         
 
