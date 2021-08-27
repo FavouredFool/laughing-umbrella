@@ -320,6 +320,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 419512414506920558, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
   m_PrefabInstance: {fileID: 419512414240775097}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &576549631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576549628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2becefa364406a449ae3bcda8dd2449b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 15
+  currentHealth: 15
+  moveSpeed: 4
+  healthBar: {fileID: 1970616931}
+  ATTACKDAMAGE: 5
+  SLASHWIDTH: 2
+  SLASHLENGTH: 3
+  ATTACKSTARTDISTANCE: 0
 --- !u!50 &576549632
 Rigidbody2D:
   serializedVersion: 4
@@ -353,17 +373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fc072fa4d5b3242b221e217992b5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
-  currentHealth: 15
-  moveSpeed: 4
-  healthBar: {fileID: 1970616931}
   target: {fileID: 1168415044}
   nextWaypointDistance: 1.5
   enemyGFX: {fileID: 640157808}
-  ATTACKDAMAGE: 5
-  SLASHWIDTH: 2
-  SLASHLENGTH: 3
-  ATTACKSTARTDISTANCE: 0
 --- !u!114 &576549634
 MonoBehaviour:
   m_ObjectHideFlags: 0
