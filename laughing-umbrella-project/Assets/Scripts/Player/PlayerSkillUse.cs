@@ -70,6 +70,7 @@ public class PlayerSkillUse : MonoBehaviour {
             {
                 // Skill wird genutzt
                 activeSkill.GetComponent<ISkill>().UseSkill();
+                gameObject.GetComponent<Animator>().SetTrigger("cast");
 
                 // Component zerstört sich selbst um Animation noch abspielen zu können ->  nicht hier zerstören
                 //Destroy(activeSkill);

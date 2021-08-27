@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 1357472061258352333}
   - component: {fileID: 6552645608688477379}
   - component: {fileID: 7414083489500264067}
+  - component: {fileID: 6468129232565814211}
   m_Layer: 0
   m_Name: SlashGFX
   m_TagString: Untagged
@@ -151,3 +152,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6468129232565814211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074421750838880382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334b4537b19618849aa9b9945fbc1170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
