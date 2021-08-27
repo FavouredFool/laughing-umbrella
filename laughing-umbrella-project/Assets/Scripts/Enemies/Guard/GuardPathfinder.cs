@@ -7,14 +7,11 @@ public class GuardPathfinder: MonoBehaviour {
 	public Transform target;
 	public float nextWaypointDistance = 1f;
 
-	public Transform enemyGFX;
-
 	private Vector2 direction;
 	bool activeAttack = false;
 	
 	Path path;
 	int currentWaypoint = 0;
-	bool reachedEndOfPath = false;
 
 	Seeker seeker;
 	Rigidbody2D rb;
@@ -85,18 +82,6 @@ public class GuardPathfinder: MonoBehaviour {
 			{
 				currentWaypoint++;
 			}
-
-			// Flip Sprite
-			if (rb.velocity.x >= 0.01f)
-			{
-				enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-			}
-			else if (rb.velocity.x <= -0.01f)
-			{
-				enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-			}
-
-
 		}
         
     }

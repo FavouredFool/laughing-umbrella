@@ -36,14 +36,13 @@ public class GuardActions : Enemy {
     {
 
 		// Animationen setzen
-		/*
+		
 		if (direction != Vector2.zero)
 		{
 			animator.SetFloat("horizontal", direction.x);
 			animator.SetFloat("vertical", direction.y);
 		}
-		animator.SetFloat("speed", direction.sqrMagnitude);
-		*/
+		
 
 		// Vorübergehend für Gizmos
 
@@ -98,13 +97,12 @@ public class GuardActions : Enemy {
 	public void StartAttack()
 	{
 		// Starte Animation -> Blendtree für Richtung
-		CreateHitbox();
+		animator.SetTrigger("attack");
 
 	}
 
 	void CreateHitbox()
 	{
-
 		// Gegner bei Slash detecten
 		Collider2D playerHit = Physics2D.OverlapArea(rotatedPointNear, rotatedPointFar, playerLayers);
 
@@ -112,8 +110,6 @@ public class GuardActions : Enemy {
 		{
 			playerHit.gameObject.GetComponent<PlayerMovement>().getDamaged(ATTACKDAMAGE);
 		}
-
-		EndAttack();
 
 	}
 
