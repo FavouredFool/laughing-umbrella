@@ -6,10 +6,10 @@ public class SkillBallGreen : MonoBehaviour, ISkill
     public void UseSkill()
     {
         Debug.Log("Gruener Ball wird geschossen.");
-        cleanUp();
+        CleanUp();
     }
 
-    public void cleanUp()
+    public void CleanUp()
     {
         Destroy(gameObject);
     }

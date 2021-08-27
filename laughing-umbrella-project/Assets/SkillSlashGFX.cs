@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class SkillSlashGFX : MonoBehaviour {
 
-	#region Variables
-	
-	#endregion
+    #region Variables
+    GameObject parent;
+    #endregion
 
 
-	#region UnityMethods
+    #region UnityMethods
 
-	public void PlayAnimation()
+    public void Start()
+    {
+        parent = transform.parent.gameObject;
+    }
+
+    public void PlayAnimation()
     {
 		// Entkoppeln, sodass Schwert sich nicht mitbewegt
 		transform.parent = null;
@@ -18,11 +23,16 @@ public class SkillSlashGFX : MonoBehaviour {
 		GetComponent<Animator>().Play("Ability_Slash");
 	}
 
-	public void cleanUp()
+    public void CreateHitbox()
+    {
+        // Aufgerufen in Animation
+        parent.GetComponent<SkillSlash>().CreateHitbox();
+    }
+
+	public void CleanUp()
     {
 		// Wird Aufgerufen bei Animation-End
 		Destroy(gameObject);
     }
-
 	#endregion
 }

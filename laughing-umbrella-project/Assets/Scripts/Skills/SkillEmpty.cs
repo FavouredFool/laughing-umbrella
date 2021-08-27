@@ -6,10 +6,10 @@ public class SkillEmpty : MonoBehaviour, ISkill
     public void UseSkill()
     {
         Debug.Log("Player hat keinen Skill");
-        cleanUp();
+        CleanUp();
     }
 
-    public void cleanUp()
+    public void CleanUp()
     {
         // Bisher kein Cleanup nötig
     }
