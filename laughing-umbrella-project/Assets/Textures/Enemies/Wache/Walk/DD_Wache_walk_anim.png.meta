@@ -1,0 +1,612 @@
+fileFormatVersion: 2
+guid: 959742f65e61e43429c42a38eba986bf
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 854
+        width: 112
+        height: 160
+      alignment: 9
+      pivot: {x: 0.6435, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c9983214f7d8c10800000000000000
+      internalID: 2057440522524007578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 854
+        width: 112
+        height: 160
+      alignment: 9
+      pivot: {x: 0.6435, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b5f6e47f6dd6130800000000000000
+      internalID: 3561739237981117246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_2
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 852
+        width: 112
+        height: 152
+      alignment: 9
+      pivot: {x: 0.6435, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32f582477e031ad0800000000000000
+      internalID: -2732824643503787462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_3
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 854
+        width: 112
+        height: 160
+      alignment: 9
+      pivot: {x: 0.6435, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fda0024e51691fc0800000000000000
+      internalID: -3523678175978541583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_4
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 854
+        width: 112
+        height: 160
+      alignment: 9
+      pivot: {x: 0.6435, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2afb3d29ae5ad50800000000000000
+      internalID: 6748057533023232723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_5
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 852
+        width: 112
+        height: 152
+      alignment: 9
+      pivot: {x: 0.6435, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 318a8cf3286b78080800000000000000
+      internalID: -9185172244466718701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 644
+        width: 112
+        height: 160
+      alignment: 9
+      pivot: {x: 0.3565, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fde8989f2d887f0800000000000000
+      internalID: -610005780312170736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_7
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 644
+        width: 112
+        height: 160
+      alignment: 9
+      pivot: {x: 0.3565, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628b0ea3ac69be820800000000000000
+      internalID: 2948616176359487526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_8
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 642
+        width: 112
+        height: 152
+      alignment: 9
+      pivot: {x: 0.3565, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c57b07994efe890800000000000000
+      internalID: -7426465912838464487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_9
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 644
+        width: 112
+        height: 160
+      alignment: 9
+      pivot: {x: 0.3565, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feaa7d41d8f960910800000000000000
+      internalID: 1803304129097345775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_10
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 644
+        width: 112
+        height: 160
+      alignment: 9
+      pivot: {x: 0.3565, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d4a99d741c41990800000000000000
+      internalID: -7416090172034757374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_11
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 642
+        width: 112
+        height: 152
+      alignment: 9
+      pivot: {x: 0.3565, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0023bba980b7d7720800000000000000
+      internalID: 2845565816453935616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_12
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 431
+        width: 96
+        height: 160
+      alignment: 9
+      pivot: {x: 0.666, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798b21ad1a0273f10800000000000000
+      internalID: 2249302418415335575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_13
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 431
+        width: 96
+        height: 160
+      alignment: 9
+      pivot: {x: 0.666, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d34bcdf7b068180800000000000000
+      internalID: -9113584152146068191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_14
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 429
+        width: 96
+        height: 152
+      alignment: 9
+      pivot: {x: 0.666, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0097b95346c642420800000000000000
+      internalID: 2604325662178900224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_15
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 431
+        width: 96
+        height: 160
+      alignment: 9
+      pivot: {x: 0.666, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f235ceae609236140800000000000000
+      internalID: 4711654744847569711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_16
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 431
+        width: 96
+        height: 160
+      alignment: 9
+      pivot: {x: 0.666, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d57e97bf989cf90800000000000000
+      internalID: -6932858438185165421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_17
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 429
+        width: 96
+        height: 152
+      alignment: 9
+      pivot: {x: 0.666, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e70a65192388df70800000000000000
+      internalID: 9212257250262517731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_18
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 214
+        width: 96
+        height: 160
+      alignment: 9
+      pivot: {x: 0.333, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55da6238ff968fc0800000000000000
+      internalID: -3492928572632672931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_19
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 214
+        width: 96
+        height: 160
+      alignment: 9
+      pivot: {x: 0.333, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a978ed9a762596fc0800000000000000
+      internalID: -3501176630118807654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_20
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 212
+        width: 96
+        height: 152
+      alignment: 9
+      pivot: {x: 0.333, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff20e3b83156c2e70800000000000000
+      internalID: 9091752882369069823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_21
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 214
+        width: 96
+        height: 160
+      alignment: 9
+      pivot: {x: 0.333, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e74704c17e8e330800000000000000
+      internalID: 3740493599057673820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_22
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 214
+        width: 96
+        height: 160
+      alignment: 9
+      pivot: {x: 0.333, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df73adf51f1d40210800000000000000
+      internalID: 1298393427215005693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_walk_anim_23
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 212
+        width: 96
+        height: 152
+      alignment: 9
+      pivot: {x: 0.333, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c8f7aedd69940f0800000000000000
+      internalID: -1132207951440802724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

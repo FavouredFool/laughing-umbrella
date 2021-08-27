@@ -1,0 +1,444 @@
+fileFormatVersion: 2
+guid: c1cd1aeafd9a34d4ba17ac1e1bc472c9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 855
+        width: 144
+        height: 160
+      alignment: 9
+      pivot: {x: 0.278, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b55abec878062340800000000000000
+      internalID: 4838564164613592496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 780
+        width: 216
+        height: 232
+      alignment: 9
+      pivot: {x: 0.5185, y: 0.3104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0940320177a716fd0800000000000000
+      internalID: -2350462878720260976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_3
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 801
+        width: 160
+        height: 216
+      alignment: 9
+      pivot: {x: 0.75, y: 0.2593}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ceef17a5851f8a0800000000000000
+      internalID: -6273135660467557238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 825
+        width: 160
+        height: 192
+      alignment: 9
+      pivot: {x: 0.75, y: 0.1665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24eeb13b4c5473e70800000000000000
+      internalID: 9094814683618864706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_6
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 591
+        width: 144
+        height: 160
+      alignment: 9
+      pivot: {x: 0.722, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd306585cdfbb4150800000000000000
+      internalID: 5857986693421204444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_8
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 589
+        width: 216
+        height: 160
+      alignment: 9
+      pivot: {x: 0.4815, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70a36b16868de1c0800000000000000
+      internalID: -4472770944365780868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_9
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 589
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.2495, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26ceaf1d3eab7a20800000000000000
+      internalID: 3061231949276169775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_10
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 588
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.2495, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e83485d534274e50800000000000000
+      internalID: 6793438376545761511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 332
+        width: 104
+        height: 232
+      alignment: 9
+      pivot: {x: 0.692, y: 0.3103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750316cc834f04f40800000000000000
+      internalID: 5710832852290056279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_13
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 340
+        width: 200
+        height: 224
+      alignment: 9
+      pivot: {x: 0.84, y: 0.2858}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15d77b5ff47793f0800000000000000
+      internalID: -894117360909691618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_14
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 402
+        width: 184
+        height: 160
+      alignment: 9
+      pivot: {x: 0.826, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d2efb15d3827b80800000000000000
+      internalID: -8398505403771638446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_15
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 403
+        width: 160
+        height: 160
+      alignment: 9
+      pivot: {x: 0.8, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1892ab2f6475740800000000000000
+      internalID: 5140655507986022886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_18
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 101
+        width: 96
+        height: 192
+      alignment: 9
+      pivot: {x: 0.333, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796030a8d4fa14620800000000000000
+      internalID: 2756677194490250903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_21
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 79
+        width: 200
+        height: 216
+      alignment: 9
+      pivot: {x: 0.16, y: 0.1113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1173ad103cc2a2100800000000000000
+      internalID: 83928759121098513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_22
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 71
+        width: 184
+        height: 192
+      alignment: 9
+      pivot: {x: 0.174, y: 0.167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbae870481385920800000000000000
+      internalID: 2979185596637817800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Wache_slash_anim_23
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 71
+        width: 160
+        height: 192
+      alignment: 9
+      pivot: {x: 0.2, y: 0.167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf0051f5690dc3a0800000000000000
+      internalID: -6643643541856710713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
