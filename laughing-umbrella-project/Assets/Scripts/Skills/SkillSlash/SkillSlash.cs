@@ -20,19 +20,38 @@ public class SkillSlash : MonoBehaviour, ISkill
     Vector2 worldPosition;
     Vector2 playerToMouseVector;
 
+    Vector3 rotatedPointFar;
+    Vector3 rotatedPointNear;
+
     void Start()
     {
         enemyLayers = LayerMask.GetMask("Enemy");
     }
 
-    public void UseSkill()
+    void Update()
     {
-
         // Get Mouse Position + Convert from Screen to World-Coordinates
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
 
         playerToMouseVector = worldPosition - new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+
+        // Winkel berechnen
+        float anglePlayerToMouse = Vector2.SignedAngle(Vector2.up, playerToMouseVector);
+
+        // Kollisionspunkt des Rechtecks vorne rechts berechnen
+        Vector3 pointNear = new Vector3(gameObject.transform.position.x + SLASHWIDTH / 2, gameObject.transform.position.y + ATTACKSTARTDISTANCE / 2, gameObject.transform.position.z);
+        rotatedPointNear = RotatePointAroundPivot(pointNear, gameObject.transform.position, new Vector3(0, 0, anglePlayerToMouse));
+
+        // Kollisionspunkt des Rechtecks hinten links berechnen
+        Vector3 pointFar = new Vector3(gameObject.transform.position.x - SLASHWIDTH / 2, gameObject.transform.position.y + SLASHLENGTH, gameObject.transform.position.z);
+        rotatedPointFar = RotatePointAroundPivot(pointFar, gameObject.transform.position, new Vector3(0, 0, anglePlayerToMouse));
+    }
+
+    public void UseSkill()
+    {
+
+        
 
 
 
@@ -49,16 +68,7 @@ public class SkillSlash : MonoBehaviour, ISkill
 
     public void CreateHitbox()
     {
-        // Winkel berechnen
-        float anglePlayerToMouse = Vector2.SignedAngle(Vector2.up, playerToMouseVector);
-
-        // Kollisionspunkt des Rechtecks vorne rechts berechnen
-        Vector3 pointNear = new Vector3(gameObject.transform.position.x + SLASHWIDTH / 2, gameObject.transform.position.y + ATTACKSTARTDISTANCE / 2, gameObject.transform.position.z);
-        Vector3 rotatedPointNear = RotatePointAroundPivot(pointNear, gameObject.transform.position, new Vector3(0, 0, anglePlayerToMouse));
-
-        // Kollisionspunkt des Rechtecks hinten links berechnen
-        Vector3 pointFar = new Vector3(gameObject.transform.position.x - SLASHWIDTH / 2, gameObject.transform.position.y + SLASHLENGTH, gameObject.transform.position.z);
-        Vector3 rotatedPointFar = RotatePointAroundPivot(pointFar, gameObject.transform.position, new Vector3(0, 0, anglePlayerToMouse));
+        
 
         // Gegner bei Slash detecten
         Collider2D[] enemiesHit = Physics2D.OverlapAreaAll(rotatedPointNear, rotatedPointFar, enemyLayers);
@@ -68,7 +78,7 @@ public class SkillSlash : MonoBehaviour, ISkill
             enemy.gameObject.GetComponent<Enemy>().getDamaged(ATTACKDAMAGE);
         }
 
-        // Aufräumen
+        // Aufrï¿½umen
         CleanUp();
     }
 
@@ -85,7 +95,7 @@ public class SkillSlash : MonoBehaviour, ISkill
         Destroy(gameObject);
     }
 
-    /*
+    
     void OnDrawGizmos()
     {
         
@@ -94,7 +104,7 @@ public class SkillSlash : MonoBehaviour, ISkill
         Gizmos.DrawWireSphere(gfxChild.transform.position, 1f);
         
     }
-    */
+    
     
 
 }
