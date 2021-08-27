@@ -14,8 +14,8 @@ TagManager:
   - UI
   - Enemy
   - Orb
-  - SolidCollider
-  - 
+  - Obstacle
+  - Player
   - 
   - 
   - 

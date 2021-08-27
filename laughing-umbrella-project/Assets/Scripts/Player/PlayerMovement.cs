@@ -48,5 +48,10 @@ public class PlayerMovement : MonoBehaviour {
         
     }
 
+	public void getDamaged(int attackDamage)
+    {
+		Debug.Log("aua");
+    }
+
     #endregion
 }

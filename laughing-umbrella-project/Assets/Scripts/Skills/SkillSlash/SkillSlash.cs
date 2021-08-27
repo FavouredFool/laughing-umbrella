@@ -10,7 +10,7 @@ public class SkillSlash : MonoBehaviour, ISkill
     // Unangenehmer Angleoffset
     private readonly int ANGLEOFFSETFORANIMATION = 20;
 
-    public int attackDamage;
+    public int ATTACKDAMAGE;
 
     public GameObject gfxChild;
 
@@ -65,7 +65,7 @@ public class SkillSlash : MonoBehaviour, ISkill
 
         foreach (Collider2D enemy in enemiesHit)
         {
-            enemy.gameObject.GetComponent<Enemy>().getDamaged(attackDamage);
+            enemy.gameObject.GetComponent<Enemy>().getDamaged(ATTACKDAMAGE);
         }
 
         // Aufräumen
