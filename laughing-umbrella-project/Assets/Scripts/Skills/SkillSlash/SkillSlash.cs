@@ -28,7 +28,7 @@ public class SkillSlash : MonoBehaviour, ISkill
         enemyLayers = LayerMask.GetMask("Enemy");
     }
 
-    void Update()
+    public void UseSkill()
     {
         // Get Mouse Position + Convert from Screen to World-Coordinates
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -46,12 +46,6 @@ public class SkillSlash : MonoBehaviour, ISkill
         // Kollisionspunkt des Rechtecks hinten links berechnen
         Vector3 pointFar = new Vector3(gameObject.transform.position.x - SLASHWIDTH / 2, gameObject.transform.position.y + SLASHLENGTH, gameObject.transform.position.z);
         rotatedPointFar = RotatePointAroundPivot(pointFar, gameObject.transform.position, new Vector3(0, 0, anglePlayerToMouse));
-    }
-
-    public void UseSkill()
-    {
-
-        
 
 
 
@@ -95,7 +89,7 @@ public class SkillSlash : MonoBehaviour, ISkill
         Destroy(gameObject);
     }
 
-    
+    /*
     void OnDrawGizmos()
     {
         
@@ -104,7 +98,7 @@ public class SkillSlash : MonoBehaviour, ISkill
         Gizmos.DrawWireSphere(gfxChild.transform.position, 1f);
         
     }
-    
+    */
     
 
 }
