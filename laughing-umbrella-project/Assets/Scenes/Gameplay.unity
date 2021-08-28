@@ -1051,8 +1051,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004714966, y: 0.63685596}
-  m_Size: {x: 0.81415415, y: 1.2757909}
+  m_Offset: {x: -0.003175497, y: 0}
+  m_Size: {x: 0.79596996, y: 1.28}
   m_Direction: 0
 --- !u!1 &1287135340
 GameObject:
@@ -1422,6 +1422,30 @@ PrefabInstance:
     - target: {fileID: 419512412996894368, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419512414282223160, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 419512414282223160, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 419512414506920545, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
+      propertyPath: m_Size.x
+      value: 0.795547
+      objectReference: {fileID: 0}
+    - target: {fileID: 419512414506920545, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5411053
+      objectReference: {fileID: 0}
+    - target: {fileID: 419512414506920545, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.002226591
+      objectReference: {fileID: 0}
+    - target: {fileID: 419512414506920545, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.009815812
       objectReference: {fileID: 0}
     - target: {fileID: 419512414506920547, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
       propertyPath: m_RootOrder
