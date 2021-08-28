@@ -18,6 +18,7 @@ public class GuardActions : Enemy {
 	GuardPathfinder pathfinder;
 
 	Vector2 direction;
+	bool createHitboxFlag = false;
     #endregion
 
 
@@ -97,19 +98,27 @@ public class GuardActions : Enemy {
 	public void StartAttack()
 	{
 		// Starte Animation -> Blendtree für Richtung
+		createHitboxFlag = true;
 		animator.SetTrigger("attack");
+		
 
 	}
 
 	void CreateHitbox()
 	{
-		// Gegner bei Slash detecten
-		Collider2D playerHit = Physics2D.OverlapArea(rotatedPointNear, rotatedPointFar, playerLayers);
+		if (createHitboxFlag)
+        {
+			// Gegner bei Slash detecten
+			Collider2D playerHit = Physics2D.OverlapArea(rotatedPointNear, rotatedPointFar, playerLayers);
 
-		if (playerHit != null)
-		{
-			playerHit.gameObject.GetComponent<PlayerMovement>().getDamaged(ATTACKDAMAGE);
+			if (playerHit != null)
+			{
+				playerHit.gameObject.GetComponent<PlayerMovement>().getDamaged(ATTACKDAMAGE);
+			}
+
+			createHitboxFlag = false;
 		}
+		
 
 	}
 
