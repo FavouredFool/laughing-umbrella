@@ -87,17 +87,16 @@ public class SkillSlash : MonoBehaviour, ISkill
         Destroy(gameObject);
     }
 
-    
+    /*
     void OnDrawGizmos()
     {
 
-        //Gizmos.DrawWireSphere(rotatedPointNear, 0.5f);
-        //Gizmos.DrawWireSphere(rotatedPointFar, 0.5f);
-        //Gizmos.DrawWireSphere(gfxChild.transform.position, 1f);
+        Gizmos.DrawWireSphere(rotatedPointNear, 0.5f);
+        Gizmos.DrawWireSphere(rotatedPointFar, 0.5f);
+        Gizmos.DrawWireSphere(gfxChild.transform.position, 1f);
         Gizmos.DrawWireSphere(gameObject.transform.position, 1f);
-        
     }
-    
+    */
     
 
 }

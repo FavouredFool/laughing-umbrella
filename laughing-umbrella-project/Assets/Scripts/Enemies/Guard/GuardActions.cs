@@ -9,6 +9,8 @@ public class GuardActions : Enemy {
     public float SLASHLENGTH;
     public float ATTACKSTARTDISTANCE = 0.7f;
 
+	public Orb enemyOrb;
+
     LayerMask playerLayers;
 
     Vector3 rotatedPointNear;
@@ -31,7 +33,11 @@ public class GuardActions : Enemy {
 		pathfinder = GetComponent<GuardPathfinder>();
 
 		direction = pathfinder.getDirection();
-    }
+
+		// Für Lebensleiste
+		currentHealth = maxHealth;
+		healthBar.SetMaxHealth(maxHealth);
+	}
 
     private void Update()
     {
@@ -145,6 +151,11 @@ public class GuardActions : Enemy {
 		Gizmos.DrawWireSphere(rotatedPointFar, 0.5f);
 
 	}
+
+	protected override void dropOrb()
+    {
+		Instantiate(enemyOrb, gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
+    }
 
 
 	public override void getDestroyed()
