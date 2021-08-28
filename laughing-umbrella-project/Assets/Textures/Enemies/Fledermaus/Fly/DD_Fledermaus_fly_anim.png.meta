@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: 33e0862ff527b764db759ba46ecc1736
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3987950001152858542
+    second: DD_Fledermaus_fly_anim_0
+  - first:
+      213: 4910847095124935931
+    second: DD_Fledermaus_fly_anim_1
+  - first:
+      213: -9134359626825364494
+    second: DD_Fledermaus_fly_anim_2
+  - first:
+      213: 4281790464918772
+    second: DD_Fledermaus_fly_anim_3
+  - first:
+      213: 2724066954276174200
+    second: DD_Fledermaus_fly_anim_4
+  - first:
+      213: 4325698894900574158
+    second: DD_Fledermaus_fly_anim_5
+  - first:
+      213: -2452739858135223089
+    second: DD_Fledermaus_fly_anim_6
+  - first:
+      213: -1104912015137591388
+    second: DD_Fledermaus_fly_anim_7
+  - first:
+      213: -8963913109992453779
+    second: DD_Fledermaus_fly_anim_8
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DD_Fledermaus_fly_anim_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 921
+        width: 120
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54545456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea91cb0a56b085730800000000000000
+      internalID: 3987950001152858542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Fledermaus_fly_anim_1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 932
+        width: 120
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf44e2b0a65d62440800000000000000
+      internalID: 4910847095124935931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Fledermaus_fly_anim_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 801
+        width: 120
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54545456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb8768b05c3c3180800000000000000
+      internalID: -9134359626825364494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Fledermaus_fly_anim_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 807
+        width: 120
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f40aa704463f0000800000000000000
+      internalID: 4281790464918772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Fledermaus_fly_anim_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 684
+        width: 72
+        height: 88
+      alignment: 9
+      pivot: {x: 0.7222222, y: 0.54545456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879f2025674ddc520800000000000000
+      internalID: 2724066954276174200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Fledermaus_fly_anim_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 692
+        width: 72
+        height: 80
+      alignment: 9
+      pivot: {x: 0.7222222, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec739d3f938f70c30800000000000000
+      internalID: 4325698894900574158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Fledermaus_fly_anim_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 568
+        width: 72
+        height: 88
+      alignment: 9
+      pivot: {x: 0.2777778, y: 0.54545456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc4786d181e16fdd0800000000000000
+      internalID: -2452739858135223089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Fledermaus_fly_anim_7
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 567
+        width: 72
+        height: 80
+      alignment: 9
+      pivot: {x: 0.2777778, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4afa9a550609aa0f0800000000000000
+      internalID: -1104912015137591388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Fledermaus_fly_anim_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 443
+        width: 56
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6363636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69ce61f488c99380800000000000000
+      internalID: -8963913109992453779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
