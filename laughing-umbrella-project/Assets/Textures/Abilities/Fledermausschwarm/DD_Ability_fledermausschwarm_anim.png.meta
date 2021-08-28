@@ -1,0 +1,300 @@
+fileFormatVersion: 2
+guid: e9f7bb4fc5f91b242a90af2489992768
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8868817494574189391
+    second: DD_Ability_fledermausschwarm_anim_0
+  - first:
+      213: -4599234715159402428
+    second: DD_Ability_fledermausschwarm_anim_1
+  - first:
+      213: -3794038937965103047
+    second: DD_Ability_fledermausschwarm_anim_2
+  - first:
+      213: 6253362681999935686
+    second: DD_Ability_fledermausschwarm_anim_3
+  - first:
+      213: 852208751910383180
+    second: DD_Ability_fledermausschwarm_anim_4
+  - first:
+      213: 7541306012756690706
+    second: DD_Ability_fledermausschwarm_anim_5
+  - first:
+      213: 9008690970902866083
+    second: DD_Ability_fledermausschwarm_anim_6
+  - first:
+      213: 3534498575418689961
+    second: DD_Ability_fledermausschwarm_anim_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DD_Ability_fledermausschwarm_anim_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 906
+        width: 136
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b4dd5b58e541b70800000000000000
+      internalID: 8868817494574189391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_fledermausschwarm_anim_1
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 924
+        width: 136
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4486744f46c3c20c0800000000000000
+      internalID: -4599234715159402428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_fledermausschwarm_anim_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 786
+        width: 136
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938f69600bdd85bc0800000000000000
+      internalID: -3794038937965103047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_fledermausschwarm_anim_3
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 800
+        width: 136
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c84a404a3868c650800000000000000
+      internalID: 6253362681999935686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_fledermausschwarm_anim_4
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 665
+        width: 88
+        height: 104
+      alignment: 9
+      pivot: {x: 0.6818182, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ee81c3857a3db00800000000000000
+      internalID: 852208751910383180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_fledermausschwarm_anim_5
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 672
+        width: 88
+        height: 96
+      alignment: 9
+      pivot: {x: 0.6818182, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21741e0fcd918a860800000000000000
+      internalID: 7541306012756690706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_fledermausschwarm_anim_6
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 536
+        width: 88
+        height: 104
+      alignment: 9
+      pivot: {x: 0.3181818, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a82feb35bc450d70800000000000000
+      internalID: 9008690970902866083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_fledermausschwarm_anim_7
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 543
+        width: 88
+        height: 96
+      alignment: 9
+      pivot: {x: 0.3181818, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a984fe4abf0d0130800000000000000
+      internalID: 3534498575418689961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
