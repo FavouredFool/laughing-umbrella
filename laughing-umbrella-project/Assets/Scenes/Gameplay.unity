@@ -335,7 +335,7 @@ MonoBehaviour:
   maxHealth: 15
   currentHealth: 15
   moveSpeed: 4
-  healthBar: {fileID: 1970616931}
+  healthBar: {fileID: 0}
   ATTACKDAMAGE: 5
   SLASHWIDTH: 2
   SLASHLENGTH: 3
@@ -1169,8 +1169,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004714966, y: 0.63685596}
-  m_Size: {x: 0.81415415, y: 1.2757909}
+  m_Offset: {x: 0.00038027763, y: 0.0003476143}
+  m_Size: {x: 0.6369705, y: 1.2746825}
   m_Direction: 0
 --- !u!1 &1287135340
 GameObject:
