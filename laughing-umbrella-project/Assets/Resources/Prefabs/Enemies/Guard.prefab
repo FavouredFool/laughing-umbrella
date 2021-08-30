@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 576549634}
   - component: {fileID: 576549636}
   - component: {fileID: 576549635}
+  - component: {fileID: 638034095}
   m_Layer: 6
   m_Name: Guard
   m_TagString: Untagged
@@ -440,15 +441,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2becefa364406a449ae3bcda8dd2449b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
-  currentHealth: 15
+  maxHealth: 45
+  currentHealth: 45
   moveSpeed: 4
   healthBar: {fileID: 419512412963997937}
   ATTACKDAMAGE: 5
   SLASHWIDTH: 2
   SLASHLENGTH: 2.5
   ATTACKSTARTDISTANCE: 0
-  enemyOrb: {fileID: 0}
+  enemyOrb: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
 --- !u!114 &576549633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,3 +562,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &638034095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419512414506920558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2124d0fcb12344b07d1710dba43c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OuterCircleRadius: 1.1
+  InnerCircleRadius: 0.48
+  forbiddenCollisionLayers:
+    serializedVersion: 2
+    m_Bits: 0

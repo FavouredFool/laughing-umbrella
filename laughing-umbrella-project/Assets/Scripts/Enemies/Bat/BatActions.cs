@@ -17,6 +17,9 @@ public class BatActions : Enemy {
     BatState batState;
 
     Vector2 flyingDirection;
+
+    Rigidbody2D rb;
+    Animator animator;
     
 
 	#endregion
@@ -26,6 +29,10 @@ public class BatActions : Enemy {
 
     void Start() {
         batState = BatState.RESTING;
+
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
         StartCoroutine(RestingRoutine());
     }
 
@@ -51,7 +58,10 @@ public class BatActions : Enemy {
                     if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionLayers))
                     {
                         batState = BatState.FLYING;
+                        animator.SetBool("resting", false);
                         flyingDirection = directionToTarget;
+                        animator.SetFloat("horizontal", flyingDirection.x);
+                        animator.SetFloat("vertical", flyingDirection.y);
                         Debug.Log("FOUND!");
                     }
                 }
@@ -66,23 +76,31 @@ public class BatActions : Enemy {
         {
             // If resting
 
-            // Search for Player
+            // Search for Player -> Coroutine
             // When found -> calculate line -> Go into flying mode
 
         }
         else if (batState == BatState.FLYING)
         {
             // If flying
-            
+
             // Fly in a straight line
-            // Check if colliding with NEW wall -> go back to Resting if true
+            rb.MovePosition(rb.position + flyingDirection * moveSpeed * Time.fixedDeltaTime);
+            
+            
 
         }
-
-
     }
 
-	protected override void dropOrb()
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if colliding with wall -> go back to Resting if true
+
+        batState = BatState.RESTING;
+        animator.SetBool("resting", true);
+    }
+
+    protected override void dropOrb()
     {
         Instantiate(enemyOrb, gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
     }
