@@ -11,10 +11,13 @@ public class BatActions : Enemy {
     public GameObject target;
     public LayerMask obstructionLayers;
     public LayerMask targetLayer;
+    public float sleepTime;
     
 
     public enum BatState { RESTING, FLYING }
     BatState batState;
+
+    bool sleep = false;
 
     Vector2 flyingDirection;
 
@@ -33,10 +36,10 @@ public class BatActions : Enemy {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        StartCoroutine(RestingRoutine());
+        StartCoroutine(BehaviourRoutine());
     }
 
-    private IEnumerator RestingRoutine()
+    private IEnumerator BehaviourRoutine()
     {
         
         WaitForSeconds wait = new WaitForSeconds(refreshDelay);
@@ -45,9 +48,13 @@ public class BatActions : Enemy {
         {
             yield return wait;
 
-            if (batState == BatState.RESTING)
+            if (sleep)
             {
-                Debug.Log("Seaaarching");
+                yield return new WaitForSeconds(1f);
+                sleep = false;
+            }
+            else if (batState == BatState.RESTING)
+            {
                 Collider2D rangeCheck = Physics2D.OverlapCircle(transform.position, visionRadius, targetLayer);
                 if (rangeCheck)
                 {
@@ -62,41 +69,27 @@ public class BatActions : Enemy {
                         flyingDirection = directionToTarget;
                         animator.SetFloat("horizontal", flyingDirection.x);
                         animator.SetFloat("vertical", flyingDirection.y);
-                        Debug.Log("FOUND!");
                     }
                 }
             }
         }
     }
 
-    void Update() {
-        
-        
-        if (batState == BatState.RESTING)
+    private void Update()
+    {
+        if (batState == BatState.FLYING)
         {
-            // If resting
-
-            // Search for Player -> Coroutine
-            // When found -> calculate line -> Go into flying mode
-
-        }
-        else if (batState == BatState.FLYING)
-        {
-            // If flying
-
-            // Fly in a straight line
             rb.MovePosition(rb.position + flyingDirection * moveSpeed * Time.fixedDeltaTime);
-            
-            
-
         }
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if colliding with wall -> go back to Resting if true
 
         batState = BatState.RESTING;
+        sleep = true;
         animator.SetBool("resting", true);
     }
 
