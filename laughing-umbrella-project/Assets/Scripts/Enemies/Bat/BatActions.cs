@@ -12,12 +12,14 @@ public class BatActions : Enemy {
     public LayerMask obstructionLayers;
     public LayerMask targetLayer;
     public float sleepTime;
+    public int antiStuckSavetimeInSec = 10;
     
 
     public enum BatState { RESTING, FLYING }
     BatState batState;
 
     bool sleep = false;
+    float flyingTime;
 
     Vector2 flyingDirection;
 
@@ -67,6 +69,7 @@ public class BatActions : Enemy {
                         batState = BatState.FLYING;
                         animator.SetBool("resting", false);
                         flyingDirection = directionToTarget;
+                        flyingTime = Time.time;
                         animator.SetFloat("horizontal", flyingDirection.x);
                         animator.SetFloat("vertical", flyingDirection.y);
                     }
@@ -79,6 +82,14 @@ public class BatActions : Enemy {
     {
         if (batState == BatState.FLYING)
         {
+            if (Time.time - flyingTime > antiStuckSavetimeInSec)
+            {
+                // Fledermaus ist stuck -> resten
+                batState = BatState.RESTING;
+                sleep = true;
+                animator.SetBool("resting", true);
+            }
+
             rb.MovePosition(rb.position + flyingDirection * moveSpeed * Time.fixedDeltaTime);
         }
     }
