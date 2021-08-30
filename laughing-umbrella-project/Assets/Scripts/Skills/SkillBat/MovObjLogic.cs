@@ -1,0 +1,39 @@
+using UnityEngine;
+
+public class MovObjLogic : MonoBehaviour {
+
+	#region Variables
+	bool isActive = false;
+	float radius = 0;
+	float angleCounter;
+	float angle = 0;
+	float speed = 0.5f;
+    #endregion
+
+
+    #region UnityMethods
+    void Update() {
+		if (isActive)
+        {
+			Vector2 position;
+			position.x = gameObject.transform.parent.position.x + radius * Mathf.Sin(Mathf.Deg2Rad * angle);
+			position.y = gameObject.transform.parent.position.y + radius * Mathf.Cos(Mathf.Deg2Rad * angle);
+
+			gameObject.transform.position = new Vector3(position.x, position.y, 0);
+
+
+			angleCounter = (angleCounter + speed) % 360;
+			angle = angleCounter - 180;
+        }
+    }
+
+	public void CreateMovement(float radius, float angle)
+    {
+		this.radius = radius;
+		this.angle = angle;
+		angleCounter = (this.angle + 180) % 360;
+		isActive = true;
+	}
+	
+	#endregion
+}
