@@ -36,6 +36,7 @@ public class GuardActions : Enemy {
 		// Für Lebensleiste
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
+
 	}
 
     private void Update()
@@ -103,6 +104,7 @@ public class GuardActions : Enemy {
 	public void StartAttack()
 	{
 		// Starte Animation -> Blendtree für Richtung
+		
 		createHitboxFlag = true;
 		animator.SetTrigger("attack");
 		
