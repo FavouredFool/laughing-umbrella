@@ -180,6 +180,9 @@ public class PlayerSkillUse : MonoBehaviour {
             case SkillEnum.Skill.SKILLBALLYELLOW:
                 activeSkill = Instantiate(allSkills["SkillBallYellow"], gameObject.transform);
                 break;
+            case SkillEnum.Skill.SKILLBAT:
+                activeSkill = Instantiate(allSkills["SkillBat"], gameObject.transform);
+                break;
         }
 
         // Player nimmt Farbe des Orbs an

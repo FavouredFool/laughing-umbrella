@@ -144,13 +144,15 @@ public class GuardActions : Enemy {
 	}
 
 
+	
+	/*
 	void OnDrawGizmos()
 	{
 
 		Gizmos.DrawWireSphere(rotatedPointNear, 0.5f);
 		Gizmos.DrawWireSphere(rotatedPointFar, 0.5f);
 
-	}
+	}*/
 
 	protected override void dropOrb()
     {
@@ -160,7 +162,6 @@ public class GuardActions : Enemy {
 
 	public override void getDestroyed()
     {
-        Debug.Log("I HAVE DIED A TERRIBLE DEATH!");
         // Destroy Object
         Destroy(gameObject);
     }

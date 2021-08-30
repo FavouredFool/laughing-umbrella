@@ -32,8 +32,12 @@ public abstract class Enemy : MonoBehaviour {
             getDestroyed();
         } else
         {
-            // Healthbar neu setzen
-            healthBar.SetHealth(currentHealth);
+            if (healthBar)
+            {
+                // Healthbar neu setzen
+                healthBar.SetHealth(currentHealth);
+            }
+            
         }
 
         
