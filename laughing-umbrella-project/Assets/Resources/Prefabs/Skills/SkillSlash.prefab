@@ -49,6 +49,9 @@ MonoBehaviour:
   ATTACKSTARTDISTANCE: 0.9
   ATTACKDAMAGE: 10
   gfxChild: {fileID: 8074421750838880382}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &8074421750838880382
 GameObject:
   m_ObjectHideFlags: 0

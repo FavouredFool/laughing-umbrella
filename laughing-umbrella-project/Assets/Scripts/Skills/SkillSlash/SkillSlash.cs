@@ -14,7 +14,7 @@ public class SkillSlash : MonoBehaviour, ISkill
 
     public GameObject gfxChild;
 
-    LayerMask enemyLayers;
+    public LayerMask enemyLayers;
 
     // Mousepos
     Vector2 worldPosition;
@@ -22,11 +22,6 @@ public class SkillSlash : MonoBehaviour, ISkill
 
     Vector3 rotatedPointFar;
     Vector3 rotatedPointNear;
-
-    void Start()
-    {
-        enemyLayers = LayerMask.GetMask("Enemy");
-    }
 
 
     public void UseSkill()

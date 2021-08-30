@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 419512412853516890}
   - component: {fileID: 419512412853516892}
   - component: {fileID: 419512412853516893}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 419512412963997950}
   - component: {fileID: 419512412963997936}
   - component: {fileID: 419512412963997937}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 419512412996894368}
   - component: {fileID: 419512412996894370}
   - component: {fileID: 419512412996894371}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 419512414282223161}
   - component: {fileID: 419512414282223302}
   - component: {fileID: 419512414282223303}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,9 +370,9 @@ GameObject:
   - component: {fileID: 576549636}
   - component: {fileID: 576549635}
   - component: {fileID: 638034095}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Guard
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,6 +389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419512414282223160}
+  - {fileID: 2237107260841070285}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -444,12 +445,15 @@ MonoBehaviour:
   maxHealth: 45
   currentHealth: 45
   moveSpeed: 4
+  attackDamage: 1
   healthBar: {fileID: 419512412963997937}
-  ATTACKDAMAGE: 5
   SLASHWIDTH: 2
   SLASHLENGTH: 2.5
   ATTACKSTARTDISTANCE: 0
   enemyOrb: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &576549633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,3 +583,50 @@ MonoBehaviour:
   forbiddenCollisionLayers:
     serializedVersion: 2
     m_Bits: 0
+--- !u!1 &6999444846869170219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2237107260841070285}
+  - component: {fileID: 4744768800163810527}
+  m_Layer: 12
+  m_Name: Guard Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2237107260841070285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999444846869170219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 419512414506920547}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &4744768800163810527
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999444846869170219}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0053420663, y: 0}
+  m_Size: {x: 0.8106841, y: 1.6}
+  m_Direction: 0

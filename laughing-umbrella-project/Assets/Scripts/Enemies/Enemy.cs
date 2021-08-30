@@ -6,8 +6,9 @@ public abstract class Enemy : MonoBehaviour {
 	public int maxHealth;
 	public int currentHealth;
 	public float moveSpeed;
+    public int attackDamage;
 
-	public Healthbar healthBar;
+    public Healthbar healthBar;
 
 	Vector2 movement;
 

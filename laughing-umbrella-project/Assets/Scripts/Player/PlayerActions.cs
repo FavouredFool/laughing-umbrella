@@ -1,24 +1,29 @@
 using UnityEngine;
 using System;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerActions : MonoBehaviour {
 
 	#region Variables
 
 	public float moveSpeed;
+	public int maxHealth;
+	private int health;
 	Vector2 movement;
 
 	private Rigidbody2D myBody;
 	public Animator animator;
-	
+
+	string ENEMY_TAG = "Enemy";
+
 	#endregion
-	
-	
+
+
 	#region UnityMethods
 
-    void Start() {
+	void Start() {
 
 		myBody = GetComponent<Rigidbody2D>();
+		health = maxHealth;
 
 	}
 
@@ -50,7 +55,24 @@ public class PlayerMovement : MonoBehaviour {
 
 	public void getDamaged(int attackDamage)
     {
-		Debug.Log("aua");
+		Debug.Log(attackDamage + " Schaden");
+		health -= attackDamage;
+		if (health <= 0)
+        {
+			getDestroyed();
+        }
+    }
+
+	public void getDestroyed()
+    {
+		Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+		
+		if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.tag.Equals(ENEMY_TAG))
+			getDamaged(collision.gameObject.transform.parent.GetComponent<Enemy>().attackDamage);
     }
 
     #endregion
