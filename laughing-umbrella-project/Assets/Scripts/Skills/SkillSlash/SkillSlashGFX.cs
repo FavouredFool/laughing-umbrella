@@ -16,11 +16,11 @@ public class SkillSlashGFX : MonoBehaviour {
 
     public void PlayAnimation()
     {
-		// Entkoppeln, sodass Schwert sich nicht mitbewegt
-		transform.parent = null;
+        // Entkoppeln, sodass Schwert sich nicht mitbewegt
+		transform.parent.parent = null;
 
-		// Animation abspielen
-		GetComponent<Animator>().Play("Ability_Slash");
+        // Animation abspielen
+        GetComponent<Animator>().Play("Ability_Slash");
 	}
 
     public void CreateHitbox()
@@ -32,7 +32,7 @@ public class SkillSlashGFX : MonoBehaviour {
 	public void CleanUp()
     {
 		// Wird Aufgerufen bei Animation-End
-		Destroy(gameObject);
+		Destroy(gameObject.transform.parent.gameObject);
     }
 	#endregion
 }

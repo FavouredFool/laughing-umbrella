@@ -28,6 +28,7 @@ public class SkillSlash : MonoBehaviour, ISkill
         enemyLayers = LayerMask.GetMask("Enemy");
     }
 
+
     public void UseSkill()
     {
         // Get Mouse Position + Convert from Screen to World-Coordinates
@@ -40,7 +41,7 @@ public class SkillSlash : MonoBehaviour, ISkill
         float anglePlayerToMouse = Vector2.SignedAngle(Vector2.up, playerToMouseVector);
 
         // Kollisionspunkt des Rechtecks vorne rechts berechnen
-        Vector3 pointNear = new Vector3(gameObject.transform.position.x + SLASHWIDTH / 2, gameObject.transform.position.y + ATTACKSTARTDISTANCE / 2, gameObject.transform.position.z);
+        Vector3 pointNear = new Vector3(gameObject.transform.position.x + SLASHWIDTH / 2, gameObject.transform.position.y, gameObject.transform.position.z);
         rotatedPointNear = RotatePointAroundPivot(pointNear, gameObject.transform.position, new Vector3(0, 0, anglePlayerToMouse));
 
         // Kollisionspunkt des Rechtecks hinten links berechnen
@@ -71,9 +72,6 @@ public class SkillSlash : MonoBehaviour, ISkill
         {
             enemy.gameObject.GetComponent<Enemy>().getDamaged(ATTACKDAMAGE);
         }
-
-        // Aufr�umen
-        CleanUp();
     }
 
     Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
@@ -92,11 +90,11 @@ public class SkillSlash : MonoBehaviour, ISkill
     /*
     void OnDrawGizmos()
     {
-        
+
         Gizmos.DrawWireSphere(rotatedPointNear, 0.5f);
         Gizmos.DrawWireSphere(rotatedPointFar, 0.5f);
         Gizmos.DrawWireSphere(gfxChild.transform.position, 1f);
-        
+        Gizmos.DrawWireSphere(gameObject.transform.position, 1f);
     }
     */
     

@@ -446,8 +446,9 @@ MonoBehaviour:
   healthBar: {fileID: 419512412963997937}
   ATTACKDAMAGE: 5
   SLASHWIDTH: 2
-  SLASHLENGTH: 3
+  SLASHLENGTH: 2.5
   ATTACKSTARTDISTANCE: 0
+  enemyOrb: {fileID: 0}
 --- !u!114 &576549633
 MonoBehaviour:
   m_ObjectHideFlags: 0

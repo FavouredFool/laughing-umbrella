@@ -17,16 +17,14 @@ public abstract class Enemy : MonoBehaviour {
 
     #region UnityMethods
 
-    private void Start()
-    {
-		currentHealth = maxHealth;
-		healthBar.SetMaxHealth(maxHealth);
-    }
-
-
     public void getDamaged(int attackDamage)
     {
-        // Get damaged, ggf. drop orb
+
+        // Drop Orb
+        dropOrb();
+
+
+        // Get damaged
         currentHealth -= attackDamage;
         if (currentHealth <= 0)
         {
@@ -37,9 +35,13 @@ public abstract class Enemy : MonoBehaviour {
             // Healthbar neu setzen
             healthBar.SetHealth(currentHealth);
         }
+
+        
     }
 
     public abstract void getDestroyed();
+
+    protected abstract void dropOrb();
 	
 	#endregion
 }
