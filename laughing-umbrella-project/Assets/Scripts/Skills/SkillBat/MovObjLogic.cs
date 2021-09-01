@@ -34,6 +34,18 @@ public class MovObjLogic : MonoBehaviour {
 		angleCounter = (this.angle + 180) % 360;
 		isActive = true;
 	}
-	
-	#endregion
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+		if(collision.gameObject.transform.parent.tag.Equals("Enemy"))
+        {
+			// Mache Damage
+			collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(transform.parent.GetComponent<SkillBat>().attackDamage);
+
+			// Zerstöre Objekt
+			Destroy(gameObject);
+		}
+	}
+
+    #endregion
 }

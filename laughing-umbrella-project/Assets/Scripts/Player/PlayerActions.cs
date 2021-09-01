@@ -13,8 +13,6 @@ public class PlayerActions : MonoBehaviour {
 	private Rigidbody2D myBody;
 	public Animator animator;
 
-	string ENEMY_TAG = "Enemy";
-
 	#endregion
 
 
@@ -66,13 +64,6 @@ public class PlayerActions : MonoBehaviour {
 	public void getDestroyed()
     {
 		Destroy(gameObject);
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-		
-		if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.tag.Equals(ENEMY_TAG))
-			getDamaged(collision.gameObject.transform.parent.GetComponent<Enemy>().attackDamage);
     }
 
     #endregion

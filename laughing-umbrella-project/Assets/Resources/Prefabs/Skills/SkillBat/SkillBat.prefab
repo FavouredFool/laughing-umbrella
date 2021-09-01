@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc68eca530a6da4e871ce6172a4aa7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleRadius: 3
+  circleRadius: 5
   movingObject: {fileID: 6179124878420030067, guid: 55606e03a12135444bc91728d8d719e3, type: 3}
   durationAmount: 6
+  attackDamage: 10

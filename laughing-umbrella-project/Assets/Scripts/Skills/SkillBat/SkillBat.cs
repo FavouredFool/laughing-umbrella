@@ -8,6 +8,7 @@ public class SkillBat : MonoBehaviour, ISkill
     public float circleRadius;
     public GameObject movingObject;
     public float durationAmount;
+    public int attackDamage = 10;
 
     GameObject[] objectArray = new GameObject[3];
 
