@@ -120,7 +120,7 @@ public class GuardActions : Enemy {
 
 			if (playerHit != null)
 			{
-				playerHit.gameObject.GetComponent<PlayerActions>().getDamaged(attackDamage);
+				playerHit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage);
 			}
 
 			createHitboxFlag = false;
