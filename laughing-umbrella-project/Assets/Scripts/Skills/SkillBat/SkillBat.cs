@@ -9,6 +9,7 @@ public class SkillBat : MonoBehaviour, ISkill
     public GameObject movingObject;
     public float durationAmount;
     public int attackDamage = 10;
+    public float speed = 2;
 
     GameObject[] objectArray = new GameObject[3];
 
@@ -54,9 +55,9 @@ public class SkillBat : MonoBehaviour, ISkill
         objectArray[1] = Instantiate(movingObject, gameObject.transform);
         objectArray[2] = Instantiate(movingObject, gameObject.transform);
 
-        objectArray[0].GetComponent<MovObjLogic>().CreateMovement(circleRadius, 0f);
-        objectArray[1].GetComponent<MovObjLogic>().CreateMovement(circleRadius, 120f);
-        objectArray[2].GetComponent<MovObjLogic>().CreateMovement(circleRadius, -120f);
+        objectArray[0].GetComponent<MovObjLogic>().CreateMovement(circleRadius, 0f, speed);
+        objectArray[1].GetComponent<MovObjLogic>().CreateMovement(circleRadius, 120f, speed);
+        objectArray[2].GetComponent<MovObjLogic>().CreateMovement(circleRadius, -120f, speed);
 
     }
 

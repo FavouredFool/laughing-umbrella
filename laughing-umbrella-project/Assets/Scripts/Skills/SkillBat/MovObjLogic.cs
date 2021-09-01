@@ -7,12 +7,12 @@ public class MovObjLogic : MonoBehaviour {
 	float radius = 0;
 	float angleCounter;
 	float angle = 0;
-	float speed = 0.5f;
+	float speed = 0;
     #endregion
 
 
     #region UnityMethods
-    void Update() {
+    void FixedUpdate() {
 		if (isActive)
         {
 			Vector2 position;
@@ -27,10 +27,11 @@ public class MovObjLogic : MonoBehaviour {
         }
     }
 
-	public void CreateMovement(float radius, float angle)
+	public void CreateMovement(float radius, float angle, float speed)
     {
 		this.radius = radius;
 		this.angle = angle;
+		this.speed = speed;
 		angleCounter = (this.angle + 180) % 360;
 		isActive = true;
 	}

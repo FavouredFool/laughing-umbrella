@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3619668043613279064}
   - component: {fileID: 8047894973741860317}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SkillBat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc68eca530a6da4e871ce6172a4aa7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleRadius: 5
+  circleRadius: 3.5
   movingObject: {fileID: 6179124878420030067, guid: 55606e03a12135444bc91728d8d719e3, type: 3}
   durationAmount: 6
   attackDamage: 10
+  speed: 3.5
