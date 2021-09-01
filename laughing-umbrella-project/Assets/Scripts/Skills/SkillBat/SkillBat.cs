@@ -13,21 +13,12 @@ public class SkillBat : MonoBehaviour, ISkill
 
     GameObject[] objectArray = new GameObject[3];
 
-    bool skillActive = false;
     float startTime = float.PositiveInfinity;
 
     #endregion
 
     void Update()
     {
-        if (skillActive)
-        {
-            // Fledermäuse fliegen
-
-
-
-        }
-
         // Abbruch nach gewisser Zeit
         if (Time.time - startTime > durationAmount)
         {
@@ -38,7 +29,6 @@ public class SkillBat : MonoBehaviour, ISkill
 
     public void UseSkill()
     {
-        skillActive = true;
         startTime = Time.time;
         createMovingObjs();
     }
@@ -55,9 +45,11 @@ public class SkillBat : MonoBehaviour, ISkill
         objectArray[1] = Instantiate(movingObject, gameObject.transform);
         objectArray[2] = Instantiate(movingObject, gameObject.transform);
 
-        objectArray[0].GetComponent<MovObjLogic>().CreateMovement(circleRadius, 0f, speed);
-        objectArray[1].GetComponent<MovObjLogic>().CreateMovement(circleRadius, 120f, speed);
-        objectArray[2].GetComponent<MovObjLogic>().CreateMovement(circleRadius, -120f, speed);
+
+        float startAngle = Random.Range(0, 360);
+        objectArray[0].GetComponent<MovObjLogic>().CreateMovement(circleRadius, startAngle-180, speed);
+        objectArray[1].GetComponent<MovObjLogic>().CreateMovement(circleRadius, ((startAngle+120f)%360)-180, speed);
+        objectArray[2].GetComponent<MovObjLogic>().CreateMovement(circleRadius, ((startAngle-120f)%360)-180, speed);
 
     }
 
