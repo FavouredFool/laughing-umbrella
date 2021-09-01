@@ -17,10 +17,11 @@ public class PlayerSkillUse : MonoBehaviour {
     Color activeColor;
     Color tempColor;
 
+    public GameObject colliderObject;
+    CapsuleCollider2D playerCollider;
+
     // Children deklarieren
     Dictionary<string, GameObject> allSkills;
-
-    CapsuleCollider2D playerCollider;
 
     // Konstante für Tags
     private string ORB_TAG = "Orb";
@@ -32,6 +33,8 @@ public class PlayerSkillUse : MonoBehaviour {
     #region UnityMethods
 
     void Start() {
+
+        playerCollider = colliderObject.GetComponent<CapsuleCollider2D>();
 
         allSkills = new Dictionary<string, GameObject>();
 
@@ -54,9 +57,6 @@ public class PlayerSkillUse : MonoBehaviour {
         EMPTYCOLOR = sr.color;
         activeColor = EMPTYCOLOR;
         backupColor = EMPTYCOLOR;
-
-        // Playercollider
-        playerCollider = gameObject.GetComponent<CapsuleCollider2D>();
 
         orbLayers = LayerMask.GetMask(ORB_TAG);
     }
@@ -179,6 +179,9 @@ public class PlayerSkillUse : MonoBehaviour {
                 break;
             case SkillEnum.Skill.SKILLBALLYELLOW:
                 activeSkill = Instantiate(allSkills["SkillBallYellow"], gameObject.transform);
+                break;
+            case SkillEnum.Skill.SKILLBAT:
+                activeSkill = Instantiate(allSkills["SkillBat"], gameObject.transform);
                 break;
         }
 

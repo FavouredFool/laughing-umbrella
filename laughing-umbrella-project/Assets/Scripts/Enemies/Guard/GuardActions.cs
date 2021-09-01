@@ -4,14 +4,14 @@ public class GuardActions : Enemy {
 
     #region Variables
     // Konstanten
-    public int ATTACKDAMAGE;
+    
     public float SLASHWIDTH;
     public float SLASHLENGTH;
     public float ATTACKSTARTDISTANCE = 0.7f;
 
 	public Orb enemyOrb;
 
-    LayerMask playerLayers;
+    public LayerMask playerLayers;
 
     Vector3 rotatedPointNear;
     Vector3 rotatedPointFar;
@@ -29,7 +29,6 @@ public class GuardActions : Enemy {
     private void Start()
     {
         animator = GetComponent<Animator>();
-        playerLayers = LayerMask.GetMask("Player");
 		pathfinder = GetComponent<GuardPathfinder>();
 
 		direction = pathfinder.getDirection();
@@ -37,6 +36,7 @@ public class GuardActions : Enemy {
 		// Für Lebensleiste
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
+
 	}
 
     private void Update()
@@ -104,6 +104,7 @@ public class GuardActions : Enemy {
 	public void StartAttack()
 	{
 		// Starte Animation -> Blendtree für Richtung
+		
 		createHitboxFlag = true;
 		animator.SetTrigger("attack");
 		
@@ -119,7 +120,7 @@ public class GuardActions : Enemy {
 
 			if (playerHit != null)
 			{
-				playerHit.gameObject.GetComponent<PlayerMovement>().getDamaged(ATTACKDAMAGE);
+				playerHit.gameObject.GetComponent<PlayerActions>().getDamaged(attackDamage);
 			}
 
 			createHitboxFlag = false;
@@ -144,13 +145,15 @@ public class GuardActions : Enemy {
 	}
 
 
+	
+	/*
 	void OnDrawGizmos()
 	{
 
 		Gizmos.DrawWireSphere(rotatedPointNear, 0.5f);
 		Gizmos.DrawWireSphere(rotatedPointFar, 0.5f);
 
-	}
+	}*/
 
 	protected override void dropOrb()
     {
@@ -160,7 +163,6 @@ public class GuardActions : Enemy {
 
 	public override void getDestroyed()
     {
-        Debug.Log("I HAVE DIED A TERRIBLE DEATH!");
         // Destroy Object
         Destroy(gameObject);
     }

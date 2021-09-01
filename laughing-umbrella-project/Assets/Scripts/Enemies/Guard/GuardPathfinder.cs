@@ -4,7 +4,6 @@ using Pathfinding;
 public class GuardPathfinder: MonoBehaviour {
 
 	#region Variables
-	public Transform target;
 	public float nextWaypointDistance = 1f;
 
 	private Vector2 direction;
@@ -16,6 +15,11 @@ public class GuardPathfinder: MonoBehaviour {
 	Seeker seeker;
 	Rigidbody2D rb;
 	GuardActions gActions;
+
+	public GameObject target;
+
+	public float attackDowntime = 3;
+	float timeLastAttack;
 	#endregion
 
 
@@ -27,13 +31,15 @@ public class GuardPathfinder: MonoBehaviour {
 		gActions = GetComponent<GuardActions>();
 
 		InvokeRepeating("UpdatePath", 0f, 0.5f);
+		timeLastAttack = float.NegativeInfinity;
+
     }
 
 	void UpdatePath()
     {
         if (seeker.IsDone())
         {
-			seeker.StartPath(rb.position, target.position, OnPathComplete);
+			seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
 		}
 		
 	}
@@ -48,6 +54,7 @@ public class GuardPathfinder: MonoBehaviour {
 	}
 
     void FixedUpdate() {
+
 		if (!activeAttack)
         {
 			if (path == null)
@@ -57,9 +64,12 @@ public class GuardPathfinder: MonoBehaviour {
 
 			if (currentWaypoint >= path.vectorPath.Count)
 			{
-				//Debug.Log("angriff!");
-				activeAttack = true;
-				gActions.StartAttack();
+				if (Time.time - timeLastAttack > attackDowntime)
+                {
+					activeAttack = true;
+					gActions.StartAttack();
+				}
+				
 				return;
 			}
 
@@ -90,6 +100,7 @@ public class GuardPathfinder: MonoBehaviour {
     {
 		// flippe Flag um Gegner wieder laufen zu lassen
 		activeAttack = false;
+		timeLastAttack = Time.time;
 
 	}
 
