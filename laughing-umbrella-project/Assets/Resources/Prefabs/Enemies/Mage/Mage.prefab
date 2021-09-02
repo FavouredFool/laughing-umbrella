@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2497003399170128690}
   m_Layer: 11
   m_Name: Mage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,9 +134,12 @@ MonoBehaviour:
   target: {fileID: 0}
   fireball: {fileID: 3438662498757319506, guid: c6c16f54b3c35ab4da085170d141fb5d, type: 3}
   initialWaittime: 2
-  repeatActions: 6
+  waitAfterTp: 3
   fireTpWait: 2
   fireballSpeed: 1.5
+  fireballDamage: 1
+  teleportDistance: 3
+  raysCast: 8
 --- !u!1 &7185764508324101701
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +152,7 @@ GameObject:
   - component: {fileID: 4238985980226141902}
   m_Layer: 12
   m_Name: Mage Trigger
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
