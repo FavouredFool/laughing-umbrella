@@ -1,0 +1,492 @@
+fileFormatVersion: 2
+guid: d3fbcd25c4bc21147a127d458248aded
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6057948849698741653
+    second: DD_Magier_teleport_anim_1
+  - first:
+      213: 6601124140389559205
+    second: DD_Magier_teleport_anim_2
+  - first:
+      213: 8486997567401734014
+    second: DD_Magier_teleport_anim_4
+  - first:
+      213: 1707348149195771948
+    second: DD_Magier_teleport_anim_5
+  - first:
+      213: -1337313672270502858
+    second: DD_Magier_teleport_anim_10
+  - first:
+      213: -7933348133746048206
+    second: DD_Magier_teleport_anim_11
+  - first:
+      213: 5483354060214316407
+    second: DD_Magier_teleport_anim_12
+  - first:
+      213: 5924093740421176038
+    second: DD_Magier_teleport_anim_14
+  - first:
+      213: 4483377865314830771
+    second: DD_Magier_teleport_anim_18
+  - first:
+      213: 1473474587659265338
+    second: DD_Magier_teleport_anim_19
+  - first:
+      213: -7670500187549890
+    second: DD_Magier_teleport_anim_20
+  - first:
+      213: 5270308507960499474
+    second: DD_Magier_teleport_anim_22
+  - first:
+      213: 793290652838978103
+    second: DD_Magier_teleport_anim_26
+  - first:
+      213: 1606592683349344086
+    second: DD_Magier_teleport_anim_27
+  - first:
+      213: -7974759808037829634
+    second: DD_Magier_teleport_anim_28
+  - first:
+      213: -8514958082561420743
+    second: DD_Magier_teleport_anim_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 836
+        width: 136
+        height: 168
+      alignment: 9
+      pivot: {x: 0.44117647, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62683a1e97ddeba0800000000000000
+      internalID: -6057948849698741653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_2
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 836
+        width: 136
+        height: 168
+      alignment: 9
+      pivot: {x: 0.44117647, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abec227e67eb9b50800000000000000
+      internalID: 6601124140389559205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_4
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 834
+        width: 152
+        height: 168
+      alignment: 9
+      pivot: {x: 0.39473686, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fa59e425fd7c570800000000000000
+      internalID: 8486997567401734014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_5
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 834
+        width: 152
+        height: 184
+      alignment: 9
+      pivot: {x: 0.39473686, y: 0.54347825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c201cb48818b1b710800000000000000
+      internalID: 1707348149195771948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_10
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 631
+        width: 136
+        height: 168
+      alignment: 9
+      pivot: {x: 0.5588235, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6342b0bec48e07de0800000000000000
+      internalID: -1337313672270502858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_11
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 627
+        width: 136
+        height: 168
+      alignment: 9
+      pivot: {x: 0.5588235, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2330f80b7e517e190800000000000000
+      internalID: -7933348133746048206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_12
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 630
+        width: 152
+        height: 168
+      alignment: 9
+      pivot: {x: 0.6052632, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d25c83779c81c40800000000000000
+      internalID: 5483354060214316407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_14
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 632
+        width: 152
+        height: 184
+      alignment: 9
+      pivot: {x: 0.6052632, y: 0.54347825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea5be5aedb963250800000000000000
+      internalID: 5924093740421176038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_18
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 434
+        width: 120
+        height: 168
+      alignment: 9
+      pivot: {x: 0.46666667, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b980ff1a68283e30800000000000000
+      internalID: 4483377865314830771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_19
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 433
+        width: 120
+        height: 168
+      alignment: 9
+      pivot: {x: 0.46666667, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35eef6a455d27410800000000000000
+      internalID: 1473474587659265338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_20
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 434
+        width: 136
+        height: 168
+      alignment: 9
+      pivot: {x: 0.5294118, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f421188bfb4eff0800000000000000
+      internalID: -7670500187549890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_22
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 437
+        width: 136
+        height: 184
+      alignment: 9
+      pivot: {x: 0.5294118, y: 0.54347825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d54b92aa5e32940800000000000000
+      internalID: 5270308507960499474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_26
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 237
+        width: 120
+        height: 168
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732ea1e45a5520b00800000000000000
+      internalID: 793290652838978103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_27
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 237
+        width: 120
+        height: 168
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f77cd8883cb4610800000000000000
+      internalID: 1606592683349344086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_28
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 237
+        width: 136
+        height: 168
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3c7d8e436f35190800000000000000
+      internalID: -7974759808037829634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Magier_teleport_anim_29
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 238
+        width: 144
+        height: 184
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.54347825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932d593fcbac4d980800000000000000
+      internalID: -8514958082561420743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
