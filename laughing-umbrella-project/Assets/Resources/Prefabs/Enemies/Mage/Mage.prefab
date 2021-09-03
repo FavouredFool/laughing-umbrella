@@ -138,9 +138,10 @@ MonoBehaviour:
   waitAfterTp: 3
   fireTpWait: 2
   tpDistanceToWall: 1
-  fireballSpeed: 5
+  fireballSpeed: 7
   fireballDamage: 1
-  teleportDistance: 4
+  createDistance: 1.5
+  teleportDistance: 6
   raysCast: 64
 --- !u!95 &761403961432604132
 Animator:

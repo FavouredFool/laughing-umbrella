@@ -896,17 +896,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1539591313}
     - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: fireballSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: createDistance
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: teleportDistance
-      value: 6
-      objectReference: {fileID: 0}
+      propertyPath: enemyOrb
+      value: 
+      objectReference: {fileID: 4831965654929628838, guid: f1cb849cb3c171044ab8b2328016deb2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
 --- !u!1001 &1102786919

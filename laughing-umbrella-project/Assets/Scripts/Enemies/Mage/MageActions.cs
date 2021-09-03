@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class MageActions : MonoBehaviour {
+public class MageActions : Enemy {
 
 	#region Variables
 	public GameObject target;
@@ -21,6 +21,8 @@ public class MageActions : MonoBehaviour {
 	public float teleportDistance = 3;
 	public int raysCast = 8;
 
+	public Orb enemyOrb;
+
 	bool hasTeleportedFlag = false;
 
 	LayerMask teleportObstacles;
@@ -35,6 +37,8 @@ public class MageActions : MonoBehaviour {
     {
 		teleportObstacles = LayerMask.GetMask("Obstacle");
 		animator = GetComponent<Animator>();
+		animator.SetFloat("horizontal", 0);
+		animator.SetFloat("vertical", -1);
 
 		//InvokeRepeating("doAction", initialWaittime, repeatActions);
 		StartCoroutine(DoAction());
@@ -144,6 +148,17 @@ public class MageActions : MonoBehaviour {
 			return false;
         }
 		return false;
+	}
+
+	protected override void dropOrb()
+    {
+		Instantiate(enemyOrb, gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
+	}
+
+	public override void getDestroyed()
+    {
+		// Destroy Object
+		Destroy(gameObject);
 	}
 
 	
