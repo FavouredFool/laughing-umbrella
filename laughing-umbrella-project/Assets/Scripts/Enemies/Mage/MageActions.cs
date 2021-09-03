@@ -5,37 +5,49 @@ using System.Collections.Generic;
 public class MageActions : Enemy {
 
 	#region Variables
-	public GameObject target;
+
+	[Header("Mage-Specific GameObjects")]
+	// Prefab, welches geschmissen wird
 	public GameObject fireball;
 
+	[Header("Fireball-Specific Variables")]
+	// Geschwindigkeit des Feuerballs
+	public float fireballSpeed = 8f;
+	// Distanz vom Mage, die der Feuerball bei Kreation hat
+	public float createDistance = 1.5f;
 
-	public float initialWaittime = 2f;
-	public float waitAfterTp = 3f;
-	public float fireTpWait = 2f;
+	[Header("Teleport-Specific Variables")]
+	// Layer durch die nicht teleportiert werden kann.
+	public LayerMask teleportObstacles;
+	// Zahl von Rays in alle Richtungen vom Mage ausgehend um einen passenden Teleportationsort zu finden.
+	public int raysCast = 64;
+	// Distanz die durch den Teleport überbrückt wird
+	public float teleportDistance = 6;
+	// Distanz die ein Teleport-Ort zur Wand haben muss um valide zu sein.
 	public float tpDistanceToWall = 3f;
 
-	public float fireballSpeed = 4f;
-	public int fireballDamage = 1;
-	public float createDistance = 2f;
+	[Header("Time-Specific Variables")]
+	// Wartezeit vor der ersten Aktion des Mages in Sek.
+	public float initialWait = 2f;
+	// Wartezeit zwischen dem Wurf des Feuerballs und dem Teleport in Sek.
+	public float waitBetweenFireTp = 2f;
+	// Wartezeit nach dem Teleport in Sek.
+	public float waitAfterTp = 3f;
 
-	public float teleportDistance = 3;
-	public int raysCast = 8;
-
-	public Orb enemyOrb;
-
-	bool hasTeleportedFlag = false;
-
-	LayerMask teleportObstacles;
-	GameObject thrownFireball;
+	// Components
 	Animator animator;
 
+	// Flag
+	bool hasTeleportedFlag = false;
 	#endregion
 
 	#region UnityMethods
 
-	void Start()
+	new protected void Start()
     {
-		teleportObstacles = LayerMask.GetMask("Obstacle");
+		// Start von "Enemy" aufrufen
+		base.Start();
+
 		animator = GetComponent<Animator>();
 		animator.SetFloat("horizontal", 0);
 		animator.SetFloat("vertical", -1);
@@ -43,10 +55,10 @@ public class MageActions : Enemy {
 		//InvokeRepeating("doAction", initialWaittime, repeatActions);
 		StartCoroutine(DoAction());
     }
-	IEnumerator DoAction()
+	protected IEnumerator DoAction()
 	{
 		// initial wait
-		yield return new WaitForSeconds(initialWaittime);
+		yield return new WaitForSeconds(initialWait);
 
 		while (true)
         {
@@ -54,17 +66,17 @@ public class MageActions : Enemy {
 
 			Vector2 directionToPlayer = (target.transform.position - gameObject.transform.position).normalized;
 
-			thrownFireball = Instantiate(fireball, gameObject.transform.position + (Vector3) directionToPlayer * createDistance, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, directionToPlayer) + 180));
+			GameObject thrownFireball = Instantiate(fireball, gameObject.transform.position + (Vector3) directionToPlayer * createDistance, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, directionToPlayer) + 180));
 
 			// Animation hinzufügen
 			animator.SetTrigger("cast");
 			animator.SetFloat("horizontal", directionToPlayer.x);
 			animator.SetFloat("vertical", directionToPlayer.y);
 
-			thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, fireballDamage);
+			thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, attackDamage);
 
 			// 2. wait
-			yield return new WaitForSeconds(fireTpWait);
+			yield return new WaitForSeconds(waitBetweenFireTp);
 
 			// 3. tp somewhere else
 			animator.SetTrigger("teleport");
@@ -76,7 +88,7 @@ public class MageActions : Enemy {
 
 	}
 
-	void teleport()
+	protected void teleport()
     {
 		// Activated by Animationend-Event
 		if (!hasTeleportedFlag)
@@ -88,7 +100,7 @@ public class MageActions : Enemy {
 		
 	}
 
-	Vector3 findPosition()
+	protected Vector3 findPosition()
     {
 		int angle = (int)Random.Range(0, 360);
 		int angleFinal;
@@ -133,7 +145,7 @@ public class MageActions : Enemy {
 		return bestPos;
     }
 
-	bool validPos(Vector2 direction, int i) {
+	protected bool validPos(Vector2 direction, int i) {
 
 		// cast ray
 		if (!Physics2D.Raycast(gameObject.transform.position, direction, teleportDistance, teleportObstacles))
@@ -150,18 +162,6 @@ public class MageActions : Enemy {
 		return false;
 	}
 
-	protected override void dropOrb()
-    {
-		Instantiate(enemyOrb, gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
-	}
-
-	public override void getDestroyed()
-    {
-		// Destroy Object
-		Destroy(gameObject);
-	}
-
-	
 	
 	
 	#endregion

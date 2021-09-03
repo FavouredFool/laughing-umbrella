@@ -100,8 +100,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009139299, y: -0.052075207}
-  m_Size: {x: 0.71645784, y: 1.3254217}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1.3254217}
   m_Direction: 0
 --- !u!114 &7061989664883557086
 MonoBehaviour:
@@ -132,23 +132,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980a11d96956ac54697a2f855daf953a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
-  moveSpeed: 0
-  attackDamage: 0
-  healthBar: {fileID: 0}
   target: {fileID: 0}
-  fireball: {fileID: 3438662498757319506, guid: c6c16f54b3c35ab4da085170d141fb5d, type: 3}
-  initialWaittime: 2
-  waitAfterTp: 3
-  fireTpWait: 2
-  tpDistanceToWall: 1
-  fireballSpeed: 7
-  fireballDamage: 1
-  createDistance: 1.5
-  teleportDistance: 6
-  raysCast: 64
+  healthBar: {fileID: 0}
   enemyOrb: {fileID: 4831965654929628838, guid: f1cb849cb3c171044ab8b2328016deb2, type: 3}
+  maxHealth: 5
+  moveSpeed: 0
+  attackDamage: 10
+  fireball: {fileID: 3438662498757319506, guid: c6c16f54b3c35ab4da085170d141fb5d, type: 3}
+  fireballSpeed: 7
+  createDistance: 1.5
+  teleportObstacles:
+    serializedVersion: 2
+    m_Bits: 256
+  raysCast: 64
+  teleportDistance: 6
+  tpDistanceToWall: 1
+  initialWait: 2
+  waitBetweenFireTp: 2
+  waitAfterTp: 3
 --- !u!95 &761403961432604132
 Animator:
   serializedVersion: 3
@@ -177,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8335077591780288598}
-  - component: {fileID: 4238985980226141902}
+  - component: {fileID: 1424658004}
   m_Layer: 12
   m_Name: Mage Trigger
   m_TagString: Enemy
@@ -199,7 +200,7 @@ Transform:
   m_Father: {fileID: 2127203646684307792}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &4238985980226141902
+--- !u!70 &1424658004
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,6 +213,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00053881714, y: -0.000011866647}
-  m_Size: {x: 0.12659304, y: 0.1351305}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1.3254217}
   m_Direction: 0

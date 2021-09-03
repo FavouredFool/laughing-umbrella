@@ -9,7 +9,7 @@ public class Fireball : MonoBehaviour {
 
 	Rigidbody2D rb;
 
-	string PLAYER_TAG = "Player";
+	readonly string PLAYER_TAG = "Player";
 
 	bool isActive = false;
 
@@ -19,12 +19,12 @@ public class Fireball : MonoBehaviour {
 	
 	#region UnityMethods
 
-    void Awake() {
+    protected void Awake() {
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
     }
 
-    void Update() {
+    protected void Update() {
 		if (isActive)
         {
 			rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
@@ -41,15 +41,13 @@ public class Fireball : MonoBehaviour {
 		animator.SetTrigger("grow");
     }
 
-
-
 	public void startShooting()
     {
 		animator.SetTrigger("fly");
 		isActive = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
 		if (collision.gameObject.tag.Equals(PLAYER_TAG)) {
 			collision.gameObject.GetComponent<PlayerActions>().getDamaged(attackDamage);

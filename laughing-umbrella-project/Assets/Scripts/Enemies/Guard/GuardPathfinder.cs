@@ -4,22 +4,25 @@ using Pathfinding;
 public class GuardPathfinder: MonoBehaviour {
 
 	#region Variables
+
+	[Header("Pathfinding-Variables")]
+	// Die Nähe die der Guard zu seinem Ziel-Waypoint haben muss um auf den nächsten Waypoint umzuschlagen.
 	public float nextWaypointDistance = 1f;
 
-	private Vector2 direction;
-	bool activeAttack = false;
-	
-	Path path;
+	// private Variables
+	Vector2 direction;
+	float timeLastAttack;
 	int currentWaypoint = 0;
 
+	// Components
 	Seeker seeker;
+	Path path;
 	Rigidbody2D rb;
 	GuardActions gActions;
 
-	public GameObject target;
+	// Flags
+	bool activeAttack = false;
 
-	public float attackDowntime = 3;
-	float timeLastAttack;
 	#endregion
 
 
@@ -39,7 +42,7 @@ public class GuardPathfinder: MonoBehaviour {
     {
         if (seeker.IsDone())
         {
-			seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
+			seeker.StartPath(rb.position, gActions.target.transform.position, OnPathComplete);
 		}
 		
 	}
@@ -64,7 +67,7 @@ public class GuardPathfinder: MonoBehaviour {
 
 			if (currentWaypoint >= path.vectorPath.Count)
 			{
-				if (Time.time - timeLastAttack > attackDowntime)
+				if (Time.time - timeLastAttack > gActions.attackDowntime)
                 {
 					activeAttack = true;
 					gActions.StartAttack();
