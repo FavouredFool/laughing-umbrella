@@ -168,20 +168,14 @@ public class PlayerSkillUse : MonoBehaviour {
         // Zugriff über Children in Hashmap
         switch(collision.gameObject.GetComponent<Orb>().skillEnum)
         {
-            case SkillEnum.Skill.SKILLBALLRED:
-                activeSkill = Instantiate(allSkills["SkillBallRed"], gameObject.transform);
-                break;
             case SkillEnum.Skill.SKILLSLASH:
                 activeSkill = Instantiate(allSkills["SkillSlash"], gameObject.transform);
                 break;
-            case SkillEnum.Skill.SKILLBALLGREEN:
-                activeSkill = Instantiate(allSkills["SkillBallGreen"], gameObject.transform);
-                break;
-            case SkillEnum.Skill.SKILLBALLYELLOW:
-                activeSkill = Instantiate(allSkills["SkillBallYellow"], gameObject.transform);
-                break;
             case SkillEnum.Skill.SKILLBAT:
                 activeSkill = Instantiate(allSkills["SkillBat"], gameObject.transform);
+                break;
+            case SkillEnum.Skill.SKILLFIRE:
+                activeSkill = Instantiate(allSkills["SkillFire"], gameObject.transform);
                 break;
         }
 

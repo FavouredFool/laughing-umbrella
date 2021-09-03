@@ -21,7 +21,7 @@ TagManager:
   - EnemyCollider
   - EnemyOnlyTrigger
   - Skill
-  - 
+  - EnemyProjectile
   - 
   - 
   - 
