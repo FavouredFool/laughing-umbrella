@@ -457,23 +457,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126347545}
   m_CullTransparentMesh: 1
---- !u!1 &356689209 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 356689209, guid: d3d5d77f0595beb4c99e0376c67e5b45, type: 3}
-  m_PrefabInstance: {fileID: 1102786919}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &356689212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356689209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7df4d2942b3ff43a2cb20e4bdb5f2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &493534411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -528,10 +511,6 @@ PrefabInstance:
     - target: {fileID: 4619642697008298346, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976392519029236579, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
@@ -895,10 +874,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1539591313}
-    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: enemyOrb
-      value: 
-      objectReference: {fileID: 4831965654929628838, guid: f1cb849cb3c171044ab8b2328016deb2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
 --- !u!1001 &1102786919
@@ -908,20 +883,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 356689211, guid: d3d5d77f0595beb4c99e0376c67e5b45, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3170938816040230428, guid: d3d5d77f0595beb4c99e0376c67e5b45, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3170938816040230428, guid: d3d5d77f0595beb4c99e0376c67e5b45, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3170938816040230428, guid: d3d5d77f0595beb4c99e0376c67e5b45, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3170938816040230503, guid: d3d5d77f0595beb4c99e0376c67e5b45, type: 3}

@@ -54,7 +54,7 @@ public class MageActions : Enemy {
 
 			Vector2 directionToPlayer = (target.transform.position - gameObject.transform.position).normalized;
 
-			thrownFireball = Instantiate(fireball, gameObject.transform.position + (Vector3) directionToPlayer * createDistance, Quaternion.identity);
+			thrownFireball = Instantiate(fireball, gameObject.transform.position + (Vector3) directionToPlayer * createDistance, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, directionToPlayer) + 180));
 
 			// Animation hinzufügen
 			animator.SetTrigger("cast");

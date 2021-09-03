@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3619668043613279064}
   - component: {fileID: 3370871497594200}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SkillSlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 6552645608688477379}
   - component: {fileID: 7414083489500264067}
   - component: {fileID: 6468129232565814211}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SlashGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -132,6 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980a11d96956ac54697a2f855daf953a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  moveSpeed: 0
+  attackDamage: 0
+  healthBar: {fileID: 0}
   target: {fileID: 0}
   fireball: {fileID: 3438662498757319506, guid: c6c16f54b3c35ab4da085170d141fb5d, type: 3}
   initialWaittime: 2
@@ -143,6 +148,7 @@ MonoBehaviour:
   createDistance: 1.5
   teleportDistance: 6
   raysCast: 64
+  enemyOrb: {fileID: 4831965654929628838, guid: f1cb849cb3c171044ab8b2328016deb2, type: 3}
 --- !u!95 &761403961432604132
 Animator:
   serializedVersion: 3
