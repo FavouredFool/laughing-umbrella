@@ -9,6 +9,7 @@ public class PlayerFireball : MonoBehaviour
 	int attackDamage;
 
 	Rigidbody2D rb;
+	CircleCollider2D cCollider;
 
 	string ENEMY_TAG = "Enemy";
 
@@ -24,6 +25,7 @@ public class PlayerFireball : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
+		cCollider = GetComponent<CircleCollider2D>();
 	}
 
 	void Update()
