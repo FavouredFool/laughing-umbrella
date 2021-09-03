@@ -852,14 +852,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2127203646684307792, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2127203646684307792, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2127203646684307792, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.17
       objectReference: {fileID: 0}
@@ -904,45 +896,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1539591313}
     - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: raysCast
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: waitAfterTp
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: fireballSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: teleportDistance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: tpDistanceToWall
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6514911340268989603, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: m_Size.x
-      value: 0.65018034
-      objectReference: {fileID: 0}
-    - target: {fileID: 6514911340268989603, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: m_Size.y
-      value: 1.6000003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6514911340268989603, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.023999453
-      objectReference: {fileID: 0}
-    - target: {fileID: 6514911340268989603, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140768904343740250, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
-      propertyPath: m_Sprite
+      propertyPath: enemyOrb
       value: 
-      objectReference: {fileID: 2057440522524007578, guid: 959742f65e61e43429c42a38eba986bf, type: 3}
+      objectReference: {fileID: 4831965654929628838, guid: f1cb849cb3c171044ab8b2328016deb2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
 --- !u!1001 &1102786919

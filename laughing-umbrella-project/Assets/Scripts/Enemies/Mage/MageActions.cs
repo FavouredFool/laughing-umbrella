@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class MageActions : MonoBehaviour {
+public class MageActions : Enemy {
 
 	#region Variables
 	public GameObject target;
@@ -14,15 +14,20 @@ public class MageActions : MonoBehaviour {
 	public float fireTpWait = 2f;
 	public float tpDistanceToWall = 3f;
 
-	public float fireballSpeed = 2f;
+	public float fireballSpeed = 4f;
 	public int fireballDamage = 1;
+	public float createDistance = 2f;
 
 	public float teleportDistance = 3;
 	public int raysCast = 8;
 
-	LayerMask teleportObstacles;
+	public Orb enemyOrb;
 
+	bool hasTeleportedFlag = false;
+
+	LayerMask teleportObstacles;
 	GameObject thrownFireball;
+	Animator animator;
 
 	#endregion
 
@@ -31,6 +36,9 @@ public class MageActions : MonoBehaviour {
 	void Start()
     {
 		teleportObstacles = LayerMask.GetMask("Obstacle");
+		animator = GetComponent<Animator>();
+		animator.SetFloat("horizontal", 0);
+		animator.SetFloat("vertical", -1);
 
 		//InvokeRepeating("doAction", initialWaittime, repeatActions);
 		StartCoroutine(DoAction());
@@ -42,11 +50,16 @@ public class MageActions : MonoBehaviour {
 
 		while (true)
         {
-			// 1. Fire fireball on target
-
-			thrownFireball = Instantiate(fireball, gameObject.transform.position, Quaternion.identity);
+			// 1. Fire fireball on target - instatiate next to the mage
 
 			Vector2 directionToPlayer = (target.transform.position - gameObject.transform.position).normalized;
+
+			thrownFireball = Instantiate(fireball, gameObject.transform.position + (Vector3) directionToPlayer * createDistance, Quaternion.identity);
+
+			// Animation hinzufügen
+			animator.SetTrigger("cast");
+			animator.SetFloat("horizontal", directionToPlayer.x);
+			animator.SetFloat("vertical", directionToPlayer.y);
 
 			thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, fireballDamage);
 
@@ -54,12 +67,25 @@ public class MageActions : MonoBehaviour {
 			yield return new WaitForSeconds(fireTpWait);
 
 			// 3. tp somewhere else
-			Vector3 position = findPosition();
-			gameObject.transform.position = position;
+			animator.SetTrigger("teleport");
+			
 
 			yield return new WaitForSeconds(waitAfterTp);
+			hasTeleportedFlag = false;
 		}
 
+	}
+
+	void teleport()
+    {
+		// Activated by Animationend-Event
+		if (!hasTeleportedFlag)
+        {
+			Vector3 position = findPosition();
+			gameObject.transform.position = position;
+			hasTeleportedFlag = true;
+		}
+		
 	}
 
 	Vector3 findPosition()
@@ -122,6 +148,17 @@ public class MageActions : MonoBehaviour {
 			return false;
         }
 		return false;
+	}
+
+	protected override void dropOrb()
+    {
+		Instantiate(enemyOrb, gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
+	}
+
+	public override void getDestroyed()
+    {
+		// Destroy Object
+		Destroy(gameObject);
 	}
 
 	
