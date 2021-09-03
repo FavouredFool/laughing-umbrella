@@ -12,6 +12,7 @@ public class MageActions : MonoBehaviour {
 	public float initialWaittime = 2f;
 	public float waitAfterTp = 3f;
 	public float fireTpWait = 2f;
+	public float tpDistanceToWall = 3f;
 
 	public float fireballSpeed = 2f;
 	public int fireballDamage = 1;
@@ -21,7 +22,6 @@ public class MageActions : MonoBehaviour {
 
 	LayerMask teleportObstacles;
 
-	CapsuleCollider2D collider;
 	GameObject thrownFireball;
 
 	#endregion
@@ -31,7 +31,6 @@ public class MageActions : MonoBehaviour {
 	void Start()
     {
 		teleportObstacles = LayerMask.GetMask("Obstacle");
-		collider = GetComponent<CapsuleCollider2D>();
 
 		//InvokeRepeating("doAction", initialWaittime, repeatActions);
 		StartCoroutine(DoAction());
@@ -47,7 +46,7 @@ public class MageActions : MonoBehaviour {
 
 			thrownFireball = Instantiate(fireball, gameObject.transform.position, Quaternion.identity);
 
-			Vector2 directionToPlayer = target.transform.position - gameObject.transform.position;
+			Vector2 directionToPlayer = (target.transform.position - gameObject.transform.position).normalized;
 
 			thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, fireballDamage);
 
@@ -114,9 +113,9 @@ public class MageActions : MonoBehaviour {
 		if (!Physics2D.Raycast(gameObject.transform.position, direction, teleportDistance, teleportObstacles))
         {
 			// keine Kollision gefunden
-			// Check ob Position in der Wand wäre 
 
-			if (!Physics2D.OverlapCapsule(gameObject.transform.position + new Vector3(direction.x * teleportDistance, direction.y * teleportDistance, 0), collider.size, collider.direction, 0f, teleportObstacles)) {
+			// Check ob Position Nahe oder in der Wand wäre 
+			if (!Physics2D.OverlapCircle(gameObject.transform.position + new Vector3(direction.x * teleportDistance, direction.y * teleportDistance, 0), tpDistanceToWall, teleportObstacles)) {
 				return true;
 			}
 

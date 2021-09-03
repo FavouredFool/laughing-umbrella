@@ -908,8 +908,20 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
+      propertyPath: waitAfterTp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
+      propertyPath: fireballSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
       propertyPath: teleportDistance
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497003399170128690, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
+      propertyPath: tpDistanceToWall
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6514911340268989603, guid: b0155a70f08d71e468ac6ebced06a3b1, type: 3}
       propertyPath: m_Size.x
