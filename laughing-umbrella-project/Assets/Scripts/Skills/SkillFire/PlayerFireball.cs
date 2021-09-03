@@ -4,29 +4,36 @@ public class PlayerFireball : MonoBehaviour
 {
 
 	#region Variables
+
+	// private Variablen
 	Vector2 direction;
 	float speed;
 	int attackDamage;
 
+	// Componenten
 	Rigidbody2D rb;
-
-	string ENEMY_TAG = "Enemy";
-
-	bool isActive = false;
-
+	CircleCollider2D cCollider;
 	Animator animator;
+
+	// Konstanten
+	readonly string ENEMY_TAG = "Enemy";
+
+	// Flags
+	bool isActive = false;
+	
 	#endregion
 
 
 	#region UnityMethods
 
-	void Awake()
+	protected void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
+		cCollider = GetComponent<CircleCollider2D>();
 	}
 
-	void Update()
+	protected void Update()
 	{
 		if (isActive)
 		{
@@ -44,25 +51,21 @@ public class PlayerFireball : MonoBehaviour
 		animator.SetTrigger("grow");
 	}
 
-
-
 	public void startShooting()
 	{
 		animator.SetTrigger("fly");
 		isActive = true;
 	}
 
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
-		if (collision.gameObject.tag.Equals(ENEMY_TAG))
+		if (collision.transform.parent.tag.Equals(ENEMY_TAG))
 		{
 			collision.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage);
 		}
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
 		Destroy(gameObject);
 	}

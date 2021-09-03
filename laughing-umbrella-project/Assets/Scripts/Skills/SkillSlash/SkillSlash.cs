@@ -2,19 +2,26 @@ using UnityEngine;
 
 public class SkillSlash : MonoBehaviour, ISkill
 {
-    public float SLASHWIDTH;
-    public float SLASHLENGTH;
 
-    public float ATTACKSTARTDISTANCE = 0.7f;
+    [Header("Graphical Representation")]
+    // GameObject - welches das Sprite repräsentiert (sollte Unterobjekt sein).
+    public GameObject gfxChild;
+
+    [Header("Slash-Variables")]
+    // Attackdamage des Slashs
+    public int attackDamage = 10;
+    // Breite des Slashs
+    public float slashWidth = 4.3f;
+    // Länge des Slashs
+    public float slashLength = 3.4f;
+    // Distanz zwischen Beginn des Slashs und Charakter
+    public float attackStartDistance = 0.9f;
 
     // Unangenehmer Angleoffset
     private readonly int ANGLEOFFSETFORANIMATION = 20;
 
-    public int ATTACKDAMAGE;
-
-    public GameObject gfxChild;
-
-    public LayerMask enemyLayers;
+    // Konstante 
+    readonly string ENEMY_TAG = "Enemy";
 
     // Mousepos
     Vector2 worldPosition;
@@ -36,18 +43,18 @@ public class SkillSlash : MonoBehaviour, ISkill
         float anglePlayerToMouse = Vector2.SignedAngle(Vector2.up, playerToMouseVector);
 
         // Kollisionspunkt des Rechtecks vorne rechts berechnen
-        Vector3 pointNear = new Vector3(gameObject.transform.position.x + SLASHWIDTH / 2, gameObject.transform.position.y, gameObject.transform.position.z);
+        Vector3 pointNear = new Vector3(gameObject.transform.position.x + slashWidth / 2, gameObject.transform.position.y, gameObject.transform.position.z);
         rotatedPointNear = RotatePointAroundPivot(pointNear, gameObject.transform.position, new Vector3(0, 0, anglePlayerToMouse));
 
         // Kollisionspunkt des Rechtecks hinten links berechnen
-        Vector3 pointFar = new Vector3(gameObject.transform.position.x - SLASHWIDTH / 2, gameObject.transform.position.y + SLASHLENGTH, gameObject.transform.position.z);
+        Vector3 pointFar = new Vector3(gameObject.transform.position.x - slashWidth / 2, gameObject.transform.position.y + slashLength, gameObject.transform.position.z);
         rotatedPointFar = RotatePointAroundPivot(pointFar, gameObject.transform.position, new Vector3(0, 0, anglePlayerToMouse));
 
 
 
         // Bewegen und rotieren von GFX zum Alignen der Animation
         float angleChildToMouse = Vector2.SignedAngle(Vector2.down, playerToMouseVector);
-        Vector2 startPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - ATTACKSTARTDISTANCE, gameObject.transform.position.z);
+        Vector2 startPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - attackStartDistance, gameObject.transform.position.z);
         gfxChild.transform.position = RotatePointAroundPivot(startPos, gameObject.transform.position, new Vector3(0, 0, angleChildToMouse));
         gfxChild.transform.rotation = Quaternion.Euler(0, 0, angleChildToMouse - ANGLEOFFSETFORANIMATION);
 
@@ -58,14 +65,14 @@ public class SkillSlash : MonoBehaviour, ISkill
 
     public void CreateHitbox()
     {
-        
-
         // Gegner bei Slash detecten
-        Collider2D[] enemiesHit = Physics2D.OverlapAreaAll(rotatedPointNear, rotatedPointFar, enemyLayers);
+        Collider2D[] enemiesHit = Physics2D.OverlapAreaAll(rotatedPointNear, rotatedPointFar);
 
-        foreach (Collider2D enemy in enemiesHit)
+        foreach (Collider2D collision in enemiesHit)
         {
-            enemy.gameObject.GetComponent<Enemy>().getDamaged(ATTACKDAMAGE);
+            if (collision.transform.parent != null && collision.transform.parent.tag.Equals(ENEMY_TAG)){
+                collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage);
+            }
         }
     }
 

@@ -442,16 +442,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2becefa364406a449ae3bcda8dd2449b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  healthBar: {fileID: 419512412963997937}
+  enemyOrb: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
   maxHealth: 45
   currentHealth: 45
   moveSpeed: 4
   attackDamage: 1
-  healthBar: {fileID: 419512412963997937}
-  SLASHWIDTH: 2
-  SLASHLENGTH: 2.5
-  ATTACKSTARTDISTANCE: 0
-  enemyOrb: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
-  playerLayers:
+  slashWidth: 0
+  slashLength: 0
+  attackStartDistance: 0.7
+  playerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!114 &576549633
@@ -467,7 +468,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypointDistance: 1.5
-  target: {fileID: 0}
   attackDowntime: 3
 --- !u!114 &576549634
 MonoBehaviour:

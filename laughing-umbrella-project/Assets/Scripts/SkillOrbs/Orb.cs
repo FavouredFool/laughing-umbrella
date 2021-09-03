@@ -4,17 +4,21 @@ public class Orb : MonoBehaviour {
 
 
     #region Variables
+    // Skillenum -> repräsentiert Skills 
     public SkillEnum.Skill skillEnum;
 
+    // Konstanten für Sinuswelle
     // Höhere Zahl -> Langsamer
-    float CREATEANIMATIONSPEED = 25;
-    float MOVEMENTANIMATIONSPEED = 0.5f;
+    readonly float CREATEANIMATIONSPEED = 25;
+    readonly float MOVEMENTANIMATIONSPEED = 0.5f;
 
     // Höhere Zahl -> geringere Amplitude
-    float MOVEMENTANIMATIONAPLITUDE = 10;
+    readonly float MOVEMENTANIMATIONAPLITUDE = 10;
         
+    // Variablen
     Vector3 maxScale;
     Vector3 startPoint;
+
     #endregion
 
     

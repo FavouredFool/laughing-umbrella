@@ -180,7 +180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472786b540210c64bbc7c09979c223db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderObject: {fileID: 356689209}
+  playerCollider: {fileID: 356689211}
+  orbLayers:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &3170938816040230497
 MonoBehaviour:
   m_ObjectHideFlags: 0

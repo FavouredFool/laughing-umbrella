@@ -3,45 +3,48 @@ using UnityEngine;
 public class GuardActions : Enemy {
 
     #region Variables
-    // Konstanten
-    
-    public float SLASHWIDTH;
-    public float SLASHLENGTH;
-    public float ATTACKSTARTDISTANCE = 0.7f;
 
-	public Orb enemyOrb;
+	[Header("Guard-Specific Variables")]
+	// Weite des Slash-Angriffs.
+    public float slashWidth = 2f;
+	// Länge des Slash-Angriffs.
+    public float slashLength = 3f;
+	// Entfernung zur Wache bei der die Hitbox beginnt (unten Gizmos entkommentieren um die Hitbox besser zu sehen). 
+    public float attackStartDistance = 0.7f;
+	// Pause zwischen Angriffen in Sek.
+	public float attackDowntime = 3;
 
-    public LayerMask playerLayers;
-
-    Vector3 rotatedPointNear;
+	// Für Gizmos
+	Vector3 rotatedPointNear;
     Vector3 rotatedPointFar;
 
-    Animator animator;
+	Vector2 direction;
+	float angle;
+
+	// Components
+	Animator animator;
 	GuardPathfinder pathfinder;
 
-	Vector2 direction;
+	// Flags
 	bool createHitboxFlag = false;
     #endregion
 
 
     #region UnityMethods
 
-    private void Start()
+    new protected void Start()
     {
+		// Start von "Enemy" aufrufen
+		base.Start();
+
         animator = GetComponent<Animator>();
 		pathfinder = GetComponent<GuardPathfinder>();
 
 		direction = pathfinder.getDirection();
-
-		// Für Lebensleiste
-		currentHealth = maxHealth;
-		healthBar.SetMaxHealth(maxHealth);
-
 	}
 
-    private void Update()
+    protected void Update()
     {
-
 		// Animationen setzen
 		
 		if (direction != Vector2.zero)
@@ -51,52 +54,37 @@ public class GuardActions : Enemy {
 		}
 		
 
-		// Vorübergehend für Gizmos
-
+		// Vorübergehend für Gizmos (sonst wird's erst bei StartAttack() berechnet).
 		// Lege Hitbox aus, teste auf Treffer in jeweilige Richtung. Wird aufgerufen aus Animation
-
 		// Direction checken
 
 		direction = pathfinder.getDirection();
-		float angle;
+		
 		if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
 		{
 			// rechts und links
 			if (direction.x > 0)
-			{
-				// rechts
 				angle = -90f;
 
-			}
 			else
-			{
-				// links
 				angle = 90f;
-
-			}
 		}
 		else
 		{
 			// oben und unten
 			if (direction.y > 0)
-			{
-				// oben
 				angle = 0f;
-			}
 			else
-			{
-				// unten
 				angle = 180f;
-			}
 		}
 
 		// Hitbox aufbauen
 		// Kollisionspunkt des Rechtecks vorne rechts berechnen
-		Vector3 pointNear = new Vector3(gameObject.transform.position.x + SLASHWIDTH / 2, gameObject.transform.position.y + ATTACKSTARTDISTANCE / 2, gameObject.transform.position.z);
+		Vector3 pointNear = new Vector3(gameObject.transform.position.x + slashWidth / 2, gameObject.transform.position.y + attackStartDistance / 2, gameObject.transform.position.z);
 		rotatedPointNear = RotatePointAroundPivot(pointNear, gameObject.transform.position, new Vector3(0, 0, angle));
 
 		// Kollisionspunkt des Rechtecks hinten links berechnen
-		Vector3 pointFar = new Vector3(gameObject.transform.position.x - SLASHWIDTH / 2, gameObject.transform.position.y + SLASHLENGTH, gameObject.transform.position.z);
+		Vector3 pointFar = new Vector3(gameObject.transform.position.x - slashWidth / 2, gameObject.transform.position.y + slashLength, gameObject.transform.position.z);
 		rotatedPointFar = RotatePointAroundPivot(pointFar, gameObject.transform.position, new Vector3(0, 0, angle));
 
 	}
@@ -107,36 +95,35 @@ public class GuardActions : Enemy {
 		
 		createHitboxFlag = true;
 		animator.SetTrigger("attack");
-		
-
 	}
 
-	void CreateHitbox()
+	protected void CreateHitbox()
 	{
 		if (createHitboxFlag)
         {
 			// Gegner bei Slash detecten
-			Collider2D playerHit = Physics2D.OverlapArea(rotatedPointNear, rotatedPointFar, playerLayers);
+			Collider2D [] attackHits = Physics2D.OverlapAreaAll(rotatedPointNear, rotatedPointFar);
 
-			if (playerHit != null)
+			foreach (Collider2D hit in attackHits)
 			{
-				playerHit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage);
+				if (hit.gameObject.transform.parent != null && hit.gameObject.transform.parent.gameObject == target)
+				{
+					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage);
+					break;
+				}
 			}
-
 			createHitboxFlag = false;
 		}
-		
-
 	}
 
-	void EndAttack()
+	protected void EndAttack()
 	{
 		// Sage dem Pathfinder, dass er wieder laufen darf
 		pathfinder.EndAttack();
 
 	}
 
-	Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
+	protected Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
 	{
 		Vector3 dir = point - pivot;
 		dir = Quaternion.Euler(angles) * dir;
@@ -155,17 +142,7 @@ public class GuardActions : Enemy {
 
 	}*/
 
-	protected override void dropOrb()
-    {
-		Instantiate(enemyOrb, gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
-    }
 
-
-	public override void getDestroyed()
-    {
-        // Destroy Object
-        Destroy(gameObject);
-    }
 
     #endregion
 }

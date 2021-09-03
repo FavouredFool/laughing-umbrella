@@ -4,20 +4,29 @@ public class SkillBat : MonoBehaviour, ISkill
 {
 
     #region Variablen
-
-    public float circleRadius;
+    [Header("GameObjects")]
+    // GameObject - welches das Sprite repräsentiert (sollte Unterobjekt sein).
     public GameObject movingObject;
-    public float durationAmount;
+
+    [Header("Bat-Variables")]
+    // Schaden pro Fledermaus
     public int attackDamage = 10;
-    public float speed = 2;
+    // Geschwindigkeit des Kreises
+    public float speed = 3.5f;
+    // Radius des Kreises
+    public float circleRadius = 4f;
+    // Länge der Existenz des Kreises in Sek
+    public float durationAmount = 6f;
+    
+    // ObjekteArray
+    readonly GameObject[] objectArray = new GameObject[3];
 
-    GameObject[] objectArray = new GameObject[3];
-
+    // Startzeit
     float startTime = float.PositiveInfinity;
 
     #endregion
 
-    void Update()
+    protected void Update()
     {
         // Abbruch nach gewisser Zeit
         if (Time.time - startTime > durationAmount)
@@ -33,11 +42,6 @@ public class SkillBat : MonoBehaviour, ISkill
         createMovingObjs();
     }
 
-    public void CleanUp()
-    {
-        Destroy(gameObject);
-    }
-
     void createMovingObjs()
     {
 
@@ -51,6 +55,11 @@ public class SkillBat : MonoBehaviour, ISkill
         objectArray[1].GetComponent<MovObjLogic>().CreateMovement(circleRadius, ((startAngle+120f)%360)-180, speed);
         objectArray[2].GetComponent<MovObjLogic>().CreateMovement(circleRadius, ((startAngle-120f)%360)-180, speed);
 
+    }
+
+    public void CleanUp()
+    {
+        Destroy(gameObject);
     }
 
 }
