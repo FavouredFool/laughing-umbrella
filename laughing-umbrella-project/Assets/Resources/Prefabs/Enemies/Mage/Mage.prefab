@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6514911340268989603}
   - component: {fileID: 7061989664883557086}
   - component: {fileID: 2497003399170128690}
+  - component: {fileID: 761403961432604132}
   m_Layer: 11
   m_Name: Mage
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 412426972337232951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.053125, y: 11.396896, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8335077591780288598}
   m_Father: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 1779788802335583640, guid: 11faba4be071c0745b52efa069630540, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,8 +100,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00053881714, y: -0.000011866647}
-  m_Size: {x: 0.12659304, y: 0.1351305}
+  m_Offset: {x: 0.009139299, y: -0.052075207}
+  m_Size: {x: 0.71645784, y: 1.3254217}
   m_Direction: 0
 --- !u!114 &7061989664883557086
 MonoBehaviour:
@@ -136,10 +137,30 @@ MonoBehaviour:
   initialWaittime: 2
   waitAfterTp: 3
   fireTpWait: 2
-  fireballSpeed: 1.5
+  tpDistanceToWall: 1
+  fireballSpeed: 5
   fireballDamage: 1
-  teleportDistance: 3
-  raysCast: 8
+  teleportDistance: 4
+  raysCast: 64
+--- !u!95 &761403961432604132
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412426972337232951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb03a9b64d7b144459cbfe007f669440, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7185764508324101701
 GameObject:
   m_ObjectHideFlags: 0
