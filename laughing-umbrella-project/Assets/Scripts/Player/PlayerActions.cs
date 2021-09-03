@@ -5,11 +5,15 @@ public class PlayerActions : MonoBehaviour {
 
 	#region Variables
 
+	[Header("Player-Variables")]
 	public float moveSpeed;
 	public int maxHealth;
-	private int health;
+
+	// private Variables
+	int currentHealth;
 	Vector2 movement;
 
+	// Components
 	private Rigidbody2D myBody;
 	public Animator animator;
 
@@ -18,20 +22,21 @@ public class PlayerActions : MonoBehaviour {
 
 	#region UnityMethods
 
-	void Start() {
+	protected void Start() {
 
 		myBody = GetComponent<Rigidbody2D>();
-		health = maxHealth;
+		animator = GetComponent<Animator>();
+		currentHealth = maxHealth;
 
 	}
 
-    void Update() {
-		//input in Update()
+    protected void Update() {
+
 		PlayerMoveControls();
     }
 
 
-	void PlayerMoveControls()
+	protected void PlayerMoveControls()
 	{
 		movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");
@@ -44,7 +49,7 @@ public class PlayerActions : MonoBehaviour {
 		animator.SetFloat("speed", movement.sqrMagnitude);
 	}
 
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
 		//movement in FixedUpdate()
 		myBody.MovePosition(myBody.position + movement * moveSpeed * Time.fixedDeltaTime);
@@ -54,14 +59,14 @@ public class PlayerActions : MonoBehaviour {
 	public void getDamaged(int attackDamage)
     {
 		Debug.Log(attackDamage + " Schaden");
-		health -= attackDamage;
-		if (health <= 0)
+		currentHealth -= attackDamage;
+		if (currentHealth <= 0)
         {
 			getDestroyed();
         }
     }
 
-	public void getDestroyed()
+	protected void getDestroyed()
     {
 		Destroy(gameObject);
     }

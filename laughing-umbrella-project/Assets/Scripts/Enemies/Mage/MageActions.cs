@@ -13,24 +13,30 @@ public class MageActions : Enemy {
 	[Header("Fireball-Specific Variables")]
 	// Geschwindigkeit des Feuerballs
 	public float fireballSpeed = 8f;
+
 	// Distanz vom Mage, die der Feuerball bei Kreation hat
 	public float createDistance = 1.5f;
 
 	[Header("Teleport-Specific Variables")]
 	// Layer durch die nicht teleportiert werden kann.
 	public LayerMask teleportObstacles;
+
 	// Zahl von Rays in alle Richtungen vom Mage ausgehend um einen passenden Teleportationsort zu finden.
 	public int raysCast = 64;
+
 	// Distanz die durch den Teleport überbrückt wird
 	public float teleportDistance = 6;
+
 	// Distanz die ein Teleport-Ort zur Wand haben muss um valide zu sein.
 	public float tpDistanceToWall = 3f;
 
 	[Header("Time-Specific Variables")]
 	// Wartezeit vor der ersten Aktion des Mages in Sek.
 	public float initialWait = 2f;
+
 	// Wartezeit zwischen dem Wurf des Feuerballs und dem Teleport in Sek.
 	public float waitBetweenFireTp = 2f;
+
 	// Wartezeit nach dem Teleport in Sek.
 	public float waitAfterTp = 3f;
 
@@ -88,19 +94,19 @@ public class MageActions : Enemy {
 
 	}
 
-	protected void teleport()
+	public void Teleport()
     {
 		// Activated by Animationend-Event
 		if (!hasTeleportedFlag)
         {
-			Vector3 position = findPosition();
+			Vector3 position = FindPosition();
 			gameObject.transform.position = position;
 			hasTeleportedFlag = true;
 		}
 		
 	}
 
-	protected Vector3 findPosition()
+	protected Vector3 FindPosition()
     {
 		int angle = (int)Random.Range(0, 360);
 		int angleFinal;
@@ -117,7 +123,7 @@ public class MageActions : Enemy {
 			direction.y = Mathf.Cos(Mathf.Deg2Rad * angleFinal);
 			direction = direction.normalized;
 
-			if (validPos(direction, i))
+			if (ValidPos(direction, i))
             {
 				possiblePositions.Add(gameObject.transform.position + new Vector3(direction.x * teleportDistance, direction.y * teleportDistance, 0));
             }
@@ -145,7 +151,7 @@ public class MageActions : Enemy {
 		return bestPos;
     }
 
-	protected bool validPos(Vector2 direction, int i) {
+	protected bool ValidPos(Vector2 direction, int i) {
 
 		// cast ray
 		if (!Physics2D.Raycast(gameObject.transform.position, direction, teleportDistance, teleportObstacles))

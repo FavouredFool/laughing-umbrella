@@ -4,6 +4,12 @@ using System.Collections.Generic;
 public class PlayerSkillUse : MonoBehaviour {
 
     #region Variables
+
+    // Collider vom Unterobject
+    public CapsuleCollider2D playerCollider;
+    // Layer auf dem Orbs aufgesammelt werden können
+    public LayerMask orbLayers;
+
     // Skills deklarieren
     GameObject activeSkill;
     GameObject backupSkill;
@@ -11,30 +17,25 @@ public class PlayerSkillUse : MonoBehaviour {
     GameObject emptySkill;
 
     // Farben deklarieren
-    SpriteRenderer sr;
     Color EMPTYCOLOR;
     Color backupColor;
     Color activeColor;
     Color tempColor;
-
-    public GameObject colliderObject;
-    CapsuleCollider2D playerCollider;
+    
+    
 
     // Children deklarieren
     Dictionary<string, GameObject> allSkills;
 
     // Konstante für Tags
-    private string ORB_TAG = "Orb";
+    string ORB_TAG = "Orb";
 
-    LayerMask orbLayers; 
     #endregion
 
 
     #region UnityMethods
 
-    void Start() {
-
-        playerCollider = colliderObject.GetComponent<CapsuleCollider2D>();
+    protected void Start() {
 
         allSkills = new Dictionary<string, GameObject>();
 
@@ -51,17 +52,18 @@ public class PlayerSkillUse : MonoBehaviour {
         backupSkill = emptySkill;
 
         
-
+        /*
         // Farben Initialisieren
         sr = GetComponent<SpriteRenderer>();
         EMPTYCOLOR = sr.color;
         activeColor = EMPTYCOLOR;
         backupColor = EMPTYCOLOR;
+        */
 
         orbLayers = LayerMask.GetMask(ORB_TAG);
     }
 
-    private void Update()
+    protected void Update()
     {
         // Linksklick -> Nutze Fähigkeit
         if (Input.GetMouseButtonDown(0))
@@ -76,10 +78,11 @@ public class PlayerSkillUse : MonoBehaviour {
                 //Destroy(activeSkill);
                 activeSkill = emptySkill;
                 
-
+                /*
                 // Farbe wird zurückgeändert
                 activeColor = EMPTYCOLOR;
                 sr.color = activeColor;
+                */
 
                 // Wenn man bei Linksklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
                 checkForOrb();
@@ -102,11 +105,13 @@ public class PlayerSkillUse : MonoBehaviour {
             backupSkill = tempSkill;
             tempSkill = emptySkill;
 
+            /*
             // Farben swappen
             tempColor = activeColor;
             activeColor = backupColor;
             backupColor = tempColor;
             sr.color = activeColor;
+            */
 
             // Wenn man bei Rechtsklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
             checkForOrb();
@@ -114,7 +119,7 @@ public class PlayerSkillUse : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         // Check ob der Spieler mit einem Orb kollidiert ist
         if (collision.gameObject.tag.Equals(ORB_TAG))
@@ -129,7 +134,7 @@ public class PlayerSkillUse : MonoBehaviour {
     }
 
 
-    void checkForOrb()
+    protected void checkForOrb()
     {
         // Checkt ob Spieler auf Orb(s) steht. Falls ja wird der näheste absorbiert.
 
@@ -161,7 +166,7 @@ public class PlayerSkillUse : MonoBehaviour {
         }
     }
 
-    void GetSkill(Collider2D collision)
+    protected void GetSkill(Collider2D collision)
     {
         // Fähigkeit von Enums über Switch Case. MUSS FÜR JEDE FÄHIGKEIT ERWEITERT WERDEN
         // SkillEmpty wird nicht aufgeführt, da er nicht durch Orbs erreichbar ist
@@ -179,9 +184,11 @@ public class PlayerSkillUse : MonoBehaviour {
                 break;
         }
 
+        /*
         // Player nimmt Farbe des Orbs an
         activeColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
         sr.color = activeColor;
+        */
 
         // Orb wird zerstört
         Destroy(collision.gameObject);

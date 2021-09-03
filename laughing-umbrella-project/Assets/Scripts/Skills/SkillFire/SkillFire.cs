@@ -3,22 +3,25 @@ using UnityEngine;
 public class SkillFire : MonoBehaviour, ISkill {
 
     #region Variables
-    public float fireballSpeed = 4f;
+    [Header("GameObjects")]
+    // Das GameObject was bei Nutzung gespawned wird
+    public GameObject fireball;
+
+    [Header("Fireball-Variables")]
+    // Schaden des Feuerballs
     public int fireballDamage = 10;
+    // Geschwindigkeit des Feuerballs
+    public float fireballSpeed = 8f;
+    // Distanz vom Spieler bei welcher der Feuerball erstellt wird
     public float createDistance = 2f;
 
-    public GameObject fireball;
+
     GameObject thrownFireball;
 
     #endregion
 
 
     #region UnityMethods
-
-    void Start() {
-        
-    }
-
 
 	public void UseSkill()
     {

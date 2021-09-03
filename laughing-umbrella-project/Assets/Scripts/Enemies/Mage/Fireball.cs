@@ -3,23 +3,28 @@ using UnityEngine;
 public class Fireball : MonoBehaviour {
 
 	#region Variables
+
+	// Variablen
 	Vector2 direction;
 	float speed;
 	int attackDamage;
 
-	Rigidbody2D rb;
-
+	// Konstanten
 	readonly string PLAYER_TAG = "Player";
 
+	// Flags
 	bool isActive = false;
 
+	// Konstruktoren
 	Animator animator;
+	Rigidbody2D rb;
+
 	#endregion
-	
-	
+
+
 	#region UnityMethods
 
-    protected void Awake() {
+	protected void Awake() {
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
     }

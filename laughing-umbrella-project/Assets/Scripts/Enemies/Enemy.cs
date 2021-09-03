@@ -14,11 +14,11 @@ public abstract class Enemy : MonoBehaviour {
 
     [Header("General Enemy-Variables")]
     // Maximale Leben des Gegners.
-    public int maxHealth;
+    public int maxHealth = 15;
     // Geschwindigkeit des Gegners.
-    public float moveSpeed;
+    public float moveSpeed = 5;
     // Schaden den der Gegner macht (meistens 1, maximal 2).
-    public int attackDamage;
+    public int attackDamage = 1;
 
     int currentHealth;
 

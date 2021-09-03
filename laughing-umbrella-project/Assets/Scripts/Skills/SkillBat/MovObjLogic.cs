@@ -3,16 +3,20 @@ using UnityEngine;
 public class MovObjLogic : MonoBehaviour {
 
 	#region Variables
-	bool isActive = false;
+	// private Variablen
 	float radius = 0;
-	float angleCounter;
-	float angle = 0;
 	float speed = 0;
-    #endregion
+	float angle = 0;
+	float angleCounter;
+
+	// Flags
+	bool isActive = false;
+
+	#endregion
 
 
-    #region UnityMethods
-    void FixedUpdate() {
+	#region UnityMethods
+	protected void FixedUpdate() {
 		if (isActive)
         {
 			Vector2 position;
@@ -36,9 +40,9 @@ public class MovObjLogic : MonoBehaviour {
 		isActive = true;
 	}
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
-		if(collision.gameObject.transform.parent.tag.Equals("Enemy"))
+		if(collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.tag.Equals("Enemy"))
         {
 			// Mache Damage
 			collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(transform.parent.GetComponent<SkillBat>().attackDamage);

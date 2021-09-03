@@ -6,7 +6,6 @@ public class SkillSlashGFX : MonoBehaviour {
     GameObject parent;
     #endregion
 
-
     #region UnityMethods
 
     public void Start()
@@ -22,7 +21,7 @@ public class SkillSlashGFX : MonoBehaviour {
         // Animation abspielen
         GetComponent<Animator>().Play("Ability_Slash");
 	}
-
+    
     public void CreateHitbox()
     {
         // Aufgerufen in Animation
@@ -34,5 +33,6 @@ public class SkillSlashGFX : MonoBehaviour {
 		// Wird Aufgerufen bei Animation-End
 		Destroy(gameObject.transform.parent.gameObject);
     }
+    
 	#endregion
 }

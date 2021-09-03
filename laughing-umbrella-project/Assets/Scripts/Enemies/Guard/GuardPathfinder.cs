@@ -28,7 +28,7 @@ public class GuardPathfinder: MonoBehaviour {
 
 	#region UnityMethods
 
-	void Start() {
+	protected void Start() {
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
 		gActions = GetComponent<GuardActions>();
@@ -38,7 +38,7 @@ public class GuardPathfinder: MonoBehaviour {
 
     }
 
-	void UpdatePath()
+	protected void UpdatePath()
     {
         if (seeker.IsDone())
         {
@@ -47,7 +47,7 @@ public class GuardPathfinder: MonoBehaviour {
 		
 	}
 
-	void OnPathComplete(Path p)
+	protected void OnPathComplete(Path p)
 	{
 		if (!p.error)
         {
@@ -56,7 +56,7 @@ public class GuardPathfinder: MonoBehaviour {
         }
 	}
 
-    void FixedUpdate() {
+    protected void FixedUpdate() {
 
 		if (!activeAttack)
         {
