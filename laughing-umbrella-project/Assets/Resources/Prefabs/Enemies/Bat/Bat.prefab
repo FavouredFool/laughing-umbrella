@@ -184,21 +184,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0e49ff7ef03a44d8b22ee4bbf8654b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  currentHealth: 5
-  moveSpeed: 6
-  attackDamage: 1
+  target: {fileID: 0}
   healthBar: {fileID: 0}
   enemyOrb: {fileID: 4831965654929628838, guid: bbf128f431ca5a54fb069c1102798df7, type: 3}
-  refreshDelay: 0.2
-  visionRadius: 7
-  target: {fileID: 0}
+  maxHealth: 5
+  moveSpeed: 6
+  attackDamage: 1
   obstructionLayers:
     serializedVersion: 2
     m_Bits: 256
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 512
+  refreshDelay: 0.2
+  visionRadius: 7
   sleepTime: 0
   antiStuckSavetimeInSec: 10
 --- !u!114 &4193275008563654988

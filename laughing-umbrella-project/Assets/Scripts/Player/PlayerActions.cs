@@ -71,5 +71,15 @@ public class PlayerActions : MonoBehaviour {
 		Destroy(gameObject);
     }
 
+	public int getMaxHealth()
+    {
+		return maxHealth;
+    }
+
+	public int getCurrentHealth()
+    {
+		return currentHealth;
+    }
+
     #endregion
 }

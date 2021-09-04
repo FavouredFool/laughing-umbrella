@@ -68,25 +68,29 @@ public class MageActions : Enemy {
 
 		while (true)
         {
-			// 1. Fire fireball on target - instatiate next to the mage
+			if (target)
+			{
+				// 1. Fire fireball on target - instatiate next to the mage
 
-			Vector2 directionToPlayer = (target.transform.position - gameObject.transform.position).normalized;
+				Vector2 directionToPlayer = (target.transform.position - gameObject.transform.position).normalized;
 
-			GameObject thrownFireball = Instantiate(fireball, gameObject.transform.position + (Vector3) directionToPlayer * createDistance, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, directionToPlayer) + 180));
+				GameObject thrownFireball = Instantiate(fireball, gameObject.transform.position + (Vector3)directionToPlayer * createDistance, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, directionToPlayer) + 180));
 
-			// Animation hinzufügen
-			animator.SetTrigger("cast");
-			animator.SetFloat("horizontal", directionToPlayer.x);
-			animator.SetFloat("vertical", directionToPlayer.y);
+				// Animation hinzufügen
+				animator.SetTrigger("cast");
+				animator.SetFloat("horizontal", directionToPlayer.x);
+				animator.SetFloat("vertical", directionToPlayer.y);
 
-			thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, attackDamage);
-
+				thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, attackDamage);
+			}
 			// 2. wait
 			yield return new WaitForSeconds(waitBetweenFireTp);
 
-			// 3. tp somewhere else
-			animator.SetTrigger("teleport");
-			
+			if (target)
+			{
+				// 3. tp somewhere else
+				animator.SetTrigger("teleport");
+			}
 
 			yield return new WaitForSeconds(waitAfterTp);
 			hasTeleportedFlag = false;

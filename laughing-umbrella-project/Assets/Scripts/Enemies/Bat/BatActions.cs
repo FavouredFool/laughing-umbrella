@@ -76,39 +76,42 @@ public class BatActions : Enemy {
         while (true)
         {
             yield return wait;
-
-            if (sleep)
+            if (target)
             {
-                yield return new WaitForSeconds(1f);
-                sleep = false;
-            }
-            else if (batState == BatState.RESTING)
-            {
-                Collider2D [] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
 
-                bool found = false;
-                foreach(Collider2D collided in rangeCheck)
+                if (sleep)
                 {
-                    if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == target)
-                    {
-                        found = true;
-                        break;
-                    }
+                    yield return new WaitForSeconds(1f);
+                    sleep = false;
                 }
-
-                if (found)
+                else if (batState == BatState.RESTING)
                 {
-                    Vector3 directionToTarget = (target.transform.position - transform.position).normalized;
-                    float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+                    Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
 
-                    if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionLayers))
+                    bool found = false;
+                    foreach (Collider2D collided in rangeCheck)
                     {
-                        batState = BatState.FLYING;
-                        animator.SetBool("resting", false);
-                        flyingDirection = directionToTarget;
-                        flyingTime = Time.time;
-                        animator.SetFloat("horizontal", flyingDirection.x);
-                        animator.SetFloat("vertical", flyingDirection.y);
+                        if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == target)
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (found)
+                    {
+                        Vector3 directionToTarget = (target.transform.position - transform.position).normalized;
+                        float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+
+                        if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionLayers))
+                        {
+                            batState = BatState.FLYING;
+                            animator.SetBool("resting", false);
+                            flyingDirection = directionToTarget;
+                            flyingTime = Time.time;
+                            animator.SetFloat("horizontal", flyingDirection.x);
+                            animator.SetFloat("vertical", flyingDirection.y);
+                        }
                     }
                 }
             }
