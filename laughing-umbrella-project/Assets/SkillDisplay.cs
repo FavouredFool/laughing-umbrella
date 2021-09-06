@@ -40,7 +40,7 @@ public class SkillDisplay : MonoBehaviour {
 
     protected void Update()
     {
-		if (!activeAnimation)
+		if (!activeAnimation && player)
         {
 			UpdateImages();
 
