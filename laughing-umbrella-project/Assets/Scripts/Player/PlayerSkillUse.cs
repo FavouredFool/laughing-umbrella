@@ -4,7 +4,6 @@ using System.Collections.Generic;
 public class PlayerSkillUse : MonoBehaviour {
 
     #region Variables
-
     // Collider vom Unterobject
     public CapsuleCollider2D playerCollider;
     // Layer auf dem Orbs aufgesammelt werden können
@@ -77,7 +76,7 @@ public class PlayerSkillUse : MonoBehaviour {
                 // Component zerstört sich selbst um Animation noch abspielen zu können ->  nicht hier zerstören
                 //Destroy(activeSkill);
                 activeSkill = emptySkill;
-                
+
                 /*
                 // Farbe wird zurückgeändert
                 activeColor = EMPTYCOLOR;
@@ -192,6 +191,16 @@ public class PlayerSkillUse : MonoBehaviour {
 
         // Orb wird zerstört
         Destroy(collision.gameObject);
+    }
+
+    public GameObject GetActiveSkill()
+    {
+        return activeSkill;
+    }
+
+    public GameObject GetBackupSkill()
+    {
+        return backupSkill;
     }
 
     #endregion
