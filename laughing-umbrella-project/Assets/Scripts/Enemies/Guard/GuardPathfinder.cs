@@ -40,7 +40,7 @@ public class GuardPathfinder: MonoBehaviour {
 
 	protected void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (seeker.IsDone() && gActions.target)
         {
 			seeker.StartPath(rb.position, gActions.target.transform.position, OnPathComplete);
 		}
@@ -58,42 +58,37 @@ public class GuardPathfinder: MonoBehaviour {
 
     protected void FixedUpdate() {
 
-		if (!activeAttack)
-        {
-			if (path == null)
+		if (gActions.target)
+		{
+			if (!activeAttack)
 			{
-				return;
-			}
-
-			if (currentWaypoint >= path.vectorPath.Count)
-			{
-				if (Time.time - timeLastAttack > gActions.attackDowntime)
-                {
-					activeAttack = true;
-					gActions.StartAttack();
+				if (path == null)
+				{
+					return;
 				}
-				
-				return;
-			}
+
+				if (currentWaypoint >= path.vectorPath.Count)
+				{
+					if (Time.time - timeLastAttack > gActions.attackDowntime)
+					{
+						activeAttack = true;
+						gActions.StartAttack();
+					}
+
+					return;
+				}
+
+				direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+
+				float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+
+				rb.MovePosition(rb.position + direction * gActions.moveSpeed * Time.fixedDeltaTime);
 
 
-			direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-
-			//Vector2 force = direction * speed * Time.fixedDeltaTime;
-
-			//Vector2 movement = new Vector2(direction.x * speed * Time.fixedDeltaTime, direction.y * speed * Time.fixedDeltaTime);
-
-			//rb.velocity += movement;
-			//rb.AddForce(force);
-
-			float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-
-			rb.MovePosition(rb.position + direction * gActions.moveSpeed * Time.fixedDeltaTime);
-
-
-			if (distance < nextWaypointDistance)
-			{
-				currentWaypoint++;
+				if (distance < nextWaypointDistance)
+				{
+					currentWaypoint++;
+				}
 			}
 		}
         

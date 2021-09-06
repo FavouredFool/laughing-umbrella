@@ -446,15 +446,12 @@ MonoBehaviour:
   healthBar: {fileID: 419512412963997937}
   enemyOrb: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
   maxHealth: 45
-  currentHealth: 45
   moveSpeed: 4
   attackDamage: 1
-  slashWidth: 0
-  slashLength: 0
+  slashWidth: 2
+  slashLength: 3
   attackStartDistance: 0.7
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 512
+  attackDowntime: 3
 --- !u!114 &576549633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +465,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypointDistance: 1.5
-  attackDowntime: 3
 --- !u!114 &576549634
 MonoBehaviour:
   m_ObjectHideFlags: 0
