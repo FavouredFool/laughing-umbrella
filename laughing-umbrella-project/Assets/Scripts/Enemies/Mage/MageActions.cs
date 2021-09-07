@@ -101,7 +101,7 @@ public class MageActions : Enemy {
 	public void Teleport()
     {
 		// Activated by Animationend-Event
-		if (!hasTeleportedFlag)
+		if (!hasTeleportedFlag && target)
         {
 			Vector3 position = FindPosition();
 			gameObject.transform.position = position;
