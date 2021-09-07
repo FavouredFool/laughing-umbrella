@@ -27,41 +27,42 @@ public class SkillEmpty : MonoBehaviour, ISkill
     }
     protected void Update()
     {
-
-        if (Input.GetMouseButtonDown(1))
+        if (activeConnection)
         {
-            // bei Swap connection brechen
-            BreakConnection();
-        }
-
-        // 2. Verbindung mit Target wird aufgebaut - Charakter wird geslowed
-
-        if (Time.time - connectionStartTime > 0 && Time.time - connectionStartTime < connectionTotalTime)
-        {
-            
-            // Aktive Connection
-            activeLineRendererComp.SetPosition(0, gameObject.transform.parent.position);
-            activeLineRendererComp.SetPosition(1, activeConnection.transform.position);
-
-
-            // Connection trennen wenn Schaden genommen wird
-            int activeHealth = player.GetComponent<PlayerActions>().getCurrentHealth();
-            if (currentHealth > activeHealth)
+            if (Input.GetMouseButtonDown(1))
             {
+                // bei Swap connection brechen
                 BreakConnection();
-                currentHealth = activeHealth;
+            }
+
+            // 2. Verbindung mit Target wird aufgebaut - Charakter wird geslowed
+
+            if (Time.time - connectionStartTime > 0 && Time.time - connectionStartTime < connectionTotalTime)
+            {
+
+                // Aktive Connection
+                activeLineRendererComp.SetPosition(0, gameObject.transform.parent.position);
+                activeLineRendererComp.SetPosition(1, activeConnection.transform.position);
+
+
+                // Connection trennen wenn Schaden genommen wird
+                int activeHealth = player.GetComponent<PlayerActions>().getCurrentHealth();
+                if (currentHealth > activeHealth)
+                {
+                    BreakConnection();
+                    currentHealth = activeHealth;
+                }
+
+            }
+
+            if (Time.time - connectionStartTime >= connectionTotalTime)
+            {
+                // Connection ist vorbei
+                GiveSkill();
+                BreakConnection();
             }
 
         }
-
-        if (Time.time - connectionStartTime >= connectionTotalTime)
-        {
-            // Connection ist vorbei
-            GiveSkill();
-            BreakConnection();
-        }
-
-        
 
     }
 
