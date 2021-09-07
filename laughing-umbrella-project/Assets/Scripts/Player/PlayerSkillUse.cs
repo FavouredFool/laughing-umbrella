@@ -127,7 +127,8 @@ public class PlayerSkillUse : MonoBehaviour {
             if (activeSkill == emptySkill)
             {
                 // den Skill des Orbs absorbieren und Orb zerstören
-                GetSkill(collision);
+                GetSkill(collision.gameObject);
+                Destroy(collision.gameObject);
             }
         }
     }
@@ -160,17 +161,19 @@ public class PlayerSkillUse : MonoBehaviour {
                     }
                 }
                 // den Skill des Orbs absorbieren und Orb zerstören
-                GetSkill(colliders[distIndex]);
+                GetSkill(colliders[distIndex].gameObject);
+                // Orb wird zerstört
+                Destroy(colliders[distIndex].gameObject);
             }
         }
     }
 
-    protected void GetSkill(Collider2D collision)
+    public void GetSkill(GameObject orb)
     {
         // Fähigkeit von Enums über Switch Case. MUSS FÜR JEDE FÄHIGKEIT ERWEITERT WERDEN
         // SkillEmpty wird nicht aufgeführt, da er nicht durch Orbs erreichbar ist
         // Zugriff über Children in Hashmap
-        switch(collision.gameObject.GetComponent<Orb>().skillEnum)
+        switch(orb.GetComponent<Orb>().skillEnum)
         {
             case SkillEnum.Skill.SKILLSLASH:
                 activeSkill = Instantiate(allSkills["SkillSlash"], gameObject.transform);
@@ -189,8 +192,7 @@ public class PlayerSkillUse : MonoBehaviour {
         sr.color = activeColor;
         */
 
-        // Orb wird zerstört
-        Destroy(collision.gameObject);
+        
     }
 
     public GameObject GetActiveSkill()

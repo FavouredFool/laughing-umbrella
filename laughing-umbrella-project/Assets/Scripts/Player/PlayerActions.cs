@@ -64,6 +64,7 @@ public class PlayerActions : MonoBehaviour {
         {
 			getDestroyed();
         }
+		
     }
 
 	protected void getDestroyed()
