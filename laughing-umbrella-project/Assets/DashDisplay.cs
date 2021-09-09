@@ -22,22 +22,28 @@ public class DashDisplay : MonoBehaviour {
     }
 
     protected void Update() {
-		dashCount = player.GetComponent<PlayerActions>().getDashCount();
 
-		switch (dashCount) {
-			case 0:
-				dashOne.enabled = false;
-				dashTwo.enabled = false;
-				break;
-			case 1:
-				dashOne.enabled = true;
-				dashTwo.enabled = false;
-				break;
-			case 2:
-				dashOne.enabled = true;
-				dashTwo.enabled = true;
-				break;
+		if (player)
+        {
+			dashCount = player.GetComponent<PlayerActions>().getDashCount();
+
+			switch (dashCount)
+			{
+				case 0:
+					dashOne.enabled = false;
+					dashTwo.enabled = false;
+					break;
+				case 1:
+					dashOne.enabled = true;
+					dashTwo.enabled = false;
+					break;
+				case 2:
+					dashOne.enabled = true;
+					dashTwo.enabled = true;
+					break;
+			}
 		}
+		
 			
 		
     }
