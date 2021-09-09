@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class PlayerActions : MonoBehaviour {
 
@@ -8,14 +9,23 @@ public class PlayerActions : MonoBehaviour {
 	[Header("Player-Variables")]
 	public float moveSpeed;
 	public int maxHealth;
+	public float dashDistance = 2;
+	public float dashTime = 0.05f;
+
+	public GameObject playerCollision;
 
 	// private Variables
 	int currentHealth;
 	Vector2 movement;
 
+	// Time
+	float dashStartTime;
+
 	// Components
 	private Rigidbody2D myBody;
-	public Animator animator;
+	private Animator animator;
+
+	bool isDashing = false;
 
 	#endregion
 
@@ -33,28 +43,82 @@ public class PlayerActions : MonoBehaviour {
     protected void Update() {
 
 		PlayerMoveControls();
-    }
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+
+			/*
+			dashStartTime = Time.time;
+			isDashing = true;
+			playerCollision.SetActive(false);
+			*/
+
+			StartCoroutine(Dash());
+
+		}
+	}
+
+	IEnumerator Dash()
+    {
+        isDashing = true;
+		playerCollision.SetActive(false);
+        myBody.velocity = Vector3.zero;
+		myBody.AddForce(dashDistance / dashTime * movement, ForceMode2D.Impulse);
+		yield return new WaitForSeconds(dashTime);
+		isDashing = false;
+		playerCollision.SetActive(true);
+	}
 
 
 	protected void PlayerMoveControls()
 	{
-		movement.x = Input.GetAxisRaw("Horizontal");
-		movement.y = Input.GetAxisRaw("Vertical");
-		movement.Normalize();
-		if (movement != Vector2.zero)
+		if(!isDashing)
         {
-			animator.SetFloat("horizontal", movement.x);
-			animator.SetFloat("vertical", movement.y);
+			movement.x = Input.GetAxisRaw("Horizontal");
+			movement.y = Input.GetAxisRaw("Vertical");
+			movement.Normalize();
+			if (movement != Vector2.zero)
+			{
+				animator.SetFloat("horizontal", movement.x);
+				animator.SetFloat("vertical", movement.y);
+			}
+			animator.SetFloat("speed", movement.sqrMagnitude);
+
+			
+
 		}
-		animator.SetFloat("speed", movement.sqrMagnitude);
 	}
 
     protected void FixedUpdate()
     {
-		//movement in FixedUpdate()
-		myBody.MovePosition(myBody.position + movement * moveSpeed * Time.fixedDeltaTime);
-        
+
+		
+		if (!isDashing)
+        {
+			//movement
+			myBody.MovePosition(myBody.position + movement * moveSpeed * Time.fixedDeltaTime);
+		} 
+		/*
+		else
+        {
+			if (Time.time - dashStartTime > dashTime)
+            {
+				myBody.velocity = Vector2.zero;
+				isDashing = false;
+				playerCollision.SetActive(true);
+				return;
+            }
+
+			Debug.Log(movement + " " + dashTime + " ");
+
+			// Dashe
+			transform.Translate((movement * dashDistance / dashTime * Time.fixedDeltaTime));
+		}*/
+		
+		
     }
+
+	
 
 	public void getDamaged(int attackDamage)
     {
