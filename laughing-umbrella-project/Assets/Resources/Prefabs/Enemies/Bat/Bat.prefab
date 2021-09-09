@@ -192,7 +192,7 @@ MonoBehaviour:
   attackDamage: 1
   obstructionLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 262400
   refreshDelay: 0.2
   visionRadius: 7
   sleepTime: 0
@@ -209,11 +209,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff2124d0fcb12344b07d1710dba43c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OuterCircleRadius: 1
+  OuterCircleRadius: 2
   InnerCircleRadius: 0.5
   forbiddenCollisionLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 262400
 --- !u!95 &8716581479765397575
 Animator:
   serializedVersion: 3

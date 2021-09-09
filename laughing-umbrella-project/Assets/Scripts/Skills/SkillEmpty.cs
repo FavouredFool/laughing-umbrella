@@ -35,7 +35,6 @@ public class SkillEmpty : MonoBehaviour, ISkill
                 BreakConnection();
             }
 
-            // 2. Verbindung mit Target wird aufgebaut - Charakter wird geslowed
 
             if (Time.time - connectionStartTime > 0 && Time.time - connectionStartTime < connectionTotalTime)
             {
@@ -53,6 +52,11 @@ public class SkillEmpty : MonoBehaviour, ISkill
                     currentHealth = activeHealth;
                 }
 
+                // Connection trennen wenn Slot schon voll ist
+                if (player.GetComponent<PlayerSkillUse>().GetActiveSkill() != player.GetComponent<PlayerSkillUse>().GetEmptySkill())
+                {
+                    BreakConnection();
+                }
             }
 
             if (Time.time - connectionStartTime >= connectionTotalTime)

@@ -204,5 +204,10 @@ public class PlayerSkillUse : MonoBehaviour {
         return backupSkill;
     }
 
+    public GameObject GetEmptySkill()
+    {
+        return emptySkill;
+    }
+
     #endregion
 }

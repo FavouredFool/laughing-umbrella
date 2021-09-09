@@ -17,11 +17,6 @@ public class OrbSpawn : MonoBehaviour {
 
     #region UnityMethods
 
-    void Start()
-    {
-		forbiddenCollisionLayers = LayerMask.GetMask("Obstacle");
-    }
-
     public Vector3 GetOrbSpawnPos()
     {
 		float xOffset;
