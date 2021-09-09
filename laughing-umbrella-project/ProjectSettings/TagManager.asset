@@ -17,7 +17,7 @@ TagManager:
   - Orb
   - Obstacle
   - PlayerCollider
-  - 
+  - PlayerColliderOuterWallOnly
   - EnemyCollider
   - EnemyOnlyTrigger
   - SkillBat
@@ -25,7 +25,7 @@ TagManager:
   - SkillFireball
   - SkillSlash
   - Tilemap
-  - 
+  - ObstacleOuterWall
   - 
   - 
   - 

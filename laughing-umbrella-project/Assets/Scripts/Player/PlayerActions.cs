@@ -17,14 +17,13 @@ public class PlayerActions : MonoBehaviour {
 	// private Variables
 	int currentHealth;
 	Vector2 movement;
-
-	// Time
-	float dashStartTime;
+	int dashCount = 0;
 
 	// Components
 	private Rigidbody2D myBody;
 	private Animator animator;
 
+	// Flags
 	bool isDashing = false;
 
 	#endregion
@@ -44,23 +43,16 @@ public class PlayerActions : MonoBehaviour {
 
 		PlayerMoveControls();
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space) && dashCount > 0)
 		{
-
-			/*
-			dashStartTime = Time.time;
-			isDashing = true;
-			playerCollision.SetActive(false);
-			*/
-
 			StartCoroutine(Dash());
-
 		}
 	}
 
 	IEnumerator Dash()
     {
         isDashing = true;
+		dashCount -= 1;
 		playerCollision.SetActive(false);
         myBody.velocity = Vector3.zero;
 		myBody.AddForce(dashDistance / dashTime * movement, ForceMode2D.Impulse);
@@ -83,39 +75,17 @@ public class PlayerActions : MonoBehaviour {
 				animator.SetFloat("vertical", movement.y);
 			}
 			animator.SetFloat("speed", movement.sqrMagnitude);
-
-			
-
 		}
 	}
 
     protected void FixedUpdate()
     {
 
-		
 		if (!isDashing)
         {
 			//movement
 			myBody.MovePosition(myBody.position + movement * moveSpeed * Time.fixedDeltaTime);
 		} 
-		/*
-		else
-        {
-			if (Time.time - dashStartTime > dashTime)
-            {
-				myBody.velocity = Vector2.zero;
-				isDashing = false;
-				playerCollision.SetActive(true);
-				return;
-            }
-
-			Debug.Log(movement + " " + dashTime + " ");
-
-			// Dashe
-			transform.Translate((movement * dashDistance / dashTime * Time.fixedDeltaTime));
-		}*/
-		
-		
     }
 
 	
@@ -146,5 +116,14 @@ public class PlayerActions : MonoBehaviour {
 		return currentHealth;
     }
 
+	public int getDashCount()
+    {
+		return dashCount;
+    }
+
+	public void setDashCount(int dashCount)
+    {
+		this.dashCount = dashCount;
+    }
     #endregion
 }

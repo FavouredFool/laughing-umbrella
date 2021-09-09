@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class PlayerSkillUse : MonoBehaviour {
 
     #region Variables
+    
     // Collider vom Unterobject
     public CapsuleCollider2D playerCollider;
     // Layer auf dem Orbs aufgesammelt werden können
@@ -20,8 +21,8 @@ public class PlayerSkillUse : MonoBehaviour {
     Color backupColor;
     Color activeColor;
     Color tempColor;
-    
-    
+
+    PlayerActions playerActions;
 
     // Children deklarieren
     Dictionary<string, GameObject> allSkills;
@@ -35,6 +36,8 @@ public class PlayerSkillUse : MonoBehaviour {
     #region UnityMethods
 
     protected void Start() {
+
+        playerActions = GetComponent<PlayerActions>();
 
         allSkills = new Dictionary<string, GameObject>();
 
@@ -185,14 +188,10 @@ public class PlayerSkillUse : MonoBehaviour {
                 activeSkill = Instantiate(allSkills["SkillFire"], gameObject.transform);
                 break;
         }
-
-        /*
-        // Player nimmt Farbe des Orbs an
-        activeColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
-        sr.color = activeColor;
-        */
-
-        
+        if (playerActions.getDashCount() < 2)
+        {
+            playerActions.setDashCount(playerActions.getDashCount() + 1);
+        }
     }
 
     public GameObject GetActiveSkill()
