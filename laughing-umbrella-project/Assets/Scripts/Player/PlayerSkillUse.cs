@@ -16,12 +16,6 @@ public class PlayerSkillUse : MonoBehaviour {
     GameObject tempSkill;
     GameObject emptySkill;
 
-    // Farben deklarieren
-    Color EMPTYCOLOR;
-    Color backupColor;
-    Color activeColor;
-    Color tempColor;
-
     PlayerActions playerActions;
 
     // Children deklarieren
@@ -53,14 +47,6 @@ public class PlayerSkillUse : MonoBehaviour {
         activeSkill = emptySkill;
         backupSkill = emptySkill;
 
-        
-        /*
-        // Farben Initialisieren
-        sr = GetComponent<SpriteRenderer>();
-        EMPTYCOLOR = sr.color;
-        activeColor = EMPTYCOLOR;
-        backupColor = EMPTYCOLOR;
-        */
 
         orbLayers = LayerMask.GetMask(ORB_TAG);
     }
@@ -76,15 +62,7 @@ public class PlayerSkillUse : MonoBehaviour {
                 activeSkill.GetComponent<ISkill>().UseSkill();
                 gameObject.GetComponent<Animator>().SetTrigger("cast");
 
-                // Component zerstört sich selbst um Animation noch abspielen zu können ->  nicht hier zerstören
-                //Destroy(activeSkill);
                 activeSkill = emptySkill;
-
-                /*
-                // Farbe wird zurückgeändert
-                activeColor = EMPTYCOLOR;
-                sr.color = activeColor;
-                */
 
                 // Wenn man bei Linksklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
                 checkForOrb();
@@ -106,14 +84,6 @@ public class PlayerSkillUse : MonoBehaviour {
             activeSkill = backupSkill;
             backupSkill = tempSkill;
             tempSkill = emptySkill;
-
-            /*
-            // Farben swappen
-            tempColor = activeColor;
-            activeColor = backupColor;
-            backupColor = tempColor;
-            sr.color = activeColor;
-            */
 
             // Wenn man bei Rechtsklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
             checkForOrb();

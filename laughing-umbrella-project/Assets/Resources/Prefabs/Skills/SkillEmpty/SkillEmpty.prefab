@@ -50,3 +50,4 @@ MonoBehaviour:
   clickRadius: 0.5
   connectionTotalTime: 3
   speedMultiplier: 0.5
+  lineColor: {r: 0.64542204, g: 0.0032929946, b: 0.6981132, a: 0}
