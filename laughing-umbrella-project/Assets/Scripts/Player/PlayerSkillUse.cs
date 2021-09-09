@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class PlayerSkillUse : MonoBehaviour {
 
     #region Variables
+    
     // Collider vom Unterobject
     public CapsuleCollider2D playerCollider;
     // Layer auf dem Orbs aufgesammelt werden können
@@ -15,13 +16,7 @@ public class PlayerSkillUse : MonoBehaviour {
     GameObject tempSkill;
     GameObject emptySkill;
 
-    // Farben deklarieren
-    Color EMPTYCOLOR;
-    Color backupColor;
-    Color activeColor;
-    Color tempColor;
-    
-    
+    PlayerActions playerActions;
 
     // Children deklarieren
     Dictionary<string, GameObject> allSkills;
@@ -35,6 +30,8 @@ public class PlayerSkillUse : MonoBehaviour {
     #region UnityMethods
 
     protected void Start() {
+
+        playerActions = GetComponent<PlayerActions>();
 
         allSkills = new Dictionary<string, GameObject>();
 
@@ -50,14 +47,6 @@ public class PlayerSkillUse : MonoBehaviour {
         activeSkill = emptySkill;
         backupSkill = emptySkill;
 
-        
-        /*
-        // Farben Initialisieren
-        sr = GetComponent<SpriteRenderer>();
-        EMPTYCOLOR = sr.color;
-        activeColor = EMPTYCOLOR;
-        backupColor = EMPTYCOLOR;
-        */
 
         orbLayers = LayerMask.GetMask(ORB_TAG);
     }
@@ -73,18 +62,15 @@ public class PlayerSkillUse : MonoBehaviour {
                 activeSkill.GetComponent<ISkill>().UseSkill();
                 gameObject.GetComponent<Animator>().SetTrigger("cast");
 
-                // Component zerstört sich selbst um Animation noch abspielen zu können ->  nicht hier zerstören
-                //Destroy(activeSkill);
                 activeSkill = emptySkill;
-
-                /*
-                // Farbe wird zurückgeändert
-                activeColor = EMPTYCOLOR;
-                sr.color = activeColor;
-                */
 
                 // Wenn man bei Linksklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
                 checkForOrb();
+
+                if (playerActions.getDashCount() < 2)
+                {
+                    playerActions.setDashCount(playerActions.getDashCount() + 1);
+                }
 
             }
             else
@@ -104,14 +90,6 @@ public class PlayerSkillUse : MonoBehaviour {
             backupSkill = tempSkill;
             tempSkill = emptySkill;
 
-            /*
-            // Farben swappen
-            tempColor = activeColor;
-            activeColor = backupColor;
-            backupColor = tempColor;
-            sr.color = activeColor;
-            */
-
             // Wenn man bei Rechtsklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
             checkForOrb();
 
@@ -127,7 +105,8 @@ public class PlayerSkillUse : MonoBehaviour {
             if (activeSkill == emptySkill)
             {
                 // den Skill des Orbs absorbieren und Orb zerstören
-                GetSkill(collision);
+                GetSkill(collision.gameObject);
+                Destroy(collision.gameObject);
             }
         }
     }
@@ -160,17 +139,19 @@ public class PlayerSkillUse : MonoBehaviour {
                     }
                 }
                 // den Skill des Orbs absorbieren und Orb zerstören
-                GetSkill(colliders[distIndex]);
+                GetSkill(colliders[distIndex].gameObject);
+                // Orb wird zerstört
+                Destroy(colliders[distIndex].gameObject);
             }
         }
     }
 
-    protected void GetSkill(Collider2D collision)
+    public void GetSkill(GameObject orb)
     {
         // Fähigkeit von Enums über Switch Case. MUSS FÜR JEDE FÄHIGKEIT ERWEITERT WERDEN
         // SkillEmpty wird nicht aufgeführt, da er nicht durch Orbs erreichbar ist
         // Zugriff über Children in Hashmap
-        switch(collision.gameObject.GetComponent<Orb>().skillEnum)
+        switch(orb.GetComponent<Orb>().skillEnum)
         {
             case SkillEnum.Skill.SKILLSLASH:
                 activeSkill = Instantiate(allSkills["SkillSlash"], gameObject.transform);
@@ -182,15 +163,7 @@ public class PlayerSkillUse : MonoBehaviour {
                 activeSkill = Instantiate(allSkills["SkillFire"], gameObject.transform);
                 break;
         }
-
-        /*
-        // Player nimmt Farbe des Orbs an
-        activeColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
-        sr.color = activeColor;
-        */
-
-        // Orb wird zerstört
-        Destroy(collision.gameObject);
+        
     }
 
     public GameObject GetActiveSkill()
@@ -201,6 +174,11 @@ public class PlayerSkillUse : MonoBehaviour {
     public GameObject GetBackupSkill()
     {
         return backupSkill;
+    }
+
+    public GameObject GetEmptySkill()
+    {
+        return emptySkill;
     }
 
     #endregion

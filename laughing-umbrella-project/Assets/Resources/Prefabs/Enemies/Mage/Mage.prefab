@@ -119,7 +119,7 @@ MonoBehaviour:
   InnerCircleRadius: 0.5
   forbiddenCollisionLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 262400
 --- !u!114 &2497003399170128690
 MonoBehaviour:
   m_ObjectHideFlags: 0

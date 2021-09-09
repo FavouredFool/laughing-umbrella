@@ -43,3 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9bdcde2613fce04fad0b668ec21f53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRendererObj: {fileID: 7074687074515475194, guid: 1f3109303448fea4db713ef0fc9200e9, type: 3}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  clickRadius: 0.5
+  connectionTotalTime: 3
+  speedMultiplier: 0.5
+  lineColor: {r: 0.64542204, g: 0.0032929946, b: 0.6981132, a: 0}
