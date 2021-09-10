@@ -13,6 +13,7 @@ public class PlayerActions : MonoBehaviour {
 	public Color invinciblityColor;
 	public float dashDistance = 2;
 	public float dashTime = 0.05f;
+	public float invincibleAfterDash = 0.2f;
 
 
 	public GameObject playerCollision;
@@ -66,6 +67,7 @@ public class PlayerActions : MonoBehaviour {
 		yield return new WaitForSeconds(dashTime);
 		isDashing = false;
 		playerCollision.SetActive(true);
+		StartCoroutine(BecomeInvincible(invincibleAfterDash, false));
 	}
 
 
@@ -109,21 +111,34 @@ public class PlayerActions : MonoBehaviour {
 				getDestroyed();
 			} else
             {
-				StartCoroutine(BecomeInvincible());
+				StartCoroutine(BecomeInvincible(invincibleTime, true));
             }
 		}
     }
 
-	IEnumerator BecomeInvincible()
+	IEnumerator BecomeInvincible(float invincibleTime, bool colorCoded)
     {
 		isInvincible = true;
 		Color tempColor = sr.color;
-		sr.color = invinciblityColor;
+
+		if (colorCoded)
+        {
+			sr.color = invinciblityColor;
+		}
 		
-		yield return new WaitForSeconds(invincibleTime);
 		
+		yield return new WaitForSeconds(invincibleTime - invincibleTime / 8);
+		
+		if (colorCoded)
+        {
+			sr.color = tempColor;
+		}
+		
+
+		// nachdem Farbe weg ist, gibt es noch eine kurze Unsichtbarkeitszeit
+		yield return new WaitForSeconds(invincibleTime / 8);
+
 		isInvincible = false;
-		sr.color = tempColor;
 	}
 
 	protected void getDestroyed()

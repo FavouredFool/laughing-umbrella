@@ -67,10 +67,6 @@ public class PlayerSkillUse : MonoBehaviour {
                 // Wenn man bei Linksklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
                 checkForOrb();
 
-                if (playerActions.getDashCount() < 2)
-                {
-                    playerActions.setDashCount(playerActions.getDashCount() + 1);
-                }
 
             }
             else
@@ -163,7 +159,12 @@ public class PlayerSkillUse : MonoBehaviour {
                 activeSkill = Instantiate(allSkills["SkillFire"], gameObject.transform);
                 break;
         }
-        
+
+        if (playerActions.getDashCount() < 2)
+        {
+            playerActions.setDashCount(playerActions.getDashCount() + 1);
+        }
+
     }
 
     public GameObject GetActiveSkill()
