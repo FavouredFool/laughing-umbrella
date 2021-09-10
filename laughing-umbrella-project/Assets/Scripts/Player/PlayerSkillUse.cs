@@ -72,6 +72,7 @@ public class PlayerSkillUse : MonoBehaviour {
             else
             {
                 // EmptySkill wird genutzt
+                gameObject.GetComponent<Animator>().SetTrigger("cast");
                 activeSkill.GetComponent<ISkill>().UseSkill();
             }
         }
