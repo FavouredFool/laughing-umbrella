@@ -19,7 +19,7 @@ public class GuardPathfinder: MonoBehaviour {
 	GuardState guardState;
 
 	// private Variables
-	Vector2 direction;
+	Vector2 direction = Vector2.down;
 	float timeLastAttack;
 	int currentWaypoint = 0;
 

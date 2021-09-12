@@ -10,7 +10,7 @@ public class PlayerActions : MonoBehaviour {
 	public float moveSpeed;
 	public int maxHealth;
 	public float invincibleTime = 1f;
-	public Color invinciblityColor;
+	public Color invinciblityColor = Color.white;
 	public float dashDistance = 2;
 	public float dashTime = 0.05f;
 	public float invincibleAfterDash = 0.2f;

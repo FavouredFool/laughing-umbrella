@@ -10,15 +10,20 @@ public class DashDisplay : MonoBehaviour {
 	public Image dashOne;
 	public Image dashTwo;
 
+	public Sprite dashFull;
+	public Sprite dashEmpty;
+
 	int dashCount;
 
-	#endregion
-	
-	
-	#region UnityMethods
+    #endregion
 
-    protected void Start() {
-        
+
+    #region UnityMethods
+
+    protected void Start()
+    {
+		dashOne.sprite = dashEmpty;
+		dashTwo.sprite = dashEmpty;
     }
 
     protected void Update() {
@@ -30,16 +35,16 @@ public class DashDisplay : MonoBehaviour {
 			switch (dashCount)
 			{
 				case 0:
-					dashOne.enabled = false;
-					dashTwo.enabled = false;
+					dashOne.sprite = dashEmpty;
+					dashTwo.sprite = dashEmpty;
 					break;
 				case 1:
-					dashOne.enabled = true;
-					dashTwo.enabled = false;
+					dashOne.sprite = dashFull;
+					dashTwo.sprite = dashEmpty;
 					break;
 				case 2:
-					dashOne.enabled = true;
-					dashTwo.enabled = true;
+					dashOne.sprite = dashFull;
+					dashTwo.sprite = dashFull;
 					break;
 			}
 		}
