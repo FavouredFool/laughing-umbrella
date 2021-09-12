@@ -9,8 +9,12 @@ public class PlayerActions : MonoBehaviour {
 	[Header("Player-Variables")]
 	public float moveSpeed;
 	public int maxHealth;
+	public float invincibleTime = 1f;
+	public Color invinciblityColor;
 	public float dashDistance = 2;
 	public float dashTime = 0.05f;
+	public float invincibleAfterDash = 0.2f;
+
 
 	public GameObject playerCollision;
 
@@ -20,11 +24,13 @@ public class PlayerActions : MonoBehaviour {
 	int dashCount = 0;
 
 	// Components
-	private Rigidbody2D myBody;
+	private Rigidbody2D rb;
 	private Animator animator;
+	private SpriteRenderer sr;
 
 	// Flags
 	bool isDashing = false;
+	bool isInvincible = false;
 
 	#endregion
 
@@ -33,8 +39,9 @@ public class PlayerActions : MonoBehaviour {
 
 	protected void Start() {
 
-		myBody = GetComponent<Rigidbody2D>();
+		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
+		sr = GetComponent<SpriteRenderer>();
 		currentHealth = maxHealth;
 
 	}
@@ -47,6 +54,7 @@ public class PlayerActions : MonoBehaviour {
 		{
 			StartCoroutine(Dash());
 		}
+
 	}
 
 	IEnumerator Dash()
@@ -54,11 +62,12 @@ public class PlayerActions : MonoBehaviour {
         isDashing = true;
 		dashCount -= 1;
 		playerCollision.SetActive(false);
-        myBody.velocity = Vector3.zero;
-		myBody.AddForce(dashDistance / dashTime * movement, ForceMode2D.Impulse);
+        rb.velocity = Vector3.zero;
+		rb.AddForce(dashDistance / dashTime * movement, ForceMode2D.Impulse);
 		yield return new WaitForSeconds(dashTime);
 		isDashing = false;
 		playerCollision.SetActive(true);
+		StartCoroutine(BecomeInvincible(invincibleAfterDash, false));
 	}
 
 
@@ -84,7 +93,7 @@ public class PlayerActions : MonoBehaviour {
 		if (!isDashing)
         {
 			//movement
-			myBody.MovePosition(myBody.position + movement * moveSpeed * Time.fixedDeltaTime);
+			rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 		} 
     }
 
@@ -92,14 +101,45 @@ public class PlayerActions : MonoBehaviour {
 
 	public void getDamaged(int attackDamage)
     {
-		Debug.Log(attackDamage + " Schaden");
-		currentHealth -= attackDamage;
-		if (currentHealth <= 0)
+		// Check ob Schaden genommen werden sollte
+		if(!isInvincible)
         {
-			getDestroyed();
-        }
-		
+			// Invincible-Time überschritten
+			currentHealth -= attackDamage;
+			if (currentHealth <= 0)
+			{
+				getDestroyed();
+			} else
+            {
+				StartCoroutine(BecomeInvincible(invincibleTime, true));
+            }
+		}
     }
+
+	IEnumerator BecomeInvincible(float invincibleTime, bool colorCoded)
+    {
+		isInvincible = true;
+		Color tempColor = sr.color;
+
+		if (colorCoded)
+        {
+			sr.color = invinciblityColor;
+		}
+		
+		
+		yield return new WaitForSeconds(invincibleTime - invincibleTime / 8);
+		
+		if (colorCoded)
+        {
+			sr.color = tempColor;
+		}
+		
+
+		// nachdem Farbe weg ist, gibt es noch eine kurze Unsichtbarkeitszeit
+		yield return new WaitForSeconds(invincibleTime / 8);
+
+		isInvincible = false;
+	}
 
 	protected void getDestroyed()
     {
