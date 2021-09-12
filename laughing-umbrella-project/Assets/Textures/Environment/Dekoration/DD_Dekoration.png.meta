@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: 5cedcd825f42b394bbba3d1e4dfb01f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4684946805534156220
+    second: DD_Dekoration_0
+  - first:
+      213: 7414523996377893749
+    second: DD_Dekoration_1
+  - first:
+      213: -8482791532082398077
+    second: DD_Dekoration_2
+  - first:
+      213: 8340359226060390924
+    second: DD_Dekoration_3
+  - first:
+      213: -6345561433931478407
+    second: DD_Dekoration_4
+  - first:
+      213: 698675630991844593
+    second: DD_Dekoration_5
+  - first:
+      213: 6086341111872930945
+    second: DD_Dekoration_6
+  - first:
+      213: -7888380183259420692
+    second: DD_Dekoration_7
+  - first:
+      213: 2530218189619220802
+    second: DD_Dekoration_8
+  - first:
+      213: 6009750756683789186
+    second: DD_Dekoration_9
+  - first:
+      213: 6401298877415484527
+    second: DD_Dekoration_10
+  - first:
+      213: 4828310936429758533
+    second: DD_Dekoration_11
+  - first:
+      213: -6258622727248017500
+    second: DD_Dekoration_12
+  - first:
+      213: 6725878925495332458
+    second: DD_Dekoration_13
+  - first:
+      213: -3323016909092199472
+    second: DD_Dekoration_14
+  - first:
+      213: -4226711448492125249
+    second: DD_Dekoration_15
+  - first:
+      213: 8511219096281848892
+    second: DD_Dekoration_16
+  - first:
+      213: -1222805855035735815
+    second: DD_Dekoration_17
+  - first:
+      213: 8540291899200547034
+    second: DD_Dekoration_18
+  - first:
+      213: -763377361935811904
+    second: DD_Dekoration_19
+  - first:
+      213: -493135938677792883
+    second: DD_Dekoration_20
+  - first:
+      213: 2696575930516466380
+    second: DD_Dekoration_21
+  - first:
+      213: -5973264527358469604
+    second: DD_Dekoration_22
+  - first:
+      213: -1353855971766715183
+    second: DD_Dekoration_23
+  - first:
+      213: -939578953358156690
+    second: DD_Dekoration_24
+  - first:
+      213: -4149240679271302435
+    second: DD_Dekoration_25
+  - first:
+      213: -9108337922498111170
+    second: DD_Dekoration_26
+  - first:
+      213: 7862511279304330938
+    second: DD_Dekoration_27
+  - first:
+      213: 4835945169010215635
+    second: DD_Dekoration_28
+  - first:
+      213: 416440671925821226
+    second: DD_Dekoration_29
+  - first:
+      213: -3308065676464494531
+    second: DD_Dekoration_30
+  - first:
+      213: -1549425685276251988
+    second: DD_Dekoration_31
+  - first:
+      213: 6284315700943720155
+    second: DD_Dekoration_33
+  - first:
+      213: -8610305214660166559
+    second: DD_Dekoration_34
+  - first:
+      213: -2775466566292536428
+    second: DD_Dekoration_35
+  - first:
+      213: 841352530616911963
+    second: DD_Dekoration_36
+  - first:
+      213: 1162138334451624390
+    second: DD_Dekoration_37
+  - first:
+      213: 1277419375714401524
+    second: DD_Dekoration_38
+  - first:
+      213: 6799237371877602662
+    second: DD_Dekoration_40
+  - first:
+      213: 2997338442341256575
+    second: DD_Dekoration_41
+  - first:
+      213: 7880389049460135025
+    second: DD_Dekoration_42
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DD_Dekoration_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1900
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a1988c3b9bbfeb0800000000000000
+      internalID: -4684946805534156220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1899
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57bc6b67a4ea5e660800000000000000
+      internalID: 7414523996377893749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_2
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1899
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c798a9b02174a80800000000000000
+      internalID: -8482791532082398077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_3
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1898
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c024b78e688eeb370800000000000000
+      internalID: 8340359226060390924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_4
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1898
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a881efe7900f7a0800000000000000
+      internalID: -6345561433931478407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_5
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 1756
+        width: 200
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4ad7ed8c132b900800000000000000
+      internalID: 698675630991844593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_6
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1929
+        width: 96
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184ca039ef6077450800000000000000
+      internalID: 6086341111872930945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_7
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 1824
+        width: 128
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7679b8408d68290800000000000000
+      internalID: -7888380183259420692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_8
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 1822
+        width: 128
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2415c7ca9042d1320800000000000000
+      internalID: 2530218189619220802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_9
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 1821
+        width: 128
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283b5c0e87ce66350800000000000000
+      internalID: 6009750756683789186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_10
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 1818
+        width: 96
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ce479d96bf5d850800000000000000
+      internalID: 6401298877415484527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_11
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 1817
+        width: 96
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5488707173b910340800000000000000
+      internalID: 4828310936429758533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_12
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 1817
+        width: 96
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a702370ac7e429a0800000000000000
+      internalID: -6258622727248017500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_13
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1757
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e6f6c5f3f175d50800000000000000
+      internalID: 6725878925495332458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_14
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1756
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d361fe2ab542e1d0800000000000000
+      internalID: -3323016909092199472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_15
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1756
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3dc88e454b755c0800000000000000
+      internalID: -4226711448492125249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_16
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1756
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c96677caced1670800000000000000
+      internalID: 8511219096281848892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_17
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1756
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0c355bd88b70fe0800000000000000
+      internalID: -1222805855035735815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_18
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1736
+        width: 48
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8aef1eb36358670800000000000000
+      internalID: 8540291899200547034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_19
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1720
+        width: 80
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cabd387550f765f0800000000000000
+      internalID: -763377361935811904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_20
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 1688
+        width: 136
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f912df9770829f0800000000000000
+      internalID: -493135938677792883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_21
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1694
+        width: 104
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca6d4095892c6520800000000000000
+      internalID: 2696575930516466380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_22
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 1681
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a5b516f83ba1da0800000000000000
+      internalID: -5973264527358469604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_23
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 1663
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcbdcdaa23263de0800000000000000
+      internalID: -1353855971766715183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_24
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1612
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c57a68be1f5f2f0800000000000000
+      internalID: -939578953358156690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_25
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1612
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddafe68f59fea66c0800000000000000
+      internalID: -4149240679271302435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_26
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1612
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39d743eaeea89180800000000000000
+      internalID: -9108337922498111170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_27
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 1585
+        width: 104
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abecf65e9504d1d60800000000000000
+      internalID: 7862511279304330938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_28
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1573
+        width: 152
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dace10628abc1340800000000000000
+      internalID: 4835945169010215635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_29
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1587
+        width: 48
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2fd920b59e77c500800000000000000
+      internalID: 416440671925821226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_30
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 1586
+        width: 48
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38ebac4bc36712d0800000000000000
+      internalID: -3308065676464494531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_31
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 1590
+        width: 48
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca82e376c855f7ae0800000000000000
+      internalID: -1549425685276251988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_33
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 1688
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde092395df563750800000000000000
+      internalID: 6284315700943720155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_34
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1594
+        width: 80
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16cbc70d60d028880800000000000000
+      internalID: -8610305214660166559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_35
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 1588
+        width: 48
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493092eecdf8b79d0800000000000000
+      internalID: -2775466566292536428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_36
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1587
+        width: 48
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b580c4e3ba51dab00800000000000000
+      internalID: 841352530616911963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_37
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 1590
+        width: 48
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c96adc68aeb02010800000000000000
+      internalID: 1162138334451624390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_38
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 1578
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc78a6772e4ab110800000000000000
+      internalID: 1277419375714401524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_40
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1567
+        width: 144
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6653356ad5ebb5e50800000000000000
+      internalID: 6799237371877602662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_41
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 1572
+        width: 120
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d8f57ce6fa89920800000000000000
+      internalID: 2997338442341256575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Dekoration_42
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 1563
+        width: 128
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17413f0a614cc5d60800000000000000
+      internalID: 7880389049460135025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
