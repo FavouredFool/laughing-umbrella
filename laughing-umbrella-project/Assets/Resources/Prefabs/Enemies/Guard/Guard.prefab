@@ -448,10 +448,10 @@ MonoBehaviour:
   maxHealth: 45
   moveSpeed: 4
   attackDamage: 1
-  slashWidth: 2
-  slashLength: 3
+  slashWidth: 1.5
+  slashLength: 2
   attackStartDistance: 0.7
-  attackDowntime: 3
+  attackDowntime: 1
 --- !u!114 &576549633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +465,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypointDistance: 1.5
+  refreshDelay: 0.2
+  visionRadius: 8
+  obstructionLayers:
+    serializedVersion: 2
+    m_Bits: 262400
 --- !u!114 &576549634
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Pathfinding;
+using System.Collections;
 
 public class GuardPathfinder: MonoBehaviour {
 
@@ -8,6 +9,14 @@ public class GuardPathfinder: MonoBehaviour {
 	[Header("Pathfinding-Variables")]
 	// Die Nähe die der Guard zu seinem Ziel-Waypoint haben muss um auf den nächsten Waypoint umzuschlagen.
 	public float nextWaypointDistance = 1f;
+	public float refreshDelay = 0.2f;
+	public float visionRadius = 5f;
+	public LayerMask obstructionLayers;
+
+	GameObject foundTarget;
+
+	enum GuardState { SEARCHING, WALKING };
+	GuardState guardState;
 
 	// private Variables
 	Vector2 direction;
@@ -22,6 +31,7 @@ public class GuardPathfinder: MonoBehaviour {
 
 	// Flags
 	bool activeAttack = false;
+	bool found = false;
 
 	#endregion
 
@@ -36,11 +46,80 @@ public class GuardPathfinder: MonoBehaviour {
 		InvokeRepeating("UpdatePath", 0f, 0.5f);
 		timeLastAttack = float.NegativeInfinity;
 
+		
+		StartCoroutine(BehaviourRoutine());
+	}
+
+   
+	
+    IEnumerator BehaviourRoutine()
+    {
+		guardState = GuardState.SEARCHING;
+
+		while (true)
+        {
+			yield return new WaitForSeconds(refreshDelay);
+
+			if (gActions.target)
+            {
+				if (guardState == GuardState.SEARCHING)
+				{
+					Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
+					found = false;
+					foreach (Collider2D collided in rangeCheck)
+					{
+						if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == gActions.target)
+						{
+							Vector3 directionToTarget = (collided.gameObject.transform.position - transform.position).normalized;
+							float distanceToTarget = Vector3.Distance(transform.position, collided.gameObject.transform.position);
+
+							if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionLayers))
+							{
+								
+								foundTarget = collided.gameObject;
+								guardState = GuardState.WALKING;
+								found = true;
+							}
+							else
+							{
+								foundTarget = null;
+							}
+							break;
+						}
+					}
+
+					if (!found)
+					{
+						foundTarget = null;
+					}
+
+				}
+				else if (guardState == GuardState.WALKING)
+				{
+					Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
+					found = false;
+					foreach (Collider2D collided in rangeCheck)
+					{
+						if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == gActions.target)
+						{
+							foundTarget = collided.gameObject;
+							found = true;
+						}
+					} 
+					if (!found)
+                    {
+						foundTarget = null;
+						guardState = GuardState.SEARCHING;
+                    }
+				}
+			}
+		}
     }
+	
 
 	protected void UpdatePath()
     {
-        if (seeker.IsDone() && gActions.target)
+        if (seeker.IsDone() && foundTarget)
         {
 			seeker.StartPath(rb.position, gActions.target.transform.position, OnPathComplete);
 		}
@@ -58,10 +137,22 @@ public class GuardPathfinder: MonoBehaviour {
 
     protected void FixedUpdate() {
 
-		if (gActions.target)
+		if (guardState == GuardState.SEARCHING)
+		{
+			gActions.GuardSearching();
+		}
+		else if (guardState == GuardState.WALKING)
+		{
+			gActions.GuardMoving();
+		}
+
+
+		if (foundTarget)
 		{
 			if (!activeAttack)
 			{
+				
+
 				if (path == null)
 				{
 					return;

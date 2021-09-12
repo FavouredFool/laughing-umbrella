@@ -41,6 +41,8 @@ public class GuardActions : Enemy {
 		pathfinder = GetComponent<GuardPathfinder>();
 
 		direction = pathfinder.getDirection();
+
+		animator.SetBool("searching", true);
 	}
 
     protected void Update()
@@ -52,7 +54,7 @@ public class GuardActions : Enemy {
 			animator.SetFloat("horizontal", direction.x);
 			animator.SetFloat("vertical", direction.y);
 		}
-		
+
 
 		// Vorübergehend für Gizmos (sonst wird's erst bei StartAttack() berechnet).
 		// Lege Hitbox aus, teste auf Treffer in jeweilige Richtung. Wird aufgerufen aus Animation
@@ -130,6 +132,17 @@ public class GuardActions : Enemy {
 		point = dir + pivot;
 		return point;
 	}
+	
+	public void GuardMoving()
+    {
+		animator.SetBool("searching", false);
+    }
+
+	public void GuardSearching()
+    {
+		animator.SetBool("searching", true);
+    }
+	
 
 
 	
