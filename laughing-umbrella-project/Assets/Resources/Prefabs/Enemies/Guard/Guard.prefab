@@ -445,7 +445,7 @@ MonoBehaviour:
   target: {fileID: 0}
   healthBar: {fileID: 419512412963997937}
   enemyOrb: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
-  maxHealth: 45
+  maxHealth: 15
   moveSpeed: 4
   attackDamage: 1
   slashWidth: 1.5
