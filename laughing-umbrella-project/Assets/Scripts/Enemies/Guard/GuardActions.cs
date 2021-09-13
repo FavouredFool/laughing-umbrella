@@ -12,7 +12,7 @@ public class GuardActions : Enemy {
 	// Entfernung zur Wache bei der die Hitbox beginnt (unten Gizmos entkommentieren um die Hitbox besser zu sehen). 
     public float attackStartDistance = 0.7f;
 	// Pause zwischen Angriffen in Sek.
-	public float attackDowntime = 3;
+	public float attackDowntime = 3f;
 
 	// Für Gizmos
 	Vector3 rotatedPointNear;
@@ -113,7 +113,8 @@ public class GuardActions : Enemy {
 			{
 				if (hit.gameObject.transform.parent != null && hit.gameObject.transform.parent.gameObject == target)
 				{
-					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage);
+					Vector2 knockbackDirection = hit.gameObject.transform.parent.position - gameObject.transform.position;
+					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
 					break;
 				}
 			}

@@ -81,7 +81,7 @@ public class MageActions : Enemy {
 				animator.SetFloat("horizontal", directionToPlayer.x);
 				animator.SetFloat("vertical", directionToPlayer.y);
 
-				thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, attackDamage);
+				thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, attackDamage, knockbackStrength);
 			}
 			// 2. wait
 			yield return new WaitForSeconds(waitBetweenFireTp);

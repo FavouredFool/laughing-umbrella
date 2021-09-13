@@ -22,6 +22,8 @@ public abstract class Enemy : MonoBehaviour {
     public int attackDamage = 1;
     // Stunlänge nach Treffer
     public float stunDuration = 0.5f;
+    // KnockbackStrength
+    public float knockbackStrength = 10f;
 
     [Header("Effects")]
     // Besiegt-Effect
@@ -95,8 +97,6 @@ public abstract class Enemy : MonoBehaviour {
 
     private void createKnockback(Vector2 knockbackDirection, float knockbackStrength)
     {
-        Debug.Log("Knockback: " + knockbackDirection + " " + knockbackStrength);
-
         //rb.AddForce(knockbackDirection * knockbackStrength);
 
         rb.velocity = knockbackDirection * knockbackStrength;
