@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public abstract class Enemy : MonoBehaviour {
 
@@ -19,12 +20,20 @@ public abstract class Enemy : MonoBehaviour {
     public float moveSpeed = 5;
     // Schaden den der Gegner macht (meistens 1, maximal 2).
     public int attackDamage = 1;
+    // Stunlänge nach Treffer
+    public float stunDuration = 0.5f;
 
     [Header("Effects")]
     // Besiegt-Effect
     public GameObject killedObj;
 
     int currentHealth;
+
+    protected Rigidbody2D rb;
+    protected SpriteRenderer sr;
+
+    // Flags
+    protected bool isStunned;
 
     #endregion
 
@@ -33,6 +42,10 @@ public abstract class Enemy : MonoBehaviour {
 
     protected void Start()
     {
+
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+
         currentHealth = maxHealth;
         if (healthBar)
         {
@@ -42,10 +55,11 @@ public abstract class Enemy : MonoBehaviour {
         
     }
 
-    public void getDamaged(int attackDamage)
+    public void getDamaged(int attackDamage, Vector2 knockbackDirection, float knockbackStrength)
     {
         // Drop Orb
         dropOrb();
+
 
         // Get damaged
         currentHealth -= attackDamage;
@@ -55,6 +69,13 @@ public abstract class Enemy : MonoBehaviour {
             getDestroyed();
         } else
         {
+
+            // Stun Enemy
+            StartCoroutine(toggleStun());
+
+            // get Knocked back
+            createKnockback(knockbackDirection, knockbackStrength);
+
             if (healthBar)
             {
                 // Healthbar neu setzen
@@ -63,7 +84,28 @@ public abstract class Enemy : MonoBehaviour {
         }
     }
 
-    protected void getDestroyed()
+    IEnumerator toggleStun()
+    {
+        isStunned = true;
+        sr.color = Color.red;
+        yield return new WaitForSeconds(stunDuration);
+        sr.color = Color.white;
+        isStunned = false;
+    }
+
+    private void createKnockback(Vector2 knockbackDirection, float knockbackStrength)
+    {
+        Debug.Log("Knockback: " + knockbackDirection + " " + knockbackStrength);
+
+        //rb.AddForce(knockbackDirection * knockbackStrength);
+
+        rb.velocity = knockbackDirection * knockbackStrength;
+        //rb.AddForce(knockbackDirection * knockbackStrength*100);
+
+
+    }
+
+    private void getDestroyed()
     {
 
         // Create Effect
@@ -77,6 +119,11 @@ public abstract class Enemy : MonoBehaviour {
     protected void dropOrb()
     {
         Instantiate(enemyOrb, gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
+    }
+
+    public bool getIsStunned()
+    {
+        return isStunned;
     }
 	
 	#endregion

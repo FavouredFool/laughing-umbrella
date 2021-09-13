@@ -44,14 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b27704fa405d043b01f546c58f0a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SLASHWIDTH: 4.3
-  SLASHLENGTH: 3.4
-  ATTACKSTARTDISTANCE: 0.9
-  ATTACKDAMAGE: 10
   gfxChild: {fileID: 8074421750838880382}
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 2048
+  attackDamage: 10
+  slashWidth: 4.3
+  slashLength: 3.4
+  attackStartDistance: 0.9
+  knockbackStrength: 7
 --- !u!1 &8074421750838880382
 GameObject:
   m_ObjectHideFlags: 0

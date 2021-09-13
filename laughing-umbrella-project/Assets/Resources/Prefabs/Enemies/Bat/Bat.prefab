@@ -190,6 +190,7 @@ MonoBehaviour:
   maxHealth: 10
   moveSpeed: 6
   attackDamage: 1
+  killedObj: {fileID: 2525912397331254685, guid: b37714d01af8ab642a0cc4260223ed57, type: 3}
   obstructionLayers:
     serializedVersion: 2
     m_Bits: 262400

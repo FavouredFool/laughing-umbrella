@@ -422,7 +422,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 4
+  m_LinearDrag: 2
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -448,6 +448,8 @@ MonoBehaviour:
   maxHealth: 30
   moveSpeed: 4
   attackDamage: 1
+  stunDuration: 0.5
+  killedObj: {fileID: 2525912397331254685, guid: b37714d01af8ab642a0cc4260223ed57, type: 3}
   slashWidth: 1.5
   slashLength: 2
   attackStartDistance: 0.7

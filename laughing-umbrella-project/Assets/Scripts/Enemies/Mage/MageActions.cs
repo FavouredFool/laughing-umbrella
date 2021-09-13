@@ -68,7 +68,7 @@ public class MageActions : Enemy {
 
 		while (true)
         {
-			if (target)
+			if (target && !isStunned)
 			{
 				// 1. Fire fireball on target - instatiate next to the mage
 

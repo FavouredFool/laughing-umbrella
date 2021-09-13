@@ -32,7 +32,6 @@ public class BatActions : Enemy {
     Vector2 flyingDirection;
 
     // Components
-    Rigidbody2D rb;
     Animator animator;
     
 
@@ -55,7 +54,7 @@ public class BatActions : Enemy {
 
     protected void Update()
     {
-        if (batState == BatState.FLYING)
+        if (batState == BatState.FLYING && !isStunned)
         {
             if (Time.time - flyingTime > antiStuckSavetimeInSec)
             {
@@ -76,7 +75,7 @@ public class BatActions : Enemy {
         while (true)
         {
             yield return wait;
-            if (target)
+            if (target && !isStunned)
             {
 
                 if (sleep)
