@@ -20,6 +20,10 @@ public abstract class Enemy : MonoBehaviour {
     // Schaden den der Gegner macht (meistens 1, maximal 2).
     public int attackDamage = 1;
 
+    [Header("Effects")]
+    // Besiegt-Effect
+    public GameObject killedObj;
+
     int currentHealth;
 
     #endregion
@@ -61,6 +65,11 @@ public abstract class Enemy : MonoBehaviour {
 
     protected void getDestroyed()
     {
+
+        // Create Effect
+        Instantiate(killedObj, gameObject.transform.position, Quaternion.identity);
+
+
         // Destroy Object
         Destroy(gameObject);
     }
