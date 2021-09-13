@@ -50,7 +50,7 @@ public class PlayerActions : MonoBehaviour {
 
 		PlayerMoveControls();
 
-		if (Input.GetKeyDown(KeyCode.Space) && dashCount > 0)
+		if (Input.GetKeyDown(KeyCode.Space) && dashCount > 0 && movement != Vector2.zero)
 		{
 			StartCoroutine(Dash());
 		}
