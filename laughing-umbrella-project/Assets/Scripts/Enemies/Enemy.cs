@@ -93,6 +93,7 @@ public abstract class Enemy : MonoBehaviour {
         yield return new WaitForSeconds(stunDuration);
         sr.color = Color.white;
         isStunned = false;
+        rb.velocity = Vector2.zero;
     }
 
     private void createKnockback(Vector2 knockbackDirection, float knockbackStrength)
