@@ -44,8 +44,10 @@ public class MovObjLogic : MonoBehaviour {
     {
 		if(collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.tag.Equals("Enemy"))
         {
+
+			Vector2 knockbackDirection = (collision.transform.position - gameObject.transform.position).normalized;
 			// Mache Damage
-			collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(transform.parent.GetComponent<SkillBat>().attackDamage);
+			collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(transform.parent.GetComponent<SkillBat>().attackDamage, knockbackDirection, transform.parent.GetComponent<SkillBat>().knockbackStrength);
 
 			// Zerstöre Objekt
 			Destroy(gameObject);

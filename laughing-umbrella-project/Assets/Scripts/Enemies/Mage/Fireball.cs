@@ -8,6 +8,7 @@ public class Fireball : MonoBehaviour {
 	Vector2 direction;
 	float speed;
 	int attackDamage;
+	float knockbackStrength;
 
 	// Konstanten
 	readonly string PLAYER_TAG = "Player";
@@ -37,11 +38,12 @@ public class Fireball : MonoBehaviour {
 		
 	}
 
-	public void SetValues(Vector2 direction, float speed, int attackDamage)
+	public void SetValues(Vector2 direction, float speed, int attackDamage, float knockbackStrength)
     {
 		this.direction = direction;
 		this.speed = speed;
 		this.attackDamage = attackDamage;
+		this.knockbackStrength = knockbackStrength;
 
 		animator.SetTrigger("grow");
     }
@@ -55,7 +57,8 @@ public class Fireball : MonoBehaviour {
     public void OnCollisionEnter2D(Collision2D collision)
     {
 		if (collision.gameObject.tag.Equals(PLAYER_TAG)) {
-			collision.gameObject.GetComponent<PlayerActions>().getDamaged(attackDamage);
+			Vector2 knockbackDirection = direction;
+			collision.gameObject.GetComponent<PlayerActions>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
         }
 		Destroy(gameObject);
     }

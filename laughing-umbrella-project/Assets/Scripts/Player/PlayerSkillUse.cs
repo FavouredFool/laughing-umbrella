@@ -53,44 +53,48 @@ public class PlayerSkillUse : MonoBehaviour {
 
     protected void Update()
     {
-        // Linksklick -> Nutze Fähigkeit
-        if (Input.GetMouseButtonDown(0))
+        if(!playerActions.getIsStunned())
         {
-            if (activeSkill != emptySkill)
+            // Linksklick -> Nutze Fähigkeit
+            if (Input.GetMouseButtonDown(0))
             {
-                // Skill wird genutzt
-                activeSkill.GetComponent<ISkill>().UseSkill();
-                gameObject.GetComponent<Animator>().SetTrigger("cast");
+                if (activeSkill != emptySkill)
+                {
+                    // Skill wird genutzt
+                    activeSkill.GetComponent<ISkill>().UseSkill();
+                    gameObject.GetComponent<Animator>().SetTrigger("cast");
 
-                activeSkill = emptySkill;
+                    activeSkill = emptySkill;
 
-                // Wenn man bei Linksklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
+                    // Wenn man bei Linksklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
+                    checkForOrb();
+
+
+                }
+                else
+                {
+                    // EmptySkill wird genutzt
+                    gameObject.GetComponent<Animator>().SetTrigger("cast");
+                    activeSkill.GetComponent<ISkill>().UseSkill();
+                }
+            }
+
+            // Rechtsklick -> Swappe Fähigkeiten
+            if (Input.GetMouseButtonDown(1))
+            {
+
+                // Skills swappen
+                tempSkill = activeSkill;
+                activeSkill = backupSkill;
+                backupSkill = tempSkill;
+                tempSkill = emptySkill;
+
+                // Wenn man bei Rechtsklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
                 checkForOrb();
 
-
-            }
-            else
-            {
-                // EmptySkill wird genutzt
-                gameObject.GetComponent<Animator>().SetTrigger("cast");
-                activeSkill.GetComponent<ISkill>().UseSkill();
             }
         }
-
-        // Rechtsklick -> Swappe Fähigkeiten
-        if (Input.GetMouseButtonDown(1))
-        {
-
-            // Skills swappen
-            tempSkill = activeSkill;
-            activeSkill = backupSkill;
-            backupSkill = tempSkill;
-            tempSkill = emptySkill;
-
-            // Wenn man bei Rechtsklick direkt wieder auf Orb steht wird nähestehenster eingezogen:
-            checkForOrb();
-
-        }
+        
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)

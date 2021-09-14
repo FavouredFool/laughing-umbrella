@@ -12,7 +12,7 @@ public class GuardActions : Enemy {
 	// Entfernung zur Wache bei der die Hitbox beginnt (unten Gizmos entkommentieren um die Hitbox besser zu sehen). 
     public float attackStartDistance = 0.7f;
 	// Pause zwischen Angriffen in Sek.
-	public float attackDowntime = 3;
+	public float attackDowntime = 3f;
 
 	// Für Gizmos
 	Vector3 rotatedPointNear;
@@ -48,47 +48,50 @@ public class GuardActions : Enemy {
     protected void Update()
     {
 		// Animationen setzen
-		
-		if (direction != Vector2.zero)
+
+		if (!isStunned)
 		{
-			animator.SetFloat("horizontal", direction.x);
-			animator.SetFloat("vertical", direction.y);
-		}
+
+			if (direction != Vector2.zero)
+			{
+				animator.SetFloat("horizontal", direction.x);
+				animator.SetFloat("vertical", direction.y);
+			}
 
 
-		// Vorübergehend für Gizmos (sonst wird's erst bei StartAttack() berechnet).
-		// Lege Hitbox aus, teste auf Treffer in jeweilige Richtung. Wird aufgerufen aus Animation
-		// Direction checken
+			// Vorübergehend für Gizmos (sonst wird's erst bei StartAttack() berechnet).
+			// Lege Hitbox aus, teste auf Treffer in jeweilige Richtung. Wird aufgerufen aus Animation
+			// Direction checken
 
-		direction = pathfinder.getDirection();
-		
-		if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-		{
-			// rechts und links
-			if (direction.x > 0)
-				angle = -90f;
+			direction = pathfinder.getDirection();
 
+			if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+			{
+				// rechts und links
+				if (direction.x > 0)
+					angle = -90f;
+
+				else
+					angle = 90f;
+			}
 			else
-				angle = 90f;
+			{
+				// oben und unten
+				if (direction.y > 0)
+					angle = 0f;
+				else
+					angle = 180f;
+			}
+
+			// Hitbox aufbauen
+			// Kollisionspunkt des Rechtecks vorne rechts berechnen
+			Vector3 pointNear = new Vector3(gameObject.transform.position.x + slashWidth / 2, gameObject.transform.position.y + attackStartDistance / 2, gameObject.transform.position.z);
+			rotatedPointNear = RotatePointAroundPivot(pointNear, gameObject.transform.position, new Vector3(0, 0, angle));
+
+			// Kollisionspunkt des Rechtecks hinten links berechnen
+			Vector3 pointFar = new Vector3(gameObject.transform.position.x - slashWidth / 2, gameObject.transform.position.y + slashLength, gameObject.transform.position.z);
+			rotatedPointFar = RotatePointAroundPivot(pointFar, gameObject.transform.position, new Vector3(0, 0, angle));
 		}
-		else
-		{
-			// oben und unten
-			if (direction.y > 0)
-				angle = 0f;
-			else
-				angle = 180f;
-		}
-
-		// Hitbox aufbauen
-		// Kollisionspunkt des Rechtecks vorne rechts berechnen
-		Vector3 pointNear = new Vector3(gameObject.transform.position.x + slashWidth / 2, gameObject.transform.position.y + attackStartDistance / 2, gameObject.transform.position.z);
-		rotatedPointNear = RotatePointAroundPivot(pointNear, gameObject.transform.position, new Vector3(0, 0, angle));
-
-		// Kollisionspunkt des Rechtecks hinten links berechnen
-		Vector3 pointFar = new Vector3(gameObject.transform.position.x - slashWidth / 2, gameObject.transform.position.y + slashLength, gameObject.transform.position.z);
-		rotatedPointFar = RotatePointAroundPivot(pointFar, gameObject.transform.position, new Vector3(0, 0, angle));
-
 	}
 
 	public void StartAttack()
@@ -110,7 +113,8 @@ public class GuardActions : Enemy {
 			{
 				if (hit.gameObject.transform.parent != null && hit.gameObject.transform.parent.gameObject == target)
 				{
-					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage);
+					Vector2 knockbackDirection = hit.gameObject.transform.parent.position - gameObject.transform.position;
+					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
 					break;
 				}
 			}
