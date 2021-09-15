@@ -59,43 +59,36 @@ public class Orb : MonoBehaviour {
     public void Update()
     {
 
-        // Spawn
-        if (orbState == OrbState.SPAWNING)
-        {
-            transform.localScale += maxScale * 1/createAnimationSpeed;
+        switch (orbState) {
+
+        case OrbState.SPAWNING:
+            transform.localScale += maxScale * 1 / createAnimationSpeed;
 
             if (transform.localScale.x >= maxScale.x)
             {
                 orbState = OrbState.FLOATING;
             }
-        }
-
-        // Floating
-        if (orbState == OrbState.FLOATING)
-        {
+            break;
+        case OrbState.FLOATING:
             transform.position = startPoint + new Vector3(0, Mathf.Sin(Time.time / movementAnimationSpeed) / movementAnimationAmplitude, 0);
 
             if (Time.time - startTime > despawnTime * despawnEffectStart)
             {
                 orbState = OrbState.DESPAWNING;
             }
-
-        }
-
-        // Despawn
-        if (orbState == OrbState.DESPAWNING)
-        {
+            break;
+        case OrbState.DESPAWNING:
             // in dem letzten 25% vor Despawn wird Orb kleiner
             // Interpolation
             transform.localScale = Vector3.Lerp(maxScale, Vector3.zero, ((Time.time - startTime) / despawnTime - despawnEffectStart) * 1 / (1 - despawnEffectStart));
-            
+
             if (Time.time - startTime > despawnTime)
             {
                 // Despawn
                 Destroy(gameObject);
             }
+            break;
         }
-
 
         // Magnetisierung
         if (!(orbState == OrbState.SPAWNING) && !(orbState == OrbState.DESPAWNING))
