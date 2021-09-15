@@ -91,12 +91,12 @@ public class Orb : MonoBehaviour {
         }
 
         // Magnetisierung
-        if (!(orbState == OrbState.SPAWNING) && !(orbState == OrbState.DESPAWNING))
+        if (!(orbState == OrbState.SPAWNING))
         {
             // Magnetisierung
             // Wenn Spieler in Gegend entdeckt wird, wird sich auf ihn zu bewegt über "moveTowards"
             Collider2D[] allColliders = Physics2D.OverlapCircleAll(cCollider.transform.position, magneticRadius);
-
+            OrbState tempOrbState = orbState;
             bool found = false;
 
             foreach (Collider2D activeCollider in allColliders)
@@ -116,7 +116,7 @@ public class Orb : MonoBehaviour {
             if (!found)
             {
                 // Keinen Player gefunden
-                orbState = OrbState.FLOATING;
+                orbState = tempOrbState;
             }
         }
     }
