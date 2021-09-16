@@ -19,7 +19,7 @@ public class GuardPathfinder: MonoBehaviour {
 	GuardState guardState;
 
 	// private Variables
-	Vector2 direction;
+	Vector2 direction = Vector2.down;
 	float timeLastAttack;
 	int currentWaypoint = 0;
 
@@ -60,7 +60,7 @@ public class GuardPathfinder: MonoBehaviour {
         {
 			yield return new WaitForSeconds(refreshDelay);
 
-			if (gActions.target)
+			if (gActions.target && !gActions.getIsStunned())
             {
 				if (guardState == GuardState.SEARCHING)
 				{
@@ -119,7 +119,7 @@ public class GuardPathfinder: MonoBehaviour {
 
 	protected void UpdatePath()
     {
-        if (seeker.IsDone() && foundTarget)
+        if (seeker.IsDone() && foundTarget && !gActions.getIsStunned())
         {
 			seeker.StartPath(rb.position, gActions.target.transform.position, OnPathComplete);
 		}
@@ -147,7 +147,7 @@ public class GuardPathfinder: MonoBehaviour {
 		}
 
 
-		if (foundTarget)
+		if (foundTarget && !gActions.getIsStunned())
 		{
 			if (!activeAttack)
 			{

@@ -16,6 +16,8 @@ public class SkillSlash : MonoBehaviour, ISkill
     public float slashLength = 3.4f;
     // Distanz zwischen Beginn des Slashs und Charakter
     public float attackStartDistance = 0.9f;
+    // Knockback-Stärke
+    public float knockbackStrength = 3f;
 
     // Unangenehmer Angleoffset
     private readonly int ANGLEOFFSETFORANIMATION = 20;
@@ -71,7 +73,8 @@ public class SkillSlash : MonoBehaviour, ISkill
         foreach (Collider2D collision in enemiesHit)
         {
             if (collision.transform.parent != null && collision.transform.parent.tag.Equals(ENEMY_TAG)){
-                collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage);
+                Vector2 knockbackDirection = (collision.transform.position - gfxChild.transform.position).normalized;
+                collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
             }
         }
     }

@@ -68,7 +68,7 @@ public class MageActions : Enemy {
 
 		while (true)
         {
-			if (target)
+			if (target && !isStunned)
 			{
 				// 1. Fire fireball on target - instatiate next to the mage
 
@@ -81,7 +81,7 @@ public class MageActions : Enemy {
 				animator.SetFloat("horizontal", directionToPlayer.x);
 				animator.SetFloat("vertical", directionToPlayer.y);
 
-				thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, attackDamage);
+				thrownFireball.GetComponent<Fireball>().SetValues(directionToPlayer, fireballSpeed, attackDamage, knockbackStrength);
 			}
 			// 2. wait
 			yield return new WaitForSeconds(waitBetweenFireTp);

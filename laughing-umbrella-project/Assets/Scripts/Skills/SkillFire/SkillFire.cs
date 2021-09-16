@@ -14,6 +14,8 @@ public class SkillFire : MonoBehaviour, ISkill {
     public float fireballSpeed = 8f;
     // Distanz vom Spieler bei welcher der Feuerball erstellt wird
     public float createDistance = 2f;
+    // St‰rke des Knockback
+    public float knockbackStrength = 2f;
 
 
     GameObject thrownFireball;
@@ -39,7 +41,7 @@ public class SkillFire : MonoBehaviour, ISkill {
         // Feuerball schieﬂen
         thrownFireball = Instantiate(fireball, transform.position + (Vector3)playerToMouseVector * createDistance, Quaternion.Euler(0,0,anglePlayerToMouse));
 
-        thrownFireball.GetComponent<PlayerFireball>().SetValues(playerToMouseVector, fireballSpeed, fireballDamage);
+        thrownFireball.GetComponent<PlayerFireball>().SetValues(playerToMouseVector, fireballSpeed, fireballDamage, knockbackStrength);
 
         CleanUp();
     }

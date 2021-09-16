@@ -9,6 +9,7 @@ public class PlayerFireball : MonoBehaviour
 	Vector2 direction;
 	float speed;
 	int attackDamage;
+	float knockbackStrength;
 
 	// Componenten
 	Rigidbody2D rb;
@@ -42,11 +43,12 @@ public class PlayerFireball : MonoBehaviour
 
 	}
 
-	public void SetValues(Vector2 direction, float speed, int attackDamage)
+	public void SetValues(Vector2 direction, float speed, int attackDamage, float knockbackStrength)
 	{
 		this.direction = direction;
 		this.speed = speed;
 		this.attackDamage = attackDamage;
+		this.knockbackStrength = knockbackStrength;
 
 		animator.SetTrigger("grow");
 	}
@@ -61,7 +63,8 @@ public class PlayerFireball : MonoBehaviour
     {
 		if (collision.transform.parent.tag.Equals(ENEMY_TAG))
 		{
-			collision.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage);
+			Vector2 knockbackDirection = direction.normalized;
+			collision.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
 		}
 	}
 

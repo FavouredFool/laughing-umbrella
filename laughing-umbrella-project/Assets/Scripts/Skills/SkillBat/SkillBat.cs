@@ -17,7 +17,9 @@ public class SkillBat : MonoBehaviour, ISkill
     public float circleRadius = 4f;
     // Länge der Existenz des Kreises in Sek
     public float durationAmount = 6f;
-    
+    // Stärke des Knockbacks
+    public float knockbackStrength = 2f;
+
     // ObjekteArray
     readonly GameObject[] objectArray = new GameObject[3];
 

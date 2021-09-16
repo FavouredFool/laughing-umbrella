@@ -10,10 +10,11 @@ public class PlayerActions : MonoBehaviour {
 	public float moveSpeed;
 	public int maxHealth;
 	public float invincibleTime = 1f;
-	public Color invinciblityColor;
+	public Color invinciblityColor = Color.white;
 	public float dashDistance = 2;
 	public float dashTime = 0.05f;
-	public float invincibleAfterDash = 0.2f;
+	public float invincibleTimeAfterDash = 0.2f;
+	public float stunDuration = 0.3f;
 
 
 	public GameObject playerCollision;
@@ -31,6 +32,7 @@ public class PlayerActions : MonoBehaviour {
 	// Flags
 	bool isDashing = false;
 	bool isInvincible = false;
+	bool isStunned = false;
 
 	#endregion
 
@@ -50,10 +52,11 @@ public class PlayerActions : MonoBehaviour {
 
 		PlayerMoveControls();
 
-		if (Input.GetKeyDown(KeyCode.Space) && dashCount > 0)
+		if (Input.GetKeyDown(KeyCode.Space) && dashCount > 0 && movement != Vector2.zero && !isStunned)
 		{
 			StartCoroutine(Dash());
 		}
+		
 
 	}
 
@@ -67,30 +70,34 @@ public class PlayerActions : MonoBehaviour {
 		yield return new WaitForSeconds(dashTime);
 		isDashing = false;
 		playerCollision.SetActive(true);
-		StartCoroutine(BecomeInvincible(invincibleAfterDash, false));
+		StartCoroutine(BecomeInvincible(invincibleTimeAfterDash));
 	}
 
 
 	protected void PlayerMoveControls()
 	{
-		if(!isDashing)
-        {
+		if (!isDashing && !isStunned)
+		{
 			movement.x = Input.GetAxisRaw("Horizontal");
 			movement.y = Input.GetAxisRaw("Vertical");
 			movement.Normalize();
-			if (movement != Vector2.zero)
-			{
-				animator.SetFloat("horizontal", movement.x);
-				animator.SetFloat("vertical", movement.y);
-			}
-			animator.SetFloat("speed", movement.sqrMagnitude);
+		} else
+        {
+			movement = Vector2.zero;
+        }
+			
+		if (movement != Vector2.zero)
+		{
+			animator.SetFloat("horizontal", movement.x);
+			animator.SetFloat("vertical", movement.y);
 		}
+		animator.SetFloat("speed", movement.sqrMagnitude);
+		
 	}
 
     protected void FixedUpdate()
     {
-
-		if (!isDashing)
+		if (!isDashing && !isStunned)
         {
 			//movement
 			rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
@@ -99,7 +106,7 @@ public class PlayerActions : MonoBehaviour {
 
 	
 
-	public void getDamaged(int attackDamage)
+	public void getDamaged(int attackDamage, Vector2 knockbackDirection, float knockbackStrength)
     {
 		// Check ob Schaden genommen werden sollte
 		if(!isInvincible)
@@ -111,32 +118,32 @@ public class PlayerActions : MonoBehaviour {
 				getDestroyed();
 			} else
             {
-				StartCoroutine(BecomeInvincible(invincibleTime, true));
+				StartCoroutine(ToggleStun());
+				CreateKnockback(knockbackDirection, knockbackStrength);
+				StartCoroutine(BecomeInvincible(invincibleTime));
             }
 		}
     }
 
-	IEnumerator BecomeInvincible(float invincibleTime, bool colorCoded)
+	IEnumerator ToggleStun()
+    {
+		isStunned = true;
+		Color backupColor = sr.color;
+		sr.color = invinciblityColor;
+		yield return new WaitForSeconds(stunDuration);
+		sr.color = backupColor;
+		isStunned = false;
+    }
+
+	void CreateKnockback(Vector2 knockbackDirection, float knockbackStrength)
+    {
+		rb.velocity = knockbackDirection * knockbackStrength;
+    }
+
+	IEnumerator BecomeInvincible(float invincibleTime)
     {
 		isInvincible = true;
-		Color tempColor = sr.color;
-
-		if (colorCoded)
-        {
-			sr.color = invinciblityColor;
-		}
-		
-		
-		yield return new WaitForSeconds(invincibleTime - invincibleTime / 8);
-		
-		if (colorCoded)
-        {
-			sr.color = tempColor;
-		}
-		
-
-		// nachdem Farbe weg ist, gibt es noch eine kurze Unsichtbarkeitszeit
-		yield return new WaitForSeconds(invincibleTime / 8);
+		yield return new WaitForSeconds(invincibleTime);
 
 		isInvincible = false;
 	}
@@ -164,6 +171,11 @@ public class PlayerActions : MonoBehaviour {
 	public void setDashCount(int dashCount)
     {
 		this.dashCount = dashCount;
+    }
+
+	public bool getIsStunned()
+    {
+		return isStunned;
     }
     #endregion
 }
