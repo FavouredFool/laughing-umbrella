@@ -5,6 +5,7 @@ public class RoomLogic : MonoBehaviour {
 
 	#region Variables
 	public GameObject enemiesObj;
+	public GameObject stairs;
 
 
 	enum RoomState { ACTIVE, FINISHED };
@@ -18,6 +19,7 @@ public class RoomLogic : MonoBehaviour {
 
     protected void Start() {
 		roomState = RoomState.ACTIVE;
+		stairs.SetActive(false);
 	
         
     }
@@ -27,17 +29,17 @@ public class RoomLogic : MonoBehaviour {
 		if (enemiesObj.transform.childCount == 0)
         {
 			roomState = RoomState.FINISHED;
-			transitionToNextRoom();
+			spawnStairs();
         }
         
 		
     }
 
-	protected void transitionToNextRoom()
-    {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-	}
+	protected void spawnStairs()
+    {
+		stairs.SetActive(true);
+    }
 	
 	#endregion
 }
