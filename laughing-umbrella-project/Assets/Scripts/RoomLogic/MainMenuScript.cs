@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour {
 
 	#region Variables
-	
+	public GameObject player;
 	#endregion
 	
 	
@@ -12,13 +12,14 @@ public class MainMenuScript : MonoBehaviour {
 
 	public void PlayGame()
     {
+		PlayerValues.health = player.GetComponent<PlayerActions>().maxHealth;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 	public void QuitGame()
     {
 		Debug.Log("QUIT");
-		UnityEditor.EditorApplication.isPlaying = false;
+		//UnityEditor.EditorApplication.isPlaying = false;
 		Application.Quit();
     }
 	

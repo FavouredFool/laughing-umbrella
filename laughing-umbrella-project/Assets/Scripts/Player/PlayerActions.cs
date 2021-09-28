@@ -46,6 +46,8 @@ public class PlayerActions : MonoBehaviour {
 		sr = GetComponent<SpriteRenderer>();
 		currentHealth = maxHealth;
 
+		currentHealth = PlayerValues.health;
+
 	}
 
     protected void Update() {
