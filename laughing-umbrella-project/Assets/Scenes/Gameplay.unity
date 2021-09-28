@@ -3584,10 +3584,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1261682355}
-    - target: {fileID: 576549631, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
-      propertyPath: knockbackStrength
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 419512412996894368, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
