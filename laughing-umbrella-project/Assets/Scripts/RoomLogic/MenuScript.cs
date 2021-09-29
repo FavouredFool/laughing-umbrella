@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuScript : MonoBehaviour {
+public class MenuScript : MonoBehaviour {
 
 	#region Variables
 	public GameObject player;
@@ -22,6 +22,17 @@ public class MainMenuScript : MonoBehaviour {
 		//UnityEditor.EditorApplication.isPlaying = false;
 		Application.Quit();
     }
+
+	public void RetryGame()
+    {
+		PlayerValues.health = player.GetComponent<PlayerActions>().maxHealth;
+		SceneManager.LoadScene(1);
+    }
+
+	public void ToMenu()
+    {
+		SceneManager.LoadScene(0);
+	}
 	
 	#endregion
 }

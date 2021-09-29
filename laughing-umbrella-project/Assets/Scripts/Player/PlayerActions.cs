@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerActions : MonoBehaviour {
 
@@ -153,6 +154,7 @@ public class PlayerActions : MonoBehaviour {
 	protected void getDestroyed()
     {
 		Destroy(gameObject);
+		SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
     }
 
 	public int getMaxHealth()
