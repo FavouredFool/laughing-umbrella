@@ -31,7 +31,14 @@ public class MenuScript : MonoBehaviour {
 
 	public void ToMenu()
     {
+		RoomLogic.gameIsPaused = false;
+		Time.timeScale = 1f;
 		SceneManager.LoadScene(0);
+	}
+
+	public void UnloadScene()
+    {
+		SceneManager.UnloadSceneAsync(gameObject.scene);
 	}
 	
 	#endregion

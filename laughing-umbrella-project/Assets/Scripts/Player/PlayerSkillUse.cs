@@ -53,7 +53,7 @@ public class PlayerSkillUse : MonoBehaviour {
 
     protected void Update()
     {
-        if(!playerActions.getIsStunned())
+        if(!playerActions.getIsStunned() && !RoomLogic.gameIsPaused)
         {
             // Linksklick -> Nutze Fähigkeit
             if (Input.GetMouseButtonDown(0))
@@ -80,7 +80,7 @@ public class PlayerSkillUse : MonoBehaviour {
             }
 
             // Rechtsklick -> Swappe Fähigkeiten
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) && !RoomLogic.gameIsPaused)
             {
 
                 // Skills swappen

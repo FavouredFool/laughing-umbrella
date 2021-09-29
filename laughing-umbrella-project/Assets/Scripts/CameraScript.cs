@@ -11,7 +11,6 @@ public class CameraScript : MonoBehaviour {
 
     protected void Start() {
 		cam = gameObject.GetComponent<Camera>();
-		Debug.Log(Screen.width + " " + Screen.height);
 		
 		if (Screen.width / Screen.height != 16f/9)
         {

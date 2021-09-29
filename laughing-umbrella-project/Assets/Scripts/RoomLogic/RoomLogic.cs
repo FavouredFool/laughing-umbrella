@@ -6,6 +6,9 @@ public class RoomLogic : MonoBehaviour {
 	#region Variables
 	public GameObject enemiesObj;
 	public GameObject stairs;
+	public GameObject HUD;
+
+	public static bool gameIsPaused = false;
 
 	#endregion
 	
@@ -22,6 +25,19 @@ public class RoomLogic : MonoBehaviour {
         {
 			spawnStairs();
         }
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+        {
+			if(gameIsPaused)
+            {
+				Resume();
+				
+            } else
+            {
+				Pause();
+				
+            }
+        }
         
 		
     }
@@ -31,6 +47,36 @@ public class RoomLogic : MonoBehaviour {
     {
 		stairs.SetActive(true);
     }
+
+	void Resume()
+    {
+		Time.timeScale = 1f;
+		HUD.SetActive(true);
+		SceneManager.UnloadSceneAsync(SceneManager.sceneCountInBuildSettings - 2);
+		gameIsPaused = false;
+
+		SceneManager.sceneUnloaded -= OnSceneUnloaded;
+	}
+
+	void Pause()
+    {
+		Time.timeScale = 0f;
+		HUD.SetActive(false);
+		Scene pauseScene = SceneManager.GetSceneByBuildIndex(SceneManager.sceneCountInBuildSettings - 2);
+		SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 2, LoadSceneMode.Additive);
+		gameIsPaused = true;
+
+		SceneManager.sceneUnloaded += OnSceneUnloaded;
+		
+	}
+
+	void OnSceneUnloaded(Scene pause)
+    {
+		Time.timeScale = 1f;
+		HUD.SetActive(true);
+		gameIsPaused = false;
+		SceneManager.sceneUnloaded -= OnSceneUnloaded;
+	}
 	
 	#endregion
 }
