@@ -112,12 +112,12 @@ TextureImporter:
       name: DD_DefeatScreen_UI_0
       rect:
         serializedVersion: 2
-        x: 128
+        x: 46
         y: 895
-        width: 435
-        height: 90
+        width: 517
+        height: 98
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.16054158, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,7 +138,7 @@ TextureImporter:
         width: 517
         height: 98
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.14506769, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,12 +154,12 @@ TextureImporter:
       name: DD_DefeatScreen_UI_9
       rect:
         serializedVersion: 2
-        x: 132
+        x: 49
         y: 592
-        width: 623
-        height: 90
+        width: 706
+        height: 98
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.11756374, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -180,7 +180,7 @@ TextureImporter:
         width: 706
         height: 98
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.10623229, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,12 +196,12 @@ TextureImporter:
       name: DD_DefeatScreen_UI_19
       rect:
         serializedVersion: 2
-        x: 133
+        x: 50
         y: 319
-        width: 660
-        height: 90
+        width: 743
+        height: 98
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.11170929, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,7 +222,7 @@ TextureImporter:
         width: 743
         height: 98
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.10094213, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
