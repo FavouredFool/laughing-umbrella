@@ -163,8 +163,8 @@ public class OrcPathfinder : MonoBehaviour
 
 				if (currentWaypoint >= path.vectorPath.Count)
 				{
-					// ACHTUNG; HIER HABE ICH DEN KOMPETTEN ANGRIFF GEBLOCKT MIT DEM "FALSE"
-					if (Time.time - timeLastAttack > oActions.attackDowntime && false)
+					
+					if (Time.time - timeLastAttack > oActions.attackDowntime)
 					{
 						activeAttack = true;
 						oActions.StartAttack();

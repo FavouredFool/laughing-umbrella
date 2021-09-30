@@ -3670,18 +3670,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 503229265, guid: d71418b00accb194882be28453a28f03, type: 3}
-      propertyPath: visionRadius
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 503229265, guid: d71418b00accb194882be28453a28f03, type: 3}
-      propertyPath: nextWaypointDistance
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 503229265, guid: d71418b00accb194882be28453a28f03, type: 3}
-      propertyPath: obstructionLayers.m_Bits
-      value: 262400
-      objectReference: {fileID: 0}
     - target: {fileID: 1256087282319404564, guid: d71418b00accb194882be28453a28f03, type: 3}
       propertyPath: m_Name
       value: Orc

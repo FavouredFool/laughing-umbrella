@@ -207,7 +207,7 @@ Animator:
   m_GameObject: {fileID: 1256087282319404564}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7212c33055106540b6d276d9ebee1f4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -228,12 +228,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3424ef6d9d4db48a5354022b75237b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypointDistance: 1
+  nextWaypointDistance: 1.5
   refreshDelay: 0.2
-  visionRadius: 5
+  visionRadius: 8
   obstructionLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 262400
 --- !u!1 &7202742751564845034
 GameObject:
   m_ObjectHideFlags: 0
