@@ -163,6 +163,9 @@ public class PlayerSkillUse : MonoBehaviour {
             case SkillEnum.Skill.SKILLFIRE:
                 activeSkill = Instantiate(allSkills["SkillFire"], gameObject.transform);
                 break;
+            case SkillEnum.Skill.SKILLMACE:
+                activeSkill = Instantiate(allSkills["SkillMace"], gameObject.transform);
+                break;
         }
 
         if (playerActions.getDashCount() < 2)
