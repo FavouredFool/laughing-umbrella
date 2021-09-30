@@ -31,7 +31,7 @@ public class MenuScript : MonoBehaviour {
 
 	public void ToMenu()
     {
-		RoomLogic.gameIsPaused = false;
+		MainScript.gameIsPaused = false;
 		Time.timeScale = 1f;
 		SceneManager.LoadScene(0);
 	}

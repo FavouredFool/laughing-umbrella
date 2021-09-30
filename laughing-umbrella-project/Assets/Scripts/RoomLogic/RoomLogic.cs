@@ -8,7 +8,7 @@ public class RoomLogic : MonoBehaviour {
 	public GameObject stairs;
 	public GameObject HUD;
 
-	public static bool gameIsPaused = false;
+	
 
 	#endregion
 	
@@ -28,7 +28,7 @@ public class RoomLogic : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Escape))
         {
-			if(gameIsPaused)
+			if(MainScript.gameIsPaused)
             {
 				Resume();
 				
@@ -53,7 +53,7 @@ public class RoomLogic : MonoBehaviour {
 		Time.timeScale = 1f;
 		HUD.SetActive(true);
 		SceneManager.UnloadSceneAsync(SceneManager.sceneCountInBuildSettings - 2);
-		gameIsPaused = false;
+		MainScript.gameIsPaused = false;
 
 		SceneManager.sceneUnloaded -= OnSceneUnloaded;
 	}
@@ -64,7 +64,7 @@ public class RoomLogic : MonoBehaviour {
 		HUD.SetActive(false);
 		Scene pauseScene = SceneManager.GetSceneByBuildIndex(SceneManager.sceneCountInBuildSettings - 2);
 		SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 2, LoadSceneMode.Additive);
-		gameIsPaused = true;
+		MainScript.gameIsPaused = true;
 
 		SceneManager.sceneUnloaded += OnSceneUnloaded;
 		
@@ -78,7 +78,7 @@ public class RoomLogic : MonoBehaviour {
 			HUD.SetActive(true);
 		}
 		
-		gameIsPaused = false;
+		MainScript.gameIsPaused = false;
 		SceneManager.sceneUnloaded -= OnSceneUnloaded;
 	}
 	
