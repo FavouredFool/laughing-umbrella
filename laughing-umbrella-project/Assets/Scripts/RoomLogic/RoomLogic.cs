@@ -73,7 +73,11 @@ public class RoomLogic : MonoBehaviour {
 	void OnSceneUnloaded(Scene pause)
     {
 		Time.timeScale = 1f;
-		HUD.SetActive(true);
+		if (HUD != null)
+        {
+			HUD.SetActive(true);
+		}
+		
 		gameIsPaused = false;
 		SceneManager.sceneUnloaded -= OnSceneUnloaded;
 	}
