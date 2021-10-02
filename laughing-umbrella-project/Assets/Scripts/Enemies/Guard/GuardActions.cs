@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GuardActions : Enemy {
+public class GuardActions : Enemy, IMeleeAttackerActions {
 
     #region Variables
 
@@ -23,7 +23,7 @@ public class GuardActions : Enemy {
 
 	// Components
 	Animator animator;
-	GuardPathfinder pathfinder;
+	PathfinderForMelee pathfinder;
 
 	// Flags
 	bool createHitboxFlag = false;
@@ -38,7 +38,7 @@ public class GuardActions : Enemy {
 		base.Start();
 
         animator = GetComponent<Animator>();
-		pathfinder = GetComponent<GuardPathfinder>();
+		pathfinder = GetComponent<PathfinderForMelee>();
 
 		direction = pathfinder.getDirection();
 
@@ -102,7 +102,7 @@ public class GuardActions : Enemy {
 		animator.SetTrigger("attack");
 	}
 
-	protected void CreateHitbox()
+	public void CreateHitbox()
 	{
 		if (createHitboxFlag)
         {
@@ -122,7 +122,7 @@ public class GuardActions : Enemy {
 		}
 	}
 
-	protected void EndAttack()
+	public void EndAttack()
 	{
 		// Sage dem Pathfinder, dass er wieder laufen darf
 		pathfinder.EndAttack();
@@ -137,14 +137,19 @@ public class GuardActions : Enemy {
 		return point;
 	}
 	
-	public void GuardMoving()
+	public void AttackerMoving()
     {
 		animator.SetBool("searching", false);
     }
 
-	public void GuardSearching()
+	public void AttackerSearching()
     {
 		animator.SetBool("searching", true);
+    }
+
+	public float GetAttackDowntime()
+    {
+		return attackDowntime;
     }
 	
 

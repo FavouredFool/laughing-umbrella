@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 419512414506920545}
   - component: {fileID: 576549632}
   - component: {fileID: 576549631}
-  - component: {fileID: 576549633}
   - component: {fileID: 576549634}
   - component: {fileID: 576549636}
   - component: {fileID: 576549635}
   - component: {fileID: 638034095}
+  - component: {fileID: 1231305907324408812}
   m_Layer: 11
   m_Name: Guard
   m_TagString: Enemy
@@ -101,24 +101,6 @@ MonoBehaviour:
   slashLength: 2
   attackStartDistance: 0.7
   attackDowntime: 1
---- !u!114 &576549633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419512414506920558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45fc072fa4d5b3242b221e217992b5ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextWaypointDistance: 1.5
-  refreshDelay: 0.2
-  visionRadius: 8
-  obstructionLayers:
-    serializedVersion: 2
-    m_Bits: 262400
 --- !u!114 &576549634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +216,25 @@ MonoBehaviour:
   forbiddenCollisionLayers:
     serializedVersion: 2
     m_Bits: 262912
+--- !u!114 &1231305907324408812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419512414506920558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa902bc0890954846bbdd7161f324a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaypointDistance: 1
+  refreshDelay: 0.2
+  visionRadius: 10
+  attackDistance: 2
+  obstructionLayers:
+    serializedVersion: 2
+    m_Bits: 262400
 --- !u!1 &6999444846869170219
 GameObject:
   m_ObjectHideFlags: 0

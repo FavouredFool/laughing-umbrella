@@ -2,7 +2,7 @@ using UnityEngine;
 using Pathfinding;
 using System.Collections;
 
-public class OrcPathfinder : MonoBehaviour
+public class PathfinderForMelee : MonoBehaviour
 {
 
 	#region Variables
@@ -12,13 +12,13 @@ public class OrcPathfinder : MonoBehaviour
 	public float nextWaypointDistance = 1f;
 	public float refreshDelay = 0.2f;
 	public float visionRadius = 5f;
-	public float attackDistance = 3.5f;
+	public float attackDistance = 1.25f;
 	public LayerMask obstructionLayers;
 
 	GameObject foundTarget;
 
-	enum OrcState { SEARCHING, WALKING };
-	OrcState orcState;
+	enum AttackerState { SEARCHING, WALKING };
+	AttackerState attackerState;
 
 	// private Variables
 	Vector2 direction = Vector2.down;
@@ -29,7 +29,8 @@ public class OrcPathfinder : MonoBehaviour
 	Seeker seeker;
 	Path path;
 	Rigidbody2D rb;
-	OrcActions oActions;
+	Enemy enemyActions;
+	IMeleeAttackerActions meleeActions;
 
 	// Flags
 	bool activeAttack = false;
@@ -44,7 +45,8 @@ public class OrcPathfinder : MonoBehaviour
 	{
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
-		oActions = GetComponent<OrcActions>();
+		enemyActions = GetComponent<Enemy>();
+		meleeActions = GetComponent<IMeleeAttackerActions>();
 
 		InvokeRepeating("UpdatePath", 0f, 0.5f);
 		timeLastAttack = float.NegativeInfinity;
@@ -57,21 +59,21 @@ public class OrcPathfinder : MonoBehaviour
 
 	IEnumerator BehaviourRoutine()
 	{
-		orcState = OrcState.SEARCHING;
+		attackerState = AttackerState.SEARCHING;
 
 		while (true)
 		{
 			yield return new WaitForSeconds(refreshDelay);
 
-			if (oActions.target && !oActions.getIsStunned())
+			if (enemyActions.target && !enemyActions.getIsStunned())
 			{
-				if (orcState == OrcState.SEARCHING)
+				if (attackerState == AttackerState.SEARCHING)
 				{
 					Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
 					found = false;
 					foreach (Collider2D collided in rangeCheck)
 					{
-						if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == oActions.target)
+						if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == enemyActions.target)
 						{
 							Vector3 directionToTarget = (collided.gameObject.transform.position - transform.position).normalized;
 							float distanceToTarget = Vector3.Distance(transform.position, collided.gameObject.transform.position);
@@ -80,7 +82,7 @@ public class OrcPathfinder : MonoBehaviour
 							{
 
 								foundTarget = collided.gameObject;
-								orcState = OrcState.WALKING;
+								attackerState = AttackerState.WALKING;
 								found = true;
 							}
 							else
@@ -97,13 +99,13 @@ public class OrcPathfinder : MonoBehaviour
 					}
 
 				}
-				else if (orcState == OrcState.WALKING)
+				else if (attackerState == AttackerState.WALKING)
 				{
 					Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
 					found = false;
 					foreach (Collider2D collided in rangeCheck)
 					{
-						if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == oActions.target)
+						if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == enemyActions.target)
 						{
 							foundTarget = collided.gameObject;
 							found = true;
@@ -112,7 +114,7 @@ public class OrcPathfinder : MonoBehaviour
 					if (!found)
 					{
 						foundTarget = null;
-						orcState = OrcState.SEARCHING;
+						attackerState = AttackerState.SEARCHING;
 					}
 				}
 			}
@@ -122,9 +124,9 @@ public class OrcPathfinder : MonoBehaviour
 
 	protected void UpdatePath()
 	{
-		if (seeker.IsDone() && foundTarget && !oActions.getIsStunned())
+		if (seeker.IsDone() && foundTarget && !enemyActions.getIsStunned())
 		{
-			seeker.StartPath(rb.position, oActions.target.transform.position, OnPathComplete);
+			seeker.StartPath(rb.position, enemyActions.target.transform.position, OnPathComplete);
 		}
 
 	}
@@ -141,17 +143,17 @@ public class OrcPathfinder : MonoBehaviour
 	protected void FixedUpdate()
 	{
 
-		if (orcState == OrcState.SEARCHING)
+		if (attackerState == AttackerState.SEARCHING)
 		{
-			oActions.OrcSearching();
+			meleeActions.AttackerSearching();
 		}
-		else if (orcState == OrcState.WALKING)
+		else if (attackerState == AttackerState.WALKING)
 		{
-			oActions.OrcMoving();
+			meleeActions.AttackerMoving();
 		}
 
 
-		if (foundTarget && !oActions.getIsStunned())
+		if (foundTarget && !enemyActions.getIsStunned())
 		{
 			if (!activeAttack)
 			{
@@ -163,10 +165,10 @@ public class OrcPathfinder : MonoBehaviour
 
 				// Attack Range
 				float distanceToTarget = Vector2.Distance(transform.position, foundTarget.transform.position);
-				if (Time.time - timeLastAttack > oActions.attackDowntime && distanceToTarget <= attackDistance)
-                {
+				if (Time.time - timeLastAttack > meleeActions.GetAttackDowntime() && distanceToTarget <= attackDistance)
+				{
 					activeAttack = true;
-					oActions.StartAttack();
+					meleeActions.StartAttack();
 				}
 
 				if (currentWaypoint >= path.vectorPath.Count)
@@ -178,7 +180,7 @@ public class OrcPathfinder : MonoBehaviour
 
 				float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
-				rb.MovePosition(rb.position + direction * oActions.moveSpeed * Time.fixedDeltaTime);
+				rb.MovePosition(rb.position + direction * enemyActions.moveSpeed * Time.fixedDeltaTime);
 
 
 				if (distance < nextWaypointDistance)

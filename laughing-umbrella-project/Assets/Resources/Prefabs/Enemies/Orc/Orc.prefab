@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7764248418989404065}
   - component: {fileID: 503229264}
   - component: {fileID: 6553647376143322200}
-  - component: {fileID: 503229265}
+  - component: {fileID: 383247070011425136}
   m_Layer: 11
   m_Name: Orc
   m_TagString: Enemy
@@ -165,10 +165,12 @@ MonoBehaviour:
   stunDuration: 0.5
   knockbackStrength: 7
   killedObj: {fileID: 2525912397331254685, guid: b37714d01af8ab642a0cc4260223ed57, type: 3}
-  slashWidth: 2
-  slashLength: 3
-  attackStartDistance: 0.7
-  attackDowntime: 3
+  lineAttackWidth: 0.7
+  lineAttackLength: 4
+  lineAttackStartDistance: 0.7
+  circleAttackRadius: 2.6
+  circleAttackDuration: 0.3
+  attackDowntime: 2
 --- !u!114 &503229264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +218,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &503229265
+--- !u!114 &383247070011425136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,13 +227,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1256087282319404564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d3424ef6d9d4db48a5354022b75237b, type: 3}
+  m_Script: {fileID: 11500000, guid: fa902bc0890954846bbdd7161f324a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypointDistance: 1.5
+  nextWaypointDistance: 1
   refreshDelay: 0.2
-  visionRadius: 8
-  attackDistance: 3.5
+  visionRadius: 10
+  attackDistance: 2.8
   obstructionLayers:
     serializedVersion: 2
     m_Bits: 262400

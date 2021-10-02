@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OrcActions : Enemy
+public class OrcActions : Enemy, IMeleeAttackerActions
 {
 
 	#region Variables
@@ -34,7 +34,7 @@ public class OrcActions : Enemy
 
 	// Components
 	Animator animator;
-	OrcPathfinder pathfinder;
+	PathfinderForMelee pathfinder;
 
 	// Flags
 	bool createHitboxLineFlag = false;
@@ -51,7 +51,7 @@ public class OrcActions : Enemy
 		base.Start();
 
 		animator = GetComponent<Animator>();
-		pathfinder = GetComponent<OrcPathfinder>();
+		pathfinder = GetComponent<PathfinderForMelee>();
 
 		direction = pathfinder.getDirection();
 
@@ -136,7 +136,7 @@ public class OrcActions : Enemy
 	}
 
 
-	protected void CreateHitboxCircle()
+	public void CreateHitboxCircle()
     {
 		if (createHitboxCircleFlag)
         {
@@ -147,7 +147,7 @@ public class OrcActions : Enemy
         }
     }
 
-	protected void CreateHitboxLine()
+	public void CreateHitboxLine()
     {
 
 		// Hitbox aufbauen
@@ -169,7 +169,7 @@ public class OrcActions : Enemy
 				if (hit.gameObject.transform.parent != null && hit.gameObject.transform.parent.gameObject == target)
 				{
 					Vector2 knockbackDirection = hit.gameObject.transform.parent.position - gameObject.transform.position;
-					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
+					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage*2, knockbackDirection, knockbackStrength);
 					break;
 				}
 			}
@@ -177,7 +177,7 @@ public class OrcActions : Enemy
 		}
 	}
 
-	protected void EndAttack()
+	public void EndAttack()
 	{
 		// Sage dem Pathfinder, dass er wieder laufen darf
 		pathfinder.EndAttack();
@@ -192,20 +192,24 @@ public class OrcActions : Enemy
 		return point;
 	}
 
-	public void OrcMoving()
+	public void AttackerMoving()
 	{
 		animator.SetBool("searching", false);
 	}
 
-	public void OrcSearching()
+	public void AttackerSearching()
 	{
 		animator.SetBool("searching", true);
+	}
+	public float GetAttackDowntime()
+	{
+		return attackDowntime;
 	}
 
 
 
 
-	
+	/*
 	void OnDrawGizmos()
 	{
 
@@ -214,7 +218,8 @@ public class OrcActions : Enemy
 		Gizmos.DrawWireSphere(endpointRotated, 0.5f);
 
 	}
-	
+	*/
+
 
 
 
