@@ -231,6 +231,7 @@ MonoBehaviour:
   nextWaypointDistance: 1.5
   refreshDelay: 0.2
   visionRadius: 8
+  attackDistance: 3.5
   obstructionLayers:
     serializedVersion: 2
     m_Bits: 262400

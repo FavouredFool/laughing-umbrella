@@ -12,6 +12,7 @@ public class OrcPathfinder : MonoBehaviour
 	public float nextWaypointDistance = 1f;
 	public float refreshDelay = 0.2f;
 	public float visionRadius = 5f;
+	public float attackDistance = 3.5f;
 	public LayerMask obstructionLayers;
 
 	GameObject foundTarget;
@@ -155,21 +156,21 @@ public class OrcPathfinder : MonoBehaviour
 			if (!activeAttack)
 			{
 
-
 				if (path == null)
 				{
 					return;
 				}
 
+				// Attack Range
+				float distanceToTarget = Vector2.Distance(transform.position, foundTarget.transform.position);
+				if (Time.time - timeLastAttack > oActions.attackDowntime && distanceToTarget <= attackDistance)
+                {
+					activeAttack = true;
+					oActions.StartAttack();
+				}
+
 				if (currentWaypoint >= path.vectorPath.Count)
 				{
-					
-					if (Time.time - timeLastAttack > oActions.attackDowntime)
-					{
-						activeAttack = true;
-						oActions.StartAttack();
-					}
-
 					return;
 				}
 
