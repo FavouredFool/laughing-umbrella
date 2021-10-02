@@ -47,7 +47,12 @@ public class PlayerActions : MonoBehaviour {
 		sr = GetComponent<SpriteRenderer>();
 		currentHealth = maxHealth;
 
-		currentHealth = PlayerValues.health;
+
+		if(MainScript.health != 0)
+        {
+			currentHealth = MainScript.health;
+		}
+		
 
 	}
 

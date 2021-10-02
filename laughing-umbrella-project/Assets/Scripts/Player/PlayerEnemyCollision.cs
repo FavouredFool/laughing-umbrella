@@ -22,7 +22,7 @@ public class PlayerEnemyCollision : MonoBehaviour {
 		} else if (collision.gameObject.tag.Equals(STAIR_TAG))
         {
 			// Collision with Stairs
-			PlayerValues.health = transform.parent.gameObject.GetComponent<PlayerActions>().getCurrentHealth();
+			MainScript.health = transform.parent.gameObject.GetComponent<PlayerActions>().getCurrentHealth();
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 

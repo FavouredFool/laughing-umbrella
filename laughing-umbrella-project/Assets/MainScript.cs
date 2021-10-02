@@ -5,6 +5,7 @@ public class MainScript : MonoBehaviour {
 	#region Variables
 	// Static variable projectwide
 	public static bool gameIsPaused = false;
+	public static int health { get; set; }
 	#endregion
 
 
