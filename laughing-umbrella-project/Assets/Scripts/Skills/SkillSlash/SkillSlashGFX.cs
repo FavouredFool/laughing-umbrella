@@ -26,7 +26,6 @@ public class SkillSlashGFX : MonoBehaviour {
 
 	public void CleanUp()
     {
-
 		Destroy(gameObject);
     }
     

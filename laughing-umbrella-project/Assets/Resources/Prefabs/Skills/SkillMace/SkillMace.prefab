@@ -47,11 +47,13 @@ MonoBehaviour:
   gfxChild: {fileID: 8427123807256843345}
   attackDamage: 10
   knockbackStrengthLine: 10
-  knockbackStrengthCircle: 5
   lineAttackWidth: 1
   lineAttackLength: 7
+  lineAttackDuration: 0.3
+  knockbackStrengthCircle: 5
   circleAttackRadius: 4
   circleAttackDuration: 0.3
+  slowStrength: 2
 --- !u!1 &8427123807256843345
 GameObject:
   m_ObjectHideFlags: 0
