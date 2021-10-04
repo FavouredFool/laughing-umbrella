@@ -598,12 +598,12 @@ TextureImporter:
       name: DD_Ork_attack_anim_33
       rect:
         serializedVersion: 2
-        x: 13
+        x: 30
         y: 397
-        width: 280
+        width: 360
         height: 328
       alignment: 9
-      pivot: {x: 0.6, y: 0.37804878}
+      pivot: {x: 0.11111111, y: 0.37804878}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -619,12 +619,12 @@ TextureImporter:
       name: DD_Ork_attack_anim_34
       rect:
         serializedVersion: 2
-        x: 329
-        y: 417
-        width: 392
+        x: 409
+        y: 389
+        width: 296
         height: 288
       alignment: 9
-      pivot: {x: 0.10204082, y: 0.43055555}
+      pivot: {x: 0.6486486, y: 0.43055555}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -640,12 +640,12 @@ TextureImporter:
       name: DD_Ork_attack_anim_36
       rect:
         serializedVersion: 2
-        x: 772
-        y: 183
-        width: 360
+        x: 790
+        y: 168
+        width: 280
         height: 472
       alignment: 9
-      pivot: {x: 0.11111111, y: 0.7372881}
+      pivot: {x: 0.5714286, y: 0.7372881}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -661,12 +661,12 @@ TextureImporter:
       name: DD_Ork_attack_anim_37
       rect:
         serializedVersion: 2
-        x: 1161
-        y: 223
-        width: 304
+        x: 1102
+        y: 196
+        width: 392
         height: 440
       alignment: 9
-      pivot: {x: 0.57894737, y: 0.7181818}
+      pivot: {x: 0.10204082, y: 0.7181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
