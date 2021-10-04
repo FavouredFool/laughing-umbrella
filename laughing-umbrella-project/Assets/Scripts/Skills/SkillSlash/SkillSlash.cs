@@ -132,7 +132,7 @@ public class SkillSlash : MonoBehaviour, ISkill
         Destroy(gameObject);
     }
 
-    
+    /*
     void OnDrawGizmos()
     {
 
@@ -142,7 +142,7 @@ public class SkillSlash : MonoBehaviour, ISkill
         //Gizmos.DrawWireSphere(gameObject.transform.position, 1f);
         Gizmos.DrawWireSphere(endpointRotated, 0.5f);
     }
-    
+    */
     
 
 }

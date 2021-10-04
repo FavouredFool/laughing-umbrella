@@ -10,8 +10,6 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 	public float lineAttackWidth = 0.7f;
 	// Länge des Slash-Angriffs.
 	public float lineAttackLength = 4f;
-	// Entfernung zur Wache bei der die Hitbox beginnt (unten Gizmos entkommentieren um die Hitbox besser zu sehen). 
-	public float lineAttackStartDistance = 0.7f;
 
 	public float circleAttackRadius = 2.3f;
 	public float circleAttackDuration = 0.3f;
@@ -103,7 +101,7 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 			// Interpoliere Grad von Anfang bis Ende um lange Line um Orc herum zu bewegen
 			// Dafür -> RotateAround
 
-			float angleInterpolated = ((Time.time - circleAttackStarttime) / (circleAttackDuration*5)) * 360;
+			float angleInterpolated = ((Time.time - circleAttackStarttime) / (circleAttackDuration)) * 360;
 			// BISHER NOCH DER FEHLER, DASS DIE ANIMATION NACH RECHTS IN DER ANIMATION COUNTER_CLOCKWISE IST
 			endpointRotated = RotatePointAroundPivot(transform.position + Vector3.up * circleAttackRadius, gameObject.transform.position, new Vector3(0, 0, angle + angleInterpolated));
 
@@ -153,7 +151,7 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 
 		// Hitbox aufbauen
 		// Kollisionspunkt des Rechtecks vorne rechts berechnen
-		Vector3 pointNear = new Vector3(gameObject.transform.position.x + lineAttackWidth / 2, gameObject.transform.position.y + lineAttackStartDistance / 2, gameObject.transform.position.z);
+		Vector3 pointNear = new Vector3(gameObject.transform.position.x + lineAttackWidth / 2, gameObject.transform.position.y, gameObject.transform.position.z);
 		rotatedPointNear = RotatePointAroundPivot(pointNear, gameObject.transform.position, new Vector3(0, 0, angle));
 
 		// Kollisionspunkt des Rechtecks hinten links berechnen

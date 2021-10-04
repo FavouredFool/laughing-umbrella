@@ -186,5 +186,10 @@ public class PlayerActions : MonoBehaviour {
     {
 		return isStunned;
     }
+
+	public void setIsStunned(bool stunned)
+    {
+		isStunned = stunned;
+    }
     #endregion
 }

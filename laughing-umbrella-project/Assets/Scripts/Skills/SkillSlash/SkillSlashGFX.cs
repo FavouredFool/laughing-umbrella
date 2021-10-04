@@ -3,7 +3,7 @@ using UnityEngine;
 public class SkillSlashGFX : MonoBehaviour {
 
     #region Variables
-    GameObject parent;
+
     #endregion
 
     #region UnityMethods
@@ -12,7 +12,7 @@ public class SkillSlashGFX : MonoBehaviour {
     public void PlayAnimation()
     {
         // Entkoppeln, sodass Schwert sich nicht mitbewegt
-		transform.parent.parent = null;
+		//transform.parent.parent = null;
 
         // Animation abspielen
         GetComponent<Animator>().Play("Ability_Slash");
@@ -26,7 +26,7 @@ public class SkillSlashGFX : MonoBehaviour {
 
 	public void CleanUp()
     {
-		// Wird Aufgerufen bei Animation-End
+
 		Destroy(gameObject);
     }
     
