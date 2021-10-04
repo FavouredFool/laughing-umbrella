@@ -53,7 +53,7 @@ public class PlayerSkillUse : MonoBehaviour {
 
     protected void Update()
     {
-        if(!playerActions.getIsStunned())
+        if(!playerActions.getIsStunned() && !MainScript.gameIsPaused)
         {
             // Linksklick -> Nutze Fähigkeit
             if (Input.GetMouseButtonDown(0))
@@ -80,7 +80,7 @@ public class PlayerSkillUse : MonoBehaviour {
             }
 
             // Rechtsklick -> Swappe Fähigkeiten
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) && !MainScript.gameIsPaused)
             {
 
                 // Skills swappen
@@ -162,6 +162,9 @@ public class PlayerSkillUse : MonoBehaviour {
                 break;
             case SkillEnum.Skill.SKILLFIRE:
                 activeSkill = Instantiate(allSkills["SkillFire"], gameObject.transform);
+                break;
+            case SkillEnum.Skill.SKILLMACE:
+                activeSkill = Instantiate(allSkills["SkillMace"], gameObject.transform);
                 break;
         }
 

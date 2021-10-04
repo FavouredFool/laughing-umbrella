@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerActions : MonoBehaviour {
 
@@ -45,6 +46,13 @@ public class PlayerActions : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		sr = GetComponent<SpriteRenderer>();
 		currentHealth = maxHealth;
+
+
+		if(MainScript.health != 0)
+        {
+			currentHealth = MainScript.health;
+		}
+		
 
 	}
 
@@ -151,6 +159,7 @@ public class PlayerActions : MonoBehaviour {
 	protected void getDestroyed()
     {
 		Destroy(gameObject);
+		SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
     }
 
 	public int getMaxHealth()
@@ -176,6 +185,11 @@ public class PlayerActions : MonoBehaviour {
 	public bool getIsStunned()
     {
 		return isStunned;
+    }
+
+	public void setIsStunned(bool stunned)
+    {
+		isStunned = stunned;
     }
     #endregion
 }

@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: c306ca379da086d4db570edf000328b2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8030890715676895099
+    second: DD_Ork_idle_anim_0
+  - first:
+      213: 3131325302533787103
+    second: DD_Ork_idle_anim_1
+  - first:
+      213: 6178479772418629084
+    second: DD_Ork_idle_anim_2
+  - first:
+      213: -2885209968149187956
+    second: DD_Ork_idle_anim_3
+  - first:
+      213: 6631130048401100955
+    second: DD_Ork_idle_anim_4
+  - first:
+      213: -4825593611723380189
+    second: DD_Ork_idle_anim_5
+  - first:
+      213: -6855037865106769358
+    second: DD_Ork_idle_anim_6
+  - first:
+      213: -1707626569806431980
+    second: DD_Ork_idle_anim_7
+  - first:
+      213: 6332336569146222684
+    second: DD_Ork_idle_anim_8
+  - first:
+      213: 4564944057714419948
+    second: DD_Ork_idle_anim_9
+  - first:
+      213: -9176000947470184334
+    second: DD_Ork_idle_anim_10
+  - first:
+      213: -5906741998412073195
+    second: DD_Ork_idle_anim_11
+  - first:
+      213: -3929618193617260179
+    second: DD_Ork_idle_anim_12
+  - first:
+      213: 939338871409540992
+    second: DD_Ork_idle_anim_13
+  - first:
+      213: -2158434836120773896
+    second: DD_Ork_idle_anim_14
+  - first:
+      213: -3164166218161439744
+    second: DD_Ork_idle_anim_15
+  - first:
+      213: 862532528974007153
+    second: DD_Ork_idle_anim_16
+  - first:
+      213: -2353184543759762936
+    second: DD_Ork_idle_anim_17
+  - first:
+      213: 4462397212402155425
+    second: DD_Ork_idle_anim_18
+  - first:
+      213: -3583322988271339805
+    second: DD_Ork_idle_anim_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1785
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7767e17e84737f60800000000000000
+      internalID: 8030890715676895099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_1
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1783
+        width: 200
+        height: 240
+      alignment: 9
+      pivot: {x: 0.52, y: 0.51666665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd08bda5c3b47b20800000000000000
+      internalID: 3131325302533787103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_2
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1782
+        width: 200
+        height: 232
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5344828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddd2f63e9e5eb550800000000000000
+      internalID: 6178479772418629084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_3
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1785
+        width: 192
+        height: 248
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c823d0a02dca5f7d0800000000000000
+      internalID: -2885209968149187956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_4
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1787
+        width: 192
+        height: 248
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b90dd5255a1860c50800000000000000
+      internalID: 6631130048401100955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_5
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1465
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a65de5d2c080db0800000000000000
+      internalID: -4825593611723380189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_6
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 1466
+        width: 200
+        height: 240
+      alignment: 9
+      pivot: {x: 0.48, y: 0.51666665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a757891630ed0a0800000000000000
+      internalID: -6855037865106769358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_7
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1466
+        width: 200
+        height: 232
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5344828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4193ba1aeaa4d48e0800000000000000
+      internalID: -1707626569806431980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_8
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1466
+        width: 192
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c582d2a3f8af0e750800000000000000
+      internalID: 6332336569146222684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_9
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 1469
+        width: 192
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce829933f60f95f30800000000000000
+      internalID: 4564944057714419948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_10
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1118
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270546b31cb48a080800000000000000
+      internalID: -9176000947470184334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_11
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1114
+        width: 152
+        height: 240
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.51666665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51774cc9279070ea0800000000000000
+      internalID: -5906741998412073195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_12
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 1114
+        width: 152
+        height: 232
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.5344828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61f78aa2113779c0800000000000000
+      internalID: -3929618193617260179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_13
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1111
+        width: 136
+        height: 247
+      alignment: 9
+      pivot: {x: 0.7058824, y: 0.5020243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ff41a0ab3390d00800000000000000
+      internalID: 939338871409540992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_14
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 1112
+        width: 136
+        height: 248
+      alignment: 9
+      pivot: {x: 0.7058824, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa5132d3f2bb02e0800000000000000
+      internalID: -2158434836120773896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 789
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c323cc69f9614d0800000000000000
+      internalID: -3164166218161439744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_16
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 789
+        width: 152
+        height: 240
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.51666665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b07b4e3c458fb00800000000000000
+      internalID: 862532528974007153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_17
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 791
+        width: 152
+        height: 232
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.5344828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a724a002fc75fd0800000000000000
+      internalID: -2353184543759762936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_18
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 790
+        width: 136
+        height: 248
+      alignment: 9
+      pivot: {x: 0.29411766, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af7ce33f9e9ded30800000000000000
+      internalID: 4462397212402155425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_idle_anim_19
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 787
+        width: 136
+        height: 248
+      alignment: 9
+      pivot: {x: 0.29411766, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e678983aba754ec0800000000000000
+      internalID: -3583322988271339805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

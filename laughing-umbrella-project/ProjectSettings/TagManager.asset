@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Orb
   - Enemy
+  - Stairs
   layers:
   - Default
   - TransparentFX

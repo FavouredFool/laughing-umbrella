@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: 097c00391fbb58e46bfb7b106411cdb0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8148358881872000970
+    second: DD_Ork_walk_anim_0
+  - first:
+      213: 7394884617620853372
+    second: DD_Ork_walk_anim_1
+  - first:
+      213: -3696397288199166918
+    second: DD_Ork_walk_anim_2
+  - first:
+      213: -3748147465129451607
+    second: DD_Ork_walk_anim_3
+  - first:
+      213: -1281650864819899177
+    second: DD_Ork_walk_anim_4
+  - first:
+      213: -6225221892354189402
+    second: DD_Ork_walk_anim_5
+  - first:
+      213: -7886717286759481828
+    second: DD_Ork_walk_anim_6
+  - first:
+      213: -4816866847952084805
+    second: DD_Ork_walk_anim_7
+  - first:
+      213: -6933701117851311984
+    second: DD_Ork_walk_anim_8
+  - first:
+      213: -3029399347860333931
+    second: DD_Ork_walk_anim_9
+  - first:
+      213: 3215631127157091067
+    second: DD_Ork_walk_anim_10
+  - first:
+      213: 8406761721358024473
+    second: DD_Ork_walk_anim_11
+  - first:
+      213: -1964936207624143669
+    second: DD_Ork_walk_anim_12
+  - first:
+      213: -3214981789968631034
+    second: DD_Ork_walk_anim_13
+  - first:
+      213: 5882929277098618360
+    second: DD_Ork_walk_anim_14
+  - first:
+      213: 5231517584225717256
+    second: DD_Ork_walk_anim_15
+  - first:
+      213: 1646693605946467261
+    second: DD_Ork_walk_anim_16
+  - first:
+      213: 6508990000973651724
+    second: DD_Ork_walk_anim_17
+  - first:
+      213: 3942797957024343812
+    second: DD_Ork_walk_anim_18
+  - first:
+      213: 4299954776330489902
+    second: DD_Ork_walk_anim_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1774
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638ce9fc4c63bee80800000000000000
+      internalID: -8148358881872000970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1774
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c729a444168ef9660800000000000000
+      internalID: 7394884617620853372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_2
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 1777
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34eb203042c3bcc0800000000000000
+      internalID: -3696397288199166918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_3
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 1777
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af9d2f2db7ebfbc0800000000000000
+      internalID: -3748147465129451607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_4
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 1780
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d476543459a63ee0800000000000000
+      internalID: -1281650864819899177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_5
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1427
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a75e3aeba19b99a0800000000000000
+      internalID: -6225221892354189402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_6
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1427
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1eb4cec960cc8290800000000000000
+      internalID: -7886717286759481828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_7
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1422
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0e5756f1d072db0800000000000000
+      internalID: -4816866847952084805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_8
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 1429
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0906eb3d19b86cf90800000000000000
+      internalID: -6933701117851311984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_9
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 1432
+        width: 200
+        height: 248
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a1cf3f75965f5d0800000000000000
+      internalID: -3029399347860333931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_10
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1051
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa23e6197730ac20800000000000000
+      internalID: 3215631127157091067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_11
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1054
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f75e0ae31daa470800000000000000
+      internalID: 8406761721358024473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_12
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 1058
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc724a0ee42bb4e0800000000000000
+      internalID: -1964936207624143669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_13
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1060
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60bf19188171263d0800000000000000
+      internalID: -3214981789968631034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_14
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 1063
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd6538220d54a150800000000000000
+      internalID: 5882929277098618360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_15
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 672
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ccbfb66851a9840800000000000000
+      internalID: 5231517584225717256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_16
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 674
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3a85c2c1b3ad610800000000000000
+      internalID: 1646693605946467261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_17
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 673
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f9a967be3945a50800000000000000
+      internalID: 6508990000973651724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_18
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 676
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40762912ad1a7b630800000000000000
+      internalID: 3942797957024343812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_walk_anim_19
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 676
+        width: 152
+        height: 248
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e205c6146128cab30800000000000000
+      internalID: 4299954776330489902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

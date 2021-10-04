@@ -16,6 +16,7 @@ public class SkillDisplay : MonoBehaviour {
 	public Sprite orbSlashSprite;
 	public Sprite orbBatSprite;
 	public Sprite orbFireSprite;
+	public Sprite orbMaceSprite;
 
 	PlayerSkillUse playerSkill;
 
@@ -94,6 +95,9 @@ public class SkillDisplay : MonoBehaviour {
 			case "SkillFire(Clone)":
 				frontOrbHolder.sprite = orbFireSprite;
 				break;
+			case "SkillMace(Clone)":
+				frontOrbHolder.sprite = orbMaceSprite;
+				break;
 			case "SkillEmpty(Clone)":
 				frontOrbHolder.sprite = null;
 				break;
@@ -109,6 +113,9 @@ public class SkillDisplay : MonoBehaviour {
 				break;
 			case "SkillFire(Clone)":
 				backOrbHolder.sprite = orbFireSprite;
+				break;
+			case "SkillMace(Clone)":
+				backOrbHolder.sprite = orbMaceSprite;
 				break;
 			case "SkillEmpty(Clone)":
 				backOrbHolder.sprite = null;

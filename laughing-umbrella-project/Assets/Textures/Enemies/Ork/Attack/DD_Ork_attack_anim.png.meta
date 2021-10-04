@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 79588a6aba9a7b4408824468f1593245
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6487497042745120320
+    second: DD_Ork_attack_anim_0
+  - first:
+      213: 1012357451814224714
+    second: DD_Ork_attack_anim_1
+  - first:
+      213: -4370318984707994665
+    second: DD_Ork_attack_anim_2
+  - first:
+      213: 8328616045182822473
+    second: DD_Ork_attack_anim_4
+  - first:
+      213: -8336339996677876299
+    second: DD_Ork_attack_anim_6
+  - first:
+      213: 8735766261423709832
+    second: DD_Ork_attack_anim_7
+  - first:
+      213: 8962114832548007280
+    second: DD_Ork_attack_anim_8
+  - first:
+      213: -6525898508036807875
+    second: DD_Ork_attack_anim_11
+  - first:
+      213: 5831089675316355361
+    second: DD_Ork_attack_anim_13
+  - first:
+      213: -4258495851184894022
+    second: DD_Ork_attack_anim_15
+  - first:
+      213: 4431637762113507089
+    second: DD_Ork_attack_anim_16
+  - first:
+      213: 7483456518980661920
+    second: DD_Ork_attack_anim_17
+  - first:
+      213: 8372161093011508165
+    second: DD_Ork_attack_anim_18
+  - first:
+      213: 4139812918471140456
+    second: DD_Ork_attack_anim_19
+  - first:
+      213: 184727515576517820
+    second: DD_Ork_attack_anim_22
+  - first:
+      213: 1812633375475840359
+    second: DD_Ork_attack_anim_24
+  - first:
+      213: 7299831044889863748
+    second: DD_Ork_attack_anim_26
+  - first:
+      213: -8282114330609237966
+    second: DD_Ork_attack_anim_27
+  - first:
+      213: 6652010841484220081
+    second: DD_Ork_attack_anim_28
+  - first:
+      213: 4386156880662697121
+    second: DD_Ork_attack_anim_31
+  - first:
+      213: 2822796160775774441
+    second: DD_Ork_attack_anim_33
+  - first:
+      213: 2911238488201733855
+    second: DD_Ork_attack_anim_34
+  - first:
+      213: 7193565870128232549
+    second: DD_Ork_attack_anim_36
+  - first:
+      213: 4216048273598780396
+    second: DD_Ork_attack_anim_37
+  - first:
+      213: -7960867031191776479
+    second: DD_Ork_attack_anim_40
+  - first:
+      213: 2705359506840542189
+    second: DD_Ork_attack_anim_41
+  - first:
+      213: 7069099683934559837
+    second: DD_Ork_attack_anim_42
+  - first:
+      213: 1862168134916415553
+    second: DD_Ork_attack_anim_43
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1634
+        width: 336
+        height: 384
+      alignment: 9
+      pivot: {x: 0.71428573, y: 0.6770833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046583a2038380a50800000000000000
+      internalID: 6487497042745120320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1667
+        width: 344
+        height: 352
+      alignment: 9
+      pivot: {x: 0.18604651, y: 0.64772725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a434b1d1dbd9c0e00800000000000000
+      internalID: 1012357451814224714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_2
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1613
+        width: 328
+        height: 400
+      alignment: 9
+      pivot: {x: 0.2682927, y: 0.31}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db8551d9028953c0800000000000000
+      internalID: -4370318984707994665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_4
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 1614
+        width: 360
+        height: 376
+      alignment: 9
+      pivot: {x: 0.73333335, y: 0.32978722}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948adbb8a20359370800000000000000
+      internalID: 8328616045182822473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_6
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1624
+        width: 176
+        height: 384
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.7395833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b5522bd0fe5f4c80800000000000000
+      internalID: -8336339996677876299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_7
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1589
+        width: 176
+        height: 440
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.77272725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e9005712dab3970800000000000000
+      internalID: 8735766261423709832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_8
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 1534
+        width: 176
+        height: 512
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.8046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d8846f4f3df5c70800000000000000
+      internalID: 8962114832548007280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_11
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1152
+        width: 344
+        height: 400
+      alignment: 9
+      pivot: {x: 0.27906978, y: 0.31}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33e634f1e95f65a0800000000000000
+      internalID: -6525898508036807875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_13
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1167
+        width: 360
+        height: 384
+      alignment: 9
+      pivot: {x: 0.75555557, y: 0.32291666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121edae4a213ce050800000000000000
+      internalID: 5831089675316355361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_15
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1159
+        width: 336
+        height: 376
+      alignment: 9
+      pivot: {x: 0.71428573, y: 0.67021275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf46a8f598c6e4c0800000000000000
+      internalID: -4258495851184894022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_16
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 1175
+        width: 352
+        height: 360
+      alignment: 9
+      pivot: {x: 0.27272728, y: 0.65555555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f8bf79017508d30800000000000000
+      internalID: 4431637762113507089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_17
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 1147
+        width: 184
+        height: 408
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.30392158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a27ce11e049ad760800000000000000
+      internalID: 7483456518980661920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_18
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 1114
+        width: 184
+        height: 464
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.2672414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb0c4f0824ef2470800000000000000
+      internalID: 8372161093011508165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_19
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 989
+        width: 184
+        height: 536
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.23134328}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864ab0a6ae1937930800000000000000
+      internalID: 4139812918471140456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_22
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 752
+        width: 280
+        height: 344
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.3604651}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4cd2a52b8409200800000000000000
+      internalID: 184727515576517820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_24
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 767
+        width: 368
+        height: 320
+      alignment: 9
+      pivot: {x: 0.8913044, y: 0.3875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76531458374c72910800000000000000
+      internalID: 1812633375475840359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_26
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 663
+        width: 360
+        height: 424
+      alignment: 9
+      pivot: {x: 0.8888889, y: 0.7075472}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446670fb8a53e4560800000000000000
+      internalID: 7299831044889863748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_27
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 684
+        width: 296
+        height: 400
+      alignment: 9
+      pivot: {x: 0.35135135, y: 0.69}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2304dd695e4001d80800000000000000
+      internalID: -8282114330609237966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_28
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 838
+        width: 336
+        height: 248
+      alignment: 9
+      pivot: {x: 0.88095236, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b6d6b0dd90b05c50800000000000000
+      internalID: 6652010841484220081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_31
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 583
+        width: 392
+        height: 248
+      alignment: 9
+      pivot: {x: 0.8979592, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a41901b172cedc30800000000000000
+      internalID: 4386156880662697121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_33
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 397
+        width: 360
+        height: 328
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.37804878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0606407269c2720800000000000000
+      internalID: 2822796160775774441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_34
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 389
+        width: 296
+        height: 288
+      alignment: 9
+      pivot: {x: 0.6486486, y: 0.43055555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6a5b90bfbc66820800000000000000
+      internalID: 2911238488201733855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_36
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 168
+        width: 280
+        height: 472
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0.7372881}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568fd55bb0ea4d360800000000000000
+      internalID: 7193565870128232549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_37
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 196
+        width: 392
+        height: 440
+      alignment: 9
+      pivot: {x: 0.10204082, y: 0.7181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce311c73199628a30800000000000000
+      internalID: 4216048273598780396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_40
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 316
+        width: 472
+        height: 248
+      alignment: 9
+      pivot: {x: 0.91525424, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12312b51d91558190800000000000000
+      internalID: -7960867031191776479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_41
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 13
+        width: 344
+        height: 248
+      alignment: 9
+      pivot: {x: 0.11627907, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debd4fa432e5b8520800000000000000
+      internalID: 2705359506840542189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_42
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 13
+        width: 400
+        height: 248
+      alignment: 9
+      pivot: {x: 0.1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5edeb675bc7a1260800000000000000
+      internalID: 7069099683934559837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ork_attack_anim_43
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 18
+        width: 480
+        height: 248
+      alignment: 9
+      pivot: {x: 0.083333336, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140aeb17d00c7d910800000000000000
+      internalID: 1862168134916415553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
