@@ -54,6 +54,9 @@ public class SkillMace : MonoBehaviour, ISkill {
         transform.parent.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         */
 
+        // SLow player 
+        transform.parent.GetComponent<PlayerActions>().moveSpeed /= 2;
+
 
         // Get Mouse Position + Convert from Screen to World-Coordinates
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -139,7 +142,8 @@ public class SkillMace : MonoBehaviour, ISkill {
 
 	public void CleanUp()
     {
-        transform.parent.GetComponent<PlayerActions>().setIsStunned(false);
+        //transform.parent.GetComponent<PlayerActions>().setIsStunned(false);
+        transform.parent.GetComponent<PlayerActions>().moveSpeed *= 2;
         Destroy(gameObject);
     }
 
