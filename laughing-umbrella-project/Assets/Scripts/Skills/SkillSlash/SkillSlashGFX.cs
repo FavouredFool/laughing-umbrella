@@ -8,10 +8,6 @@ public class SkillSlashGFX : MonoBehaviour {
 
     #region UnityMethods
 
-    public void Start()
-    {
-        parent = transform.parent.gameObject;
-    }
 
     public void PlayAnimation()
     {
@@ -25,13 +21,13 @@ public class SkillSlashGFX : MonoBehaviour {
     public void CreateHitbox()
     {
         // Aufgerufen in Animation
-        parent.GetComponent<SkillSlash>().CreateHitbox();
+        transform.parent.GetComponent<SkillSlash>().CreateHitbox();
     }
 
 	public void CleanUp()
     {
 		// Wird Aufgerufen bei Animation-End
-		Destroy(gameObject.transform.parent.gameObject);
+		Destroy(gameObject);
     }
     
 	#endregion

@@ -82,7 +82,7 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 			{
 				// rechts und links
 				if (direction.x > 0)
-					angle = -90f;
+					angle = 270f;
 
 				else
 					angle = 90f;
@@ -103,8 +103,9 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 			// Interpoliere Grad von Anfang bis Ende um lange Line um Orc herum zu bewegen
 			// Dafür -> RotateAround
 
-			float angle = ((Time.time - circleAttackStarttime) / circleAttackDuration) * 360;
-			endpointRotated = RotatePointAroundPivot(transform.position + Vector3.up * circleAttackRadius, gameObject.transform.position, new Vector3(0, 0, angle));
+			float angleInterpolated = ((Time.time - circleAttackStarttime) / (circleAttackDuration*5)) * 360;
+			// BISHER NOCH DER FEHLER, DASS DIE ANIMATION NACH RECHTS IN DER ANIMATION COUNTER_CLOCKWISE IST
+			endpointRotated = RotatePointAroundPivot(transform.position + Vector3.up * circleAttackRadius, gameObject.transform.position, new Vector3(0, 0, angle + angleInterpolated));
 
 			RaycastHit2D[] attackHits = Physics2D.LinecastAll(transform.position, endpointRotated);
 
@@ -209,7 +210,7 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 
 
 
-	/*
+	
 	void OnDrawGizmos()
 	{
 
@@ -218,7 +219,7 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 		Gizmos.DrawWireSphere(endpointRotated, 0.5f);
 
 	}
-	*/
+	
 
 
 

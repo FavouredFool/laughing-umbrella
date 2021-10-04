@@ -50,6 +50,8 @@ MonoBehaviour:
   slashLength: 3.4
   attackStartDistance: 0.9
   knockbackStrength: 7
+  attackDuration: 0.15
+  totalAngle: 110
 --- !u!1 &8074421750838880382
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,9 +14,15 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 	// Pause zwischen Angriffen in Sek.
 	public float attackDowntime = 3f;
 
+	public float attackDuration = 0.2f;
+
+	public float totalAngle = 90f;
+
 	// Für Gizmos
 	Vector3 rotatedPointNear;
     Vector3 rotatedPointFar;
+
+	Vector3 endpointRotated;
 
 	Vector2 direction;
 	float angle;
@@ -27,12 +33,16 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 
 	// Flags
 	bool createHitboxFlag = false;
-    #endregion
+	bool attackActive = false;
+
+	float attackStarttime = float.NegativeInfinity;
+	
+	#endregion
 
 
-    #region UnityMethods
+	#region UnityMethods
 
-    new protected void Start()
+	new protected void Start()
     {
 		// Start von "Enemy" aufrufen
 		base.Start();
@@ -69,7 +79,7 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 			{
 				// rechts und links
 				if (direction.x > 0)
-					angle = -90f;
+					angle = 270f;
 
 				else
 					angle = 90f;
@@ -83,14 +93,35 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 					angle = 180f;
 			}
 
-			// Hitbox aufbauen
-			// Kollisionspunkt des Rechtecks vorne rechts berechnen
-			Vector3 pointNear = new Vector3(gameObject.transform.position.x + slashWidth / 2, gameObject.transform.position.y + attackStartDistance / 2, gameObject.transform.position.z);
-			rotatedPointNear = RotatePointAroundPivot(pointNear, gameObject.transform.position, new Vector3(0, 0, angle));
 
-			// Kollisionspunkt des Rechtecks hinten links berechnen
-			Vector3 pointFar = new Vector3(gameObject.transform.position.x - slashWidth / 2, gameObject.transform.position.y + slashLength, gameObject.transform.position.z);
-			rotatedPointFar = RotatePointAroundPivot(pointFar, gameObject.transform.position, new Vector3(0, 0, angle));
+			if (attackActive)
+            {
+
+
+				float angleInterpolated = (((Time.time - attackStarttime) / attackDuration) * totalAngle) - totalAngle/2;
+				endpointRotated = RotatePointAroundPivot(transform.position + Vector3.up * slashLength, gameObject.transform.position, new Vector3(0, 0, angle - angleInterpolated));
+
+				RaycastHit2D[] attackHits = Physics2D.LinecastAll(transform.position, endpointRotated);
+
+				foreach (RaycastHit2D rayHit in attackHits)
+				{
+					Collider2D hit = rayHit.collider;
+					if (hit.gameObject.transform.parent != null && hit.gameObject.transform.parent.gameObject == target)
+					{
+						Vector2 knockbackDirection = hit.gameObject.transform.parent.position - gameObject.transform.position;
+						hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
+						break;
+					}
+				}
+
+
+				if (Time.time - attackStarttime > attackDuration)
+				{
+					attackActive = false;
+				}
+
+			}
+		
 		}
 	}
 
@@ -102,25 +133,18 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 		animator.SetTrigger("attack");
 	}
 
+
 	public void CreateHitbox()
-	{
+    {
 		if (createHitboxFlag)
         {
-			// Gegner bei Slash detecten
-			Collider2D [] attackHits = Physics2D.OverlapAreaAll(rotatedPointNear, rotatedPointFar);
 
-			foreach (Collider2D hit in attackHits)
-			{
-				if (hit.gameObject.transform.parent != null && hit.gameObject.transform.parent.gameObject == target)
-				{
-					Vector2 knockbackDirection = hit.gameObject.transform.parent.position - gameObject.transform.position;
-					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
-					break;
-				}
-			}
+			attackActive = true;
+			attackStarttime = Time.time;
+
 			createHitboxFlag = false;
-		}
-	}
+        }
+    }
 
 	public void EndAttack()
 	{
@@ -159,10 +183,10 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 	void OnDrawGizmos()
 	{
 
-		Gizmos.DrawWireSphere(rotatedPointNear, 0.5f);
-		Gizmos.DrawWireSphere(rotatedPointFar, 0.5f);
+		Gizmos.DrawWireSphere(endpointRotated, 0.5f);
 
-	}*/
+	}
+	*/
 
 
 
