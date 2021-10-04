@@ -73,6 +73,10 @@ public abstract class Enemy : MonoBehaviour {
         {
 
             // Stun Enemy
+            if(isStunned)
+            {
+                StopAllCoroutines();
+            }
             StartCoroutine(toggleStun());
 
             // get Knocked back
