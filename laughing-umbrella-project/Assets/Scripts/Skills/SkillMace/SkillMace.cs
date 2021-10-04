@@ -48,9 +48,11 @@ public class SkillMace : MonoBehaviour, ISkill {
 
     public void UseSkill()
     {
+        /*
         // Stun player
         transform.parent.GetComponent<PlayerActions>().setIsStunned(true);
         transform.parent.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        */
 
 
         // Get Mouse Position + Convert from Screen to World-Coordinates
