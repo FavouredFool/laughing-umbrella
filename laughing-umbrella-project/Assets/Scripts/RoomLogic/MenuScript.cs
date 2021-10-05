@@ -13,6 +13,7 @@ public class MenuScript : MonoBehaviour {
 	public void PlayGame()
     {
 		MainScript.health = player.GetComponent<PlayerActions>().maxHealth;
+		MainScript.maxHealth = player.GetComponent<PlayerActions>().maxHealth;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

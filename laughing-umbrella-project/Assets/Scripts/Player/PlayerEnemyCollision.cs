@@ -23,6 +23,7 @@ public class PlayerEnemyCollision : MonoBehaviour {
         {
 			// Collision with Stairs
 			MainScript.health = transform.parent.gameObject.GetComponent<PlayerActions>().getCurrentHealth();
+			MainScript.maxHealth = transform.parent.gameObject.GetComponent<PlayerActions>().getMaxHealth();
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 

@@ -7,6 +7,8 @@ TagManager:
   - Orb
   - Enemy
   - Stairs
+  - Heal
+  - HpUp
   layers:
   - Default
   - TransparentFX

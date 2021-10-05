@@ -187,12 +187,15 @@ MonoBehaviour:
   target: {fileID: 0}
   healthBar: {fileID: 0}
   enemyOrb: {fileID: 4831965654929628838, guid: bbf128f431ca5a54fb069c1102798df7, type: 3}
+  holdsHP: 0
+  holdsHPColor: {r: 1, g: 0.9137255, b: 0.9137255, a: 1}
   maxHealth: 10
   moveSpeed: 6
   attackDamage: 1
   stunDuration: 0.5
   knockbackStrength: 10
   killedObj: {fileID: 2525912397331254685, guid: b37714d01af8ab642a0cc4260223ed57, type: 3}
+  healingItem: {fileID: 922564387035649182, guid: fb6d59f43a739034dbcd0d9f60a53f2a, type: 3}
   obstructionLayers:
     serializedVersion: 2
     m_Bits: 262400

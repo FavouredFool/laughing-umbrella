@@ -35,6 +35,9 @@ public class PlayerActions : MonoBehaviour {
 	bool isInvincible = false;
 	bool isStunned = false;
 
+	string HEALINGITEM_TAG = "Heal";
+	string HPUP_TAG = "HpUp";
+
 	#endregion
 
 
@@ -51,6 +54,10 @@ public class PlayerActions : MonoBehaviour {
 		if(MainScript.health != 0)
         {
 			currentHealth = MainScript.health;
+		}
+		if(MainScript.maxHealth != 0)
+        {
+			maxHealth = MainScript.maxHealth;
 		}
 		
 
@@ -154,6 +161,26 @@ public class PlayerActions : MonoBehaviour {
 		yield return new WaitForSeconds(invincibleTime);
 
 		isInvincible = false;
+	}
+
+	protected void OnTriggerEnter2D(Collider2D collision)
+	{
+		// Check ob der Spieler mit einem Heal kollidiert + Heilung
+		if (collision.gameObject.tag.Equals(HEALINGITEM_TAG))
+		{
+			if (currentHealth != maxHealth)
+            {
+				Destroy(collision.gameObject);
+				currentHealth++;
+			}
+		}
+		// Check ob Spieler mit hpUp kollidiert + hp up
+		if (collision.gameObject.tag.Equals(HPUP_TAG))
+        {
+			Destroy(collision.gameObject);
+			maxHealth++;
+			currentHealth++;
+        }
 	}
 
 	protected void getDestroyed()

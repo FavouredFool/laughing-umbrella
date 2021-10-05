@@ -115,8 +115,7 @@ public class PathfinderForMelee : MonoBehaviour
 					{
 						foundTarget = null;
 						attackerState = AttackerState.SEARCHING;
-					}
-				}
+					}				}
 			}
 		}
 	}

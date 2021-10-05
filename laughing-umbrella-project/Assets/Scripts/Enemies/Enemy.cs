@@ -14,6 +14,10 @@ public abstract class Enemy : MonoBehaviour {
     public Orb enemyOrb;
 
     [Header("General Enemy-Variables")]
+    // Hält Leben?
+    public bool holdsHP = false;
+    // Farbe wenn leben gehalten werden
+    public Color holdsHPColor;
     // Maximale Leben des Gegners.
     public int maxHealth = 15;
     // Geschwindigkeit des Gegners.
@@ -24,10 +28,12 @@ public abstract class Enemy : MonoBehaviour {
     public float stunDuration = 0.5f;
     // KnockbackStrength
     public float knockbackStrength = 10f;
+    
 
     [Header("Effects")]
     // Besiegt-Effect
     public GameObject killedObj;
+    public GameObject healingItem;
 
     int currentHealth;
 
@@ -53,6 +59,11 @@ public abstract class Enemy : MonoBehaviour {
         {
             // Für Lebensleiste
             healthBar.SetMaxHealth(maxHealth);
+        }
+
+        if(holdsHP)
+        {
+            sr.color = holdsHPColor;
         }
         
     }
@@ -115,6 +126,11 @@ public abstract class Enemy : MonoBehaviour {
 
         // Create Effect
         Instantiate(killedObj, gameObject.transform.position, Quaternion.identity);
+        if (holdsHP)
+        {
+            Instantiate(healingItem, gameObject.transform.position, Quaternion.identity);
+        }
+        
 
 
         // Destroy Object
