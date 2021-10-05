@@ -106,12 +106,12 @@ TextureImporter:
       name: DD_Ability_morgenstern_anim_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 601
-        width: 464
-        height: 416
+        x: 7
+        y: 586
+        width: 480
+        height: 432
       alignment: 9
-      pivot: {x: 0.14655173, y: 0}
+      pivot: {x: 0.15833333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -127,10 +127,10 @@ TextureImporter:
       name: DD_Ability_morgenstern_anim_2
       rect:
         serializedVersion: 2
-        x: 864
-        y: 29
-        width: 136
-        height: 800
+        x: 863
+        y: 14
+        width: 152
+        height: 816
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,10 +148,10 @@ TextureImporter:
       name: DD_Ability_morgenstern_anim_8
       rect:
         serializedVersion: 2
-        x: 310
-        y: 30
-        width: 136
-        height: 416
+        x: 309
+        y: 15
+        width: 152
+        height: 432
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: DD_Ability_morgenstern_anim_9
       rect:
         serializedVersion: 2
-        x: 593
-        y: 33
-        width: 136
-        height: 608
+        x: 592
+        y: 18
+        width: 152
+        height: 624
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
