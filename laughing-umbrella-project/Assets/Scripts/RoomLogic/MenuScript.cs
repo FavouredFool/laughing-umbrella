@@ -26,6 +26,7 @@ public class MenuScript : MonoBehaviour {
 
 	public void RetryGame()
     {
+		MainScript.maxHealth = player.GetComponent<PlayerActions>().maxHealth;
 		MainScript.health = player.GetComponent<PlayerActions>().maxHealth;
 		SceneManager.LoadScene(1);
     }
