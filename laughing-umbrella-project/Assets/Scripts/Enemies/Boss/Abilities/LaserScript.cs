@@ -9,6 +9,7 @@ public class LaserScript : MonoBehaviour {
 	[Range(2,4)]
 	public int laserAmount;
 	public float laserSpawnDistance = 3.5f;
+	public float timeBeforeMoving = 1f;
 
 	readonly GameObject[] laserArray = new GameObject[4];
 
@@ -17,6 +18,13 @@ public class LaserScript : MonoBehaviour {
 	public float totalAngle = 360f;
 
 	bool moveLaser = false;
+	bool fadeIn = false;
+	float fadeInStart;
+	float fadeInInter = 0;
+
+	bool fadeOut = false;
+	float fadeOutStart;
+	float fadeOutInter;
 
 	float angle = 0;
 
@@ -34,7 +42,25 @@ public class LaserScript : MonoBehaviour {
 
     protected void Update() {
 
-        if (moveLaser)
+		if(fadeIn)
+        {
+			fadeInInter = (Time.time - fadeInStart) / (timeBeforeMoving / 4);
+			foreach(GameObject laser in laserArray)
+            {
+				laser.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, fadeInInter);
+            }
+		}
+
+		if (fadeOut)
+		{
+			fadeOutInter = 1 - (Time.time - fadeOutStart) / (timeBeforeMoving / 4);
+			foreach (GameObject laser in laserArray)
+			{
+				laser.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, fadeOutInter);
+			}
+		}
+
+		if (moveLaser)
         {
 
 			angle = totalAngle / moveDuration * Time.deltaTime;
@@ -55,6 +81,7 @@ public class LaserScript : MonoBehaviour {
 		for (int i = 0; i < laserAmount; i++)
         {
 			laserArray[i] = Instantiate(laser, gameObject.transform);
+			laserArray[i].GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
 		}
 
 
@@ -78,7 +105,10 @@ public class LaserScript : MonoBehaviour {
 			}
 		}
 
-		yield return new WaitForSeconds(1);
+		fadeIn = true;
+		fadeInStart = Time.time;
+		yield return new WaitForSeconds(timeBeforeMoving);
+		fadeIn = false;
 
 		// rotieren
 		moveLaser = true;
@@ -87,7 +117,12 @@ public class LaserScript : MonoBehaviour {
 
 		// Endpunkt des Lasers
 		moveLaser = false;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(timeBeforeMoving*(3f/4));
+
+		fadeOut = true;
+		fadeOutStart = Time.time;
+		yield return new WaitForSeconds(timeBeforeMoving / 4);
+		fadeOut = false;
 
 		CleanUp();
 
