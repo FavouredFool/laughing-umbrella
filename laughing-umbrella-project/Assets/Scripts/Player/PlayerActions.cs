@@ -38,6 +38,8 @@ public class PlayerActions : MonoBehaviour {
 	string HEALINGITEM_TAG = "Heal";
 	string HPUP_TAG = "HpUp";
 
+	LayerMask obstacleLayer;
+
 	#endregion
 
 
@@ -51,7 +53,10 @@ public class PlayerActions : MonoBehaviour {
 		currentHealth = maxHealth;
 
 
-		if(MainScript.health != 0)
+		obstacleLayer = LayerMask.GetMask("Obstacle");
+
+
+		if (MainScript.health != 0)
         {
 			currentHealth = MainScript.health;
 		}
@@ -97,11 +102,8 @@ public class PlayerActions : MonoBehaviour {
 
 			foreach(Collider2D collided in allCollisions)
             {
-				Debug.Log(LayerMask.LayerToName(collided.gameObject.layer));
-				Debug.Log(movement);
-				if (LayerMask.LayerToName(collided.gameObject.layer) == "Obstacle")
+				if (collided.gameObject.layer == obstacleLayer)
                 {
-					//gameObject.transform.position += new Vector3(0,0.2f,0);
 					gameObject.transform.position += new Vector3(tempMovement.y, tempMovement.x, 0);
 					collisionflag = true;
 				}
