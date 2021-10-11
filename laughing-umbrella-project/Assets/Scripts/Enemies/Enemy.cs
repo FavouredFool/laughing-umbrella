@@ -43,6 +43,8 @@ public abstract class Enemy : MonoBehaviour {
     // Flags
     protected bool isStunned;
 
+    Color tempColor;
+
     #endregion
 
 
@@ -64,6 +66,7 @@ public abstract class Enemy : MonoBehaviour {
         if(holdsHP)
         {
             sr.color = holdsHPColor;
+            tempColor = sr.color;
         }
         
     }
@@ -104,9 +107,10 @@ public abstract class Enemy : MonoBehaviour {
     IEnumerator toggleStun()
     {
         isStunned = true;
+        tempColor = sr.color;
         sr.color = Color.red;
         yield return new WaitForSeconds(stunDuration);
-        sr.color = Color.white;
+        sr.color = tempColor;
         isStunned = false;
         rb.velocity = Vector2.zero;
     }

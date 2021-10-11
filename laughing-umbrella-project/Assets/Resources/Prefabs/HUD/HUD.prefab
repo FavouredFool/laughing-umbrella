@@ -1660,6 +1660,7 @@ MonoBehaviour:
   orbSlashSprite: {fileID: 21300000, guid: 6eab06d96afc9e4429fd55aa49b3943d, type: 3}
   orbBatSprite: {fileID: 21300000, guid: ff04744dfb72c5d4ab211fda3e4ca823, type: 3}
   orbFireSprite: {fileID: 21300000, guid: 92d641abe130f1d44b43492813a5cf0e, type: 3}
+  orbMaceSprite: {fileID: 21300000, guid: 2baf1592cbaf537418cd371141226af7, type: 3}
 --- !u!114 &905259986967251722
 MonoBehaviour:
   m_ObjectHideFlags: 0
