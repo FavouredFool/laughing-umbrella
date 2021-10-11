@@ -77,6 +77,7 @@ public class PlayerActions : MonoBehaviour {
 
 	IEnumerator Dash()
     {
+		Vector2 tempMovement = movement;
         isDashing = true;
 		dashCount -= 1;
 		playerCollision.SetActive(false);
@@ -85,6 +86,28 @@ public class PlayerActions : MonoBehaviour {
 		yield return new WaitForSeconds(dashTime);
 		isDashing = false;
 		playerCollision.SetActive(true);
+
+		// Dont stuck in Wall
+		bool collisionflag = false;
+		do
+		{
+			collisionflag = false;
+			CapsuleCollider2D collider = playerCollision.GetComponent<CapsuleCollider2D>();
+			Collider2D [] allCollisions = Physics2D.OverlapCapsuleAll(playerCollision.transform.position, collider.size, collider.direction, 0f);
+
+			foreach(Collider2D collided in allCollisions)
+            {
+				Debug.Log(LayerMask.LayerToName(collided.gameObject.layer));
+				Debug.Log(movement);
+				if (LayerMask.LayerToName(collided.gameObject.layer) == "Obstacle")
+                {
+					//gameObject.transform.position += new Vector3(0,0.2f,0);
+					gameObject.transform.position += new Vector3(tempMovement.y, tempMovement.x, 0);
+					collisionflag = true;
+				}
+            }
+		} while (collisionflag);
+
 		StartCoroutine(BecomeInvincible(invincibleTimeAfterDash));
 	}
 
