@@ -7,13 +7,14 @@ public class PlayerEnemyCollision : MonoBehaviour {
 	string ENEMY_TAG = "Enemy";
 	string STAIR_TAG = "Stairs";
 	string LASER_TAG = "BossLaser";
-    #endregion
+	string BALL_TAG = "BossBall";
+	#endregion
 
 
-    #region UnityMethods
+	#region UnityMethods
 
 
-    public void OnTriggerEnter2D(Collider2D collision)
+	public void OnTriggerEnter2D(Collider2D collision)
 	{
 		
 		// Collision with an enemy
@@ -25,6 +26,11 @@ public class PlayerEnemyCollision : MonoBehaviour {
         {
 			Vector2 knockbackDirection = (gameObject.transform.position - collision.transform.position).normalized;
 			transform.parent.GetComponent<PlayerActions>().getDamaged(collision.transform.parent.GetComponent<LaserScript>().damage, knockbackDirection, collision.transform.parent.GetComponent<LaserScript>().knockbackStrength);
+        } else if (collision.gameObject.tag.Equals(BALL_TAG))
+        {
+			Destroy(collision.gameObject);
+			Vector2 knockBackDirection = collision.GetComponent<OrbProjectile>().GetDirection();
+			transform.parent.GetComponent<PlayerActions>().getDamaged(collision.GetComponent<OrbProjectile>().GetDamage(), knockBackDirection, collision.GetComponent<OrbProjectile>().GetKnockbackStrength());
         }
 		else if (collision.gameObject.tag.Equals(STAIR_TAG))
         {

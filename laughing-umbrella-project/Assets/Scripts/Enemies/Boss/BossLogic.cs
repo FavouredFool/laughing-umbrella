@@ -61,7 +61,7 @@ public class BossLogic : MonoBehaviour {
 				// decide and do next attack
 				attackActive = true;
 				//switch (Random.Range(0, 3))
-				switch(1)
+				switch(2)
 				{
 					case 0:
 						AbilityLaser();
@@ -93,7 +93,7 @@ public class BossLogic : MonoBehaviour {
 
 	void AbilityFlower()
     {
-		Instantiate(flowerAbility, boss.transform);
+		Instantiate(flowerAbility, boss.transform.position - new Vector3(0,2,0), Quaternion.identity, boss.transform);
 	}
 
 	public void SetAttackActive(bool attackActive)

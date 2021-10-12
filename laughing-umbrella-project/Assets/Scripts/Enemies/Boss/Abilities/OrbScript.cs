@@ -5,7 +5,10 @@ public class OrbScript : MonoBehaviour {
 
 	#region Variables
 	public GameObject orb;
-	
+
+	public int damage = 1;
+	public float knockbackStrength = 3f;
+
 	public float orbSpawnDistance = 3.5f;
 	public float orbSpeed = 3;
 	public float orbDespawnTime = 10f;
@@ -73,26 +76,23 @@ public class OrbScript : MonoBehaviour {
 
 		for (int i = 0; i < waveAmountVersion2; i++)
 		{
-
 			angle = i * angleIncreaseVersion2;
-
 
 			for (int j = 0; j<2; j++)
             {
-				ShootOrb(angle);
-				ShootOrb(angle + 45);
-				ShootOrb(angle + 90);
-				ShootOrb(angle + 135);
-				ShootOrb(angle + 180);
-				ShootOrb(angle + 225);
-				ShootOrb(angle + 270);
-				ShootOrb(angle + 315);
+
+				for (int k = 0; k<8; k++)
+                {
+					ShootOrb(angle + k*45);
+				}
+				
 
 				yield return new WaitForSeconds(timeBetweenWavesVersion2);
 			}
 
 			yield return new WaitForSeconds(timeBetweenWavesVersion2);
 		}
+
 		CleanUp();
 	}
 
@@ -102,7 +102,7 @@ public class OrbScript : MonoBehaviour {
 		orbInstance.transform.position = gameObject.transform.position - new Vector3(0, orbSpawnDistance, 0);
 		orbInstance.transform.position = RotatePointAroundPivot(orbInstance.transform.position, gameObject.transform.position, new Vector3(0,0, angle));
 		Vector2 direction = orbInstance.transform.position - gameObject.transform.position;
-		orbInstance.GetComponent<OrbProjectile>().SetValues(orbSpeed, direction, orbDespawnTime);
+		orbInstance.GetComponent<OrbProjectile>().SetValues(orbSpeed, direction, orbDespawnTime, damage, knockbackStrength);
 	}
 
 	void CleanUp()

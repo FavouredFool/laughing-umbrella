@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7116915463494330767}
   m_Layer: 0
   m_Name: OrbAbility
-  m_TagString: Untagged
+  m_TagString: BossBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orb: {fileID: 1473602085690870590, guid: d1d3aca0530e1a44b8c49a8fa0945769, type: 3}
-  waveAmount: 32
+  damage: 1
+  knockbackStrength: 2
   orbSpawnDistance: 3.5
   orbSpeed: 1.5
-  timeBetweenWaves: 0.25
+  orbDespawnTime: 10
+  waveAmountVersion1: 17
+  timeBetweenWavesVersion1: 0.5
+  waveAmountVersion2: 8
+  timeBetweenWavesVersion2: 0.5
+  angleIncreaseVersion2: 22.5

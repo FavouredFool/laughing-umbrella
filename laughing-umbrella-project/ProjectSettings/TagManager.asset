@@ -11,6 +11,7 @@ TagManager:
   - HpUp
   - Boss
   - BossLaser
+  - BossBall
   layers:
   - Default
   - TransparentFX
