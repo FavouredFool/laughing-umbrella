@@ -106,10 +106,10 @@ TextureImporter:
       name: Boss_Ability_EnergyBall_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 844
-        width: 152
-        height: 152
+        x: 24
+        y: 899
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,10 +127,10 @@ TextureImporter:
       name: Boss_Ability_EnergyBall_1
       rect:
         serializedVersion: 2
-        x: 227
-        y: 844
-        width: 152
-        height: 152
+        x: 153
+        y: 900
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,10 +148,10 @@ TextureImporter:
       name: Boss_Ability_EnergyBall_2
       rect:
         serializedVersion: 2
-        x: 435
-        y: 840
-        width: 152
-        height: 152
+        x: 287
+        y: 896
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: Boss_Ability_EnergyBall_3
       rect:
         serializedVersion: 2
-        x: 652
-        y: 841
-        width: 152
-        height: 152
+        x: 423
+        y: 897
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
