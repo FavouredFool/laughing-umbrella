@@ -93,7 +93,9 @@ public class BossLogic : MonoBehaviour {
 
 	void AbilityFlower()
     {
-		Instantiate(flowerAbility, boss.transform.position - new Vector3(0,2,0), Quaternion.identity, boss.transform);
+		GameObject test = Instantiate(flowerAbility, new Vector3(), Quaternion.identity, boss.transform);
+		//test.transform.position = gameObject.transform.position;
+
 	}
 
 	public void SetAttackActive(bool attackActive)

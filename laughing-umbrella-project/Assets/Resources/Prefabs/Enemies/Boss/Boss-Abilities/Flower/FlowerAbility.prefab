@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5594179887858111208}
+  - component: {fileID: 8390227419775571479}
   m_Layer: 0
   m_Name: FlowerAbility
   m_TagString: Untagged
@@ -24,9 +25,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674760480702447622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9.07, y: -2.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8390227419775571479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674760480702447622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42211a6d9affb7741b1c121131d9eb40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilBlossom: 1
+  timeBetweenWaves: 2
+  timeActiveDangerous: 1
+  cropFlower: {fileID: -4695258285846406220, guid: 980657854009bcc40bd156ca47da9d6c, type: 3}
+  blossomedFlower: {fileID: 562083114693939841, guid: 980657854009bcc40bd156ca47da9d6c, type: 3}

@@ -6739,6 +6739,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1435424467823904519, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435424467823904519, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056408345816907229, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056408345816907229, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427713509253110072, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: m_Name
+      value: FlowerPatterns
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427713509253110072, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: m_TagString
+      value: FlowerPattern
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840955302472611062, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840955302472611062, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8277769610122298438, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
       propertyPath: m_Name
       value: BossLogic

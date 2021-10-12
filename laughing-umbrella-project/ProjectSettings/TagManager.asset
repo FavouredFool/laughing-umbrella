@@ -12,6 +12,7 @@ TagManager:
   - Boss
   - BossLaser
   - BossBall
+  - FlowerPattern
   layers:
   - Default
   - TransparentFX
