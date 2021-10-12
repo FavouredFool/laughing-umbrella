@@ -84,6 +84,7 @@ public class LaserScript : MonoBehaviour {
         {
 			laserArray[i] = Instantiate(laser, gameObject.transform);
 			laserArray[i].GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+			laserArray[i].GetComponent<BoxCollider2D>().enabled = false;
 		}
 
 
@@ -109,8 +110,20 @@ public class LaserScript : MonoBehaviour {
 
 		fadeIn = true;
 		fadeInStart = Time.time;
-		yield return new WaitForSeconds(timeBeforeMoving);
+		yield return new WaitForSeconds(timeBeforeMoving/4);
 		fadeIn = false;
+
+		// Zeit vor Collider-Aktivierung
+		yield return new WaitForSeconds(timeBeforeMoving / 2);
+
+		for (int i = 0; i < laserAmount; i++)
+		{
+			laserArray[i].GetComponent<BoxCollider2D>().enabled = true;
+		}
+
+		yield return new WaitForSeconds(timeBeforeMoving / 4);
+
+
 
 		// rotieren
 		moveLaser = true;

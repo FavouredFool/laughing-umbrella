@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1762266335983083051}
+  - component: {fileID: 7116915463494330767}
   m_Layer: 0
   m_Name: OrbAbility
   m_TagString: Untagged
@@ -30,3 +31,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7116915463494330767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8557674979080762113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51130c05af7302648aedbf86d37a54dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orb: {fileID: 1473602085690870590, guid: d1d3aca0530e1a44b8c49a8fa0945769, type: 3}
+  waveAmount: 32
+  orbSpawnDistance: 3.5
+  orbSpeed: 1.5
+  timeBetweenWaves: 0.25

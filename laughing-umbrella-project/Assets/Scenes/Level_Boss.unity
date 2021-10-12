@@ -5933,7 +5933,7 @@ Transform:
   - {fileID: 358564935}
   - {fileID: 323738005}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &991896815
 GameObject:
@@ -6525,13 +6525,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLogic
       objectReference: {fileID: 0}
-    - target: {fileID: 8277769610122298438, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
-      propertyPath: m_TagString
-      value: Boss
-      objectReference: {fileID: 0}
     - target: {fileID: 8277769610122298441, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8277769610122298441, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
       propertyPath: m_LocalPosition.x
