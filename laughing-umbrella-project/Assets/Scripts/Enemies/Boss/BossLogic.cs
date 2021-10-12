@@ -16,10 +16,6 @@ public class BossLogic : MonoBehaviour {
 	public enum BossState { INTRO, FIGHT, END };
 	BossState bossState;
 
-	/*
-	public enum ActiveAttack { NONE, LASER, ORB, FLOWER }
-	ActiveAttack activeAttack;
-	*/
 
 
 	bool attackActive = false;
@@ -30,29 +26,7 @@ public class BossLogic : MonoBehaviour {
 	#region UnityMethods
 
 	protected void Start() {
-		//activeAttack = ActiveAttack.NONE;
 		SwapState(BossState.FIGHT);
-    }
-
-    protected void Update()
-    {
-		/*
-		// Welcher Angriff gerade aktiv ist
-        switch(activeAttack)
-        {
-			case ActiveAttack.LASER:
-				break;
-			case ActiveAttack.ORB:
-				break;
-			case ActiveAttack.FLOWER:
-				break;
-			case ActiveAttack.NONE:
-				// NUR wenn kein Angriff aktiv ist
-				break;
-		}
-		*/
-
-		// Immer, unabhängig von Angriff
     }
 
     void SwapState(BossState state)

@@ -9,6 +9,8 @@ TagManager:
   - Stairs
   - Heal
   - HpUp
+  - Boss
+  - BossLaser
   layers:
   - Default
   - TransparentFX

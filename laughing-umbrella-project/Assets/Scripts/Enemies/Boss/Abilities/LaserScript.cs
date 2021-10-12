@@ -16,6 +16,8 @@ public class LaserScript : MonoBehaviour {
 	
 	public float moveDuration = 6f;
 	public float totalAngle = 360f;
+	public float knockbackStrength = 1.5f;
+	public int damage = 1;
 
 	bool moveLaser = false;
 	bool fadeIn = false;
