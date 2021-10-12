@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42211a6d9affb7741b1c121131d9eb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeUntilBlossom: 1
-  timeBetweenWaves: 2
-  timeActiveDangerous: 1
+  waveAmount: 5
+  timeUntilBlossom: 0.7
+  timeBetweenWaves: 0.5
+  timeActiveDangerous: 0.5
   cropFlower: {fileID: -4695258285846406220, guid: 980657854009bcc40bd156ca47da9d6c, type: 3}
   blossomedFlower: {fileID: 562083114693939841, guid: 980657854009bcc40bd156ca47da9d6c, type: 3}

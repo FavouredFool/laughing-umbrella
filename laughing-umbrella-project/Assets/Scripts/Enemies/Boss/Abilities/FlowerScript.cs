@@ -5,6 +5,8 @@ public class FlowerScript : MonoBehaviour {
 
 	#region Variables
 
+	public int waveAmount = 5;
+
 	public float timeUntilBlossom = 1f;
 	public float timeBetweenWaves = 2f;
 	public float timeActiveDangerous = 1f;
@@ -38,17 +40,62 @@ public class FlowerScript : MonoBehaviour {
 
 	IEnumerator ActiveAbility()
     {
-		
-		yield return StartCoroutine(SpawnPattern(flowerPatterns[0]));
 
-		yield return new WaitForSeconds(timeBetweenWaves);
+		// Angriffe bestimmen
+		int[] allAttacks = new int[waveAmount];
+		int lastAttack = -1;
+		int rolledAttack = -1;
 
-		yield return StartCoroutine(SpawnPattern(flowerPatterns[1]));
+		bool test0 = true;
+		bool test1 = true;
+		bool test2 = true;
 
-		yield return new WaitForSeconds(timeBetweenWaves);
+		do
+		{
+			for (int i = 0; i < waveAmount; i++)
+			{
+				do
+				{
+					rolledAttack = Random.Range(0, 3);
+					allAttacks[i] = rolledAttack;
 
-		yield return StartCoroutine(SpawnPattern(flowerPatterns[2]));
+				} while (rolledAttack == lastAttack);
 
+				lastAttack = rolledAttack;
+			}
+
+			// Endtest ob alle Versionen mindestens ein mal drin sind
+			
+			foreach (int j in allAttacks)
+			{
+
+				switch (j)
+				{
+					case 0:
+						test0 = false;
+						break;
+					case 1:
+						test1 = false;
+						break;
+					case 2:
+						test2 = false;
+						break;
+				}
+			}
+		} while (test0 || test1 || test2);
+
+
+
+
+		for (int i = 0; i < waveAmount; i++)
+        {
+			// 0 bis 2 -> verschiedene Angriffe
+
+
+			yield return StartCoroutine(SpawnPattern(flowerPatterns[allAttacks[i]]));
+
+			yield return new WaitForSeconds(timeBetweenWaves);
+		}
 
 		CleanUp();
     }
