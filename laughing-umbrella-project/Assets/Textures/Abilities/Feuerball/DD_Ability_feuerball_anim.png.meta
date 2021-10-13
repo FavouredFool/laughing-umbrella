@@ -20,6 +20,18 @@ TextureImporter:
   - first:
       213: 7763985432313978257
     second: DD_Ability_feuerball_anim_5
+  - first:
+      213: 8146174934645530548
+    second: DD_Ability_feuerball_anim_6
+  - first:
+      213: -7302692026235462238
+    second: DD_Ability_feuerball_anim_7
+  - first:
+      213: 1762051624347348666
+    second: DD_Ability_feuerball_anim_14
+  - first:
+      213: 5039110155300472884
+    second: DD_Ability_feuerball_anim_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -230,6 +242,90 @@ TextureImporter:
       bones: []
       spriteID: 19dd1668d973fbb60800000000000000
       internalID: 7763985432313978257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_feuerball_anim_6
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 414
+        width: 304
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfdcb951f60d0170800000000000000
+      internalID: 8146174934645530548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_feuerball_anim_7
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 402
+        width: 304
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad58202b40a7aa90800000000000000
+      internalID: -7302692026235462238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_feuerball_anim_14
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 64
+        width: 248
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abeaf19dd90147810800000000000000
+      internalID: 1762051624347348666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DD_Ability_feuerball_anim_17
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 60
+        width: 264
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4388fb6ecf38ee540800000000000000
+      internalID: 5039110155300472884
       vertices: []
       indices: 
       edges: []
