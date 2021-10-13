@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 562083114693939841
     second: Boss_Ability_Flower_1
+  - first:
+      213: -6562094245228984177
+    second: Boss_Ability_Flower_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -126,7 +129,7 @@ TextureImporter:
         width: 240
         height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,6 +137,27 @@ TextureImporter:
       bones: []
       spriteID: 182d3916d9becc700800000000000000
       internalID: 562083114693939841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ability_Flower_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 649
+        width: 176
+        height: 176
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88cd7a2d02cee4a0800000000000000
+      internalID: -6562094245228984177
       vertices: []
       indices: 
       edges: []
