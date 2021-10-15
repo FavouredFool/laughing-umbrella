@@ -42,7 +42,7 @@ public class PlayerEnemyCollision : MonoBehaviour {
 		else if (collision.gameObject.tag.Equals(BOSS_TAG))
         {
 			Vector2 knockbackDirection = (gameObject.transform.position - collision.transform.position).normalized;
-			transform.parent.GetComponent<PlayerActions>().getDamaged(collision.transform.parent.GetComponent<BossLogic>().damage, knockbackDirection, collision.transform.parent.GetComponent<BossLogic>().knockbackStrength);
+			transform.parent.GetComponent<PlayerActions>().getDamaged(collision.transform.parent.parent.GetComponent<BossLogic>().damage, knockbackDirection, collision.transform.parent.parent.GetComponent<BossLogic>().knockbackStrength);
         }
 		else if (collision.gameObject.tag.Equals(STAIR_TAG))
         {
