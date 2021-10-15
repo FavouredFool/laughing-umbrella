@@ -25,18 +25,17 @@ public class OrbSpawn : MonoBehaviour {
 		Collider2D collider;
 		do
 		{
-			if (Random.Range(0f, 1f) == 0)
+			if (Random.Range(0, 2) == 0)
 				xOffset = Random.Range(-OuterCircleRadius, -InnerCircleRadius);
 
 			else
 				xOffset = Random.Range(InnerCircleRadius, OuterCircleRadius);
 
-			if (Random.Range(0f, 1f) == 0)
+			if (Random.Range(0, 2) == 0)
 				yOffset = Random.Range(-OuterCircleRadius, -InnerCircleRadius);
 
 			else
 				yOffset = Random.Range(InnerCircleRadius, OuterCircleRadius);
-
 
 			spawnPos = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, 0);
 

@@ -67,9 +67,10 @@ public class PlayerFireball : MonoBehaviour
 			Vector2 knockbackDirection = direction.normalized;
 			collision.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
 		}
-		else if (collision.transform.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG))
+		else if (collision.transform.parent != null && collision.transform.parent.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG))
 		{
 			// Boss bekommt Schaden
+			collision.gameObject.transform.parent.parent.GetComponent<BossLogic>().GetDamaged(attackDamage);
 		}
 
 	}

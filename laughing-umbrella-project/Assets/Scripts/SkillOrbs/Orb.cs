@@ -121,6 +121,11 @@ public class Orb : MonoBehaviour {
         }
     }
 
+    public void SetTime(float despawnTime)
+    {
+        this.despawnTime = despawnTime;
+    }
+
 
 
     #endregion

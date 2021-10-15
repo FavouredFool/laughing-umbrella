@@ -55,9 +55,10 @@ public class MovObjLogic : MonoBehaviour {
 			// Zerstöre Objekt
 			Destroy(gameObject);
 		}
-		else if (collision.transform.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG))
+		else if (collision.transform.parent != null && collision.transform.parent.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG))
 		{
 			// Boss bekommt Schaden
+			collision.gameObject.transform.parent.parent.GetComponent<BossLogic>().GetDamaged(transform.parent.GetComponent<SkillBat>().attackDamage);
 
 			// Zerstöre Objekt
 			Destroy(gameObject);

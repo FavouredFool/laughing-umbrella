@@ -10,6 +10,8 @@ public class BossLogic : MonoBehaviour {
 	public GameObject laserAbility;
 	public GameObject orbAbility;
 	public GameObject flowerAbility;
+	public GameObject[] orbs;
+	public GameObject[] orbSpawners;
 	
 	public float attackDowntime = 3.0f;
 
@@ -18,6 +20,9 @@ public class BossLogic : MonoBehaviour {
 	public int damage;
 	public int knockbackStrength;
 	public float colorChangeDuration = 0.5f;
+
+	public float regularOrbSpawnTime = 8f;
+	public float regularOrbDespawnTime = 20f;
 
 	public enum BossState { INTRO, FIGHT, END };
 	BossState bossState;
@@ -48,6 +53,9 @@ public class BossLogic : MonoBehaviour {
 
     void SwapState(BossState state)
     {
+
+		bossState = state;
+
 		switch (state)
 		{
 			case BossState.INTRO:
@@ -56,6 +64,7 @@ public class BossLogic : MonoBehaviour {
 			case BossState.FIGHT:
 				// Fight starts
 				StartCoroutine(FightBehaviour());
+				StartCoroutine(regularOrbSpawn());
 				break;
 			case BossState.END:
 				// Fight is over, boss is dead
@@ -125,7 +134,7 @@ public class BossLogic : MonoBehaviour {
 	public void GetDamaged(int attackDamage)
     {
 		// Drop Orb
-		//dropOrb();
+		dropOrb();
 
 
 		// Get damaged
@@ -164,6 +173,53 @@ public class BossLogic : MonoBehaviour {
 		// Destroy Object
 		Destroy(gameObject);
 	}
+
+	protected void dropOrb()
+	{
+		GameObject orb = Instantiate(orbs[Random.Range(0,4)], gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
+		orb.GetComponent<Orb>().SetTime(regularOrbDespawnTime);
+	}
+
+	IEnumerator regularOrbSpawn()
+    {
+
+		Vector2 spawnPos = new Vector2();
+		int spawnNr = -1;
+		int lastSpawnNr = -1;
+
+		while (bossState == BossState.FIGHT)
+        {
+			yield return new WaitForSeconds(regularOrbSpawnTime);
+
+			do
+			{
+				spawnNr = Random.Range(0, 4);
+
+			} while (spawnNr == lastSpawnNr);
+
+			lastSpawnNr = spawnNr;
+
+			switch(spawnNr)
+            {
+				case 0:
+					spawnPos = orbSpawners[0].transform.position;
+					break;
+				case 1:
+					spawnPos = orbSpawners[1].transform.position;
+					break;
+				case 2:
+					spawnPos = orbSpawners[2].transform.position;
+					break;
+				case 3:
+					spawnPos = orbSpawners[3].transform.position;
+					break;
+            }
+
+			GameObject orb = Instantiate(orbs[Random.Range(0, 4)], spawnPos, Quaternion.identity);
+			orb.GetComponent<Orb>().SetTime(regularOrbDespawnTime);
+
+		}
+    }
 
 
 	void AbilityLaser()

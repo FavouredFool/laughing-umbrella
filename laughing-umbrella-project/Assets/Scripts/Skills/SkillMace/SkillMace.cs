@@ -98,9 +98,11 @@ public class SkillMace : MonoBehaviour, ISkill {
                     Vector2 knockbackDirection = (hit.transform.position - gfxChild.transform.position).normalized;
                     hit.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrengthCircle);
                 }
-                else if (hit.transform.parent != null && hit.transform.parent.tag.Equals(BOSS_TAG) && !hitObjectsCircle.Contains(hit.transform.parent.gameObject))
+                else if (hit.transform.parent != null && hit.transform.parent.parent != null && hit.transform.parent.tag.Equals(BOSS_TAG) && !hitObjectsCircle.Contains(hit.transform.parent.parent.gameObject))
                 {
                     // Boss bekommt Schaden
+                    hitObjectsCircle.Add(hit.transform.parent.parent.gameObject);
+                    hit.gameObject.transform.parent.parent.GetComponent<BossLogic>().GetDamaged(attackDamage);
                 }
             }
 
@@ -144,9 +146,11 @@ public class SkillMace : MonoBehaviour, ISkill {
                     Vector2 knockbackDirection = (collision.transform.position - gfxChild.transform.position).normalized;
                     collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrengthLine);
                 }
-                else if (collision.transform.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG) && !hitObjectsLine.Contains(collision.transform.parent.gameObject))
+                else if (collision.transform.parent != null && collision.transform.parent.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG) && !hitObjectsLine.Contains(collision.transform.parent.parent.gameObject))
                 {
                     // Boss bekommt Schaden
+                    hitObjectsLine.Add(collision.transform.parent.parent.gameObject);
+                    collision.gameObject.transform.parent.parent.GetComponent<BossLogic>().GetDamaged(attackDamage);
                 }
             }
 
