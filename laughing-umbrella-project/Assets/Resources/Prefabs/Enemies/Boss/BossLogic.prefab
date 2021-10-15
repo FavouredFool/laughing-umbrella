@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 5905589367826872064}
   - component: {fileID: 1436504984}
   - component: {fileID: 1035747636779838462}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -645,13 +645,16 @@ MonoBehaviour:
   - {fileID: 4460109068292712580}
   - {fileID: 4443636084394912128}
   - {fileID: 2215994952317508250}
+  wall: {fileID: 0}
+  camera: {fileID: 0}
   attackDowntime: 2
-  health: 200
+  health: 500
   damage: 1
   knockbackStrength: 10
   colorChangeDuration: 0.2
   regularOrbSpawnTime: 8
   regularOrbDespawnTime: 20
+  distanceForIntro: 10
 --- !u!114 &76079374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff2124d0fcb12344b07d1710dba43c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OuterCircleRadius: 9
+  OuterCircleRadius: 8
   InnerCircleRadius: 2
   forbiddenCollisionLayers:
     serializedVersion: 2

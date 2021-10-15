@@ -35,7 +35,7 @@ public abstract class Enemy : MonoBehaviour {
     public GameObject killedObj;
     public GameObject healingItem;
 
-    int currentHealth;
+    protected int currentHealth;
 
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
@@ -57,6 +57,7 @@ public abstract class Enemy : MonoBehaviour {
         sr = GetComponent<SpriteRenderer>();
 
         currentHealth = maxHealth;
+       
         if (healthBar)
         {
             // Für Lebensleiste
@@ -75,7 +76,6 @@ public abstract class Enemy : MonoBehaviour {
     {
         // Drop Orb
         dropOrb();
-
 
         // Get damaged
         currentHealth -= attackDamage;

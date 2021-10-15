@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OuterCircleRadius: 1.1
-  InnerCircleRadius: 0.48
+  InnerCircleRadius: 0.5
   forbiddenCollisionLayers:
     serializedVersion: 2
     m_Bits: 262912

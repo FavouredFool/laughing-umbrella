@@ -12,6 +12,8 @@ public class BossLogic : MonoBehaviour {
 	public GameObject flowerAbility;
 	public GameObject[] orbs;
 	public GameObject[] orbSpawners;
+	public GameObject wall;
+	public GameObject camera;
 	
 	public float attackDowntime = 3.0f;
 
@@ -24,11 +26,11 @@ public class BossLogic : MonoBehaviour {
 	public float regularOrbSpawnTime = 8f;
 	public float regularOrbDespawnTime = 20f;
 
+	public float distanceForIntro = 8f;
+
 	public enum BossState { INTRO, FIGHT, END };
 	BossState bossState;
 
-	Color tempColor;
-	Color damageColor = Color.red;
 
 	SpriteRenderer sr;
 	Animator animator;
@@ -38,18 +40,25 @@ public class BossLogic : MonoBehaviour {
 	int attack = -1;
 	bool attackActive = false;
 
+	readonly string PLAYER_TAG = "Player";
+
 	#endregion
 
 
 	#region UnityMethods
 
 	protected void Start() {
-		SwapState(BossState.FIGHT);
+		SwapState(BossState.INTRO);
 		sr = boss.GetComponent<SpriteRenderer>();
 		animator = boss.GetComponent<Animator>();
 
 		currentHealth = health;
 	}
+
+    protected void Update()
+    {
+
+    }
 
     void SwapState(BossState state)
     {
@@ -60,6 +69,7 @@ public class BossLogic : MonoBehaviour {
 		{
 			case BossState.INTRO:
 				// Lil Intro Scenario + Camera Pan
+				StartCoroutine(CheckPlayerPos());
 				break;
 			case BossState.FIGHT:
 				// Fight starts
@@ -71,6 +81,36 @@ public class BossLogic : MonoBehaviour {
 				break;
 		}
 	}
+
+	IEnumerator CheckPlayerPos()
+    {
+		bool foundPlayer = false;
+		do
+		{
+			yield return new WaitForSeconds(0.2f);
+
+			Collider2D[] collisions = Physics2D.OverlapCircleAll(gameObject.transform.position, distanceForIntro);
+
+			foreach (Collider2D collision in collisions)
+			{
+				if (collision.transform.parent != null && collision.transform.parent.tag.Equals(PLAYER_TAG))
+				{
+					foundPlayer = true;
+					wall.SetActive(true);
+				}
+			}
+
+		} while (!foundPlayer);
+
+		// Camera Pan
+
+		yield return new WaitForSeconds(1f);
+
+		SwapState(BossState.FIGHT);
+
+		
+
+    }
 
 
 	IEnumerator FightBehaviour()
@@ -159,7 +199,8 @@ public class BossLogic : MonoBehaviour {
 
 	IEnumerator ChangeColor()
     {
-		tempColor = sr.color;
+		Color tempColor = Color.white;
+		Color damageColor = Color.red;
 		sr.color = damageColor;
 		yield return new WaitForSeconds(colorChangeDuration);
 		sr.color = tempColor;
