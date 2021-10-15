@@ -26,6 +26,7 @@ public class BossLogic : MonoBehaviour {
 	Color damageColor = Color.red;
 
 	SpriteRenderer sr;
+	Animator animator;
 
 
 	int lastAttack = -1;
@@ -40,6 +41,7 @@ public class BossLogic : MonoBehaviour {
 	protected void Start() {
 		SwapState(BossState.FIGHT);
 		sr = boss.GetComponent<SpriteRenderer>();
+		animator = boss.GetComponent<Animator>();
 
 		currentHealth = health;
 	}
@@ -70,8 +72,7 @@ public class BossLogic : MonoBehaviour {
 		{
 			if (!attackActive)
             {
-				// Downtime between attacks
-				yield return new WaitForSeconds(attackDowntime);
+				yield return new WaitForSeconds(0.1f);
 
 				// decide and do next attack
 				attackActive = true;
@@ -85,16 +86,32 @@ public class BossLogic : MonoBehaviour {
 				switch (attack)
 				{
 					case 0:
-						AbilityLaser();
+						animator.SetTrigger("laser");
 						lastAttack = 0;
 						break;
 					case 1:
-						AbilityOrb();
+						animator.SetTrigger("orb");
 						lastAttack = 1;
 						break;
 					case 2:
-						AbilityFlower();
+						animator.SetTrigger("flower");
 						lastAttack = 2;
+						break;
+				}
+
+				// Downtime between attacks
+				yield return new WaitForSeconds(attackDowntime);
+
+				switch (attack)
+				{
+					case 0:
+						AbilityLaser();
+						break;
+					case 1:
+						AbilityOrb();
+						break;
+					case 2:
+						AbilityFlower();
 						break;
 				}
 			} else
