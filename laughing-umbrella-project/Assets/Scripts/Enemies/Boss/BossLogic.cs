@@ -13,8 +13,19 @@ public class BossLogic : MonoBehaviour {
 	
 	public float attackDowntime = 3.0f;
 
+	public int health;
+	int currentHealth;
+	public int damage;
+	public int knockbackStrength;
+	public float colorChangeDuration = 0.5f;
+
 	public enum BossState { INTRO, FIGHT, END };
 	BossState bossState;
+
+	Color tempColor;
+	Color damageColor = Color.red;
+
+	SpriteRenderer sr;
 
 
 	int lastAttack = -1;
@@ -28,7 +39,10 @@ public class BossLogic : MonoBehaviour {
 
 	protected void Start() {
 		SwapState(BossState.FIGHT);
-    }
+		sr = boss.GetComponent<SpriteRenderer>();
+
+		currentHealth = health;
+	}
 
     void SwapState(BossState state)
     {
@@ -91,6 +105,50 @@ public class BossLogic : MonoBehaviour {
 		}
     }
 
+	public void GetDamaged(int attackDamage)
+    {
+		// Drop Orb
+		//dropOrb();
+
+
+		// Get damaged
+		currentHealth -= attackDamage;
+		if (currentHealth <= 0)
+		{
+			// Destroy Object
+			GetDestroyed();
+		}
+		else
+		{
+			StartCoroutine(ChangeColor());
+			/*
+			if (healthBar)
+			{
+				// Healthbar neu setzen
+				healthBar.SetHealth(currentHealth);
+			}
+			*/
+		}
+	}
+
+	IEnumerator ChangeColor()
+    {
+		tempColor = sr.color;
+		sr.color = damageColor;
+		yield return new WaitForSeconds(colorChangeDuration);
+		sr.color = tempColor;
+	}
+
+	void GetDestroyed()
+    {
+		// Create Effect
+		//Instantiate(killedObj, gameObject.transform.position, Quaternion.identity);
+
+		// Destroy Object
+		Destroy(gameObject);
+	}
+
+
 	void AbilityLaser()
     {
 		Instantiate(laserAbility, boss.transform.position - new Vector3(0, 2, 0), Quaternion.identity, boss.transform);
@@ -103,7 +161,7 @@ public class BossLogic : MonoBehaviour {
 
 	void AbilityFlower()
     {
-		GameObject test = Instantiate(flowerAbility, new Vector3(), Quaternion.identity, boss.transform);
+		Instantiate(flowerAbility, new Vector3(), Quaternion.identity, boss.transform);
 	}
 
 	public void SetAttackActive(bool attackActive)

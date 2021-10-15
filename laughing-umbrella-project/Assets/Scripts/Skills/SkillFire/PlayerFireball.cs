@@ -18,6 +18,7 @@ public class PlayerFireball : MonoBehaviour
 
 	// Konstanten
 	readonly string ENEMY_TAG = "Enemy";
+	readonly string BOSS_TAG = "Boss";
 
 	// Flags
 	bool isActive = false;
@@ -66,6 +67,11 @@ public class PlayerFireball : MonoBehaviour
 			Vector2 knockbackDirection = direction.normalized;
 			collision.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
 		}
+		else if (collision.transform.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG))
+		{
+			// Boss bekommt Schaden
+		}
+
 	}
 
     protected void OnCollisionEnter2D(Collision2D collision)

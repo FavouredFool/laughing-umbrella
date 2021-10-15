@@ -29,6 +29,7 @@ public class SkillSlash : MonoBehaviour, ISkill
 
     // Konstante 
     readonly string ENEMY_TAG = "Enemy";
+    readonly string BOSS_TAG = "Boss";
 
     Vector3 playerToMouseVector;
     Vector3 endpointRotated;
@@ -64,6 +65,11 @@ public class SkillSlash : MonoBehaviour, ISkill
                     hitObjects.Add(hit.transform.parent.gameObject);
                     Vector2 knockbackDirection = (hit.transform.position - gfxChild.transform.position).normalized;
                     hit.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
+                } else if (hit.transform.parent != null && hit.transform.parent.parent != null && hit.transform.parent.tag.Equals(BOSS_TAG) && !hitObjects.Contains(hit.transform.parent.parent.gameObject))
+                {
+                    // Boss bekommt Schaden
+                    hitObjects.Add(hit.transform.parent.parent.gameObject);
+                    hit.gameObject.transform.parent.parent.GetComponent<BossLogic>().GetDamaged(attackDamage);
                 }
             }
 
@@ -99,24 +105,8 @@ public class SkillSlash : MonoBehaviour, ISkill
 
     public void CreateHitbox()
     {
-
         attackActive = true;
         attackStarttime = Time.time;
-
-
-
-        /*
-        // Gegner bei Slash detecten
-        Collider2D[] enemiesHit = Physics2D.OverlapAreaAll(rotatedPointNear, rotatedPointFar);
-
-        foreach (Collider2D collision in enemiesHit)
-        {
-            if (collision.transform.parent != null && collision.transform.parent.tag.Equals(ENEMY_TAG)){
-                Vector2 knockbackDirection = (collision.transform.position - gfxChild.transform.position).normalized;
-                collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
-            }
-        }
-        */
     }
 
     Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)

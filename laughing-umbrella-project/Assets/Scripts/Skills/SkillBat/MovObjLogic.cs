@@ -12,6 +12,9 @@ public class MovObjLogic : MonoBehaviour {
 	// Flags
 	bool isActive = false;
 
+	readonly string ENEMY_TAG = "Enemy";
+	readonly string BOSS_TAG = "Boss";
+
 	#endregion
 
 
@@ -42,12 +45,19 @@ public class MovObjLogic : MonoBehaviour {
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-		if(collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.tag.Equals("Enemy"))
+		if(collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.tag.Equals(ENEMY_TAG))
         {
 
 			Vector2 knockbackDirection = (collision.transform.position - gameObject.transform.position).normalized;
 			// Mache Damage
 			collision.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(transform.parent.GetComponent<SkillBat>().attackDamage, knockbackDirection, transform.parent.GetComponent<SkillBat>().knockbackStrength);
+
+			// Zerstöre Objekt
+			Destroy(gameObject);
+		}
+		else if (collision.transform.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG))
+		{
+			// Boss bekommt Schaden
 
 			// Zerstöre Objekt
 			Destroy(gameObject);
