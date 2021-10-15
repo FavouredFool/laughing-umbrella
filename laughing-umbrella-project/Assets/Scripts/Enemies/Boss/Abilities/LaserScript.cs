@@ -5,7 +5,6 @@ public class LaserScript : MonoBehaviour {
 
 	#region Variables
 	public GameObject laser;
-	public bool counterclockwise = false;
 	[Range(2,4)]
 	public int laserAmount;
 	public float laserSpawnDistance = 3.5f;
@@ -18,6 +17,8 @@ public class LaserScript : MonoBehaviour {
 	public float totalAngle = 360f;
 	public float knockbackStrength = 1.5f;
 	public int damage = 1;
+
+	bool counterclockwise = false;
 
 	bool moveLaser = false;
 	bool fadeIn = false;
@@ -37,9 +38,16 @@ public class LaserScript : MonoBehaviour {
 
     protected void Start() {
 
+		if (Random.Range(0,2) == 0)
+        {
+			counterclockwise = true;
+		} else
+        {
+			counterclockwise = false;
+        }
+
 		StartCoroutine(ActiveAbility());
 
-		
 	}
 
     protected void Update() {

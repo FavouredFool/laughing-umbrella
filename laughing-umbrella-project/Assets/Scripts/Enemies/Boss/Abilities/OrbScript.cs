@@ -64,6 +64,8 @@ public class OrbScript : MonoBehaviour {
 			angle = (i * angleIncreaseVersion1) + startAngleVersion1;
 			ShootOrb(angle);
 			ShootOrb(angle + 180);
+			ShootOrb(angle + 90);
+			ShootOrb(angle + 270);
 
 			yield return new WaitForSeconds(timeBetweenWavesVersion1);
 		}

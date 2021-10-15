@@ -17,7 +17,8 @@ public class BossLogic : MonoBehaviour {
 	BossState bossState;
 
 
-
+	int lastAttack = -1;
+	int attack = -1;
 	bool attackActive = false;
 
 	#endregion
@@ -60,17 +61,26 @@ public class BossLogic : MonoBehaviour {
 
 				// decide and do next attack
 				attackActive = true;
-				//switch (Random.Range(0, 3))
-				switch(2)
+
+				do
+				{
+					attack = Random.Range(0, 3);
+
+				} while (attack == lastAttack);
+
+				switch (attack)
 				{
 					case 0:
 						AbilityLaser();
+						lastAttack = 0;
 						break;
 					case 1:
 						AbilityOrb();
+						lastAttack = 1;
 						break;
 					case 2:
 						AbilityFlower();
+						lastAttack = 2;
 						break;
 				}
 			} else
@@ -94,8 +104,6 @@ public class BossLogic : MonoBehaviour {
 	void AbilityFlower()
     {
 		GameObject test = Instantiate(flowerAbility, new Vector3(), Quaternion.identity, boss.transform);
-		//test.transform.position = gameObject.transform.position;
-
 	}
 
 	public void SetAttackActive(bool attackActive)
