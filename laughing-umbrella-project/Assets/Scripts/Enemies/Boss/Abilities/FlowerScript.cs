@@ -15,6 +15,7 @@ public class FlowerScript : MonoBehaviour {
 	public float timeActiveDangerous = 1f;
 
 	public Sprite cropFlower;
+	public Sprite bloomingFlower;
 	public Sprite blossomedFlower;
 
 	GameObject[] flowerPatterns = new GameObject[3];
@@ -145,6 +146,12 @@ public class FlowerScript : MonoBehaviour {
 
 		yield return new WaitForSeconds(timeUntilBlossom);
 		fadeIn = false;
+
+		foreach (Transform flower in flowerPattern.transform)
+        {
+			flower.GetComponent<SpriteRenderer>().sprite = bloomingFlower;
+        }
+		yield return new WaitForSeconds(0.025f);
 
 		foreach (Transform flower in flowerPattern.transform)
         {
