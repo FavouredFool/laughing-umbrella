@@ -6928,6 +6928,18 @@ PrefabInstance:
       propertyPath: wall
       value: 
       objectReference: {fileID: 1856704267}
+    - target: {fileID: 8277769610122298440, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 120874236}
+    - target: {fileID: 8277769610122298440, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: regularOrbSpawnTime
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8277769610122298440, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
+      propertyPath: regularOrbDespawnTime
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8277769610122298441, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -6972,5 +6984,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 76079374, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c6360fcc6aedbf049936b7f6ba9ec772, type: 3}

@@ -13,7 +13,7 @@ public class BossLogic : MonoBehaviour {
 	public GameObject[] orbs;
 	public GameObject[] orbSpawners;
 	public GameObject wall;
-	public GameObject camera;
+	public GameObject player;
 	
 	public float attackDowntime = 3.0f;
 
@@ -41,6 +41,7 @@ public class BossLogic : MonoBehaviour {
 	bool attackActive = false;
 
 	readonly string PLAYER_TAG = "Player";
+	readonly string ORB_TAG = "Orb";
 
 	#endregion
 
@@ -217,50 +218,55 @@ public class BossLogic : MonoBehaviour {
 
 	protected void dropOrb()
 	{
-		GameObject orb = Instantiate(orbs[Random.Range(0,4)], gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
-		orb.GetComponent<Orb>().SetTime(regularOrbDespawnTime);
+		SpawnOrb();
 	}
 
 	IEnumerator regularOrbSpawn()
     {
 
-		Vector2 spawnPos = new Vector2();
-		int spawnNr = -1;
-		int lastSpawnNr = -1;
-
 		while (bossState == BossState.FIGHT)
         {
 			yield return new WaitForSeconds(regularOrbSpawnTime);
 
-			do
-			{
-				spawnNr = Random.Range(0, 4);
-
-			} while (spawnNr == lastSpawnNr);
-
-			lastSpawnNr = spawnNr;
-
-			switch(spawnNr)
-            {
-				case 0:
-					spawnPos = orbSpawners[0].transform.position;
-					break;
-				case 1:
-					spawnPos = orbSpawners[1].transform.position;
-					break;
-				case 2:
-					spawnPos = orbSpawners[2].transform.position;
-					break;
-				case 3:
-					spawnPos = orbSpawners[3].transform.position;
-					break;
-            }
-
-			GameObject orb = Instantiate(orbs[Random.Range(0, 4)], spawnPos, Quaternion.identity);
-			orb.GetComponent<Orb>().SetTime(regularOrbDespawnTime);
-
+			SpawnOrb();
 		}
     }
+
+	void SpawnOrb()
+    {
+		Vector2 spawnPos = new Vector2();
+		int spawnNr = -1;
+
+		bool found = false;
+		int counter = 0;
+		do
+		{
+
+			found = false;
+			counter++;
+
+			spawnNr = Random.Range(0, 4);
+
+			Collider2D[] colliders = Physics2D.OverlapPointAll(orbSpawners[spawnNr].transform.position);
+			foreach (Collider2D collider in colliders)
+			{
+				if (collider.gameObject.tag.Equals(ORB_TAG))
+				{
+					found = true;
+				}
+			}
+
+
+
+			if (!found)
+            {
+				spawnPos = orbSpawners[spawnNr].transform.position;
+				GameObject orb = Instantiate(orbs[Random.Range(0, 4)], spawnPos, Quaternion.identity);
+				orb.GetComponent<Orb>().SetTime(regularOrbDespawnTime);
+			}
+
+		} while (found && counter < 20);
+	} 
 
 
 	void AbilityLaser()
