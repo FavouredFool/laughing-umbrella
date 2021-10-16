@@ -12,6 +12,7 @@ public class OrbProjectile : MonoBehaviour {
 	float knockbackStrength;
 	Rigidbody2D rb;
 	SpriteRenderer sr;
+	CircleCollider2D collider;
 
 	bool startUp;
 
@@ -25,7 +26,10 @@ public class OrbProjectile : MonoBehaviour {
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		sr = GetComponent<SpriteRenderer>();
+		collider = GetComponent<CircleCollider2D>();
+		collider.enabled = false;
 		sr.color = new Color(1, 1, 1, 0);
+
 		startTime = Time.time;
     }
 
@@ -33,10 +37,8 @@ public class OrbProjectile : MonoBehaviour {
 		
 		if (Time.time - startTime > orbSpawnTime)
         {
-			if (Time.time - startTime > orbDespawnTime)
-			{
-				Destroy(gameObject);
-			}
+			collider.enabled = true;
+
 			rb.MovePosition(rb.position + direction * orbSpeed * Time.fixedDeltaTime);
 		} else
         {
