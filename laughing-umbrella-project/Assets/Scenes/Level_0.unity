@@ -1801,17 +1801,9 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1679592568}
-    - target: {fileID: -3158727985413139256, guid: cba7a3f4cf2705b46ae15628821d5269, type: 3}
-      propertyPath: knockbackStrength
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 848597584854780327, guid: cba7a3f4cf2705b46ae15628821d5269, type: 3}
       propertyPath: m_Name
       value: Dummy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1120742902666852058, guid: cba7a3f4cf2705b46ae15628821d5269, type: 3}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1466976844861462667, guid: cba7a3f4cf2705b46ae15628821d5269, type: 3}
       propertyPath: m_RootOrder

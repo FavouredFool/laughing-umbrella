@@ -120,7 +120,7 @@ MonoBehaviour:
   enemyOrb: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
   holdsHP: 0
   holdsHPColor: {r: 0, g: 0, b: 0, a: 0}
-  maxHealth: 100
+  maxHealth: 200
   moveSpeed: 0
   attackDamage: 0
   stunDuration: 0.5
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6426468024166090178}
   - component: {fileID: 5608538776752799525}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: DummyTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

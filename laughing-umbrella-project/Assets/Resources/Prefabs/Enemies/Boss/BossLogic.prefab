@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 537602638519205963}
-  - component: {fileID: 1567598230839933820}
+  - component: {fileID: 487071832}
   m_Layer: 12
   m_Name: BossTrigger
   m_TagString: Boss
@@ -153,7 +153,7 @@ Transform:
   m_Father: {fileID: 8303235358449284597}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1567598230839933820
+--- !u!70 &487071832
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,8 +166,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0122783305, y: -2.0928626}
-  m_Size: {x: 4.656373, y: 2.7898843}
+  m_Offset: {x: -0.04722429, y: -2.0229704}
+  m_Size: {x: 5.0058455, y: 3.1626515}
   m_Direction: 1
 --- !u!1 &4056408345816907229
 GameObject:
@@ -345,8 +345,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0122783305, y: -2.0928626}
-  m_Size: {x: 4.656373, y: 2.7898843}
+  m_Offset: {x: -0.04722429, y: -2.0229704}
+  m_Size: {x: 5.0058455, y: 3.1626515}
   m_Direction: 1
 --- !u!1 &4443636084394912128
 GameObject:
