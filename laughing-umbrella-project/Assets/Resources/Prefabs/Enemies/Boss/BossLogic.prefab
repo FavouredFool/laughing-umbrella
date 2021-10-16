@@ -595,7 +595,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8277769610122298441}
   - component: {fileID: 8277769610122298440}
-  - component: {fileID: 76079374}
   m_Layer: 0
   m_Name: BossLogic
   m_TagString: Boss
@@ -646,32 +645,15 @@ MonoBehaviour:
   - {fileID: 4443636084394912128}
   - {fileID: 2215994952317508250}
   wall: {fileID: 0}
-  camera: {fileID: 0}
+  player: {fileID: 0}
   attackDowntime: 2
   health: 500
   damage: 1
   knockbackStrength: 10
   colorChangeDuration: 0.2
-  regularOrbSpawnTime: 8
-  regularOrbDespawnTime: 20
-  distanceForIntro: 10
---- !u!114 &76079374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8277769610122298438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff2124d0fcb12344b07d1710dba43c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OuterCircleRadius: 8
-  InnerCircleRadius: 2
-  forbiddenCollisionLayers:
-    serializedVersion: 2
-    m_Bits: 262400
+  regularOrbSpawnTime: 16
+  regularOrbDespawnTime: 13
+  distanceForIntro: 13
 --- !u!1001 &17249332725974566
 PrefabInstance:
   m_ObjectHideFlags: 0

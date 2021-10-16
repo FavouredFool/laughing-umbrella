@@ -46,6 +46,7 @@ MonoBehaviour:
   orb: {fileID: 1473602085690870590, guid: d1d3aca0530e1a44b8c49a8fa0945769, type: 3}
   damage: 1
   knockbackStrength: 2
+  orbSpawnTime: 0.3
   orbSpawnDistance: 3.5
   orbSpeed: 1.5
   orbDespawnTime: 10

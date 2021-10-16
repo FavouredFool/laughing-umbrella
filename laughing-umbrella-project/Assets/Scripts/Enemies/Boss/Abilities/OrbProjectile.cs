@@ -11,34 +11,51 @@ public class OrbProjectile : MonoBehaviour {
 	int damage;
 	float knockbackStrength;
 	Rigidbody2D rb;
+	SpriteRenderer sr;
+
+	bool startUp;
+
+	float orbSpawnTime;
+	float t;
 	#endregion
-	
-	
+
+
 	#region UnityMethods
 
-    void Start() {
+	void Start() {
 		rb = GetComponent<Rigidbody2D>();
+		sr = GetComponent<SpriteRenderer>();
+		sr.color = new Color(1, 1, 1, 0);
 		startTime = Time.time;
     }
 
     void Update() {
 		
-		if (Time.time - startTime > orbDespawnTime)
+		if (Time.time - startTime > orbSpawnTime)
         {
-			Destroy(gameObject);
+			if (Time.time - startTime > orbDespawnTime)
+			{
+				Destroy(gameObject);
+			}
+			rb.MovePosition(rb.position + direction * orbSpeed * Time.fixedDeltaTime);
+		} else
+        {
+			t = (Time.time - startTime) / orbSpawnTime;
+			sr.color = new Color(1, 1, 1, t);
         }
-
-		rb.MovePosition(rb.position + direction * orbSpeed * Time.fixedDeltaTime);
+		
 	}
 
-	public void SetValues(float orbSpeed, Vector2 direction, float orbDespawnTime, int damage, float knockbackStrength)
+	public void SetValues(float orbSpeed, Vector2 direction, float orbDespawnTime, int damage, float knockbackStrength, float orbSpawnTime)
     {
 		this.orbSpeed = orbSpeed;
 		this.direction = direction;
 		this.orbDespawnTime = orbDespawnTime;
 		this.damage = damage;
 		this.knockbackStrength = knockbackStrength;
-    }
+		this.orbSpawnTime = orbSpawnTime;
+
+	}
 
 	public void OnTriggerEnter2D(Collider2D collision)
     {

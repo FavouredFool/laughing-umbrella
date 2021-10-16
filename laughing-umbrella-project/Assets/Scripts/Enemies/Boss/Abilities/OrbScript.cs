@@ -9,6 +9,7 @@ public class OrbScript : MonoBehaviour {
 	public int damage = 1;
 	public float knockbackStrength = 3f;
 
+	public float orbSpawnTime = 0.3f;
 	public float orbSpawnDistance = 3.5f;
 	public float orbSpeed = 3;
 	public float orbDespawnTime = 10f;
@@ -104,7 +105,7 @@ public class OrbScript : MonoBehaviour {
 		orbInstance.transform.position = gameObject.transform.position - new Vector3(0, orbSpawnDistance, 0);
 		orbInstance.transform.position = RotatePointAroundPivot(orbInstance.transform.position, gameObject.transform.position, new Vector3(0,0, angle));
 		Vector2 direction = orbInstance.transform.position - gameObject.transform.position;
-		orbInstance.GetComponent<OrbProjectile>().SetValues(orbSpeed, direction, orbDespawnTime, damage, knockbackStrength);
+		orbInstance.GetComponent<OrbProjectile>().SetValues(orbSpeed, direction, orbDespawnTime, damage, knockbackStrength, orbSpawnTime);
 	}
 
 	void CleanUp()

@@ -109,8 +109,6 @@ public class BossLogic : MonoBehaviour {
 
 		SwapState(BossState.FIGHT);
 
-		
-
     }
 
 
@@ -175,7 +173,7 @@ public class BossLogic : MonoBehaviour {
 	public void GetDamaged(int attackDamage)
     {
 		// Drop Orb
-		dropOrb();
+		SpawnOrb();
 
 
 		// Get damaged
@@ -216,10 +214,6 @@ public class BossLogic : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
-	protected void dropOrb()
-	{
-		SpawnOrb();
-	}
 
 	IEnumerator regularOrbSpawn()
     {

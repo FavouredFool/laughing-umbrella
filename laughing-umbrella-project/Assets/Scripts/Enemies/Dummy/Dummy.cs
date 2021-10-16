@@ -5,7 +5,7 @@ using UnityEngine;
 public class Dummy : Enemy
 {
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         // Start von "Enemy" aufrufen
         base.Start();
