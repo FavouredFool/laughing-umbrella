@@ -40,11 +40,19 @@ public class MageActions : Enemy {
 	// Wartezeit nach dem Teleport in Sek.
 	public float waitAfterTp = 3f;
 
+	public LayerMask obstructionLayers;
+
 	// Components
 	Animator animator;
 
 	// Flag
 	bool hasTeleportedFlag = false;
+	bool found = false;
+
+
+	public float visionRadius = 5;
+	GameObject foundTarget;
+
 	#endregion
 
 	#region UnityMethods
@@ -58,9 +66,50 @@ public class MageActions : Enemy {
 		animator.SetFloat("horizontal", 0);
 		animator.SetFloat("vertical", -1);
 
+		StartCoroutine(BehaviourRoutine());
 		//InvokeRepeating("doAction", initialWaittime, repeatActions);
-		StartCoroutine(DoAction());
+		//StartCoroutine(DoAction());
     }
+
+
+	IEnumerator BehaviourRoutine()
+	{
+
+		while (!found)
+		{
+			yield return new WaitForSeconds(0.2f);
+
+			if (target && !getIsStunned())
+			{
+				Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
+				found = false;
+				foreach (Collider2D collided in rangeCheck)
+				{
+					if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == target)
+					{
+						Vector3 directionToTarget = (collided.gameObject.transform.position - transform.position).normalized;
+						float distanceToTarget = Vector3.Distance(transform.position, collided.gameObject.transform.position);
+
+						if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionLayers))
+						{
+
+							foundTarget = collided.gameObject;
+							found = true;
+						}
+						else
+						{
+							foundTarget = null;
+						}
+						break;
+					}
+				}
+			}
+		}
+
+		StartCoroutine(DoAction());
+	}
+
+
 	protected IEnumerator DoAction()
 	{
 		// initial wait
@@ -68,6 +117,7 @@ public class MageActions : Enemy {
 
 		while (true)
         {
+			
 			if (target && !isStunned)
 			{
 				// 1. Fire fireball on target - instatiate next to the mage
@@ -103,7 +153,7 @@ public class MageActions : Enemy {
 		// Activated by Animationend-Event
 		if (!hasTeleportedFlag && target)
         {
-			Vector3 position = FindPosition();
+			Vector3 position = FindPositionNew();
 			gameObject.transform.position = position;
 			hasTeleportedFlag = true;
 		}
@@ -155,6 +205,52 @@ public class MageActions : Enemy {
 		return bestPos;
     }
 
+	protected Vector3 FindPositionNew()
+    {
+		Vector3 teleportPoint;
+		Vector3 teleportPos;
+		int angleCounter = 0;
+		bool posCorrect = false;
+		int angle;
+		float teleportDistanceTemp = teleportDistance;
+		int distanceCounter = 0;
+		do
+        {
+
+			do
+			{
+				angleCounter++;
+				angle = Random.Range(-75, 76);
+
+				teleportPoint = target.transform.position + (target.transform.position - gameObject.transform.position).normalized * teleportDistanceTemp;
+				teleportPos = RotatePointAroundPivot(teleportPoint, target.transform.position, new Vector3(0, 0, angle));
+
+				// Check Pos
+				if (!Physics2D.Raycast(teleportPos, target.transform.position - teleportPos, teleportDistanceTemp, teleportObstacles))
+				{
+					posCorrect = true;
+				}
+
+			} while (!posCorrect && angleCounter < 10);
+		
+
+			if (angleCounter == 10)
+			{
+				distanceCounter++;
+				angleCounter = 0;
+				teleportDistanceTemp /= 2;
+			}
+
+		} while(!posCorrect && distanceCounter < 4);
+
+		if (!posCorrect)
+        {
+			return FindPosition();
+		}
+		
+		return teleportPos;
+    }
+
 	protected bool ValidPos(Vector2 direction, int i) {
 
 		// cast ray
@@ -172,7 +268,15 @@ public class MageActions : Enemy {
 		return false;
 	}
 
-	
-	
+	Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
+	{
+		Vector3 dir = point - pivot;
+		dir = Quaternion.Euler(angles) * dir;
+		point = dir + pivot;
+		return point;
+	}
+
+
+
 	#endregion
 }

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireball: {fileID: 415940668042132915, guid: c556be37334bc804b94097118ddc5b22, type: 3}
   fireballDamage: 10
-  fireballSpeed: 8
+  fireballSpeed: 14
   createDistance: 2
   knockbackStrength: 4
+  explosionRange: 2.25

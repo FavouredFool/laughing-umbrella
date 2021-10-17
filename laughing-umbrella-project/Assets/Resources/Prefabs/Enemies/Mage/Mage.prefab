@@ -150,13 +150,17 @@ MonoBehaviour:
   createDistance: 1.5
   teleportObstacles:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 262400
   raysCast: 64
-  teleportDistance: 6
+  teleportDistance: 8
   tpDistanceToWall: 1
   initialWait: 2
   waitBetweenFireTp: 2
   waitAfterTp: 3
+  obstructionLayers:
+    serializedVersion: 2
+    m_Bits: 262400
+  visionRadius: 11
 --- !u!95 &761403961432604132
 Animator:
   serializedVersion: 3
