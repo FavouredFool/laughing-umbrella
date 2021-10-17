@@ -265,12 +265,12 @@ public class BossLogic : MonoBehaviour {
 
 	void AbilityLaser()
     {
-		Instantiate(laserAbility, boss.transform.position - new Vector3(0, 2, 0), Quaternion.identity, boss.transform);
+		Instantiate(laserAbility, boss.transform.position - new Vector3(0, 1.6f, 0), Quaternion.identity, boss.transform);
     }
 
 	void AbilityOrb()
     {
-		Instantiate(orbAbility, boss.transform.position - new Vector3(0,2,0), Quaternion.identity, boss.transform);
+		Instantiate(orbAbility, boss.transform.position - new Vector3(0,1.6f,0), Quaternion.identity, boss.transform);
 	}
 
 	void AbilityFlower()

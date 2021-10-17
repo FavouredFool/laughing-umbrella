@@ -44,9 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 2815449864189217396, guid: 599f809a0132bf946b085d0928859689, type: 3}
-  counterclockwise: 0
   laserAmount: 4
-  laserSpawnDistance: 4.1
+  laserSpawnDistance: 4.3
   timeBeforeMoving: 1
   moveDuration: 6
   totalAngle: 360
