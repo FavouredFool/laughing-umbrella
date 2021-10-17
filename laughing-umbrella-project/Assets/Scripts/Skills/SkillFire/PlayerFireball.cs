@@ -5,11 +5,14 @@ public class PlayerFireball : MonoBehaviour
 
 	#region Variables
 
+	public GameObject explosion;
+
 	// private Variablen
 	Vector2 direction;
 	float speed;
 	int attackDamage;
 	float knockbackStrength;
+	float explosionRange;
 
 	// Componenten
 	Rigidbody2D rb;
@@ -22,6 +25,7 @@ public class PlayerFireball : MonoBehaviour
 
 	// Flags
 	bool isActive = false;
+	bool alreadyExploded = false;
 	
 	#endregion
 
@@ -44,12 +48,13 @@ public class PlayerFireball : MonoBehaviour
 
 	}
 
-	public void SetValues(Vector2 direction, float speed, int attackDamage, float knockbackStrength)
+	public void SetValues(Vector2 direction, float speed, int attackDamage, float knockbackStrength, float explosionRange)
 	{
 		this.direction = direction;
 		this.speed = speed;
 		this.attackDamage = attackDamage;
 		this.knockbackStrength = knockbackStrength;
+		this.explosionRange = explosionRange;
 
 		animator.SetTrigger("grow");
 	}
@@ -62,10 +67,11 @@ public class PlayerFireball : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-		if (collision.transform.parent.tag.Equals(ENEMY_TAG))
+		if (collision.transform.parent.tag.Equals(ENEMY_TAG) && !alreadyExploded)
 		{
-			Vector2 knockbackDirection = direction.normalized;
-			collision.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
+			//Vector2 knockbackDirection = direction.normalized;
+			//collision.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
+			Explosion();
 		}
 		else if (collision.transform.parent != null && collision.transform.parent.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG))
 		{
@@ -75,10 +81,24 @@ public class PlayerFireball : MonoBehaviour
 
 	}
 
+	
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-		Destroy(gameObject);
+		if (!alreadyExploded)
+			Explosion();
 	}
+	
 
-    #endregion
+	protected void Explosion()
+    {
+		alreadyExploded = true;
+		GameObject explosionInstance = Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+
+		explosionInstance.GetComponent<Explosion>().SetValues(attackDamage, knockbackStrength, explosionRange);
+
+		Destroy(gameObject);
+    }
+
+
+	#endregion
 }

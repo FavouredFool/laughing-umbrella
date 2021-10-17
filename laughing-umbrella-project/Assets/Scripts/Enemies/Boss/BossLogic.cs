@@ -15,6 +15,7 @@ public class BossLogic : MonoBehaviour {
 	public GameObject wall;
 	public GameObject player;
 	public GameObject killedObj;
+	public GameObject endEnemy;
 
 	public float attackDowntime = 3.0f;
 
@@ -210,6 +211,8 @@ public class BossLogic : MonoBehaviour {
     {
 		// Create Effect
 		Instantiate(killedObj, gameObject.transform.position, Quaternion.identity);
+
+		Destroy(endEnemy);
 
 		// Destroy Object
 		Destroy(gameObject);

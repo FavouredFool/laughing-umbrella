@@ -12,7 +12,7 @@ public class OrbProjectile : MonoBehaviour {
 	float knockbackStrength;
 	Rigidbody2D rb;
 	SpriteRenderer sr;
-	CircleCollider2D collider;
+	new CircleCollider2D collider;
 
 	bool startUp;
 

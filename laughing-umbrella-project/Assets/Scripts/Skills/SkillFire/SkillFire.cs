@@ -17,6 +17,8 @@ public class SkillFire : MonoBehaviour, ISkill {
     // St‰rke des Knockback
     public float knockbackStrength = 2f;
 
+    public float explosionRange = 3f;
+
 
     GameObject thrownFireball;
 
@@ -41,7 +43,7 @@ public class SkillFire : MonoBehaviour, ISkill {
         // Feuerball schieﬂen
         thrownFireball = Instantiate(fireball, transform.position + (Vector3)playerToMouseVector * createDistance, Quaternion.Euler(0,0,anglePlayerToMouse));
 
-        thrownFireball.GetComponent<PlayerFireball>().SetValues(playerToMouseVector, fireballSpeed, fireballDamage, knockbackStrength);
+        thrownFireball.GetComponent<PlayerFireball>().SetValues(playerToMouseVector, fireballSpeed, fireballDamage, knockbackStrength, explosionRange);
 
         CleanUp();
     }
