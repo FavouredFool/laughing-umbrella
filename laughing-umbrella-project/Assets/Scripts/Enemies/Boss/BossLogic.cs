@@ -14,7 +14,8 @@ public class BossLogic : MonoBehaviour {
 	public GameObject[] orbSpawners;
 	public GameObject wall;
 	public GameObject player;
-	
+	public GameObject killedObj;
+
 	public float attackDowntime = 3.0f;
 
 	public int health;
@@ -208,7 +209,7 @@ public class BossLogic : MonoBehaviour {
 	void GetDestroyed()
     {
 		// Create Effect
-		//Instantiate(killedObj, gameObject.transform.position, Quaternion.identity);
+		Instantiate(killedObj, gameObject.transform.position, Quaternion.identity);
 
 		// Destroy Object
 		Destroy(gameObject);

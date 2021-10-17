@@ -646,8 +646,9 @@ MonoBehaviour:
   - {fileID: 2215994952317508250}
   wall: {fileID: 0}
   player: {fileID: 0}
+  killedObj: {fileID: 2525912397331254685, guid: c85173171af5f1b4190cd2b58653c4be, type: 3}
   attackDowntime: 2
-  health: 500
+  health: 100
   damage: 1
   knockbackStrength: 10
   colorChangeDuration: 0.2
