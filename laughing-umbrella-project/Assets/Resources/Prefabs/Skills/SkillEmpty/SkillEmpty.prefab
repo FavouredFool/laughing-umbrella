@@ -44,10 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRendererObj: {fileID: 7074687074515475194, guid: 1f3109303448fea4db713ef0fc9200e9, type: 3}
+  circleOverlay: {fileID: 2692127884141480518, guid: f7b50bf73d2a7374596c2bdda76e3ddf, type: 3}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 2048
   clickRadius: 0.5
   connectionTotalTime: 3
   speedMultiplier: 0.5
+  maxDist: 5
   lineColor: {r: 0.64542204, g: 0.0032929946, b: 0.6981132, a: 0}

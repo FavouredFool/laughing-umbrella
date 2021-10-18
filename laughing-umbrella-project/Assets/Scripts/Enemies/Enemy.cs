@@ -107,7 +107,7 @@ public abstract class Enemy : MonoBehaviour {
     IEnumerator toggleStun()
     {
         isStunned = true;
-        tempColor = sr.color;
+        tempColor = Color.white;
         sr.color = Color.red;
         yield return new WaitForSeconds(stunDuration);
         sr.color = tempColor;

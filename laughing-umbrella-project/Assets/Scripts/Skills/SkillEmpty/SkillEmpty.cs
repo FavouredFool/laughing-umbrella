@@ -4,17 +4,23 @@ public class SkillEmpty : MonoBehaviour, ISkill
 {
     [Header("GameObjects")]
     public GameObject lineRendererObj;
+    public GameObject circleOverlay;
     [Header("Layers")]
     public LayerMask enemyLayers;
     [Header("SkillVariables")]
     public float clickRadius = 0.5f;
     public float connectionTotalTime = 3f;
     public float speedMultiplier = 0.5f;
+    public float maxDist = 5f;
     [Header("Color")]
     public Color lineColor;
 
     GameObject activeLineRenderer;
     LineRenderer activeLineRendererComp;
+
+    GameObject activeCircleRenderer;
+
+    
 
     GameObject player;
     GameObject activeConnection;
@@ -40,7 +46,6 @@ public class SkillEmpty : MonoBehaviour, ISkill
         colorKey[0].color = Color.white;
         colorKey[0].time = 0f;
         colorKey[1].color = lineColor;
-        //colorKey[1].color = new Color(192f/255, 77f/255, 250f/255);
         colorKey[1].time = 1f;
 
         alphaKey = new GradientAlphaKey[2];
@@ -55,6 +60,12 @@ public class SkillEmpty : MonoBehaviour, ISkill
     {
         if (activeConnection)
         {
+
+
+            
+
+
+
             if (Input.GetMouseButtonDown(1))
             {
                 // bei Swap connection brechen
@@ -82,6 +93,12 @@ public class SkillEmpty : MonoBehaviour, ISkill
 
                 // Connection trennen wenn Slot schon voll ist
                 if (player.GetComponent<PlayerSkillUse>().GetActiveSkill() != player.GetComponent<PlayerSkillUse>().GetEmptySkill())
+                {
+                    BreakConnection();
+                }
+
+                // Connection trennen wenn Spieler zu weit von Gegner entfernt ist
+                if (Vector2.Distance(activeConnection.transform.position, player.transform.position) > maxDist)
                 {
                     BreakConnection();
                 }
@@ -129,7 +146,9 @@ public class SkillEmpty : MonoBehaviour, ISkill
             if (!activeConnection)
             {
                 BuildConnection(colliders[distIndex]);
-            } else
+
+            }
+            else
             {
                 // Vorherige Connection zerstören
                 BreakConnection();
@@ -146,6 +165,7 @@ public class SkillEmpty : MonoBehaviour, ISkill
 
     public void BuildConnection(Collider2D collider)
     {
+
         activeLineRenderer = Instantiate(lineRendererObj, gameObject.transform);
         activeLineRendererComp = activeLineRenderer.GetComponent<LineRenderer>();
         activeLineRendererComp.positionCount = 2;
@@ -156,6 +176,9 @@ public class SkillEmpty : MonoBehaviour, ISkill
 
         // Slow down player while channeling
         player.GetComponent<PlayerActions>().moveSpeed *= speedMultiplier;
+
+        //Draw Circle
+        activeCircleRenderer = Instantiate(circleOverlay, activeConnection.transform);
 
     }
 
