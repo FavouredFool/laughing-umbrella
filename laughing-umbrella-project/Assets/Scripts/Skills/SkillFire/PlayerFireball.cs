@@ -75,8 +75,8 @@ public class PlayerFireball : MonoBehaviour
 		}
 		else if (collision.transform.parent != null && collision.transform.parent.parent != null && collision.transform.parent.tag.Equals(BOSS_TAG))
 		{
-			// Boss bekommt Schaden
-			collision.gameObject.transform.parent.parent.GetComponent<BossLogic>().GetDamaged(attackDamage);
+
+			Explosion();
 		}
 
 	}

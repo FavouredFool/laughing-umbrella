@@ -10,6 +10,7 @@ public class Explosion : MonoBehaviour
     float explosionKnockback;
 
     readonly string ENEMY_TAG = "Enemy";
+    readonly string BOSS_TAG = "Boss";
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,11 @@ public class Explosion : MonoBehaviour
                 Vector2 knockbackDirection = (collider.transform.position - gameObject.transform.position).normalized;
                 collider.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(explosionDamage, knockbackDirection, explosionKnockback);
 
+            }
+            else if (collider.transform.parent != null && collider.transform.parent.parent != null && collider.transform.parent.tag.Equals(BOSS_TAG))
+            {
+                // Boss bekommt Schaden
+                collider.gameObject.transform.parent.parent.GetComponent<BossLogic>().GetDamaged(explosionDamage);
             }
         }
     }

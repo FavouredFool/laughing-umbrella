@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BossLogic : MonoBehaviour {
 
@@ -16,6 +17,7 @@ public class BossLogic : MonoBehaviour {
 	public GameObject player;
 	public GameObject killedObj;
 	public GameObject endEnemy;
+	public GameObject healthBar;
 
 	public float attackDowntime = 3.0f;
 
@@ -36,6 +38,10 @@ public class BossLogic : MonoBehaviour {
 
 	SpriteRenderer sr;
 	Animator animator;
+	Healthbar healthSlider;
+
+	float[] distanceToOrbSpawner = new float[4];
+	
 
 
 	int lastAttack = -1;
@@ -52,10 +58,19 @@ public class BossLogic : MonoBehaviour {
 
 	protected void Start() {
 		SwapState(BossState.INTRO);
+		
 		sr = boss.GetComponent<SpriteRenderer>();
 		animator = boss.GetComponent<Animator>();
+		healthSlider = healthBar.GetComponent<Healthbar>();
 
 		currentHealth = health;
+
+
+
+		if (healthSlider)
+		{
+			healthSlider.SetMaxHealth(health);
+		}
 	}
 
     protected void Update()
@@ -76,6 +91,7 @@ public class BossLogic : MonoBehaviour {
 				break;
 			case BossState.FIGHT:
 				// Fight starts
+				
 				StartCoroutine(FightBehaviour());
 				StartCoroutine(regularOrbSpawn());
 				break;
@@ -100,6 +116,8 @@ public class BossLogic : MonoBehaviour {
 				{
 					foundPlayer = true;
 					wall.SetActive(true);
+					healthBar.SetActive(true);
+					break;
 				}
 			}
 
@@ -118,6 +136,8 @@ public class BossLogic : MonoBehaviour {
     {
 		// Different Attacks with different times are being calculated here -> Coroutine
 		
+
+
 		while (bossState != BossState.END)
 		{
 			if (!attackActive)
@@ -177,24 +197,27 @@ public class BossLogic : MonoBehaviour {
 		// Drop Orb
 		SpawnOrb();
 
-
 		// Get damaged
 		currentHealth -= attackDamage;
+
+		// Update Healthbar
+		if (healthSlider)
+		{
+			healthSlider.SetHealth(currentHealth);
+		}
+
+		
 		if (currentHealth <= 0)
 		{
+			// Disable healthbar
+			healthBar.SetActive(false);
+
 			// Destroy Object
 			GetDestroyed();
 		}
 		else
 		{
 			StartCoroutine(ChangeColor());
-			/*
-			if (healthBar)
-			{
-				// Healthbar neu setzen
-				healthBar.SetHealth(currentHealth);
-			}
-			*/
 		}
 	}
 
@@ -236,11 +259,13 @@ public class BossLogic : MonoBehaviour {
 		int spawnNr = -1;
 
 		bool found = false;
+		bool closestFlag = false;
 		int counter = 0;
 		do
 		{
 
 			found = false;
+			closestFlag = true;
 			counter++;
 
 			spawnNr = Random.Range(0, 4);
@@ -254,7 +279,27 @@ public class BossLogic : MonoBehaviour {
 				}
 			}
 
+			if (!found)
+			{
+				// Orb cant spawn at the closest position
+				for (int i = 0; i < orbSpawners.Length; i++)
+                {
+					distanceToOrbSpawner[i] = Vector2.Distance(orbSpawners[i].transform.position, player.transform.position);
+				}
 
+				for (int i = 0; i < orbSpawners.Length; i++)
+				{
+					if (distanceToOrbSpawner[spawnNr] > distanceToOrbSpawner[i])
+                    {
+						closestFlag = false;
+					}
+				}
+			}
+
+			if (closestFlag)
+            {
+				found = true;
+            }
 
 			if (!found)
             {
