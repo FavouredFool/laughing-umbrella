@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MenuScript : MonoBehaviour {
 
@@ -12,10 +13,22 @@ public class MenuScript : MonoBehaviour {
 
 	public void PlayGame()
     {
+
+		FindObjectOfType<AudioManager>().Play("testSound");
+
 		MainScript.health = player.GetComponent<PlayerActions>().maxHealth;
 		MainScript.maxHealth = player.GetComponent<PlayerActions>().maxHealth;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		
+
+		StartCoroutine(tested());
     }
+
+	IEnumerator tested ()
+    {
+		yield return new WaitForSeconds(2);
+		
+	}
 
 	public void QuitGame()
     {
