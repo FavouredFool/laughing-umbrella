@@ -14,6 +14,7 @@ public class SkillEmpty : MonoBehaviour, ISkill
     public float maxDist = 5f;
     [Header("Color")]
     public Color lineColor;
+    public Color circleColor;
 
     GameObject activeLineRenderer;
     LineRenderer activeLineRendererComp;
@@ -61,11 +62,6 @@ public class SkillEmpty : MonoBehaviour, ISkill
         if (activeConnection)
         {
 
-
-            
-
-
-
             if (Input.GetMouseButtonDown(1))
             {
                 // bei Swap connection brechen
@@ -98,10 +94,14 @@ public class SkillEmpty : MonoBehaviour, ISkill
                 }
 
                 // Connection trennen wenn Spieler zu weit von Gegner entfernt ist
-                if (Vector2.Distance(activeConnection.transform.position, player.transform.position) > maxDist)
+                if(activeConnection)
                 {
-                    BreakConnection();
+                    if (Vector2.Distance(activeConnection.transform.position, player.transform.position) > maxDist)
+                    {
+                        BreakConnection();
+                    }
                 }
+                
             }
 
             if (Time.time - connectionStartTime >= connectionTotalTime)
@@ -179,6 +179,10 @@ public class SkillEmpty : MonoBehaviour, ISkill
 
         //Draw Circle
         activeCircleRenderer = Instantiate(circleOverlay, activeConnection.transform);
+        activeCircleRenderer.GetComponent<CircleShape>().SetValues(maxDist*0.9f);
+        activeCircleRenderer.GetComponent<LineRenderer>().startColor = circleColor;
+        activeCircleRenderer.GetComponent<LineRenderer>().endColor = circleColor;
+
 
     }
 
@@ -189,6 +193,7 @@ public class SkillEmpty : MonoBehaviour, ISkill
             activeConnection = null;
             connectionStartTime = float.PositiveInfinity;
             Destroy(activeLineRenderer);
+            Destroy(activeCircleRenderer);
 
             // Speed up Player again
             player.GetComponent<PlayerActions>().moveSpeed /= speedMultiplier;
