@@ -129,7 +129,7 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 	{
 		// Starte Animation -> Blendtree für Richtung
 
-		FindObjectOfType<AudioManager>().Play("SwordSlash");
+		//FindObjectOfType<AudioManager>().Play("SwordSlash");
 
 		createHitboxFlag = true;
 		animator.SetTrigger("attack");

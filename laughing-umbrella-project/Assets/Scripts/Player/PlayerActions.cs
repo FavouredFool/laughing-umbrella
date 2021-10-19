@@ -154,6 +154,8 @@ public class PlayerActions : MonoBehaviour {
 		// Check ob Schaden genommen werden sollte
 		if(!isInvincible)
         {
+			FindObjectOfType<AudioManager>().Play("PlayerDamage");
+
 			// Invincible-Time überschritten
 			currentHealth -= attackDamage;
 			if (currentHealth <= 0)
@@ -218,6 +220,10 @@ public class PlayerActions : MonoBehaviour {
 
 	protected void getDestroyed()
     {
+		FindObjectOfType<AudioManager>().Pause("MusicLevel");
+		FindObjectOfType<AudioManager>().Pause("MusicBoss");
+		FindObjectOfType<AudioManager>().Stop("Fledermaus");
+
 		Destroy(gameObject);
 		SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
     }

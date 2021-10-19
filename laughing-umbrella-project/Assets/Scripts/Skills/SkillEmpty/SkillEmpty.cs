@@ -118,6 +118,8 @@ public class SkillEmpty : MonoBehaviour, ISkill
     public void UseSkill()
     {
 
+        
+
         // 1. Target wird gesucht
         // Richtung definieren
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -165,6 +167,8 @@ public class SkillEmpty : MonoBehaviour, ISkill
 
     public void BuildConnection(Collider2D collider)
     {
+
+        FindObjectOfType<AudioManager>().Play("Slotless");
 
         activeLineRenderer = Instantiate(lineRendererObj, gameObject.transform);
         activeLineRendererComp = activeLineRenderer.GetComponent<LineRenderer>();

@@ -13,12 +13,20 @@ public class MenuScript : MonoBehaviour {
 
     public void Start()
     {
-		FindObjectOfType<AudioManager>().Play("MusicMain");
+		if (FindObjectOfType<AudioManager>().IsPlaying("MusicMain"))
+        {
+			FindObjectOfType<AudioManager>().Unpause("MusicMain");
+
+		} else
+        {
+			FindObjectOfType<AudioManager>().Play("MusicMain");
+		}
+		
 	}
 
     public void PlayGame()
 	{
-		FindObjectOfType<AudioManager>().Stop("MusicMain");
+		FindObjectOfType<AudioManager>().Pause("MusicMain");
 		FindObjectOfType<AudioManager>().Play("MusicLevel");
 		FindObjectOfType<AudioManager>().Play("ButtonClick");
 		
@@ -54,6 +62,18 @@ public class MenuScript : MonoBehaviour {
 		MainScript.gameIsPaused = false;
 		Time.timeScale = 1f;
 		SceneManager.LoadScene(0);
+
+		// Reset backgroundMusic
+		if (FindObjectOfType<AudioManager>().IsPlaying("MusicLevel"))
+		{
+			FindObjectOfType<AudioManager>().Stop("MusicLevel");
+		}
+
+		if (FindObjectOfType<AudioManager>().IsPlaying("MusicBoss"))
+		{
+			FindObjectOfType<AudioManager>().Stop("MusicBoss");
+		}
+
 	}
 
 	public void UnloadScene()

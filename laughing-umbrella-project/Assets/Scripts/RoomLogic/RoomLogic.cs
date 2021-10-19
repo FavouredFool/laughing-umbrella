@@ -19,11 +19,19 @@ public class RoomLogic : MonoBehaviour {
 
     protected void Start() {
 		stairs.SetActive(false);
+
+		// BackgroundMusic
+		AudioManager audioManager = FindObjectOfType<AudioManager>();
+		if (!audioManager.IsPlaying("MusicLevel") && !audioManager.IsPlaying("MusicMain"))
+        {
+			audioManager.Play("MusicLevel");
+        }
+
     }
 
     protected void Update() {
 
-		if (enemiesObj.transform.childCount == 0 && !stairsActive)
+		if (enemiesObj == null || (enemiesObj.transform.childCount == 0 && !stairsActive))
         {
 			spawnStairs();
 			stairsActive = true;
@@ -34,12 +42,17 @@ public class RoomLogic : MonoBehaviour {
 			if(MainScript.gameIsPaused)
             {
 				Resume();
-				
-            } else
+				FindObjectOfType<AudioManager>().Unpause("MusicLevel");
+				FindObjectOfType<AudioManager>().Unpause("MusicBoss");
+				FindObjectOfType<AudioManager>().Pause("MusicMain");
+
+			} else
             {
 				Pause();
-				
-            }
+				FindObjectOfType<AudioManager>().Pause("MusicLevel");
+				FindObjectOfType<AudioManager>().Pause("MusicBoss");
+
+			}
         }
         
 		
@@ -48,9 +61,14 @@ public class RoomLogic : MonoBehaviour {
 
 	protected void spawnStairs()
     {
-		FindObjectOfType<AudioManager>().Play("RoomCleared");
+		if (enemiesObj != null)
+        {
+			FindObjectOfType<AudioManager>().Play("RoomCleared");
+		}
+
 		stairs.SetActive(true);
-    }
+
+	}
 
 	void Resume()
     {
@@ -76,6 +94,15 @@ public class RoomLogic : MonoBehaviour {
 
 	void OnSceneUnloaded(Scene pause)
     {
+		if (FindObjectOfType<AudioManager>() != null)
+        {
+			FindObjectOfType<AudioManager>().Unpause("MusicLevel");
+			FindObjectOfType<AudioManager>().Unpause("MusicBoss");
+			FindObjectOfType<AudioManager>().Pause("MusicMain");
+
+		}
+		
+
 		Time.timeScale = 1f;
 		if (HUD != null)
         {

@@ -89,8 +89,6 @@ public abstract class Enemy : MonoBehaviour {
         } else
         {
 
-            
-
             // Stun Enemy
             if(isStunned)
             {
@@ -149,7 +147,7 @@ public abstract class Enemy : MonoBehaviour {
 
     protected void dropOrb()
     {
-        FindObjectOfType<AudioManager>().Play("OrbSpawn");
+        //FindObjectOfType<AudioManager>().Play("OrbSpawn");
         Instantiate(enemyOrb, gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
     }
 

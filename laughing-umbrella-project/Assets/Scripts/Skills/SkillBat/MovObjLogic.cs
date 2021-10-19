@@ -63,7 +63,6 @@ public class MovObjLogic : MonoBehaviour {
 			collision.gameObject.transform.parent.parent.GetComponent<BossLogic>().GetDamaged(transform.parent.GetComponent<SkillBat>().attackDamage);
 
 			// Zerstöre Objekt
-			FindObjectOfType<AudioManager>().Stop("Fledermaus");
 			Destroy(gameObject);
 		}
 	}

@@ -122,7 +122,7 @@ public class MageActions : Enemy {
 			{
 				// 1. Fire fireball on target - instatiate next to the mage
 
-				FindObjectOfType<AudioManager>().Play("FireballCast");
+				//FindObjectOfType<AudioManager>().Play("FireballCast");
 
 				Vector2 directionToPlayer = (target.transform.position - gameObject.transform.position).normalized;
 
@@ -140,7 +140,7 @@ public class MageActions : Enemy {
 
 			if (target)
 			{
-				FindObjectOfType<AudioManager>().Play("MageTeleport");
+				//FindObjectOfType<AudioManager>().Play("MageTeleport");
 				// 3. tp somewhere else
 				animator.SetTrigger("teleport");
 			}

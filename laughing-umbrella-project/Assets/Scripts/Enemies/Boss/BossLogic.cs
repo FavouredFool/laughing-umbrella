@@ -58,8 +58,7 @@ public class BossLogic : MonoBehaviour {
 
 	protected void Start() {
 
-		FindObjectOfType<AudioManager>().Stop("MusicLevel");
-
+		
 
 		SwapState(BossState.INTRO);
 		
@@ -118,6 +117,7 @@ public class BossLogic : MonoBehaviour {
 			{
 				if (collision.transform.parent != null && collision.transform.parent.tag.Equals(PLAYER_TAG))
 				{
+					FindObjectOfType<AudioManager>().Pause("MusicLevel");
 					FindObjectOfType<AudioManager>().Play("MusicBoss");
 					foundPlayer = true;
 					wall.SetActive(true);
@@ -199,6 +199,9 @@ public class BossLogic : MonoBehaviour {
 
 	public void GetDamaged(int attackDamage)
     {
+
+		FindObjectOfType<AudioManager>().Play("DamageEnemy");
+
 		// Drop Orb
 		SpawnOrb();
 

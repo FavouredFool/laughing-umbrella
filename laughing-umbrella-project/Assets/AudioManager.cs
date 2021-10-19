@@ -22,14 +22,12 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("Theme");
+
     }
 
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-            return;
 
         s.source.Play();
     }
@@ -37,10 +35,28 @@ public class AudioManager : MonoBehaviour
     public void Stop(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-            return;
 
         s.source.Stop();
+    }
+
+    public bool IsPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        return s.source.isPlaying;
+    }
+
+    public void Pause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        s.source.Pause();
+    }
+
+    public void Unpause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        s.source.UnPause();
     }
 
 }

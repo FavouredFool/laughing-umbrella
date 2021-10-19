@@ -142,7 +142,7 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 		if (createHitboxCircleFlag)
         {
 
-			FindObjectOfType<AudioManager>().Play("MorgensternSwing");
+			//FindObjectOfType<AudioManager>().Play("MorgensternSwing");
 
 			circleAttackActive = true;
 			circleAttackStarttime = Time.time;
@@ -154,7 +154,7 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 	public void CreateHitboxLine()
     {
 
-		FindObjectOfType<AudioManager>().Play("MorgensternStab");
+		//FindObjectOfType<AudioManager>().Play("MorgensternStab");
 
 		// Hitbox aufbauen
 		// Kollisionspunkt des Rechtecks vorne rechts berechnen
@@ -175,7 +175,7 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 				if (hit.gameObject.transform.parent != null && hit.gameObject.transform.parent.gameObject == target)
 				{
 					Vector2 knockbackDirection = hit.gameObject.transform.parent.position - gameObject.transform.position;
-					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage*2, knockbackDirection, knockbackStrength);
+					hit.gameObject.transform.parent.GetComponent<PlayerActions>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
 					break;
 				}
 			}

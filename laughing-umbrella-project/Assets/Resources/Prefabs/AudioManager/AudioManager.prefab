@@ -46,98 +46,98 @@ MonoBehaviour:
   sounds:
   - name: RoomCleared
     clip: {fileID: 8300000, guid: 1150157bbc9d6af4bb848d0b5b608485, type: 3}
-    volume: 0.35
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: BossEnergyball
     clip: {fileID: 8300000, guid: 84b839f9356c8e94081fa33a3a31c134, type: 3}
-    volume: 0.605
-    pitch: 1
+    volume: 0.1
+    pitch: 0.75
     loop: 0
     source: {fileID: 0}
   - name: BossFlower
     clip: {fileID: 8300000, guid: e6556a3a2f051884783d97e7eeb518f9, type: 3}
-    volume: 0.605
-    pitch: 1
+    volume: 1
+    pitch: 0.52
     loop: 0
     source: {fileID: 0}
   - name: BossLaser
     clip: {fileID: 8300000, guid: 002c51f9fc83d0349ada0b7bcd16fec9, type: 3}
     volume: 0.605
-    pitch: 1
-    loop: 1
+    pitch: 0.85
+    loop: 0
     source: {fileID: 0}
   - name: ButtonClick
     clip: {fileID: 8300000, guid: ce83babd9d34e8748b82105ddd798408, type: 3}
-    volume: 0.605
+    volume: 0.86
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ButtonHover
     clip: {fileID: 8300000, guid: 2ad22dd2cefa87a4d9ab803d7a0ec7a1, type: 3}
-    volume: 0.605
+    volume: 0.6
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Dash
     clip: {fileID: 8300000, guid: e5861138780bb0f4d9f5baea0b446a5c, type: 3}
-    volume: 0.605
-    pitch: 1
+    volume: 0.3
+    pitch: 2
     loop: 0
     source: {fileID: 0}
   - name: DamageEnemy
-    clip: {fileID: 8300000, guid: 82624a41b4d33fe49a2c334a71c33d4b, type: 3}
-    volume: 0.605
-    pitch: 1
+    clip: {fileID: 8300000, guid: e6556a3a2f051884783d97e7eeb518f9, type: 3}
+    volume: 0.9
+    pitch: 1.9
     loop: 0
     source: {fileID: 0}
   - name: FireballCast
     clip: {fileID: 8300000, guid: c76266c397bbf1043b98df2461b0f67b, type: 3}
-    volume: 0.605
-    pitch: 1
+    volume: 0.387
+    pitch: 2.9
     loop: 0
     source: {fileID: 0}
   - name: FireballExplosion
     clip: {fileID: 8300000, guid: 67c25050b3d24f840b908ee87aa8ca95, type: 3}
     volume: 0.605
-    pitch: 1
+    pitch: 1.79
     loop: 0
     source: {fileID: 0}
   - name: Fledermaus
     clip: {fileID: 8300000, guid: a64370326fc50854e8f41a9263e14230, type: 3}
-    volume: 0.605
-    pitch: 1
-    loop: 0
+    volume: 1
+    pitch: 1.7
+    loop: 1
     source: {fileID: 0}
   - name: Heal
     clip: {fileID: 8300000, guid: 65ac601d8b7ddc642ace71eed95838c0, type: 3}
-    volume: 0.605
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MageTeleport
     clip: {fileID: 8300000, guid: 13fcb893c97d52642be2ba3a6f54f47b, type: 3}
     volume: 0.605
-    pitch: 1
+    pitch: 1.4
     loop: 0
     source: {fileID: 0}
   - name: MorgensternStab
     clip: {fileID: 8300000, guid: be9cb613195449b46888f966be435082, type: 3}
-    volume: 0.605
-    pitch: 1
+    volume: 0.292
+    pitch: 1.4
     loop: 0
     source: {fileID: 0}
   - name: MorgensternSwing
     clip: {fileID: 8300000, guid: 2252781f8c9396847848d651e48f64f5, type: 3}
     volume: 0.605
-    pitch: 1
+    pitch: 0.75
     loop: 0
     source: {fileID: 0}
   - name: OrbPickup
-    clip: {fileID: 8300000, guid: d2a6f34cccb240948ae138725363ccbe, type: 3}
-    volume: 0.605
-    pitch: 1
+    clip: {fileID: 8300000, guid: c83575158dddc184ab9402d5f8bc5b42, type: 3}
+    volume: 0.4
+    pitch: 1.25
     loop: 0
     source: {fileID: 0}
   - name: OrbSpawn
@@ -149,7 +149,7 @@ MonoBehaviour:
   - name: Slotless
     clip: {fileID: 8300000, guid: 2365a275b42e5c24b985711d95c5c939, type: 3}
     volume: 0.605
-    pitch: 1
+    pitch: 3
     loop: 0
     source: {fileID: 0}
   - name: Swap
@@ -166,8 +166,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: SwordSlash
     clip: {fileID: 8300000, guid: 261da66fb111ff846ac96274f75b1994, type: 3}
-    volume: 0.605
-    pitch: 1
+    volume: 1
+    pitch: 3
     loop: 0
     source: {fileID: 0}
   - name: MusicMain
@@ -187,4 +187,10 @@ MonoBehaviour:
     volume: 0.605
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: PlayerDamage
+    clip: {fileID: 0}
+    volume: 1
+    pitch: 1.2
+    loop: 0
     source: {fileID: 0}

@@ -61,6 +61,7 @@ public class SkillBat : MonoBehaviour, ISkill
 
     public void CleanUp()
     {
+        FindObjectOfType<AudioManager>().Stop("Fledermaus");
         Destroy(gameObject);
     }
 
