@@ -128,7 +128,9 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 	public void StartAttack()
 	{
 		// Starte Animation -> Blendtree für Richtung
-		
+
+		FindObjectOfType<AudioManager>().Play("SwordSlash");
+
 		createHitboxFlag = true;
 		animator.SetTrigger("attack");
 	}

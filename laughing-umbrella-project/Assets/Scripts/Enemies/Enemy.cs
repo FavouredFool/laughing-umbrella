@@ -77,6 +77,9 @@ public abstract class Enemy : MonoBehaviour {
         // Drop Orb
         dropOrb();
 
+
+        FindObjectOfType<AudioManager>().Play("DamageEnemy");
+
         // Get damaged
         currentHealth -= attackDamage;
         if (currentHealth <= 0)
@@ -85,6 +88,8 @@ public abstract class Enemy : MonoBehaviour {
             getDestroyed();
         } else
         {
+
+            
 
             // Stun Enemy
             if(isStunned)
@@ -128,6 +133,7 @@ public abstract class Enemy : MonoBehaviour {
     private void getDestroyed()
     {
 
+        
         // Create Effect
         Instantiate(killedObj, gameObject.transform.position, Quaternion.identity);
         if (holdsHP)
@@ -143,6 +149,7 @@ public abstract class Enemy : MonoBehaviour {
 
     protected void dropOrb()
     {
+        FindObjectOfType<AudioManager>().Play("OrbSpawn");
         Instantiate(enemyOrb, gameObject.GetComponent<OrbSpawn>().GetOrbSpawnPos(), Quaternion.identity);
     }
 

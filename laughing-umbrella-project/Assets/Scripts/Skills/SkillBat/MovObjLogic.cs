@@ -36,6 +36,8 @@ public class MovObjLogic : MonoBehaviour {
 
 	public void CreateMovement(float radius, float angle, float speed)
     {
+		FindObjectOfType<AudioManager>().Play("Fledermaus");
+
 		this.radius = radius;
 		this.angle = angle;
 		this.speed = speed;
@@ -61,6 +63,7 @@ public class MovObjLogic : MonoBehaviour {
 			collision.gameObject.transform.parent.parent.GetComponent<BossLogic>().GetDamaged(transform.parent.GetComponent<SkillBat>().attackDamage);
 
 			// Zerstöre Objekt
+			FindObjectOfType<AudioManager>().Stop("Fledermaus");
 			Destroy(gameObject);
 		}
 	}

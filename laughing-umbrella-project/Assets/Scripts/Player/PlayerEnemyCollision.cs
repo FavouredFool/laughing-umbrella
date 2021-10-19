@@ -46,6 +46,7 @@ public class PlayerEnemyCollision : MonoBehaviour {
         }
 		else if (collision.gameObject.tag.Equals(STAIR_TAG))
         {
+			FindObjectOfType<AudioManager>().Play("Stairs");
 			// Collision with Stairs
 			MainScript.health = transform.parent.gameObject.GetComponent<PlayerActions>().getCurrentHealth();
 			MainScript.maxHealth = transform.parent.gameObject.GetComponent<PlayerActions>().getMaxHealth();

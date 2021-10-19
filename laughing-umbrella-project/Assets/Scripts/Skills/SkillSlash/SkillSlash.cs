@@ -84,6 +84,8 @@ public class SkillSlash : MonoBehaviour, ISkill
     public void UseSkill()
     {
 
+        FindObjectOfType<AudioManager>().Play("SwordSlash");
+
         // Get Mouse Position + Convert from Screen to World-Coordinates
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);

@@ -45,6 +45,7 @@ public class Orb : MonoBehaviour {
 
     public void Start()
     {
+
         maxScale = transform.localScale;
         transform.localScale = new Vector3(0, 0, 0);
 

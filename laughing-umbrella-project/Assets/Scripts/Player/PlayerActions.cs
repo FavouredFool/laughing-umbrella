@@ -82,6 +82,9 @@ public class PlayerActions : MonoBehaviour {
 
 	IEnumerator Dash()
     {
+
+		FindObjectOfType<AudioManager>().Play("Dash");
+
 		Vector2 tempMovement = movement;
         isDashing = true;
 		dashCount -= 1;
@@ -195,6 +198,9 @@ public class PlayerActions : MonoBehaviour {
 		{
 			if (currentHealth != maxHealth)
             {
+
+				FindObjectOfType<AudioManager>().Play("Heal");
+
 				Destroy(collision.gameObject);
 				currentHealth++;
 			}
@@ -202,6 +208,8 @@ public class PlayerActions : MonoBehaviour {
 		// Check ob Spieler mit hpUp kollidiert + hp up
 		if (collision.gameObject.tag.Equals(HPUP_TAG))
         {
+			FindObjectOfType<AudioManager>().Play("Heal");
+
 			Destroy(collision.gameObject);
 			maxHealth++;
 			currentHealth++;

@@ -57,6 +57,10 @@ public class BossLogic : MonoBehaviour {
 	#region UnityMethods
 
 	protected void Start() {
+
+		FindObjectOfType<AudioManager>().Stop("MusicLevel");
+
+
 		SwapState(BossState.INTRO);
 		
 		sr = boss.GetComponent<SpriteRenderer>();
@@ -114,6 +118,7 @@ public class BossLogic : MonoBehaviour {
 			{
 				if (collision.transform.parent != null && collision.transform.parent.tag.Equals(PLAYER_TAG))
 				{
+					FindObjectOfType<AudioManager>().Play("MusicBoss");
 					foundPlayer = true;
 					wall.SetActive(true);
 					healthBar.SetActive(true);
@@ -232,6 +237,8 @@ public class BossLogic : MonoBehaviour {
 
 	void GetDestroyed()
     {
+		FindObjectOfType<AudioManager>().Stop("MusicBoss");
+
 		// Create Effect
 		Instantiate(killedObj, gameObject.transform.position, Quaternion.identity);
 

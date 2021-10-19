@@ -164,6 +164,9 @@ public class SkillMace : MonoBehaviour, ISkill {
 
 	public void CreateHitboxCircle()
     {
+
+        FindObjectOfType<AudioManager>().Play("MorgensternSwing");
+
         circleAttackStarttime = Time.time;
         circleAttackActive = true;
 
@@ -171,6 +174,9 @@ public class SkillMace : MonoBehaviour, ISkill {
 
     public void CreateHitboxLine()
     {
+
+        FindObjectOfType<AudioManager>().Play("MorgensternStab");
+
         lineAttackStarttime = Time.time;
         lineAttackActive = true;
     }

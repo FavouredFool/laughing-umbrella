@@ -8,6 +8,8 @@ public class RoomLogic : MonoBehaviour {
 	public GameObject stairs;
 	public GameObject HUD;
 
+	bool stairsActive = false;
+
 	
 
 	#endregion
@@ -21,9 +23,10 @@ public class RoomLogic : MonoBehaviour {
 
     protected void Update() {
 
-		if (enemiesObj.transform.childCount == 0)
+		if (enemiesObj.transform.childCount == 0 && !stairsActive)
         {
 			spawnStairs();
+			stairsActive = true;
         }
 
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -45,6 +48,7 @@ public class RoomLogic : MonoBehaviour {
 
 	protected void spawnStairs()
     {
+		FindObjectOfType<AudioManager>().Play("RoomCleared");
 		stairs.SetActive(true);
     }
 

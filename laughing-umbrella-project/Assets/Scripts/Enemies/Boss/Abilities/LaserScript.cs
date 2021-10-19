@@ -86,8 +86,10 @@ public class LaserScript : MonoBehaviour {
     {
 		// Ablauf: Erst spawnen, dann positionieren, dann rotieren
 
+		FindObjectOfType<AudioManager>().Play("BossLaser");
+
 		// Spawnen
-		
+
 		for (int i = 0; i < laserAmount; i++)
         {
 			laserArray[i] = Instantiate(laser, gameObject.transform);
@@ -154,6 +156,7 @@ public class LaserScript : MonoBehaviour {
 
 	void CleanUp()
     {
+		FindObjectOfType<AudioManager>().Stop("BossLaser");
 		transform.parent.parent.GetComponent<BossLogic>().SetAttackActive(false);
 		Destroy(gameObject);
     }

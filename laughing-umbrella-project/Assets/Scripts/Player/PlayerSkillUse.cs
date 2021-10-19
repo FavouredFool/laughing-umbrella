@@ -83,6 +83,8 @@ public class PlayerSkillUse : MonoBehaviour {
             if (Input.GetMouseButtonDown(1) && !MainScript.gameIsPaused)
             {
 
+                FindObjectOfType<AudioManager>().Play("Swap");
+
                 // Skills swappen
                 tempSkill = activeSkill;
                 activeSkill = backupSkill;
@@ -105,6 +107,7 @@ public class PlayerSkillUse : MonoBehaviour {
             // Nur Fähigkeit aufheben wenn Fähigkeit vorher null war
             if (activeSkill == emptySkill)
             {
+                FindObjectOfType<AudioManager>().Play("OrbPickup");
                 // den Skill des Orbs absorbieren und Orb zerstören
                 GetSkill(collision.gameObject);
                 Destroy(collision.gameObject);

@@ -116,6 +116,7 @@ public class FlowerScript : MonoBehaviour {
 
 		for (int i = 0; i < waveAmount; i++)
         {
+
 			yield return StartCoroutine(SpawnPattern(flowerPatterns[allAttacks[i]]));
 
 			yield return new WaitForSeconds(timeBetweenWaves);
@@ -132,6 +133,7 @@ public class FlowerScript : MonoBehaviour {
 
 	IEnumerator SpawnPattern(GameObject flowerPattern)
     {
+
 		flowerPattern.SetActive(true);
 
 		foreach (Transform flower in flowerPattern.transform)
@@ -146,6 +148,10 @@ public class FlowerScript : MonoBehaviour {
 
 		yield return new WaitForSeconds(timeUntilBlossom);
 		fadeIn = false;
+
+
+		FindObjectOfType<AudioManager>().Play("BossFlower");
+
 
 		foreach (Transform flower in flowerPattern.transform)
         {

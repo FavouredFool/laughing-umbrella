@@ -98,6 +98,8 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 		if (circleAttackActive)
         {
 
+			
+
 			// Interpoliere Grad von Anfang bis Ende um lange Line um Orc herum zu bewegen
 			// Dafür -> RotateAround
 
@@ -139,6 +141,9 @@ public class OrcActions : Enemy, IMeleeAttackerActions
     {
 		if (createHitboxCircleFlag)
         {
+
+			FindObjectOfType<AudioManager>().Play("MorgensternSwing");
+
 			circleAttackActive = true;
 			circleAttackStarttime = Time.time;
 
@@ -148,6 +153,8 @@ public class OrcActions : Enemy, IMeleeAttackerActions
 
 	public void CreateHitboxLine()
     {
+
+		FindObjectOfType<AudioManager>().Play("MorgensternStab");
 
 		// Hitbox aufbauen
 		// Kollisionspunkt des Rechtecks vorne rechts berechnen

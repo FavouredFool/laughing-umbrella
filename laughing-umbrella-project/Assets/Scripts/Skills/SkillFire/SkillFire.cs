@@ -30,6 +30,8 @@ public class SkillFire : MonoBehaviour, ISkill {
 	public void UseSkill()
     {
 
+        FindObjectOfType<AudioManager>().Play("FireballCast");
+
         // Richtung definieren
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);

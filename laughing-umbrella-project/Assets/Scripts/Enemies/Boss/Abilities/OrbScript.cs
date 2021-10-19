@@ -62,6 +62,7 @@ public class OrbScript : MonoBehaviour {
 
 		for (int i = 0; i < waveAmountVersion1; i++)
         {
+			FindObjectOfType<AudioManager>().Play("BossEnergyball");
 			angle = (i * angleIncreaseVersion1) + startAngleVersion1;
 			ShootOrb(angle);
 			ShootOrb(angle + 180);
@@ -83,7 +84,7 @@ public class OrbScript : MonoBehaviour {
 
 			for (int j = 0; j<2; j++)
             {
-
+				FindObjectOfType<AudioManager>().Play("BossEnergyball");
 				for (int k = 0; k<8; k++)
                 {
 					ShootOrb(angle + k*45);

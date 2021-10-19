@@ -44,14 +44,146 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: testSound
-    clip: {fileID: 8300000, guid: f21dbb58e6b63b64aabb111cc850b5c9, type: 3}
+  - name: RoomCleared
+    clip: {fileID: 8300000, guid: 1150157bbc9d6af4bb848d0b5b608485, type: 3}
     volume: 0.35
-    pitch: 0.25
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Theme
-    clip: {fileID: 8300000, guid: 31ee980bd00402949a80b76ffd4db158, type: 3}
+  - name: BossEnergyball
+    clip: {fileID: 8300000, guid: 84b839f9356c8e94081fa33a3a31c134, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BossFlower
+    clip: {fileID: 8300000, guid: e6556a3a2f051884783d97e7eeb518f9, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BossLaser
+    clip: {fileID: 8300000, guid: 002c51f9fc83d0349ada0b7bcd16fec9, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: ce83babd9d34e8748b82105ddd798408, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonHover
+    clip: {fileID: 8300000, guid: 2ad22dd2cefa87a4d9ab803d7a0ec7a1, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: e5861138780bb0f4d9f5baea0b446a5c, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DamageEnemy
+    clip: {fileID: 8300000, guid: 82624a41b4d33fe49a2c334a71c33d4b, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FireballCast
+    clip: {fileID: 8300000, guid: c76266c397bbf1043b98df2461b0f67b, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FireballExplosion
+    clip: {fileID: 8300000, guid: 67c25050b3d24f840b908ee87aa8ca95, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Fledermaus
+    clip: {fileID: 8300000, guid: a64370326fc50854e8f41a9263e14230, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Heal
+    clip: {fileID: 8300000, guid: 65ac601d8b7ddc642ace71eed95838c0, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MageTeleport
+    clip: {fileID: 8300000, guid: 13fcb893c97d52642be2ba3a6f54f47b, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MorgensternStab
+    clip: {fileID: 8300000, guid: be9cb613195449b46888f966be435082, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MorgensternSwing
+    clip: {fileID: 8300000, guid: 2252781f8c9396847848d651e48f64f5, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: OrbPickup
+    clip: {fileID: 8300000, guid: d2a6f34cccb240948ae138725363ccbe, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: OrbSpawn
+    clip: {fileID: 8300000, guid: c83575158dddc184ab9402d5f8bc5b42, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Slotless
+    clip: {fileID: 8300000, guid: 2365a275b42e5c24b985711d95c5c939, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Swap
+    clip: {fileID: 8300000, guid: c66ab74ec8892ac45b1bfead0aac739c, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Stairs
+    clip: {fileID: 8300000, guid: 9bf0fb2511db7874495740fdf06588ff, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwordSlash
+    clip: {fileID: 8300000, guid: 261da66fb111ff846ac96274f75b1994, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MusicMain
+    clip: {fileID: 8300000, guid: eda1e1ff6a4dbbb40868f29db27f6fc2, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicLevel
+    clip: {fileID: 8300000, guid: 55c6ed2f793fbea499517275c448176e, type: 3}
+    volume: 0.605
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicBoss
+    clip: {fileID: 8300000, guid: da47c970a034ed244b2647fef460dfa5, type: 3}
     volume: 0.605
     pitch: 1
     loop: 1
