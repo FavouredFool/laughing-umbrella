@@ -192,10 +192,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1660001980}
-    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
-      propertyPath: moveSpeed
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1496e72e7db3047942de13d624806b, type: 3}
 --- !u!1 &123537218
@@ -515,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 1660001980}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1496e72e7db3047942de13d624806b, type: 3}
@@ -1083,7 +1079,7 @@ PrefabInstance:
       objectReference: {fileID: 1660001980}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1496e72e7db3047942de13d624806b, type: 3}
@@ -1944,7 +1940,7 @@ PrefabInstance:
       objectReference: {fileID: 1660001980}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1496e72e7db3047942de13d624806b, type: 3}
@@ -2221,6 +2217,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 642856495}
   stairs: {fileID: 1306455165}
   HUD: {fileID: 403315231}
+  healRoom: 0
 --- !u!4 &1393758219
 Transform:
   m_ObjectHideFlags: 0

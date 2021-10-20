@@ -8272,6 +8272,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 962643161}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHPColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8553971670683802516, guid: d71418b00accb194882be28453a28f03, type: 3}
       propertyPath: m_RootOrder
       value: 0

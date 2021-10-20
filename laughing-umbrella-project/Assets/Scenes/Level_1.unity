@@ -6913,6 +6913,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 259964075}
   stairs: {fileID: 1482729505}
   HUD: {fileID: 1041808839}
+  healRoom: 0
 --- !u!4 &1915904958
 Transform:
   m_ObjectHideFlags: 0
@@ -7047,6 +7048,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1067621837}
+    - target: {fileID: 576549631, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
+      propertyPath: holdsHP
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 419512412996894368, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

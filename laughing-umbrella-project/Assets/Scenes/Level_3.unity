@@ -2133,7 +2133,7 @@ PrefabInstance:
       objectReference: {fileID: 1189941888}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1496e72e7db3047942de13d624806b, type: 3}
@@ -2517,7 +2517,7 @@ PrefabInstance:
       objectReference: {fileID: 1189941888}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1496e72e7db3047942de13d624806b, type: 3}
@@ -2669,7 +2669,7 @@ PrefabInstance:
       objectReference: {fileID: 1189941888}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1496e72e7db3047942de13d624806b, type: 3}
@@ -7932,7 +7932,7 @@ PrefabInstance:
       objectReference: {fileID: 1189941888}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1496e72e7db3047942de13d624806b, type: 3}
@@ -8152,7 +8152,7 @@ PrefabInstance:
       objectReference: {fileID: 1189941888}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1496e72e7db3047942de13d624806b, type: 3}
@@ -9432,6 +9432,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 1410996241}
   stairs: {fileID: 61753123}
   HUD: {fileID: 1547969785}
+  healRoom: 0
 --- !u!4 &1511757948
 Transform:
   m_ObjectHideFlags: 0
@@ -11127,6 +11128,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1189941888}
+    - target: {fileID: 576549631, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
+      propertyPath: holdsHP
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 419512414506920547, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
       propertyPath: m_RootOrder
       value: 8

@@ -190,7 +190,7 @@ MonoBehaviour:
   holdsHP: 0
   holdsHPColor: {r: 1, g: 0.9137255, b: 0.9137255, a: 1}
   maxHealth: 10
-  moveSpeed: 6
+  moveSpeed: 8.5
   attackDamage: 1
   stunDuration: 0.5
   knockbackStrength: 10
@@ -201,7 +201,7 @@ MonoBehaviour:
     m_Bits: 262400
   refreshDelay: 0.2
   visionRadius: 7
-  sleepTime: 0
+  sleepTime: 0.6
   antiStuckSavetimeInSec: 10
 --- !u!114 &4193275008563654988
 MonoBehaviour:

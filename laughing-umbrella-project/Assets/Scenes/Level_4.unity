@@ -184,7 +184,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -308,7 +312,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -4522,7 +4530,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -4846,7 +4858,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -5063,7 +5079,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -5822,7 +5842,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -6223,10 +6247,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
-      propertyPath: moveSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
       value: 10
       objectReference: {fileID: 0}
@@ -6293,7 +6313,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -6362,7 +6386,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -6550,7 +6578,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -6649,7 +6681,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -7046,7 +7082,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -7793,7 +7833,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -8060,6 +8104,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 583637340}
   stairs: {fileID: 422418391}
   HUD: {fileID: 957642119}
+  healRoom: 0
 --- !u!4 &1970364572
 Transform:
   m_ObjectHideFlags: 0
@@ -10741,7 +10786,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec

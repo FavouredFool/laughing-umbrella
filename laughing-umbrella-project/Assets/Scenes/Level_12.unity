@@ -519,6 +519,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1798278539}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHPColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8553971670683802516, guid: d71418b00accb194882be28453a28f03, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4043,6 +4051,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 328402812}
   stairs: {fileID: 1160843525}
   HUD: {fileID: 604971750}
+  healRoom: 0
 --- !u!4 &410403178
 Transform:
   m_ObjectHideFlags: 0
@@ -4297,6 +4306,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1798278539}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHPColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8553971670683802516, guid: d71418b00accb194882be28453a28f03, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5402,6 +5419,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1798278539}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHPColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8553971670683802516, guid: d71418b00accb194882be28453a28f03, type: 3}
       propertyPath: m_RootOrder
       value: 0

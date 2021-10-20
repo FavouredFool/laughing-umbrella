@@ -8318,6 +8318,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 1608466100}
   stairs: {fileID: 1580370148}
   HUD: {fileID: 552483336}
+  healRoom: 0
 --- !u!4 &433549151
 Transform:
   m_ObjectHideFlags: 0
@@ -9534,6 +9535,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 227233419}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHPColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8553971670683802516, guid: d71418b00accb194882be28453a28f03, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -20060,6 +20069,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 227233419}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764248418989404065, guid: d71418b00accb194882be28453a28f03, type: 3}
+      propertyPath: holdsHPColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8553971670683802516, guid: d71418b00accb194882be28453a28f03, type: 3}
       propertyPath: m_RootOrder
       value: 22
