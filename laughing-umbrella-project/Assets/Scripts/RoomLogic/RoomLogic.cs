@@ -51,8 +51,8 @@ public class RoomLogic : MonoBehaviour {
 				else
 					audioManager.Play("MusicLevel");
 
-
-				audioManager.Pause("MusicMain");
+				if (audioManager.IsPlaying("MusicLevel"))
+					audioManager.Pause("MusicMain");
 			}
 		}
 

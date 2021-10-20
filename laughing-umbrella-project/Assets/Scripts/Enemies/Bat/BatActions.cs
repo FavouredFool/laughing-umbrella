@@ -80,7 +80,7 @@ public class BatActions : Enemy {
 
                 if (sleep)
                 {
-                    yield return new WaitForSeconds(1f);
+                    yield return new WaitForSeconds(sleepTime);
                     sleep = false;
                 }
                 else if (batState == BatState.RESTING)
