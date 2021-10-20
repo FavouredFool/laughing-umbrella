@@ -7,6 +7,7 @@ public class RoomLogic : MonoBehaviour {
 	public GameObject enemiesObj;
 	public GameObject stairs;
 	public GameObject HUD;
+	public bool healRoom;
 
 	bool stairsActive = false;
 
@@ -24,8 +25,38 @@ public class RoomLogic : MonoBehaviour {
 		AudioManager audioManager = FindObjectOfType<AudioManager>();
 		if (!audioManager.IsPlaying("MusicLevel") && !audioManager.IsPlaying("MusicMain"))
         {
-			audioManager.Play("MusicLevel");
-        }
+			if (healRoom)
+            {
+				audioManager.Play("MusicMain");
+			} else
+            {
+				audioManager.Play("MusicLevel");
+			}
+			
+        } else
+        {
+			if (healRoom)
+			{
+				audioManager.Pause("MusicLevel");
+
+				if (audioManager.IsPlaying("MusicMain"))
+					audioManager.Unpause("MusicMain");
+				else 
+					audioManager.Play("MusicMain");
+			}
+			if (!healRoom)
+			{
+				if (audioManager.IsPlaying("MusicLevel"))
+					audioManager.Unpause("MusicLevel");
+				else
+					audioManager.Play("MusicLevel");
+
+
+				audioManager.Pause("MusicMain");
+			}
+		}
+
+		
 
     }
 
@@ -96,6 +127,7 @@ public class RoomLogic : MonoBehaviour {
     {
 		if (FindObjectOfType<AudioManager>() != null)
         {
+			FindObjectOfType<AudioManager>().Play("ButtonClick");
 			FindObjectOfType<AudioManager>().Unpause("MusicLevel");
 			FindObjectOfType<AudioManager>().Unpause("MusicBoss");
 			FindObjectOfType<AudioManager>().Pause("MusicMain");

@@ -50,6 +50,10 @@ public class MenuScript : MonoBehaviour {
 
 	public void RetryGame()
     {
+
+		FindObjectOfType<AudioManager>().Pause("MusicMain");
+		FindObjectOfType<AudioManager>().Play("MusicLevel");
+
 		FindObjectOfType<AudioManager>().Play("ButtonClick");
 		MainScript.maxHealth = player.GetComponent<PlayerActions>().maxHealth;
 		MainScript.health = player.GetComponent<PlayerActions>().maxHealth;

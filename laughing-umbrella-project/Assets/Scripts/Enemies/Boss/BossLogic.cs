@@ -117,7 +117,7 @@ public class BossLogic : MonoBehaviour {
 			{
 				if (collision.transform.parent != null && collision.transform.parent.tag.Equals(PLAYER_TAG))
 				{
-					FindObjectOfType<AudioManager>().Pause("MusicLevel");
+					FindObjectOfType<AudioManager>().Stop("MusicLevel");
 					FindObjectOfType<AudioManager>().Play("MusicBoss");
 					foundPlayer = true;
 					wall.SetActive(true);

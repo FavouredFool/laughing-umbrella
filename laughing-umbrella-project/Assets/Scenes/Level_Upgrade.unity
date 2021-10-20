@@ -3745,6 +3745,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 1273616861}
   stairs: {fileID: 1713087805}
   HUD: {fileID: 571085043}
+  healRoom: 1
 --- !u!4 &1665031302
 Transform:
   m_ObjectHideFlags: 0

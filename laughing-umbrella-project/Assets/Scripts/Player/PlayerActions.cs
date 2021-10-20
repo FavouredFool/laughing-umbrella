@@ -220,9 +220,10 @@ public class PlayerActions : MonoBehaviour {
 
 	protected void getDestroyed()
     {
-		FindObjectOfType<AudioManager>().Pause("MusicLevel");
-		FindObjectOfType<AudioManager>().Pause("MusicBoss");
+		FindObjectOfType<AudioManager>().Stop("MusicLevel");
+		FindObjectOfType<AudioManager>().Stop("MusicBoss");
 		FindObjectOfType<AudioManager>().Stop("Fledermaus");
+		FindObjectOfType<AudioManager>().Stop("BossLaser");
 
 		Destroy(gameObject);
 		SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);

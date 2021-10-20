@@ -168,7 +168,7 @@ public class SkillEmpty : MonoBehaviour, ISkill
     public void BuildConnection(Collider2D collider)
     {
 
-        FindObjectOfType<AudioManager>().Play("Slotless");
+        FindObjectOfType<AudioManager>().Play("SlotlessStart");
 
         activeLineRenderer = Instantiate(lineRendererObj, gameObject.transform);
         activeLineRendererComp = activeLineRenderer.GetComponent<LineRenderer>();
@@ -192,6 +192,7 @@ public class SkillEmpty : MonoBehaviour, ISkill
 
     public void BreakConnection()
     {
+        
         if (activeConnection)
         {
             activeConnection = null;
@@ -206,6 +207,7 @@ public class SkillEmpty : MonoBehaviour, ISkill
 
     void GiveSkill()
     {
+        FindObjectOfType<AudioManager>().Play("SlotlessEnd");
         player.GetComponent<PlayerSkillUse>().GetSkill(activeConnection.GetComponent<Enemy>().enemyOrb.gameObject);
     }
 

@@ -146,10 +146,16 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Slotless
+  - name: SlotlessStart
     clip: {fileID: 8300000, guid: 2365a275b42e5c24b985711d95c5c939, type: 3}
     volume: 0.605
     pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: SlotlessEnd
+    clip: {fileID: 8300000, guid: 2365a275b42e5c24b985711d95c5c939, type: 3}
+    volume: 0.605
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Swap
