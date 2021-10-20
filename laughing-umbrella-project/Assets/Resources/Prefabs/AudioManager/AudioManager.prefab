@@ -64,7 +64,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BossLaser
     clip: {fileID: 8300000, guid: 002c51f9fc83d0349ada0b7bcd16fec9, type: 3}
-    volume: 0.35
+    volume: 0.25
     pitch: 0.8
     loop: 0
     source: {fileID: 0}
