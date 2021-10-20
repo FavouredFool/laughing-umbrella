@@ -154,8 +154,6 @@ public class PlayerActions : MonoBehaviour {
 		// Check ob Schaden genommen werden sollte
 		if(!isInvincible)
         {
-			FindObjectOfType<AudioManager>().Play("PlayerDamage");
-
 			// Invincible-Time überschritten
 			currentHealth -= attackDamage;
 			if (currentHealth <= 0)
@@ -163,6 +161,7 @@ public class PlayerActions : MonoBehaviour {
 				getDestroyed();
 			} else
             {
+				FindObjectOfType<AudioManager>().Play("PlayerDamage");
 				StartCoroutine(ToggleStun());
 				CreateKnockback(knockbackDirection, knockbackStrength);
 				StartCoroutine(BecomeInvincible(invincibleTime));
@@ -222,7 +221,6 @@ public class PlayerActions : MonoBehaviour {
     {
 		FindObjectOfType<AudioManager>().Stop("MusicLevel");
 		FindObjectOfType<AudioManager>().Stop("MusicBoss");
-		FindObjectOfType<AudioManager>().Stop("Fledermaus");
 		FindObjectOfType<AudioManager>().Stop("BossLaser");
 
 		Destroy(gameObject);

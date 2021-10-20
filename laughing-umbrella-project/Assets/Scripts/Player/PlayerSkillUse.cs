@@ -142,6 +142,9 @@ public class PlayerSkillUse : MonoBehaviour {
                         shortestDist = tempDist;
                     }
                 }
+
+                FindObjectOfType<AudioManager>().Play("OrbPickup");
+
                 // den Skill des Orbs absorbieren und Orb zerstören
                 GetSkill(colliders[distIndex].gameObject);
                 // Orb wird zerstört

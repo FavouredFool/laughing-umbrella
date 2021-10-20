@@ -64,8 +64,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BossLaser
     clip: {fileID: 8300000, guid: 002c51f9fc83d0349ada0b7bcd16fec9, type: 3}
-    volume: 0.605
-    pitch: 0.85
+    volume: 0.35
+    pitch: 0.8
     loop: 0
     source: {fileID: 0}
   - name: ButtonClick
@@ -88,26 +88,26 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: DamageEnemy
     clip: {fileID: 8300000, guid: e6556a3a2f051884783d97e7eeb518f9, type: 3}
-    volume: 0.9
+    volume: 0.6
     pitch: 1.9
     loop: 0
     source: {fileID: 0}
   - name: FireballCast
     clip: {fileID: 8300000, guid: c76266c397bbf1043b98df2461b0f67b, type: 3}
-    volume: 0.387
+    volume: 0.25
     pitch: 2.9
     loop: 0
     source: {fileID: 0}
   - name: FireballExplosion
     clip: {fileID: 8300000, guid: 67c25050b3d24f840b908ee87aa8ca95, type: 3}
-    volume: 0.605
+    volume: 0.35
     pitch: 1.79
     loop: 0
     source: {fileID: 0}
   - name: Fledermaus
-    clip: {fileID: 8300000, guid: a64370326fc50854e8f41a9263e14230, type: 3}
+    clip: {fileID: 8300000, guid: 7367a4948a1937842b7febcfed0fc7d4, type: 3}
     volume: 1
-    pitch: 1.7
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Heal
@@ -124,56 +124,44 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MorgensternStab
     clip: {fileID: 8300000, guid: be9cb613195449b46888f966be435082, type: 3}
-    volume: 0.292
+    volume: 0.4
     pitch: 1.4
     loop: 0
     source: {fileID: 0}
   - name: MorgensternSwing
     clip: {fileID: 8300000, guid: 2252781f8c9396847848d651e48f64f5, type: 3}
-    volume: 0.605
+    volume: 0.65
     pitch: 0.75
-    loop: 0
-    source: {fileID: 0}
-  - name: OrbPickup
-    clip: {fileID: 8300000, guid: c83575158dddc184ab9402d5f8bc5b42, type: 3}
-    volume: 0.4
-    pitch: 1.25
-    loop: 0
-    source: {fileID: 0}
-  - name: OrbSpawn
-    clip: {fileID: 8300000, guid: c83575158dddc184ab9402d5f8bc5b42, type: 3}
-    volume: 0.605
-    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SlotlessStart
     clip: {fileID: 8300000, guid: 2365a275b42e5c24b985711d95c5c939, type: 3}
-    volume: 0.605
+    volume: 0.35
     pitch: 3
     loop: 0
     source: {fileID: 0}
   - name: SlotlessEnd
     clip: {fileID: 8300000, guid: 2365a275b42e5c24b985711d95c5c939, type: 3}
-    volume: 0.605
+    volume: 0.35
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Swap
     clip: {fileID: 8300000, guid: c66ab74ec8892ac45b1bfead0aac739c, type: 3}
-    volume: 0.605
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Stairs
     clip: {fileID: 8300000, guid: 9bf0fb2511db7874495740fdf06588ff, type: 3}
-    volume: 0.605
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SwordSlash
-    clip: {fileID: 8300000, guid: 261da66fb111ff846ac96274f75b1994, type: 3}
-    volume: 1
-    pitch: 3
+    clip: {fileID: 8300000, guid: 82713cde52c6d1c48813068d2228a48c, type: 3}
+    volume: 0.55
+    pitch: 1.25
     loop: 0
     source: {fileID: 0}
   - name: MusicMain
@@ -195,8 +183,14 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: PlayerDamage
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1.2
+    clip: {fileID: 8300000, guid: dedd227be1715134386f294b438d79cd, type: 3}
+    volume: 0.65
+    pitch: 1.6
+    loop: 0
+    source: {fileID: 0}
+  - name: OrbPickup
+    clip: {fileID: 8300000, guid: dedd227be1715134386f294b438d79cd, type: 3}
+    volume: 0.2
+    pitch: 0.85
     loop: 0
     source: {fileID: 0}

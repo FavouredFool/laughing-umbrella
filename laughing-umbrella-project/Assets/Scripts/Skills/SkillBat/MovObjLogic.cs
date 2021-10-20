@@ -36,7 +36,6 @@ public class MovObjLogic : MonoBehaviour {
 
 	public void CreateMovement(float radius, float angle, float speed)
     {
-		FindObjectOfType<AudioManager>().Play("Fledermaus");
 
 		this.radius = radius;
 		this.angle = angle;

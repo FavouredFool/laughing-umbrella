@@ -63,7 +63,12 @@ public class SkillSlash : MonoBehaviour, ISkill
                 if (hit.transform.parent != null && hit.transform.parent.tag.Equals(ENEMY_TAG) && !hitObjects.Contains(hit.transform.parent.gameObject))
                 {
                     hitObjects.Add(hit.transform.parent.gameObject);
-                    Vector2 knockbackDirection = (hit.transform.position - gfxChild.transform.position).normalized;
+                    Vector2 knockbackDirection = Vector2.zero;
+                    if (gfxChild.transform.position != null)
+                    {
+                         knockbackDirection = (hit.transform.position - gfxChild.transform.position).normalized;
+                    }
+                        
                     hit.gameObject.transform.parent.GetComponent<Enemy>().getDamaged(attackDamage, knockbackDirection, knockbackStrength);
                 } else if (hit.transform.parent != null && hit.transform.parent.parent != null && hit.transform.parent.tag.Equals(BOSS_TAG) && !hitObjects.Contains(hit.transform.parent.parent.gameObject))
                 {

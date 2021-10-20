@@ -146,11 +146,13 @@ public class FlowerScript : MonoBehaviour {
 		fadeInPattern = flowerPattern;
 		fadeInStart = Time.time;
 
-		yield return new WaitForSeconds(timeUntilBlossom);
+		yield return new WaitForSeconds(timeUntilBlossom * 0.9f);
 		fadeIn = false;
 
 
 		FindObjectOfType<AudioManager>().Play("BossFlower");
+
+		yield return new WaitForSeconds(timeUntilBlossom * 0.1f);
 
 
 		foreach (Transform flower in flowerPattern.transform)
