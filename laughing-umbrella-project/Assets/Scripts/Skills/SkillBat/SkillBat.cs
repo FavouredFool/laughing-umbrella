@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SkillBat : MonoBehaviour, ISkill
 {
@@ -40,6 +41,7 @@ public class SkillBat : MonoBehaviour, ISkill
 
     public void UseSkill()
     {
+        FindObjectOfType<AudioManager>().Play("Fledermaus");
         startTime = Time.time;
         createMovingObjs();
     }

@@ -105,10 +105,10 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Fledermaus
-    clip: {fileID: 8300000, guid: 7367a4948a1937842b7febcfed0fc7d4, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
+    clip: {fileID: 8300000, guid: dedd227be1715134386f294b438d79cd, type: 3}
+    volume: 0.468
+    pitch: 1.6
+    loop: 0
     source: {fileID: 0}
   - name: Heal
     clip: {fileID: 8300000, guid: 65ac601d8b7ddc642ace71eed95838c0, type: 3}
@@ -190,7 +190,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: OrbPickup
     clip: {fileID: 8300000, guid: dedd227be1715134386f294b438d79cd, type: 3}
-    volume: 0.2
+    volume: 0.15
     pitch: 0.85
     loop: 0
     source: {fileID: 0}
