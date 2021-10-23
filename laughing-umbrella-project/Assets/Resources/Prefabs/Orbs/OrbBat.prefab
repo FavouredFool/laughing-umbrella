@@ -113,3 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillEnum: 2
+  despawnTime: 10
+  despawnEffectStart: 0.85
+  magneticRadius: 1
+  magneticSpeed: 50

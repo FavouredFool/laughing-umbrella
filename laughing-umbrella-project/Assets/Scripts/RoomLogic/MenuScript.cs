@@ -26,13 +26,18 @@ public class MenuScript : MonoBehaviour {
 
     public void PlayGame()
 	{
-		FindObjectOfType<AudioManager>().Pause("MusicMain");
+		FindObjectOfType<AudioManager>().Stop("MusicMain");
+		FindObjectOfType<AudioManager>().Stop("MusicLevel");
+		FindObjectOfType<AudioManager>().Stop("MusicBoss");
+
 		FindObjectOfType<AudioManager>().Play("MusicLevel");
 		FindObjectOfType<AudioManager>().Play("ButtonClick");
 		
 		MainScript.health = player.GetComponent<PlayerActions>().maxHealth;
 		MainScript.maxHealth = player.GetComponent<PlayerActions>().maxHealth;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+		MainScript.startTime = Time.time;
 	}
 
 	public void HoverButton()
@@ -51,14 +56,20 @@ public class MenuScript : MonoBehaviour {
 	public void RetryGame()
     {
 
-		FindObjectOfType<AudioManager>().Pause("MusicMain");
-		FindObjectOfType<AudioManager>().Play("MusicLevel");
+		FindObjectOfType<AudioManager>().Stop("MusicMain");
+		FindObjectOfType<AudioManager>().Stop("MusicLevel");
+		FindObjectOfType<AudioManager>().Stop("MusicBoss");
 
+
+		FindObjectOfType<AudioManager>().Play("MusicLevel");
 		FindObjectOfType<AudioManager>().Play("ButtonClick");
+
 		MainScript.maxHealth = player.GetComponent<PlayerActions>().maxHealth;
 		MainScript.health = player.GetComponent<PlayerActions>().maxHealth;
 		SceneManager.LoadScene(1);
-    }
+
+		MainScript.startTime = Time.time;
+	}
 
 	public void ToMenu()
     {

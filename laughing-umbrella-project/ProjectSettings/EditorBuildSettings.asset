@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: c8824d96fb9ad0c4d8373cb845c3dcd0
-  - enabled: 0
-    path: Assets/Scenes/Gameplay.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Level_0.unity
     guid: b7cd507dec36a744092a6d785e1f22c8
@@ -59,6 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_Boss.unity
     guid: af22b33a8c12c3645b89a46044447be2
+  - enabled: 1
+    path: Assets/Scenes/Endscene.unity
+    guid: a025f9d933d8b2a4fb718fe3851f4010
   - enabled: 1
     path: Assets/Scenes/OptionsScene.unity
     guid: 999b197b9b55900439d9df04ff6fa210

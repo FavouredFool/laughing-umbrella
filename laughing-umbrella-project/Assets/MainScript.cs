@@ -7,6 +7,10 @@ public class MainScript : MonoBehaviour {
 	public static bool gameIsPaused = false;
 	public static int health { get; set; }
 	public static int maxHealth { get; set; }
+
+	public static float startTime { get; set; }
+
+	public static float totalTime { get; set; }
 	#endregion
 
 

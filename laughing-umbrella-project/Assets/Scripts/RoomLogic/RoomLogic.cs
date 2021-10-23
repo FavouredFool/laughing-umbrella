@@ -39,10 +39,7 @@ public class RoomLogic : MonoBehaviour {
 			{
 				audioManager.Pause("MusicLevel");
 
-				if (audioManager.IsPlaying("MusicMain"))
-					audioManager.Unpause("MusicMain");
-				else 
-					audioManager.Play("MusicMain");
+				audioManager.Play("MusicMain");
 			}
 			if (!healRoom)
 			{
@@ -51,8 +48,8 @@ public class RoomLogic : MonoBehaviour {
 				else
 					audioManager.Play("MusicLevel");
 
-				if (audioManager.IsPlaying("MusicLevel"))
-					audioManager.Pause("MusicMain");
+				if (audioManager.IsPlaying("MusicMain"))
+					audioManager.Stop("MusicMain");
 			}
 		}
 
@@ -75,7 +72,7 @@ public class RoomLogic : MonoBehaviour {
 				Resume();
 				FindObjectOfType<AudioManager>().Unpause("MusicLevel");
 				FindObjectOfType<AudioManager>().Unpause("MusicBoss");
-				FindObjectOfType<AudioManager>().Pause("MusicMain");
+				FindObjectOfType<AudioManager>().Stop("MusicMain");
 
 			} else
             {
@@ -130,7 +127,7 @@ public class RoomLogic : MonoBehaviour {
 			FindObjectOfType<AudioManager>().Play("ButtonClick");
 			FindObjectOfType<AudioManager>().Unpause("MusicLevel");
 			FindObjectOfType<AudioManager>().Unpause("MusicBoss");
-			FindObjectOfType<AudioManager>().Pause("MusicMain");
+			FindObjectOfType<AudioManager>().Stop("MusicMain");
 
 		}
 		

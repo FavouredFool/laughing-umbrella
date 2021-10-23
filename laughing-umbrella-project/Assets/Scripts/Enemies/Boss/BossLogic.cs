@@ -58,8 +58,6 @@ public class BossLogic : MonoBehaviour {
 
 	protected void Start() {
 
-		
-
 		SwapState(BossState.INTRO);
 		
 		sr = boss.GetComponent<SpriteRenderer>();
@@ -240,6 +238,9 @@ public class BossLogic : MonoBehaviour {
 
 	void GetDestroyed()
     {
+		// Calculate final time
+		MainScript.totalTime = Time.time - MainScript.startTime;
+
 		FindObjectOfType<AudioManager>().Stop("BossLaser");
 		FindObjectOfType<AudioManager>().Stop("MusicBoss");
 
