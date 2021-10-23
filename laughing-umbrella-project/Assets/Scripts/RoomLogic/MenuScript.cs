@@ -77,13 +77,21 @@ public class MenuScript : MonoBehaviour {
 		{
 			FindObjectOfType<AudioManager>().Stop("MusicBoss");
 		}
-
 	}
+
+
+	public void ToOptions()
+    {
+		FindObjectOfType<AudioManager>().Play("ButtonClick");
+		SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 3);
+	}
+
 
 	public void UnloadScene()
     {
 		SceneManager.UnloadSceneAsync(gameObject.scene);
 	}
+
 	
 	#endregion
 }

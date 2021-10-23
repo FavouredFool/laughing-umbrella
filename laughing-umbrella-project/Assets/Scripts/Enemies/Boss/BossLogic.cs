@@ -240,6 +240,7 @@ public class BossLogic : MonoBehaviour {
 
 	void GetDestroyed()
     {
+		FindObjectOfType<AudioManager>().Stop("BossLaser");
 		FindObjectOfType<AudioManager>().Stop("MusicBoss");
 
 		// Create Effect

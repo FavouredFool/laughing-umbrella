@@ -101,6 +101,12 @@ public class SkillEmpty : MonoBehaviour, ISkill
                         BreakConnection();
                     }
                 }
+
+                // Connection trennen wenn connection stirbt
+                if (activeConnection == null)
+                {
+                    BreakConnection();
+                }
                 
             }
 

@@ -60,6 +60,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_Boss.unity
     guid: af22b33a8c12c3645b89a46044447be2
   - enabled: 1
+    path: Assets/Scenes/OptionsScene.unity
+    guid: 999b197b9b55900439d9df04ff6fa210
+  - enabled: 1
     path: Assets/Scenes/PauseScreen.unity
     guid: bb938675b55c0f84c8f87c482e6289e7
   - enabled: 1
