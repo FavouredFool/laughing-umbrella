@@ -184,7 +184,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -308,7 +312,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -733,7 +741,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.47885883}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -744,7 +752,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.68}
+  m_Size: {x: 0.96, y: 0.7222822}
   m_EdgeRadius: 0
 --- !u!212 &283181928
 SpriteRenderer:
@@ -4522,7 +4530,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -4561,7 +4573,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.4749688}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4572,7 +4584,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.68}
+  m_Size: {x: 0.96, y: 0.73006225}
   m_EdgeRadius: 0
 --- !u!212 &392965563
 SpriteRenderer:
@@ -4707,7 +4719,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.15740797}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4718,7 +4730,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.88}
+  m_Size: {x: 0.8, y: 0.56518406}
   m_EdgeRadius: 0
 --- !u!212 &405739738
 SpriteRenderer:
@@ -4846,7 +4858,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -5063,7 +5079,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -5822,7 +5842,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -6223,10 +6247,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
-      propertyPath: moveSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
       value: 10
       objectReference: {fileID: 0}
@@ -6293,7 +6313,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -6362,7 +6386,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -6406,7 +6434,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.47462642}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6417,7 +6445,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.68}
+  m_Size: {x: 0.96, y: 0.730747}
   m_EdgeRadius: 0
 --- !u!212 &1388284636
 SpriteRenderer:
@@ -6550,7 +6578,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -6649,7 +6681,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -7046,7 +7082,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -7131,7 +7171,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.4822253}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7142,7 +7182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.68}
+  m_Size: {x: 0.96, y: 0.71554923}
   m_EdgeRadius: 0
 --- !u!212 &1645629251
 SpriteRenderer:
@@ -7240,7 +7280,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.47797}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7251,7 +7291,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.68}
+  m_Size: {x: 0.96, y: 0.7240598}
   m_EdgeRadius: 0
 --- !u!212 &1658248042
 SpriteRenderer:
@@ -7354,7 +7394,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.48346508}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7365,7 +7405,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.68}
+  m_Size: {x: 0.96, y: 0.7130697}
   m_EdgeRadius: 0
 --- !u!212 &1772814463
 SpriteRenderer:
@@ -7463,7 +7503,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.15820858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7474,7 +7514,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.88}
+  m_Size: {x: 0.8, y: 0.56358284}
   m_EdgeRadius: 0
 --- !u!212 &1801169131
 SpriteRenderer:
@@ -7654,7 +7694,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.47889507}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7665,7 +7705,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.68}
+  m_Size: {x: 0.96, y: 0.7222097}
   m_EdgeRadius: 0
 --- !u!212 &1826163800
 SpriteRenderer:
@@ -7793,7 +7833,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec
@@ -7950,7 +7994,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.48192346}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7961,7 +8005,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.68}
+  m_Size: {x: 0.96, y: 0.7161529}
   m_EdgeRadius: 0
 --- !u!212 &1897497775
 SpriteRenderer:
@@ -8060,6 +8104,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 583637340}
   stairs: {fileID: 422418391}
   HUD: {fileID: 957642119}
+  healRoom: 0
 --- !u!4 &1970364572
 Transform:
   m_ObjectHideFlags: 0
@@ -10741,7 +10786,11 @@ PrefabInstance:
       objectReference: {fileID: 762975247}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: moveSpeed
-      value: 8
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
+      propertyPath: sleepTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4193275008563654990, guid: fb1496e72e7db3047942de13d624806b, type: 3}
       propertyPath: antiStuckSavetimeInSec

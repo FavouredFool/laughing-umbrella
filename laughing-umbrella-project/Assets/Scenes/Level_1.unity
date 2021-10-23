@@ -337,7 +337,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.3621186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -348,7 +348,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.68}
+  m_Size: {x: 1.28, y: 0.9557626}
   m_EdgeRadius: 0
 --- !u!1 &153828497
 GameObject:
@@ -528,7 +528,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.24218202}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -539,7 +539,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.12}
+  m_Size: {x: 0.96, y: 0.63563585}
   m_EdgeRadius: 0
 --- !u!1 &195570516
 GameObject:
@@ -5326,7 +5326,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.23963284}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5337,7 +5337,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.12}
+  m_Size: {x: 0.96, y: 0.6407342}
   m_EdgeRadius: 0
 --- !u!1 &1067621837 stripped
 GameObject:
@@ -5951,7 +5951,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.3548435}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5962,7 +5962,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.6}
+  m_Size: {x: 1.28, y: 0.8903129}
   m_EdgeRadius: 0
 --- !u!1001 &1478307768
 PrefabInstance:
@@ -6536,7 +6536,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.12048161}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6547,7 +6547,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.6}
+  m_Size: {x: 1.28, y: 1.3590367}
   m_EdgeRadius: 0
 --- !u!1 &1760797023
 GameObject:
@@ -6913,6 +6913,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 259964075}
   stairs: {fileID: 1482729505}
   HUD: {fileID: 1041808839}
+  healRoom: 0
 --- !u!4 &1915904958
 Transform:
   m_ObjectHideFlags: 0
@@ -7047,6 +7048,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1067621837}
+    - target: {fileID: 576549631, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
+      propertyPath: holdsHP
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 419512412996894368, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

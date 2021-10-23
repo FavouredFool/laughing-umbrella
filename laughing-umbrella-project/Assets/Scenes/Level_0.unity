@@ -1964,7 +1964,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.23834634}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1975,7 +1975,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.12}
+  m_Size: {x: 0.96, y: 0.6433072}
   m_EdgeRadius: 0
 --- !u!212 &967249895
 SpriteRenderer:
@@ -4511,7 +4511,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.35811508}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4522,7 +4522,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.68}
+  m_Size: {x: 1.28, y: 0.9637697}
   m_EdgeRadius: 0
 --- !u!1 &1676249991
 GameObject:
@@ -5201,6 +5201,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 0}
   stairs: {fileID: 321623305}
   HUD: {fileID: 1414134022}
+  healRoom: 0
 --- !u!4 &1975646156
 Transform:
   m_ObjectHideFlags: 0

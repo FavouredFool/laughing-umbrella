@@ -2495,7 +2495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6595258673211725592, guid: fe8c93182adc6dd4e8747b28e4da4b80, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.243
+      value: 28.475
       objectReference: {fileID: 0}
     - target: {fileID: 6595258673211725592, guid: fe8c93182adc6dd4e8747b28e4da4b80, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2563,6 +2563,7 @@ MonoBehaviour:
   enemiesObj: {fileID: 1540936225}
   stairs: {fileID: 383943459}
   HUD: {fileID: 2136729017}
+  healRoom: 0
 --- !u!4 &255059903
 Transform:
   m_ObjectHideFlags: 0
