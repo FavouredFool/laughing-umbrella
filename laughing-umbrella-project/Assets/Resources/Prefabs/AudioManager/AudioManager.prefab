@@ -46,150 +46,175 @@ MonoBehaviour:
   sounds:
   - name: RoomCleared
     clip: {fileID: 8300000, guid: 1150157bbc9d6af4bb848d0b5b608485, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: BossEnergyball
     clip: {fileID: 8300000, guid: 84b839f9356c8e94081fa33a3a31c134, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.1
     pitch: 0.75
     loop: 0
     source: {fileID: 0}
   - name: BossFlower
     clip: {fileID: 8300000, guid: e6556a3a2f051884783d97e7eeb518f9, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 1
     pitch: 0.52
     loop: 0
     source: {fileID: 0}
   - name: BossLaser
     clip: {fileID: 8300000, guid: 002c51f9fc83d0349ada0b7bcd16fec9, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.25
     pitch: 0.8
     loop: 0
     source: {fileID: 0}
   - name: ButtonClick
     clip: {fileID: 8300000, guid: ce83babd9d34e8748b82105ddd798408, type: 3}
-    volume: 0.86
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
+    volume: 0.7
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ButtonHover
     clip: {fileID: 8300000, guid: 2ad22dd2cefa87a4d9ab803d7a0ec7a1, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.6
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Dash
     clip: {fileID: 8300000, guid: e5861138780bb0f4d9f5baea0b446a5c, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.3
     pitch: 2
     loop: 0
     source: {fileID: 0}
   - name: DamageEnemy
     clip: {fileID: 8300000, guid: e6556a3a2f051884783d97e7eeb518f9, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.6
     pitch: 1.9
     loop: 0
     source: {fileID: 0}
   - name: FireballCast
     clip: {fileID: 8300000, guid: c76266c397bbf1043b98df2461b0f67b, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.25
     pitch: 2.9
     loop: 0
     source: {fileID: 0}
   - name: FireballExplosion
     clip: {fileID: 8300000, guid: 67c25050b3d24f840b908ee87aa8ca95, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.35
     pitch: 1.79
     loop: 0
     source: {fileID: 0}
   - name: Fledermaus
     clip: {fileID: 8300000, guid: dedd227be1715134386f294b438d79cd, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.468
     pitch: 1.6
     loop: 0
     source: {fileID: 0}
   - name: Heal
     clip: {fileID: 8300000, guid: 65ac601d8b7ddc642ace71eed95838c0, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MageTeleport
     clip: {fileID: 8300000, guid: 13fcb893c97d52642be2ba3a6f54f47b, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.605
     pitch: 1.4
     loop: 0
     source: {fileID: 0}
   - name: MorgensternStab
     clip: {fileID: 8300000, guid: be9cb613195449b46888f966be435082, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.4
     pitch: 1.4
     loop: 0
     source: {fileID: 0}
   - name: MorgensternSwing
     clip: {fileID: 8300000, guid: 2252781f8c9396847848d651e48f64f5, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.65
     pitch: 0.75
     loop: 0
     source: {fileID: 0}
   - name: SlotlessStart
     clip: {fileID: 8300000, guid: 2365a275b42e5c24b985711d95c5c939, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.35
     pitch: 3
     loop: 0
     source: {fileID: 0}
   - name: SlotlessEnd
     clip: {fileID: 8300000, guid: 2365a275b42e5c24b985711d95c5c939, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.35
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Swap
     clip: {fileID: 8300000, guid: c66ab74ec8892ac45b1bfead0aac739c, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Stairs
     clip: {fileID: 8300000, guid: 9bf0fb2511db7874495740fdf06588ff, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SwordSlash
     clip: {fileID: 8300000, guid: 82713cde52c6d1c48813068d2228a48c, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.55
     pitch: 1.25
     loop: 0
     source: {fileID: 0}
   - name: MusicMain
     clip: {fileID: 8300000, guid: eda1e1ff6a4dbbb40868f29db27f6fc2, type: 3}
+    group: {fileID: 2786593584036117299, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.605
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MusicLevel
     clip: {fileID: 8300000, guid: 55c6ed2f793fbea499517275c448176e, type: 3}
+    group: {fileID: 2786593584036117299, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.605
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MusicBoss
     clip: {fileID: 8300000, guid: da47c970a034ed244b2647fef460dfa5, type: 3}
+    group: {fileID: 2786593584036117299, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.605
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: PlayerDamage
     clip: {fileID: 8300000, guid: dedd227be1715134386f294b438d79cd, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.65
     pitch: 1.6
     loop: 0
     source: {fileID: 0}
   - name: OrbPickup
     clip: {fileID: 8300000, guid: dedd227be1715134386f294b438d79cd, type: 3}
+    group: {fileID: -1235300227521291130, guid: 86b9123f71b1fb04d9213ed31fc37f4a, type: 2}
     volume: 0.15
     pitch: 0.85
     loop: 0
