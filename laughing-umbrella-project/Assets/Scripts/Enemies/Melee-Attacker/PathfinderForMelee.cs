@@ -18,7 +18,7 @@ public class PathfinderForMelee : MonoBehaviour
 	GameObject foundTarget;
 
 	enum AttackerState { SEARCHING, WALKING };
-	AttackerState attackerState;
+	AttackerState attackerState = AttackerState.SEARCHING;
 
 	// private Variables
 	Vector2 direction = Vector2.down;
@@ -48,77 +48,10 @@ public class PathfinderForMelee : MonoBehaviour
 		enemyActions = GetComponent<Enemy>();
 		meleeActions = GetComponent<IMeleeAttackerActions>();
 
-		InvokeRepeating("UpdatePath", 0f, 0.5f);
+		InvokeRepeating("UpdatePath", 0f, refreshDelay);
 		timeLastAttack = float.NegativeInfinity;
-
-
-		StartCoroutine(BehaviourRoutine());
 	}
 
-
-
-	IEnumerator BehaviourRoutine()
-	{
-		attackerState = AttackerState.SEARCHING;
-
-		while (true)
-		{
-			yield return new WaitForSeconds(refreshDelay);
-
-			if (enemyActions.target && !enemyActions.getIsStunned())
-			{
-				if (attackerState == AttackerState.SEARCHING)
-				{
-					Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
-					found = false;
-					foreach (Collider2D collided in rangeCheck)
-					{
-						if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == enemyActions.target)
-						{
-							Vector3 directionToTarget = (collided.gameObject.transform.position - transform.position).normalized;
-							float distanceToTarget = Vector3.Distance(transform.position, collided.gameObject.transform.position);
-
-							if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionLayers))
-							{
-
-								foundTarget = collided.gameObject;
-								attackerState = AttackerState.WALKING;
-								found = true;
-							}
-							else
-							{
-								foundTarget = null;
-							}
-							break;
-						}
-					}
-
-					if (!found)
-					{
-						foundTarget = null;
-					}
-
-				}
-				else if (attackerState == AttackerState.WALKING)
-				{
-					Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
-					found = false;
-					foreach (Collider2D collided in rangeCheck)
-					{
-						if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == enemyActions.target)
-						{
-							foundTarget = collided.gameObject;
-							found = true;
-						}
-					}
-					if (!found)
-					{
-						foundTarget = null;
-						attackerState = AttackerState.SEARCHING;
-					}				}
-			}
-		}
-	}
 
 
 	protected void UpdatePath()
@@ -128,6 +61,59 @@ public class PathfinderForMelee : MonoBehaviour
 			seeker.StartPath(rb.position, enemyActions.target.transform.position, OnPathComplete);
 		}
 
+		if (enemyActions.target && !enemyActions.getIsStunned())
+		{
+			if (attackerState == AttackerState.SEARCHING)
+			{
+				Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
+				found = false;
+				foreach (Collider2D collided in rangeCheck)
+				{
+					if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == enemyActions.target)
+					{
+						Vector3 directionToTarget = (collided.gameObject.transform.position - transform.position).normalized;
+						float distanceToTarget = Vector3.Distance(transform.position, collided.gameObject.transform.position);
+
+						if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionLayers))
+						{
+
+							foundTarget = collided.gameObject;
+							attackerState = AttackerState.WALKING;
+							found = true;
+						}
+						else
+						{
+							foundTarget = null;
+						}
+						break;
+					}
+				}
+
+				if (!found)
+				{
+					foundTarget = null;
+				}
+
+			}
+			else if (attackerState == AttackerState.WALKING)
+			{
+				Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, visionRadius);
+				found = false;
+				foreach (Collider2D collided in rangeCheck)
+				{
+					if (collided.gameObject.transform.parent != null && collided.gameObject.transform.parent.gameObject == enemyActions.target)
+					{
+						foundTarget = collided.gameObject;
+						found = true;
+					}
+				}
+				if (!found)
+				{
+					foundTarget = null;
+					attackerState = AttackerState.SEARCHING;
+				}
+			}
+		}
 	}
 
 	protected void OnPathComplete(Path p)
@@ -175,7 +161,17 @@ public class PathfinderForMelee : MonoBehaviour
 					return;
 				}
 
-				direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+				Vector2 tempDirection = (new Vector2(path.vectorPath[currentWaypoint].x, path.vectorPath[currentWaypoint].y) - rb.position).normalized;
+
+				if (tempDirection != Vector2.zero){
+					direction = tempDirection;
+                }
+
+				if (direction == Vector2.zero)
+                {
+					Debug.Log(direction);
+                }
+
 
 				float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 

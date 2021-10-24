@@ -6715,7 +6715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1231305907324408812, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
       propertyPath: refreshDelay
-      value: 2
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1231305907324408812, guid: dcbb1a56a0b439840a73d568c195c229, type: 3}
       propertyPath: nextWaypointDistance

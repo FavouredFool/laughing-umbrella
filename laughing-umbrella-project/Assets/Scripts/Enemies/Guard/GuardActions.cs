@@ -62,19 +62,25 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 		if (!isStunned)
 		{
 
+			direction = pathfinder.getDirection();
+
+			animator.SetFloat("horizontal", direction.x);
+			animator.SetFloat("vertical", direction.y);
+
 			if (direction != Vector2.zero)
 			{
-				animator.SetFloat("horizontal", direction.x);
-				animator.SetFloat("vertical", direction.y);
+				
+			} else
+            {
+				Debug.Log(direction);
 			}
-
 
 			// Vorübergehend für Gizmos (sonst wird's erst bei StartAttack() berechnet).
 			// Lege Hitbox aus, teste auf Treffer in jeweilige Richtung. Wird aufgerufen aus Animation
 			// Direction checken
 
-			direction = pathfinder.getDirection();
 
+			/*
 			if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
 			{
 				// rechts und links
@@ -92,6 +98,8 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 				else
 					angle = 180f;
 			}
+			*/
+
 
 
 			if (attackActive)

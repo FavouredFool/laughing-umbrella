@@ -34,6 +34,9 @@ public class SkillEmpty : MonoBehaviour, ISkill
     GradientColorKey[] colorKey;
     GradientAlphaKey[] alphaKey;
 
+    bool connectionWasActive = false;
+    bool connectionlossAsIntended = false;
+
 
     protected void Start()
     {
@@ -61,11 +64,14 @@ public class SkillEmpty : MonoBehaviour, ISkill
     {
         if (activeConnection)
         {
+            connectionWasActive = true;
+
 
             if (Input.GetMouseButtonDown(1))
             {
                 // bei Swap connection brechen
                 BreakConnection();
+                connectionlossAsIntended = true;
             }
 
 
@@ -85,12 +91,14 @@ public class SkillEmpty : MonoBehaviour, ISkill
                 {
                     BreakConnection();
                     currentHealth = activeHealth;
+                    connectionlossAsIntended = true;
                 }
 
                 // Connection trennen wenn Slot schon voll ist
                 if (player.GetComponent<PlayerSkillUse>().GetActiveSkill() != player.GetComponent<PlayerSkillUse>().GetEmptySkill())
                 {
                     BreakConnection();
+                    connectionlossAsIntended = true;
                 }
 
                 // Connection trennen wenn Spieler zu weit von Gegner entfernt ist
@@ -99,14 +107,11 @@ public class SkillEmpty : MonoBehaviour, ISkill
                     if (Vector2.Distance(activeConnection.transform.position, player.transform.position) > maxDist)
                     {
                         BreakConnection();
+                        connectionlossAsIntended = true;
                     }
                 }
 
-                // Connection trennen wenn connection stirbt
-                if (activeConnection == null)
-                {
-                    BreakConnection();
-                }
+                
                 
             }
 
@@ -115,8 +120,19 @@ public class SkillEmpty : MonoBehaviour, ISkill
                 // Connection ist vorbei
                 GiveSkill();
                 BreakConnection();
+                connectionlossAsIntended = true;
             }
 
+        } else
+        {
+
+            if (connectionWasActive && !connectionlossAsIntended)
+            {
+                BreakConnection();
+            }
+
+            connectionWasActive = false;
+            connectionlossAsIntended = false;
         }
 
     }
@@ -164,10 +180,6 @@ public class SkillEmpty : MonoBehaviour, ISkill
                 // Neue Connection aufbauen
                 BuildConnection(colliders[distIndex]);
             }
-            
-        } else
-        {
-            BreakConnection();
         }
     }
 
@@ -198,9 +210,7 @@ public class SkillEmpty : MonoBehaviour, ISkill
 
     public void BreakConnection()
     {
-        
-        if (activeConnection)
-        {
+
             activeConnection = null;
             connectionStartTime = float.PositiveInfinity;
             Destroy(activeLineRenderer);
@@ -208,7 +218,7 @@ public class SkillEmpty : MonoBehaviour, ISkill
 
             // Speed up Player again
             player.GetComponent<PlayerActions>().moveSpeed /= speedMultiplier;
-        }
+
     }
 
     void GiveSkill()
