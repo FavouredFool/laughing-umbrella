@@ -16,11 +16,15 @@ public class MainScript : MonoBehaviour {
 
 	#region UnityMethods
 
+
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 	public static void LoadMain()
     {
 		GameObject main = GameObject.Instantiate(Resources.Load("Prefabs/Main")) as GameObject;
 		GameObject.DontDestroyOnLoad(main);
+
+		QualitySettings.vSyncCount = 1;
+		Application.targetFrameRate = 300;
     }
 	
 	#endregion

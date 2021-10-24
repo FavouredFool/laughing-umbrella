@@ -27,10 +27,7 @@ public class EndScript : MonoBehaviour
         clip.waitForFirstFrame = true;
         clip.loopPointReached += EndReached;
 
-        if (!FindObjectOfType<AudioManager>().IsPlaying("MusicMain"))
-        {
-            FindObjectOfType<AudioManager>().Play("MusicMain");
-        }
+        FindObjectOfType<AudioManager>().Play("MusicCredits");
     }
     private void Update()
     {
