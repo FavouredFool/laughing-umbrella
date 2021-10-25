@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 159557369}
   - component: {fileID: 159557368}
   - component: {fileID: 159557370}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: DD_Dekoration_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,6 +710,10 @@ PrefabInstance:
     - target: {fileID: 4619642697008298346, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
+      propertyPath: despawnTime
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
@@ -1182,6 +1186,10 @@ PrefabInstance:
     - target: {fileID: 4619642697008298346, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
+      propertyPath: despawnTime
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
@@ -5228,7 +5236,7 @@ GameObject:
   - component: {fileID: 1061609375}
   - component: {fileID: 1061609374}
   - component: {fileID: 1061609376}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: DD_Dekoration_6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5395,6 +5403,10 @@ PrefabInstance:
     - target: {fileID: 4619642697008298346, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
+      propertyPath: despawnTime
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
@@ -5941,6 +5953,10 @@ PrefabInstance:
     - target: {fileID: 4619642697008298346, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831965654929628838, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}
+      propertyPath: despawnTime
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a1f3d956ffddef4cbc7cf2da5226582, type: 3}

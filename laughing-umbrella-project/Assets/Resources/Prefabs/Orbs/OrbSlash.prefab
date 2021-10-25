@@ -112,9 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08370c2aa76a56740a698cf435a3a89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   skillEnum: 1
-  despawnTime: 7
+  despawnTime: 10
   despawnEffectStart: 0.85
   magneticRadius: 1
   magneticSpeed: 50

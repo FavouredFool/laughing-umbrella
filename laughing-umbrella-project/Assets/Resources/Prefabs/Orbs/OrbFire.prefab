@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 92d641abe130f1d44b43492813a5cf0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -113,3 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillEnum: 3
+  despawnTime: 10
+  despawnEffectStart: 0.85
+  magneticRadius: 1
+  magneticSpeed: 50
