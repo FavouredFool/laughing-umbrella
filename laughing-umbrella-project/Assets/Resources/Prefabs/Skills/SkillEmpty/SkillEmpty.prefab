@@ -49,7 +49,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   clickRadius: 0.5
-  connectionTotalTime: 3
+  connectionTotalTime: 2
   speedMultiplier: 0.5
   maxDist: 6
   lineColor: {r: 0.64542204, g: 0.0032929946, b: 0.6981132, a: 0}
