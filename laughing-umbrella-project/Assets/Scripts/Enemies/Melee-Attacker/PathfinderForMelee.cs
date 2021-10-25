@@ -59,7 +59,7 @@ public class PathfinderForMelee : MonoBehaviour
 		if (seeker.IsDone() && foundTarget && !enemyActions.getIsStunned())
 		{
 			seeker.StartPath(rb.position, enemyActions.target.transform.position, OnPathComplete);
-		}
+		} 
 
 		if (enemyActions.target && !enemyActions.getIsStunned())
 		{
@@ -122,7 +122,10 @@ public class PathfinderForMelee : MonoBehaviour
 		{
 			path = p;
 			currentWaypoint = 0;
-		}
+		} else
+        {
+			Debug.Log("error");
+        }
 	}
 
 	protected void FixedUpdate()
@@ -148,6 +151,11 @@ public class PathfinderForMelee : MonoBehaviour
 					return;
 				}
 
+				if (currentWaypoint >= path.vectorPath.Count)
+				{
+					return;
+				}
+
 				// Attack Range
 				float distanceToTarget = Vector2.Distance(transform.position, foundTarget.transform.position);
 				if (Time.time - timeLastAttack > meleeActions.GetAttackDowntime() && distanceToTarget <= attackDistance)
@@ -156,9 +164,10 @@ public class PathfinderForMelee : MonoBehaviour
 					meleeActions.StartAttack();
 				}
 
-				if (currentWaypoint >= path.vectorPath.Count)
+				float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+				if (distance < nextWaypointDistance)
 				{
-					return;
+					currentWaypoint++;
 				}
 
 				Vector2 tempDirection = (new Vector2(path.vectorPath[currentWaypoint].x, path.vectorPath[currentWaypoint].y) - rb.position).normalized;
@@ -167,21 +176,7 @@ public class PathfinderForMelee : MonoBehaviour
 					direction = tempDirection;
                 }
 
-				if (direction == Vector2.zero)
-                {
-					Debug.Log(direction);
-                }
-
-
-				float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-
 				rb.MovePosition(rb.position + direction * enemyActions.moveSpeed * Time.fixedDeltaTime);
-
-
-				if (distance < nextWaypointDistance)
-				{
-					currentWaypoint++;
-				}
 			}
 		}
 

@@ -67,13 +67,7 @@ public class GuardActions : Enemy, IMeleeAttackerActions {
 			animator.SetFloat("horizontal", direction.x);
 			animator.SetFloat("vertical", direction.y);
 
-			if (direction != Vector2.zero)
-			{
-				
-			} else
-            {
-				Debug.Log(direction);
-			}
+		
 
 			// Vorübergehend für Gizmos (sonst wird's erst bei StartAttack() berechnet).
 			// Lege Hitbox aus, teste auf Treffer in jeweilige Richtung. Wird aufgerufen aus Animation

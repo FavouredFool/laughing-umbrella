@@ -140,8 +140,6 @@ public class SkillEmpty : MonoBehaviour, ISkill
     public void UseSkill()
     {
 
-        
-
         // 1. Target wird gesucht
         // Richtung definieren
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -166,19 +164,22 @@ public class SkillEmpty : MonoBehaviour, ISkill
                     shortestDist = tempDist;
                 }
             }
-
-            if (!activeConnection)
+            
+            if (shortestDist <= maxDist * 0.85f)
             {
-                BuildConnection(colliders[distIndex]);
+                if (!activeConnection)
+                {
+                    BuildConnection(colliders[distIndex]);
 
-            }
-            else
-            {
-                // Vorherige Connection zerstören
-                BreakConnection();
+                }
+                else
+                {
+                    // Vorherige Connection zerstören
+                    BreakConnection();
 
-                // Neue Connection aufbauen
-                BuildConnection(colliders[distIndex]);
+                    // Neue Connection aufbauen
+                    BuildConnection(colliders[distIndex]);
+                }
             }
         }
     }

@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypointDistance: 1
-  refreshDelay: 0.2
+  refreshDelay: 0.3
   visionRadius: 10
   attackDistance: 2
   obstructionLayers:
