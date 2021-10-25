@@ -20,8 +20,9 @@ public class EndScript : MonoBehaviour
     {
         timeText.enabled = false;
         startTime = Time.time;
+        MainScript.totalTime = 222.212f;
         var ts = TimeSpan.FromSeconds(MainScript.totalTime);
-        timeText.text = "final time: \n" + string.Format("{0:XX}:{1:XX}:{2:XX}:{3:XXX}",ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+        timeText.text = "final time: \n" + string.Format("{0:00}:{1:00}:{2:00}:{3:000}",ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
 
         clip = gameObject.GetComponent<VideoPlayer>();
         clip.waitForFirstFrame = true;

@@ -22,7 +22,8 @@ public class OrbSpawn : MonoBehaviour {
 		float xOffset;
 		float yOffset;
 		Vector3 spawnPos;
-		Collider2D collider;
+		//Collider2D collider;
+		RaycastHit2D rayCollision;
 		do
 		{
 			if (Random.Range(0, 2) == 0)
@@ -39,10 +40,12 @@ public class OrbSpawn : MonoBehaviour {
 
 			spawnPos = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, 0);
 
-			// Check for collision with wall
-			collider = Physics2D.OverlapPoint(new Vector2(spawnPos.x, spawnPos.y), forbiddenCollisionLayers);
+			// Check for wall between object and spawnpoint
 
-		} while (collider != null);
+			rayCollision = Physics2D.Raycast(gameObject.transform.position, spawnPos - gameObject.transform.position, Vector2.Distance(spawnPos, gameObject.transform.position), forbiddenCollisionLayers);
+			//collider = Physics2D.OverlapPoint(new Vector2(spawnPos.x, spawnPos.y), forbiddenCollisionLayers);
+
+		} while (rayCollision.collider != null);
 
 		return spawnPos;
     }

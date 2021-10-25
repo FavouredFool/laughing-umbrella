@@ -170,6 +170,11 @@ public class PathfinderForMelee : MonoBehaviour
 					currentWaypoint++;
 				}
 
+				if (currentWaypoint >= path.vectorPath.Count)
+				{
+					return;
+				}
+
 				Vector2 tempDirection = (new Vector2(path.vectorPath[currentWaypoint].x, path.vectorPath[currentWaypoint].y) - rb.position).normalized;
 
 				if (tempDirection != Vector2.zero){
@@ -179,7 +184,6 @@ public class PathfinderForMelee : MonoBehaviour
 				rb.MovePosition(rb.position + direction * enemyActions.moveSpeed * Time.fixedDeltaTime);
 			}
 		}
-
 	}
 
 	public void EndAttack()
