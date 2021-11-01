@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MainScript : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class MainScript : MonoBehaviour {
 	public static float startTime { get; set; }
 
 	public static float totalTime { get; set; }
+
+	public AudioMixer audioMixer;
 	#endregion
 
 
@@ -26,6 +29,42 @@ public class MainScript : MonoBehaviour {
 		QualitySettings.vSyncCount = 1;
 		Application.targetFrameRate = 300;
     }
-	
+
+    public void Start()
+    {
+		SetVolumeMusic();
+		SetVolumeSound();
+	}
+
+
+	public void SetVolumeMusic()
+	{
+		PlayerPrefs.SetFloat("volumeMusic", 0.75f);
+		float volume = 0.75f;
+
+		if (volume <= 0.01f)
+		{
+			audioMixer.SetFloat("volumeMusic", -80);
+		}
+		else
+		{
+			audioMixer.SetFloat("volumeMusic", Mathf.Log10(volume) * 20);
+		}
+	}
+
+	public void SetVolumeSound()
+	{
+		PlayerPrefs.SetFloat("volumeSound", 0.75f);
+		float volume = 0.75f;
+
+		if (volume <= 0.01f)
+		{
+			audioMixer.SetFloat("volumeSound", -80);
+		}
+		else
+		{
+			audioMixer.SetFloat("volumeSound", Mathf.Log10(volume) * 20);
+		}
+	}
 	#endregion
 }

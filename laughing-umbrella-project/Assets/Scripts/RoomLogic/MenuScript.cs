@@ -15,10 +15,6 @@ public class MenuScript : MonoBehaviour {
 
     public void Start()
     {
-
-		SetVolumeMusic();
-		SetVolumeSound();
-
 		if (FindObjectOfType<AudioManager>().IsPlaying("MusicMain"))
         {
 			FindObjectOfType<AudioManager>().Unpause("MusicMain");
@@ -32,35 +28,7 @@ public class MenuScript : MonoBehaviour {
 		
 	}
 
-	public void SetVolumeMusic()
-	{
-		PlayerPrefs.SetFloat("volumeMusic", 0.75f);
-		float volume = 0.75f;
 
-		if (volume <= 0.01f)
-		{
-			audioMixer.SetFloat("volumeMusic", -80);
-		}
-		else
-		{
-			audioMixer.SetFloat("volumeMusic", Mathf.Log10(volume) * 20);
-		}
-	}
-
-	public void SetVolumeSound()
-	{
-		PlayerPrefs.SetFloat("volumeSound", 0.75f);
-		float volume = 0.75f;
-
-		if (volume <= 0.01f)
-		{
-			audioMixer.SetFloat("volumeSound", -80);
-		}
-		else
-		{
-			audioMixer.SetFloat("volumeSound", Mathf.Log10(volume) * 20);
-		}
-	}
 
 	public void PlayGame()
 	{
