@@ -49,7 +49,7 @@ public class MenuScript : MonoBehaviour {
 
 	public void SetVolumeSound()
 	{
-		PlayerPrefs.SetFloat("volumeMusic", 0.75f);
+		PlayerPrefs.SetFloat("volumeSound", 0.75f);
 		float volume = 0.75f;
 
 		if (volume <= 0.01f)
