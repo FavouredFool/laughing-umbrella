@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 using System.Collections;
 
 public class MenuScript : MonoBehaviour {
 
 	#region Variables
 	public GameObject player;
+	public AudioMixer audioMixer;
     #endregion
 
 
@@ -13,6 +15,10 @@ public class MenuScript : MonoBehaviour {
 
     public void Start()
     {
+
+		SetVolumeMusic();
+		SetVolumeSound();
+
 		if (FindObjectOfType<AudioManager>().IsPlaying("MusicMain"))
         {
 			FindObjectOfType<AudioManager>().Unpause("MusicMain");
@@ -21,10 +27,40 @@ public class MenuScript : MonoBehaviour {
         {
 			FindObjectOfType<AudioManager>().Play("MusicMain");
 		}
+
+
 		
 	}
 
-    public void PlayGame()
+	public void SetVolumeMusic()
+	{
+		float volume = PlayerPrefs.GetFloat("volumeMusic");
+
+		if (volume <= 0.01f)
+		{
+			audioMixer.SetFloat("volumeMusic", -80);
+		}
+		else
+		{
+			audioMixer.SetFloat("volumeMusic", Mathf.Log10(volume) * 20);
+		}
+	}
+
+	public void SetVolumeSound()
+	{
+		float volume = PlayerPrefs.GetFloat("volumeSound");
+
+		if (volume <= 0.01f)
+		{
+			audioMixer.SetFloat("volumeSound", -80);
+		}
+		else
+		{
+			audioMixer.SetFloat("volumeSound", Mathf.Log10(volume) * 20);
+		}
+	}
+
+	public void PlayGame()
 	{
 		FindObjectOfType<AudioManager>().Stop("MusicMain");
 		FindObjectOfType<AudioManager>().Stop("MusicLevel");
