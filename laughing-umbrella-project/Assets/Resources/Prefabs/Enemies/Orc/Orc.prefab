@@ -159,9 +159,9 @@ MonoBehaviour:
   target: {fileID: 0}
   healthBar: {fileID: 0}
   enemyOrb: {fileID: 4831965654929628838, guid: f766020b6a2104a4c8339627b06c71af, type: 3}
-  holdsHP: 0
-  holdsHPColor: {r: 1, g: 0.9137255, b: 0.9137255, a: 0}
-  maxHealth: 50
+  holdsHP: 1
+  holdsHPColor: {r: 1, g: 0.9137255, b: 0.9137255, a: 1}
+  maxHealth: 70
   moveSpeed: 3
   attackDamage: 1
   stunDuration: 0.5

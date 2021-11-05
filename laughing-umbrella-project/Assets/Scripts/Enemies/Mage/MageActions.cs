@@ -244,7 +244,7 @@ public class MageActions : Enemy {
 				teleportDistanceTemp /= 2;
 			}
 
-		} while(!posCorrect && distanceCounter < 4);
+		} while(!posCorrect && distanceCounter < 2);
 
 		if (!posCorrect)
         {

@@ -237,12 +237,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  maxHealth: 3
-  invincibleTime: 1
+  maxHealth: 4
+  invincibleTime: 1.25
   invinciblityColor: {r: 0.6415094, g: 0, b: 0.4495829, a: 1}
   dashDistance: 2.8
   dashTime: 0.08
-  invincibleAfterDash: 0.2
+  invincibleTimeAfterDash: 0.4
+  stunDuration: 0.3
   playerCollision: {fileID: 356689209}
 --- !u!95 &3170938816040230501
 Animator:

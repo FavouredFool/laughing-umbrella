@@ -39,6 +39,7 @@ public class PlayerActions : MonoBehaviour {
 	string HPUP_TAG = "HpUp";
 
 	LayerMask obstacleLayer;
+	LayerMask outerWallLayer;
 
 	#endregion
 
@@ -54,6 +55,7 @@ public class PlayerActions : MonoBehaviour {
 
 
 		obstacleLayer = LayerMask.GetMask("Obstacle");
+		outerWallLayer = LayerMask.GetMask("ObstacleOuterWall");
 
 
 		if (MainScript.health != 0)
@@ -97,21 +99,39 @@ public class PlayerActions : MonoBehaviour {
 
 		// Dont stuck in Wall
 		bool collisionflag = false;
+		int counter = 0;
 		do
 		{
+			counter++;
 			collisionflag = false;
 			CapsuleCollider2D collider = playerCollision.GetComponent<CapsuleCollider2D>();
 			Collider2D [] allCollisions = Physics2D.OverlapCapsuleAll(playerCollision.transform.position, collider.size, collider.direction, 0f);
-
-			foreach(Collider2D collided in allCollisions)
+			
+			foreach (Collider2D collided in allCollisions)
             {
-				if (collided.gameObject.layer == obstacleLayer)
+				
+				if (((1<<collided.gameObject.layer) & obstacleLayer) != 0)
                 {
-					gameObject.transform.position += new Vector3(tempMovement.y, tempMovement.x, 0);
+					if (!Physics2D.OverlapCapsule(playerCollision.transform.position + new Vector3(tempMovement.x*2, 0,0), collider.size, collider.direction, 0f, obstacleLayer) && !Physics2D.Raycast(gameObject.transform.position, new Vector3(tempMovement.x, 0, 0), 2, outerWallLayer))
+                    {
+						gameObject.transform.position += new Vector3(tempMovement.x, 0, 0);
+					}
+					else if(!Physics2D.OverlapCapsule(playerCollision.transform.position + new Vector3(-tempMovement.x*2, 0, 0), collider.size, collider.direction, 0f, obstacleLayer) && !Physics2D.Raycast(gameObject.transform.position, new Vector3(-tempMovement.x, 0, 0), 2, outerWallLayer))
+                    {
+						gameObject.transform.position += new Vector3(-tempMovement.x, 0, 0);
+					}
+					else if (!Physics2D.OverlapCapsule(playerCollision.transform.position + new Vector3(0, tempMovement.y*2, 0), collider.size, collider.direction, 0f, obstacleLayer) && !Physics2D.Raycast(gameObject.transform.position, new Vector3(0, tempMovement.y, 0), 2, outerWallLayer))
+					{
+						gameObject.transform.position += new Vector3(0, tempMovement.y, 0);
+					}
+					else if (!Physics2D.OverlapCapsule(playerCollision.transform.position + new Vector3(0, -tempMovement.y * 2, 0), collider.size, collider.direction, 0f, obstacleLayer) && !Physics2D.Raycast(gameObject.transform.position, new Vector3(0, -tempMovement.y, 0), 2, outerWallLayer))
+					{
+						gameObject.transform.position += new Vector3(0, -tempMovement.y, 0);
+					}
 					collisionflag = true;
 				}
             }
-		} while (collisionflag);
+		} while (collisionflag && counter<1000);
 
 		StartCoroutine(BecomeInvincible(invincibleTimeAfterDash));
 	}

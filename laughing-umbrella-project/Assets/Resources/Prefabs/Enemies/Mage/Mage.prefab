@@ -160,7 +160,7 @@ MonoBehaviour:
   obstructionLayers:
     serializedVersion: 2
     m_Bits: 262400
-  visionRadius: 11
+  visionRadius: 8.5
 --- !u!95 &761403961432604132
 Animator:
   serializedVersion: 3

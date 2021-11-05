@@ -733,7 +733,7 @@ MonoBehaviour:
   endEnemy: {fileID: 0}
   healthBar: {fileID: 0}
   attackDowntime: 2
-  health: 250
+  health: 300
   damage: 1
   knockbackStrength: 10
   colorChangeDuration: 0.2

@@ -190,7 +190,7 @@ MonoBehaviour:
   holdsHP: 0
   holdsHPColor: {r: 1, g: 0.9137255, b: 0.9137255, a: 1}
   maxHealth: 10
-  moveSpeed: 8.5
+  moveSpeed: 7.5
   attackDamage: 1
   stunDuration: 0.5
   knockbackStrength: 10
